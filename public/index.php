@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
+use Controllers\DashboardController;
 use MVC\Router;
 use Controllers\PropiedadController;
 use Controllers\VendedorController;
@@ -11,6 +12,8 @@ $router = new Router();
 
 //Zona privada
 $router->get('/admin', [PropiedadController::class,'index']);
+
+$router->get('/dashboard',[DashboardController::class, 'index']);
 
 $router->get('/propiedades/crear', [PropiedadController::class,'crear']);
 $router->post('/propiedades/crear', [PropiedadController::class,'crear']);
