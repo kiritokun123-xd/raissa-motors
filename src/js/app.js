@@ -1,44 +1,45 @@
-document.addEventListener("DOMContentLoaded", function() {
-    evenListeners();
+// document.addEventListener("DOMContentLoaded", function() {
+//     evenListeners();
 
-    darkMode();
-});
+//     darkMode();
+// });
 
-function darkMode(){
-    const prefiereDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+// function darkMode(){
+//     const prefiereDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
 
-    if(prefiereDarkMode.matches){
-        document.body.classList.add("dark-mode");
-    }else{
-        document.body.classList.remove("dark-mode");
-    }
+//     // if(prefiereDarkMode.matches){
+//     //     document.body.classList.add("dark-mode");
+//     // }else{
+//     //     document.body.classList.remove("dark-mode");
+//     // }
 
-    prefiereDarkMode.addEventListener("change", function(){
-        if(prefiereDarkMode.matches){
-            document.body.classList.add("dark-mode");
-        }else{
-            document.body.classList.remove("dark-mode");
-        }
-    });
+//     prefiereDarkMode.addEventListener("change", function(){
+//         if(prefiereDarkMode.matches){
+//             document.body.classList.add("dark-mode");
+//         }else{
+//             document.body.classList.remove("dark-mode");
+//         }
+//     });
 
-    const botonDarkMode = document.querySelector(".dark-mode-boton");
+//     const botonDarkMode = document.querySelector(".dark-mode-boton");
 
-    botonDarkMode.addEventListener("click", function(){
-        document.body.classList.toggle("dark-mode");
-    });
-}
+//     botonDarkMode.addEventListener("click", function(){
+//         document.body.classList.toggle("dark-mode");
+//     });
+// }
 
-function evenListeners(){
-    const mobileMenu = document.querySelector(".mobile-menu");
+// function evenListeners(){
+//     const mobileMenu = document.querySelector(".mobile-menu");
+//     if(mobileMenu){
+//         mobileMenu.addEventListener("click", navegacionResponsive);
+//     }
+// }
 
-    mobileMenu.addEventListener("click", navegacionResponsive);
-}
-
-function navegacionResponsive(){
-    const navegacion = document.querySelector(".navegacion");
-    if(navegacion.classList.contains("mostrar")){
-        navegacion.classList.remove("mostrar");
-    }else{
-        navegacion.classList.add("mostrar");
-    }
-}
+// function navegacionResponsive(){
+//     const navegacion = document.querySelector(".navegacion");
+//     if(navegacion.classList.contains("mostrar")){
+//         navegacion.classList.remove("mostrar");
+//     }else{
+//         navegacion.classList.add("mostrar");
+//     }
+// }

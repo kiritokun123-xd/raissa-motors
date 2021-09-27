@@ -36,5 +36,8 @@ $router->get('/entrada',[PaginasController::class, 'entrada']);
 $router->get('/contacto',[PaginasController::class, 'contacto']);
 $router->post('/contacto',[PaginasController::class, 'contacto']);
 
+//Zona Dashboard
+$router->get('/dashboard',[DashboardController::class, 'inicio']);
+
 
 $router->comprobarRutas();
