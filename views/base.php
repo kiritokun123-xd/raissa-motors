@@ -20,14 +20,14 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- CSS -->
     <link rel="stylesheet" href="../build/css/app.css">
-<body>
+<body id="body-pd" >
     
     <header class="header" id="header">
         <div class="header__toogle">
-            <i class='bx bx-menu' id="header-toogle"></i>
+            <i class='bx bx-menu' id="header-toggle"></i>
         </div>
-        <div class="header__image">
-            <img src="..build/imagenes/perfil.png" alt="">
+        <div class="header__img">
+            <img src="../imagenes/perfil.png" alt="">
         </div>
     </header>
 
@@ -41,9 +41,9 @@
             </div>
 
             <div class="nav__list">
-                <a href="#" class="nav__link">
-                    <i class='bx bx-grid-alt nav__icon'>Dashboard</i>
-                    <span class="nav__name"></span>
+                <a href="#" class="nav__link active">
+                    <i class="bx bx-grid-alt nav__icon"></i>
+                    <span class="nav__name">Dashboard</span>
                 </a>
 
                 <a href="#" class="nav__link">
@@ -57,16 +57,25 @@
                 </a>
 
                 <a href="#" class="nav__link">
-                    <i class='bx bx-grid-alt nav__icon'></i>
-                    <span class="nav__name"></span>
+                    <i class='bx bx-bookmark nav__icon'></i>
+                    <span class="nav__name">Favorites</span>
                 </a>
 
                 <a href="#" class="nav__link">
-                    <i class='bx bx-grid-alt nav__icon'></i>
-                    <span class="nav__name"></span>
+                    <i class='bx bx-folder nav__icon'></i>
+                    <span class="nav__name">Data</span>
                 </a>
-
+                
+                <a href="#" class="nav__link">
+                    <i class='bx bx-bar-chart-alt-2 nav__icon'></i>
+                    <span class="nav__name">Analytics</span>
+                </a>
             </div>
+
+            <a href="#" class="nav__link">
+                <i class='bx bx-log-out nav__icon'></i>
+                <span class="nav__name">Log Out</span>
+            </a>
         </nav>
     </div>
     <?php echo $contenido; ?>
