@@ -27,10 +27,22 @@
             <hr class="siderbar-divider">
 
             <li class="nav-item">
-                <a href="nav-link">
-                    <span>RAISSA MOTOR'S</span>
+                <a href="" class="nav-link">
+                    <i class='bx bxs-dashboard'></i>
+                    <span>Dashbddddddoard</span>
                 </a>
             </li>
+
+            <!-- <hr class="siderbar-divider">
+
+            <div class="sidebar-heading">Interface</div>
+
+            <li class="nav-item">
+                <a href="nav-link">
+                    <i class='bx bxl-mastodon'></i>
+                    <span>RAISSA MOTOR'S</span>
+                </a>
+            </li> -->
        </ul>
        <div class="contenedor">
 

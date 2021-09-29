@@ -4,10 +4,26 @@ ul{
     padding: 0;
     text-decoration: none;
     li{
+        margin: 0;
+        padding: 0;
         list-style: none;
         span{
             font-weight: $black;
             color: $blanco;
+        }
+    }
+}
+
+.flex{
+    display: flex;
+    position: relative;
+    .navbar{
+        background-color: #4e73df;
+        background-image: linear-gradient(180deg,#4e73df 10%,#224abe 100%);
+        background-size: cover;
+        p{
+            color: $blanco;
+
         }
     }
 }
@@ -33,7 +49,7 @@ ul{
     }
 }
 .siderbar-divider{
-    margin: 0 1rem 1rem;
+    margin: 0 1.6rem 1.6rem;
 }
 hr{
     border-top: 1px solid rgba(255,255,255,.15);
@@ -42,19 +58,29 @@ hr{
     height: 0;
     overflow: visible;
 }
-.flex{
-    display: flex;
-    
-    .navbar{
-        background-color: #4e73df;
-        background-image: linear-gradient(180deg,#4e73df 10%,#224abe 100%);
-        background-size: cover;
-        p{
-            color: $blanco;
 
-        }
+.nav-item{
+    color: $blanco;
+    font-weight: 700;
+    position: relative;
+    height: 2rem;
+    
+    .nav-link{
+        padding: 1.6rem;
+        position: relative;
+        color: $blanco;
+        width: 100;
     }
 }
+
+.sidebar-heading{
+    color: rgba(255,255,255,.4);
+    padding: 0 1.6rem;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
 .nav{
     height: 100%;
     display: flex;
