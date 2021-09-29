@@ -1,3 +1,1 @@
-<main class="main">
-
-</main>
+<h1>HOLA MUNDO</h1>

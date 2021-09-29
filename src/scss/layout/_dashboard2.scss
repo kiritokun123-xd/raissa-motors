@@ -1,0 +1,80 @@
+// Base
+ul{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    li{
+        list-style: none;
+        span{
+            font-weight: $black;
+            color: $blanco;
+        }
+    }
+}
+
+.sidebar-brand{
+    display: flex;
+    padding: 2.4rem 1.6rem;
+    justify-content: center;
+    align-items: center;
+    
+    .sidebar-brand-icon{
+        font-size: 3.5rem;
+        color: $blanco;
+    }
+
+    .sidebar-brand-text{
+        color: $blanco;
+        font-weight: 700;
+        margin: 0 1.6rem;
+        p{
+            font-size: 1.6rem;
+        }
+    }
+}
+.siderbar-divider{
+    margin: 0 1rem 1rem;
+}
+hr{
+    border-top: 1px solid rgba(255,255,255,.15);
+    border-bottom: 1px rgba(255,50,50,0) ;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+.flex{
+    display: flex;
+    
+    .navbar{
+        background-color: #4e73df;
+        background-image: linear-gradient(180deg,#4e73df 10%,#224abe 100%);
+        background-size: cover;
+        p{
+            color: $blanco;
+
+        }
+    }
+}
+.nav{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.contenedor{
+    width: 100%;
+    flex-direction: column;
+    
+    background-color: $gris;
+    .header{
+        margin: 0;
+        background-color: $white-color;
+        box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+        height: 7rem;
+    }
+}
+
+.main{
+    height: 100rem;
+}
