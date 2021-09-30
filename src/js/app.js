@@ -1,8 +1,56 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     evenListeners();
+document.addEventListener("DOMContentLoaded", function() {
+    showNavbar('nav-link','nav-caja');
 
-//     darkMode();
-// });
+    mostrarPerfil('nav-link-li','caja-perfil','content');
+});
+const showNavbar = (navlinkid, navcajaid) =>{
+    const navlink = document.getElementById(navlinkid),
+    navcaja = document.getElementById(navcajaid)
+    // Validate that all variables exist
+    if(navlink && navcaja){
+        
+        navlink.addEventListener('click', (e)=>{
+            e.preventDefault();
+            // show navbar
+            navcaja.classList.toggle('mostrar')
+        })
+        
+    }else{
+        console.log("no hay")
+    }
+}
+
+
+
+//===MOSTRAR PERFIL CONFIGURACION===//
+
+const mostrarPerfil = (navlinkliid,cajaperfilid,contentid) =>{
+    const navlinkli = document.getElementById(navlinkliid),
+    cajaperfil = document.getElementById(cajaperfilid),
+    content = document.getElementById(contentid)
+    // Validate that all variables exist
+    if(navlinkli && cajaperfil && content){
+        
+        navlinkli.addEventListener('click', (e)=>{
+            e.preventDefault();
+            // show navbar
+            cajaperfil.classList.toggle('mostrar')
+        })
+
+        content.addEventListener('click', (e) =>{
+            var click = e.target;
+            if(click != cajaperfil){
+                console.log("Hola")
+                cajaperfil.classList.remove('mostrar')
+            }
+            
+        })
+        
+    }else{
+        console.log("no hay")
+    }
+}
+
 
 // function darkMode(){
 //     const prefiereDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
@@ -44,40 +92,5 @@
 //     }
 // }
 
+//===MOSTRAR SUBMENU===//
 
-/*===== SHOW NAVBAR  =====*/ 
-const showNavbar = (toggleId, navId, bodyId, headerId) =>{
-    const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId),
-    bodypd = document.getElementById(bodyId),
-    headerpd = document.getElementById(headerId)
-    // Validate that all variables exist
-    if(toggle && nav && bodypd && headerpd){
-        
-        toggle.addEventListener('click', ()=>{
-            // show navbar
-            nav.classList.toggle('show')
-            // change icon
-            toggle.classList.toggle('bx-x')
-            // add padding to body
-            bodypd.classList.toggle('body-pd')
-            // add padding to header
-            headerpd.classList.toggle('body-pd')
-        })
-    }else{
-        console.log("no hay")
-    }
-}
-
-showNavbar('header-toggle','nav-bar','body-pd','header')
-
-/*===== LINK ACTIVE  =====*/ 
-const linkColor = document.querySelectorAll('.nav__link')
-
-function colorLink(){
-    if(linkColor){
-        linkColor.forEach(l=> l.classList.remove('active'))
-        this.classList.add('active')
-    }
-}
-linkColor.forEach(l=> l.addEventListener('click', colorLink))

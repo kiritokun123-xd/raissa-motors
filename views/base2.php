@@ -11,7 +11,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../build/css/app.css">
 </head>
-<body>
+<body id="content">
     
     <div class="flex">
        <ul class="navbar-nav">
@@ -28,8 +28,8 @@
 
             <li class="nav-item">
                 <a href="" class="nav-link">
-                    <i class='bx bxs-dashboard'></i>
-                    <span>Dashboard</span>
+                    <i class='bx bxs-dashboard bx-icon'></i>
+                    <span class="span">Dashboard</span>
                 </a>
             </li>
 
@@ -38,13 +38,13 @@
             <div class="sidebar-heading">Interface</div>
 
             <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="" class="nav-link" id="nav-link">
                     <i class='bx bxs-dashboard bx-icon'></i>
                     <span class="span">Dashboard</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
                 </a>
 
-                <div class="nav-caja mostrar">
+                <div class="nav-caja " id=nav-caja>
                     <div class="nav-caja-items">
                         <h6>Custom Components:</h6>
                         <a href="">Buttons</a>
@@ -52,34 +52,7 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item">
-                <a href="" class="nav-link">
-                    <i class='bx bxs-dashboard bx-icon'></i>
-                    <span class="span">Dashboard</span>
-                    <i class='bx bxs-right-arrow bx-arrow'></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="" class="nav-link">
-                    <i class='bx bxs-dashboard bx-icon'></i>
-                    <span class="span">Dashboard</span>
-                    <i class='bx bxs-right-arrow bx-arrow'></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="" class="nav-link">
-                    <i class='bx bxs-dashboard bx-icon'></i>
-                    <span class="span">Dashboard</span>
-                    <i class='bx bxs-right-arrow bx-arrow'></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="" class="nav-link">
-                    <i class='bx bxs-dashboard bx-icon'></i>
-                    <span class="span">Dashboard</span>
-                    <i class='bx bxs-right-arrow bx-arrow'></i>
-                </a>
-            </li>
+           
             <hr class="siderbar-divider">
             <li class="nav-item">
                 <a href="" class="nav-link">
@@ -89,7 +62,7 @@
                 
             </li>
        </ul>
-       <div class="contenedor">
+       <div class="contenedor" >
 
            <header class="header">
                 <nav class="navbar">
@@ -102,10 +75,31 @@
                         </li>
                         <div class="bloque-nav"></div>
                         <li class="nav-item-li">
-                            <a href="" class="nav-link-li">
+                            <a href="" id="nav-link-li" class="nav-link-li">
                                 <span class="name-link">Angelito</span>
                                 <img src="imagenes/perfil.svg" class="img-perfil" alt="imagen del perfil">
                             </a>    
+                            <div class="caja-perfil" id="caja-perfil">
+                                <a href class="perfil-item">
+                                    <i class='bx bxs-user'></i>
+                                    <span>Perfil</span>
+                                </a>
+                                <a href class="perfil-item">
+                                    <i class='bx bxs-wrench'></i>
+                                    <span>Ajustes</span>
+                                </a>
+                                <a href class="perfil-item">
+                                    <i class='bx bx-list-ul'></i>
+                                    <span>Actividad</span>
+                                </a>
+                                
+                                <div class="divider-perfil"></div>
+
+                                <a href class="perfil-item">
+                                    <i class='bx bx-log-out'></i>   
+                                    <span>Salir</span>
+                                </a>
+                            </div>
                         </li>
                     </ul>
                 </nav>
