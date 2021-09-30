@@ -14,7 +14,7 @@
 <body>
     
     <div class="flex">
-       <ul class="navbar">
+       <ul class="navbar-nav">
             <a href="" class="sidebar-brand">
                 <div class="sidebar-brand-icon">
                     <i class='bx bxl-mastodon'></i>
@@ -43,6 +43,14 @@
                     <span class="span">Dashboard</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
                 </a>
+
+                <div class="nav-caja mostrar">
+                    <div class="nav-caja-items">
+                        <h6>Custom Components:</h6>
+                        <a href="">Buttons</a>
+                        <a href="">Card</a>
+                    </div>
+                </div>
             </li>
             <li class="nav-item">
                 <a href="" class="nav-link">
@@ -77,14 +85,30 @@
                 <a href="" class="nav-link">
                     <i class='bx bxs-dashboard bx-icon'></i>
                     <span class="span">Dashboard</span>
-                    <i class='bx bxs-right-arrow bx-arrow'></i>
                 </a>
+                
             </li>
        </ul>
        <div class="contenedor">
 
            <header class="header">
-                <p>header</p>
+                <nav class="navbar">
+                    <ul class="navbar-ul">
+                        <li class="nav-item-li">
+                            <a href="" class="nav-link-li">
+                                <i class='bx bxs-message-alt-detail bx-nav-icon'></i>
+                                <span class="span-li">7</span>
+                            </a>
+                        </li>
+                        <div class="bloque-nav"></div>
+                        <li class="nav-item-li">
+                            <a href="" class="nav-link-li">
+                                <span class="name-link">Angelito</span>
+                                <img src="imagenes/perfil.svg" class="img-perfil" alt="imagen del perfil">
+                            </a>    
+                        </li>
+                    </ul>
+                </nav>
            </header>
 
            <div class="main">

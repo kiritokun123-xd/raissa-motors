@@ -18,7 +18,7 @@ ul{
 .flex{
     display: flex;
     position: relative;
-    .navbar{
+    .navbar-nav{
         display: flex;
         flex-direction: column;
         background-color: #4e73df;
@@ -102,7 +102,7 @@ hr{
 .sidebar-heading{
     color: rgba(255,255,255,.4);
     padding: 0 1.6rem;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1rem;
     text-transform: uppercase;
 }
@@ -124,12 +124,103 @@ hr{
         background-color: $white-color;
         box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
         height: 7rem;
-        p{
+    }
+}
+.navbar{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0.8rem 1.6rem;
+    height: 100%;
+    .navbar-ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .bloque-nav{
+            border-right: 1px solid #e3e6f0;
+            height: 3rem;
+            margin: 0 2rem;
+            width: 0;
+        }
+    }
+}
+.nav-caja{
+    margin: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-caja-items{
+    padding: .5rem 0;
+    min-width: 10rem;
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    border-radius: 0.5rem;
+    background-color: $blanco;
+
+    h6{
+        margin: 0;
+        white-space: nowrap;
+        padding: .5rem 1.5rem;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 1rem;
+        color: #b7b9cc;
+    }
+    a{
+        font-weight: 400;
+        padding: .5rem 1rem;
+        margin: 0 .5rem;
+        display: block;
+        color: #3a3b45;
+        text-decoration: none;
+        border-radius: .35rem;
+        white-space: nowrap;
+    }
+}
+
+.nav-item-li{
+    .nav-link-li{
+        height: 4.375rem;
+        display: flex;
+        align-items: center;
+        padding: 0 .75rem;
+        position: relative;
+        .bx-nav-icon{
+            font-size: 2rem;
+            color: $gris-icons;
+        }   
+        .span-li{
+            position: absolute;
+            transform: scale(.7);
+            transform-origin: top right;
+            right: -0.1rem;
+            margin-top: -.9rem;
+            color: #fff;
+            background-color: #e74a3b;
+            display: inline-block;
+            padding: .25em .4em;
+            font-size: 75%;
+            font-weight: 700;
+            line-height: 1;
             text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: .35rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+        .img-perfil{
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+        .name-link{
+            margin: 0 0.8rem 0 0;
+            color: $gris-texto;
+            font-weight: 400;
         }
     }
 }
 
 .main{
-    height: 10rem;
+    height: 90rem;
 }
