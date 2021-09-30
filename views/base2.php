@@ -24,25 +24,62 @@
                 </div>
             </a>
 
-            <hr class="siderbar-divider">
+            <hr class="siderbar-divider my-0">
 
             <li class="nav-item">
                 <a href="" class="nav-link">
                     <i class='bx bxs-dashboard'></i>
-                    <span>Dashbddddddoard</span>
+                    <span>Dashboard</span>
                 </a>
             </li>
 
-            <!-- <hr class="siderbar-divider">
+            <hr class="siderbar-divider">
 
             <div class="sidebar-heading">Interface</div>
 
             <li class="nav-item">
-                <a href="nav-link">
-                    <i class='bx bxl-mastodon'></i>
-                    <span>RAISSA MOTOR'S</span>
+                <a href="" class="nav-link">
+                    <i class='bx bxs-dashboard bx-icon'></i>
+                    <span class="span">Dashboard</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
                 </a>
-            </li> -->
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class='bx bxs-dashboard bx-icon'></i>
+                    <span class="span">Dashboard</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class='bx bxs-dashboard bx-icon'></i>
+                    <span class="span">Dashboard</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class='bx bxs-dashboard bx-icon'></i>
+                    <span class="span">Dashboard</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class='bx bxs-dashboard bx-icon'></i>
+                    <span class="span">Dashboard</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
+            </li>
+            <hr class="siderbar-divider">
+            <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class='bx bxs-dashboard bx-icon'></i>
+                    <span class="span">Dashboard</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
+            </li>
        </ul>
        <div class="contenedor">
 

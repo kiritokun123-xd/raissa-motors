@@ -36,7 +36,7 @@
             <div>
                 <a href="#" class="nav__logo">
                     <i class='bx bx-layer nav__logo-icon' ></i>
-                    <span class="nav__logo-name">Bdimcode</span>
+                    <span class="nav__logo-name">RAISSAMOTOR'S</span>
                 </a>
             </div>
 
@@ -48,33 +48,33 @@
 
                 <a href="#" class="nav__link">
                     <i class='bx bx-user nav__icon'></i>
-                    <span class="nav__name">Users</span>
+                    <span class="nav__name">Usuarios</span>
                 </a>
 
                 <a href="#" class="nav__link">
                     <i class='bx bx-message-square-detail nav__icon'></i>
-                    <span class="nav__name">Messages</span>
+                    <span class="nav__name">Pedidos</span>
                 </a>
 
                 <a href="#" class="nav__link">
                     <i class='bx bx-bookmark nav__icon'></i>
-                    <span class="nav__name">Favorites</span>
+                    <span class="nav__name">Cotizaciones</span>
                 </a>
 
                 <a href="#" class="nav__link">
                     <i class='bx bx-folder nav__icon'></i>
-                    <span class="nav__name">Data</span>
+                    <span class="nav__name">Almacen</span>
                 </a>
                 
                 <a href="#" class="nav__link">
                     <i class='bx bx-bar-chart-alt-2 nav__icon'></i>
-                    <span class="nav__name">Analytics</span>
+                    <span class="nav__name">Proveedores</span>
                 </a>
             </div>
 
             <a href="#" class="nav__link">
                 <i class='bx bx-log-out nav__icon'></i>
-                <span class="nav__name">Log Out</span>
+                <span class="nav__name">Salir</span>
             </a>
         </nav>
     </div>

@@ -3,6 +3,7 @@ ul{
     margin: 0;
     padding: 0;
     text-decoration: none;
+    overflow-anchor: none;
     li{
         margin: 0;
         padding: 0;
@@ -18,6 +19,8 @@ ul{
     display: flex;
     position: relative;
     .navbar{
+        display: flex;
+        flex-direction: column;
         background-color: #4e73df;
         background-image: linear-gradient(180deg,#4e73df 10%,#224abe 100%);
         background-size: cover;
@@ -27,6 +30,7 @@ ul{
         }
     }
 }
+
 
 .sidebar-brand{
     display: flex;
@@ -50,6 +54,9 @@ ul{
 }
 .siderbar-divider{
     margin: 0 1.6rem 1.6rem;
+    &.my-0{
+        margin: 0 1.6rem 0 ;
+    }
 }
 hr{
     border-top: 1px solid rgba(255,255,255,.15);
@@ -62,16 +69,35 @@ hr{
 .nav-item{
     color: $blanco;
     font-weight: 700;
-    position: relative;
     height: 2rem;
-    
+    height: auto;
     .nav-link{
+        display: block;
+        text-align: left;
         padding: 1.6rem;
-        position: relative;
         color: $blanco;
-        width: 100;
+        width: 25rem;
+        &:hover{
+            .bx-icon, .span{
+                color: $blanco;
+            }
+        }
+        .bx-icon{
+            color: rgba(255,255,255,.5);
+        }
+        .span{
+            color: rgba(255,255,255,.8);
+            font-weight: 200;
+        }
+        .bx-arrow{
+            color: rgba(255,255,255,.5);
+            margin: 0.5rem;
+            float: right;
+            vertical-align: 0;
+        }
     }
 }
+
 
 .sidebar-heading{
     color: rgba(255,255,255,.4);
@@ -98,9 +124,12 @@ hr{
         background-color: $white-color;
         box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
         height: 7rem;
+        p{
+            text-align: center;
+        }
     }
 }
 
 .main{
-    height: 100rem;
+    height: 10rem;
 }
