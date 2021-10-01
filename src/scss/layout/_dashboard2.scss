@@ -18,6 +18,7 @@ ul{
 .flex{
     display: flex;
     position: relative;
+    
     .navbar-nav{
         display: flex;
         flex-direction: column;
@@ -26,12 +27,80 @@ ul{
         background-size: cover;
         width: 12rem;
         transition: 0.3s;
+        .lateral{   
+            transition: 0.5s ease-in-out;
+        }
+        &.ocultar{
+            width: 0;
+            transform: translate(-2rem,0);
+            overflow: hidden;
+        }
         @include tablet{
             width: auto;
+            &.small{
+                width: 12rem;
+            }
         }
         p{
             color: $blanco;
 
+        }
+        &.small{
+            width: 12rem;
+            .sidebar-brand-text{
+                display: none;
+            }
+            .nav-caja{
+                overflow: hidden;
+                opacity: 0;
+                transform: scale(0.7);
+                visibility: hidden;
+                border-radius: 0.5rem;
+                background-color: $blanco;
+                position: absolute;
+                top: 0;
+                left: calc(10rem + 1.5rem / 2);
+                z-index: 1;
+                transition: 0.3s;
+                &.mostrar{
+                    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+                    opacity: 1;
+                    transform: scale(1);
+                    visibility:visible
+                }   
+            }  
+            .nav-link{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: auto;
+                transition: 0.3s;
+                .bx-arrow{
+                    display: none;
+                }
+                .bx-icon{
+                    font-size: 2rem;
+                    color: rgba(255,255,255,.5);
+                }
+                .span{
+                    font-size: 1.2rem;
+                    color: rgba(255,255,255,.8);
+                    font-weight: 600;
+                }
+                &:hover, &:visited, &focus, &:active{
+                    .bx-icon, .span{
+                        color: $blanco;
+                    }
+                }
+
+            }
+            .sidebar-heading{
+                text-align: center;
+            } 
+            .lateral{
+                transform: rotate(180deg);
+            } 
         }
     }
 }
@@ -56,7 +125,6 @@ ul{
         }
         color: $blanco;
         font-weight: 700;
-        margin: 0 1.6rem;
         p{
             font-size: 1.6rem;
         }
@@ -80,8 +148,7 @@ hr{
     position: relative;
     color: $blanco;
     font-weight: 700;
-    height: 2rem;
-    height: auto;
+    
     .nav-link{
         display: flex;
         flex-direction: column;
@@ -90,38 +157,73 @@ hr{
         transition: 0.3s;
         @include tablet{
             display: block;
-            width: 25rem;
+            width: 22.5rem;
         }
         text-align: left;
         padding: 1.6rem;
         color: $blanco;
-        &:hover, &:visited, &focus, &:active{
+        &:hover, &:visited, &:focus, &:active{
             .bx-icon, .span{
                 color: $blanco;
             }
         }
 
         .bx-icon{
+            font-size: 2rem;
+            @include tablet{
+                font-size: 1.6rem;
+            }
             color: rgba(255,255,255,.5);
+            &:hover{
+                color: $blanco;
+            }
         }
         .span{
+            font-size: 1.2rem;
             color: rgba(255,255,255,.8);
-            font-weight: 200;
+            font-weight: 600;
+            @include tablet{
+                font-size: 1.4rem;
+                font-weight:300;
+            }
         }
         .bx-arrow{
+            font-size: 1.5rem;
             display: none;
             transition: 0.3s;
             @include tablet{
                 display: block;
             }
             color: rgba(255,255,255,.5);
-            margin: 0.5rem;
+            margin: 0.8rem;
             float: right;
             vertical-align: 0;
+
+            &.girar{
+                transform: rotate(90deg);
+            }
         }
     }
 }
 
+.lateral{
+    visibility: hidden;
+    text-align: center;
+    i{
+        cursor: pointer;
+        padding: 1rem;
+        border-radius: 50%;
+        background-color: rgba(255,255,255,.2);
+        font-size: 3rem;
+        color: rgba(255,255,255,.5);
+        &:hover{
+            background-color: rgba(255,255,255,.3);
+        }
+    }
+    @include tablet{
+        visibility: visible;
+    }
+}
 
 .sidebar-heading{
     color: rgba(255,255,255,.4);
@@ -155,9 +257,34 @@ hr{
         height: 7rem;
     }
 }
+.menu{
+    visibility: visible;
+    opacity: 1;
+    height: 4rem;
+    width: 4rem;
+    cursor: pointer;
+    color: #4e73df;
+    text-align: center;
+    padding: 0;
+    border-radius: 50%;
+    appearance: none;
+    border: 0;
+    background-color: $blanco;
+    transition: 0.3s;
+    &:hover{
+        background-color: #EAECF4;
+    }
+    @include tablet{
+        visibility: hidden;
+        opacity: 0;
+    }
+    i{
+        font-size: 2.5rem;
+    }
+}
 .navbar{
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
     padding: 0.8rem 1.6rem;
     height: 100%;
@@ -177,28 +304,32 @@ hr{
 .nav-caja{
     overflow: hidden;
     opacity: 0;
+    transform: scale(0.7);
+    visibility: hidden;
     border-radius: 0.5rem;
     background-color: $blanco;
     position: absolute;
-    left: calc(11rem + 1.5rem / 2);
+    top: 0;
+    left: calc(10rem + 1.5rem / 2);
     z-index: 1;
-    top: 4px;
     transition: 0.3s;
     &.mostrar{
         box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
         opacity: 1;
+        transform: scale(1);
+        visibility:visible
     }
     @include tablet{
         left: auto;
         height: 0;
         overflow: hidden;
-        margin: 0 2rem 2rem;
+        margin: 0 2rem 1rem;
         position: relative;
         z-index: 1;
-        
+        transform: scale(1);
     
         &.mostrar{
-            height: 11.5rem;
+            height: 12rem;
         }
     }
 }
@@ -206,11 +337,10 @@ hr{
 .nav-caja-items{
     padding: .5rem 0;
     min-width: 10rem;
-    font-size: 1.5rem;
     margin: 0;
     transition: 0.3s;
     @include tablet{
-        margin: 0 0 1rem 0;
+        margin: 0 0 0rem 0;
     }
     
 
@@ -224,9 +354,10 @@ hr{
         color: #b7b9cc;
     }
     a{
+        font-size: 1.36rem;
         font-weight: 400;
-        padding: .5rem 1rem;
-        margin: 0 .5rem;
+        padding: .8rem 1.4rem;
+        margin: 0 .8rem;
         display: block;
         color: #3a3b45;
         text-decoration: none;
@@ -280,16 +411,91 @@ hr{
             height: 3.5rem;
         }
         .name-link{
+            display: none;
+            @include tablet{
+                display: block;
+            }
             margin: 0 0.8rem 0 0;
             color: $gris-texto;
             font-weight: 400;
         }
+    }
+    .mensajes{
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.7);
+        transition: 0.3s;
+        &.mostrar{
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+        padding: 0;
+        border: none;
+        overflow: hidden;
+        top: 6rem;
+        right: -8rem; 
+        width: calc(100vw - 5rem);
+        border-radius: 0.5rem;
+        box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+        @include tablet{
+            width: 30rem;
+            right: 0;
+            
+        }
+        h6{
+            margin: 0;
+            background-color: #4e73df;
+            border: 1px solid #4e73df;
+            padding: 1rem 2.4rem;
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        .mensaje-flex{
+            display: flex;
+            white-space: normal;
+            padding: 0.8rem 2.4rem;
+            border-left: 1px solid #e3e6f0;
+            border-right: 1px solid #e3e6f0;
+            border-bottom: 1px solid #e3e6f0;
+            background-color: $blanco;
+            line-height: 1.3rem;
+            img{
+                width: 4.2rem;
+                height: 4.2rem;
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+
+.info-mensajes{
+    padding: 0.5rem 0;
+    .texto-truncado{
+        max-width: 20rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 700;
+        color: #3a3b45;
+        text-align: inherit;
+        font-size: 1.36rem;
+        margin-bottom: 0.5rem;
+    }
+    .autor{
+        color: #b7b9cc;
+        font-size: 80%;
+        font-weight: 300;
     }
 }
 
 .caja-perfil{
     visibility: hidden;
     opacity: 0;
+    transform: scale(0.7);
     overflow: hidden;
     width: 15rem;
     position: absolute;
@@ -303,10 +509,12 @@ hr{
     &.quitar{
         visibility: hidden;
         opacity: 0;
+        
     }
     &.mostrar{
         visibility: visible;
         opacity: 1;
+        transform: scale(1);
     }  
     .perfil-item{
         display: block;

@@ -14,7 +14,7 @@
 <body id="content">
     
     <div class="flex">
-       <ul class="navbar-nav">
+       <ul class="navbar-nav" id="navbar-nav">
             <a href="" class="sidebar-brand">
                 <div class="sidebar-brand-icon">
                     <i class='bx bxl-mastodon'></i>
@@ -37,14 +37,14 @@
 
             <div class="sidebar-heading">Interface</div>
 
-            <li class="nav-item">
-                <a href="" class="nav-link" id="nav-link">
+            <li class="nav-item ">
+                <a href="" class="nav-link navlink" data-paso="0">
                     <i class='bx bxs-dashboard bx-icon'></i>
                     <span class="span">Dashboard</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
                 </a>
 
-                <div class="nav-caja " id=nav-caja>
+                <div class="nav-caja caja-query" >
                     <div class="nav-caja-items">
                         <h6>Custom Components:</h6>
                         <a href="">Buttons</a>
@@ -52,8 +52,42 @@
                     </div>
                 </div>
             </li>
-           
+            <li class="nav-item">
+                <a href="" class="nav-link navlink" data-paso="1">
+                    <i class='bx bxs-dashboard bx-icon'></i>
+                    <span class="span">Dashboard</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
+
+                <div class="nav-caja caja-query" >
+                    <div class="nav-caja-items">
+                        <h6>Custom Components:</h6>
+                        <a href="">Buttons</a>
+                        <a href="">Card</a>
+                    </div>
+                </div>
+            </li>
+            
             <hr class="siderbar-divider">
+
+            <div class="sidebar-heading">Addons</div>
+
+            <li class="nav-item">
+                <a href="" class="nav-link navlink" data-paso="2">
+                    <i class='bx bxs-dashboard bx-icon'></i>
+                    <span class="span">Dashboard</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
+
+                <div class="nav-caja caja-query" >
+                    <div class="nav-caja-items">
+                        <h6>Custom Components:</h6>
+                        <a href="">Buttons</a>
+                        <a href="">Card</a>
+                    </div>
+                </div>
+            </li>
+
             <li class="nav-item">
                 <a href="" class="nav-link">
                     <i class='bx bxs-dashboard bx-icon'></i>
@@ -61,17 +95,50 @@
                 </a>
                 
             </li>
-       </ul>
-       <div class="contenedor" >
+            <hr class="siderbar-divider">
+
+            <div class="lateral" >
+                <i class='bx bx-arrow-from-right' id="lateral"></i>
+            </div>
+       </ul> <!--FIN NAVBAR-->
+
+       <div class="contenedor" > <!--INCIO CONTENIDO-->
 
            <header class="header">
                 <nav class="navbar">
+                    <button id="menu" class="menu">
+                        <i class='bx bx-menu'></i>
+                    </button>
                     <ul class="navbar-ul">
                         <li class="nav-item-li">
-                            <a href="" class="nav-link-li">
+                            <a href="" class="nav-link-li" id="nav-mensaje">
                                 <i class='bx bxs-message-alt-detail bx-nav-icon'></i>
-                                <span class="span-li">7</span>
+                                <span class="span-li">3</span>
                             </a>
+                            <div class="mensajes" id="mensajes">
+                                <h6>Centro de Mensaje</h6>
+                                <a href="" class="mensaje-flex">
+                                    <img src="imagenes/autor.svg" alt="">
+                                    <div class="info-mensajes">
+                                        <div class="texto-truncado">Hola que tal! Te hablo para informarte sobre el pedido de....</div>
+                                        <div class="autor">Marco</div>
+                                    </div>
+                                </a>
+                                <a href="" class="mensaje-flex">
+                                    <img src="imagenes/autor2.svg" alt="">
+                                    <div class="info-mensajes">
+                                        <div class="texto-truncado">Hola Angel! Puedes revisar el pedido del señor...</div>
+                                        <div class="autor">Raissa</div>
+                                    </div>
+                                </a>
+                                <a href="" class="mensaje-flex">
+                                    <img src="imagenes/autor3.svg" alt="">
+                                    <div class="info-mensajes">
+                                        <div class="texto-truncado">Que tal! Tengo un pedido para entregar hoy a las ...</div>
+                                        <div class="autor">Rene</div>
+                                    </div>
+                                </a>
+                            </div>
                         </li>
                         <div class="bloque-nav"></div>
                         <li class="nav-item-li">

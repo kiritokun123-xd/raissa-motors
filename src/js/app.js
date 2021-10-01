@@ -1,23 +1,102 @@
 document.addEventListener("DOMContentLoaded", function() {
-    showNavbar('nav-link','nav-caja');
+    mostrarSubmenu('.navlink','.caja-query','.bx-arrow');
 
     mostrarPerfil('nav-link-li','caja-perfil','content');
+
+    mostrarMensajes('nav-mensaje','mensajes','content');
+    
+    ocultarNav('menu','navbar-nav');
+
+    ocultarNavLat('lateral','navbar-nav');
 });
-const showNavbar = (navlinkid, navcajaid) =>{
-    const navlink = document.getElementById(navlinkid),
-    navcaja = document.getElementById(navcajaid)
-    // Validate that all variables exist
-    if(navlink && navcaja){
-        
-        navlink.addEventListener('click', (e)=>{
+
+const mostrarMensajes = (navmensajeid,mensajeid,contentid) => {
+    const navmensaje = document.getElementById(navmensajeid),
+    mensaje = document.getElementById(mensajeid),
+    content = document.getElementById(contentid)
+
+    if(navmensaje && mensaje && content){
+        navmensaje.addEventListener('click', (e)=>{
             e.preventDefault();
             // show navbar
-            navcaja.classList.toggle('mostrar')
+            mensaje.classList.toggle('mostrar')
         })
-        
-    }else{
-        console.log("no hay")
+
+        content.addEventListener('click', (e) =>{
+            let hijos = e.target.parentElement;
+            let padre = e.target;
+            if(hijos != navmensaje && padre != navmensaje){
+                mensaje.classList.remove('mostrar')
+            }
+        })
     }
+
+}
+const ocultarNavLat = (lateralid,navbarid) => {
+    const lateral = document.getElementById(lateralid),
+    navbarnav = document.getElementById(navbarid)
+    if(lateral && navbarnav){
+        lateral.addEventListener('click', (e)=>{
+            e.preventDefault();
+            // show navbar
+            navbarnav.classList.toggle('small')
+        })
+    }
+
+}
+const ocultarNav = (menuid, navbarid) =>{
+    const menu = document.getElementById(menuid),
+    navbar = document.getElementById(navbarid)
+
+    if(menu && navbar){
+        menu.addEventListener('click', (e)=>{
+            e.preventDefault();
+
+            if(navbar.classList.contains("small")){
+                navbar.classList.remove("small");
+                navbar.classList.add('ocultar')
+            }else{
+               // show navbar
+                navbar.classList.toggle('ocultar') 
+            }
+            
+        })
+    }
+}
+
+const mostrarSubmenu = (navlinkid, navcajaid, boxarrowid) =>{
+    const navlink = document.querySelectorAll(navlinkid),
+    navcaja = document.querySelectorAll(navcajaid),
+    boxarrow = document.querySelectorAll(boxarrowid)
+
+    let i=0;
+    let ultimoi;
+    navlink.forEach((nav => {
+        let elemento;
+        
+        nav.addEventListener('click', (e) =>{
+            e.preventDefault();
+
+            if(e.target != nav){
+                elemento = e.target.parentElement;
+            }else{
+                elemento = e.target;
+            }
+            i = parseInt(elemento.dataset.paso);
+            if(ultimoi >=0 && ultimoi != i){
+                navcaja[ultimoi].classList.remove('mostrar');
+                boxarrow[ultimoi].classList.remove('girar');
+                navcaja[i].classList.toggle('mostrar'); 
+                boxarrow[i].classList.toggle('girar');
+            }else{
+                navcaja[i].classList.toggle('mostrar'); 
+                boxarrow[i].classList.toggle('girar');
+            }
+            
+            ultimoi = i;
+        })
+    }))
+
 }
 
 
@@ -38,18 +117,16 @@ const mostrarPerfil = (navlinkliid,cajaperfilid,contentid) =>{
         })
 
         content.addEventListener('click', (e) =>{
-            var click = e.target;
-            if(click != cajaperfil){
-                console.log("Hola")
+            let hijos = e.target.parentElement;
+            let padre = e.target;
+            if(hijos != navlinkli && padre != navlinkli){
                 cajaperfil.classList.remove('mostrar')
             }
-            
         })
         
-    }else{
-        console.log("no hay")
     }
 }
+
 
 
 // function darkMode(){
