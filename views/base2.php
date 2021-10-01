@@ -35,63 +35,95 @@
 
             <hr class="siderbar-divider">
 
-            <div class="sidebar-heading">Interface</div>
+            <div class="sidebar-heading">Almacén Comas</div>
 
             <li class="nav-item ">
                 <a href="" class="nav-link navlink" data-paso="0">
-                    <i class='bx bxs-dashboard bx-icon'></i>
-                    <span class="span">Dashboard</span>
+                    <i class='bx bx-book-bookmark bx-icon'></i>
+                    <span class="span">Logística</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
                 </a>
 
                 <div class="nav-caja caja-query" >
                     <div class="nav-caja-items">
-                        <h6>Custom Components:</h6>
-                        <a href="">Buttons</a>
-                        <a href="">Card</a>
+                        <h6>Stock y Compra:</h6>
+                        <a href="">Stock de almacén</a>
+                        <a href="">Ver Orden de Compra</a>
                     </div>
                 </div>
             </li>
             <li class="nav-item">
                 <a href="" class="nav-link navlink" data-paso="1">
-                    <i class='bx bxs-dashboard bx-icon'></i>
-                    <span class="span">Dashboard</span>
+                    <i class='bx bxs-user-detail bx-icon'></i>
+                    <span class="span">Proveedores</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
                 </a>
 
                 <div class="nav-caja caja-query" >
                     <div class="nav-caja-items">
-                        <h6>Custom Components:</h6>
-                        <a href="">Buttons</a>
-                        <a href="">Card</a>
+                        <h6>Proveedor y precios: </h6>
+                        <a href="">Artículos y precios</a>
+                        <a href="">Administrar Proveedor </a>
                     </div>
                 </div>
             </li>
             
             <hr class="siderbar-divider">
 
-            <div class="sidebar-heading">Addons</div>
+            <div class="sidebar-heading">Almacén Puente Piedra</div>
 
             <li class="nav-item">
                 <a href="" class="nav-link navlink" data-paso="2">
-                    <i class='bx bxs-dashboard bx-icon'></i>
-                    <span class="span">Dashboard</span>
+                    <i class='bx bxs-store-alt bx-icon'></i>
+                    <span class="span">Inventario</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
                 </a>
 
                 <div class="nav-caja caja-query" >
                     <div class="nav-caja-items">
-                        <h6>Custom Components:</h6>
-                        <a href="">Buttons</a>
-                        <a href="">Card</a>
+                        <h6>Stock y artículos:</h6>
+                        <a href="">Stock de Almacén</a>
+                        <a href="">Administrar Artículos</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a href="" class="nav-link navlink" data-paso="3">
+                    <i class='bx bx-cart-alt bx-icon'></i>
+                    <span class="span">Operaciones</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
+
+                <div class="nav-caja caja-query" >
+                    <div class="nav-caja-items">
+                        <h6>Pedidos y Compra:</h6>
+                        <a href="">Ver Pedidos</a>
+                        <a href="">Crear Orden de Compra</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a href="" class="nav-link navlink" data-paso="4">
+                    <i class='bx bx-cycling bx-icon'></i>
+                    <span class="span">Motos</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
+
+                <div class="nav-caja caja-query" >
+                    <div class="nav-caja-items">
+                        <h6>Piezas y motos:</h6>
+                        <a href="">Piezas de Moto</a>
+                        <a href="">Adminitrar Motos</a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
                 <a href="" class="nav-link">
-                    <i class='bx bxs-dashboard bx-icon'></i>
-                    <span class="span">Dashboard</span>
+                    <i class='bx bx-laptop bx-icon'></i>
+                    <span class="span">Administrar Página</span>
                 </a>
                 
             </li>
@@ -121,7 +153,7 @@
                                     <img src="imagenes/autor.svg" alt="">
                                     <div class="info-mensajes">
                                         <div class="texto-truncado">Hola que tal! Te hablo para informarte sobre el pedido de....</div>
-                                        <div class="autor">Marco</div>
+                                        <div class="autor">Angel</div>
                                     </div>
                                 </a>
                                 <a href="" class="mensaje-flex">
@@ -143,7 +175,7 @@
                         <div class="bloque-nav"></div>
                         <li class="nav-item-li">
                             <a href="" id="nav-link-li" class="nav-link-li">
-                                <span class="name-link">Angelito</span>
+                                <span class="name-link">Marco</span>
                                 <img src="imagenes/perfil.svg" class="img-perfil" alt="imagen del perfil">
                             </a>    
                             <div class="caja-perfil" id="caja-perfil">
