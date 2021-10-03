@@ -35,25 +35,39 @@
 
             <hr class="siderbar-divider">
 
-            <div class="sidebar-heading">Almacén Comas</div>
+            <div class="sidebar-heading">Logística</div>
 
-            <li class="nav-item ">
-                <a href="" class="nav-link navlink" data-paso="0">
-                    <i class='bx bx-book-bookmark bx-icon'></i>
-                    <span class="span">Logística</span>
+
+
+            <hr class="siderbar-divider">
+
+            <div class="sidebar-heading">Almacén Tienda</div>
+
+            <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class='bx bxs-store-alt bx-icon'></i>
+                    <span class="span">Inventario</span>
+                </a> 
+            </li>
+
+            <li class="nav-item">
+                <a href="" class="nav-link navlink" data-paso="1">
+                    <i class='bx bx-cart-alt bx-icon'></i>
+                    <span class="span">Operaciones</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
                 </a>
 
                 <div class="nav-caja caja-query" >
                     <div class="nav-caja-items">
-                        <h6>Stock y Compra:</h6>
-                        <a href="">Stock de almacén</a>
+                        <h6>Pedidos y Compra:</h6>
+                        <a href="">Ver Pedidos</a>
                         <a href="">Ver Orden de Compra</a>
                     </div>
                 </div>
             </li>
+
             <li class="nav-item">
-                <a href="" class="nav-link navlink" data-paso="1">
+                <a href="" class="nav-link navlink" data-paso="2">
                     <i class='bx bxs-user-detail bx-icon'></i>
                     <span class="span">Proveedores</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
@@ -70,26 +84,17 @@
             
             <hr class="siderbar-divider">
 
-            <div class="sidebar-heading">Almacén Puente Piedra</div>
+            <div class="sidebar-heading">Almacén Ensamblaje</div>
 
             <li class="nav-item">
-                <a href="" class="nav-link navlink" data-paso="2">
+                <a href="" class="nav-link">
                     <i class='bx bxs-store-alt bx-icon'></i>
                     <span class="span">Inventario</span>
-                    <i class='bx bxs-right-arrow bx-arrow'></i>
-                </a>
-
-                <div class="nav-caja caja-query" >
-                    <div class="nav-caja-items">
-                        <h6>Stock y artículos:</h6>
-                        <a href="">Stock de Almacén</a>
-                        <a href="">Administrar Artículos</a>
-                    </div>
-                </div>
+                </a> 
             </li>
 
             <li class="nav-item">
-                <a href="" class="nav-link navlink" data-paso="3">
+                <a href="" class="nav-link navlink" data-paso="4">
                     <i class='bx bx-cart-alt bx-icon'></i>
                     <span class="span">Operaciones</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
@@ -105,7 +110,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="" class="nav-link navlink" data-paso="4">
+                <a href="" class="nav-link navlink" data-paso="5">
                     <i class='bx bx-cycling bx-icon'></i>
                     <span class="span">Motos</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
@@ -116,6 +121,33 @@
                         <h6>Piezas y motos:</h6>
                         <a href="">Piezas de Moto</a>
                         <a href="">Adminitrar Motos</a>
+                    </div>
+                </div>
+            </li>
+
+            <hr class="siderbar-divider">
+
+            <div class="sidebar-heading">Almacén Soldadura</div>
+
+            <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class='bx bxs-store-alt bx-icon'></i>
+                    <span class="span">Inventario</span>
+                </a> 
+            </li>
+
+            <li class="nav-item">
+                <a href="" class="nav-link navlink" data-paso="7">
+                    <i class='bx bx-cart-alt bx-icon'></i>
+                    <span class="span">Operaciones</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
+
+                <div class="nav-caja caja-query" >
+                    <div class="nav-caja-items">
+                        <h6>Pedidos y Compra:</h6>
+                        <a href="">Ver Pedidos</a>
+                        <a href="">Crear Orden de Compra</a>
                     </div>
                 </div>
             </li>
