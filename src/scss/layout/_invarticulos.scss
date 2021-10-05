@@ -1,0 +1,45 @@
+.main-titulo{
+    margin: 0;
+    font-size: 2.75rem;
+    font-weight: 400;
+    color: $grisOscuro;
+    text-align: left;
+}
+
+.popup-img{
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    .contenido-img{
+        box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+        background-color: #f8f8f8;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        @include tablet{
+            width: 40%;
+        }
+        width: 70%;
+        transition: 0.3s ease all;
+        transform: scale(0.7);
+        opacity: 0;   
+        img{
+            width: 100%;
+        } 
+    }
+    &.active{
+        opacity: 1;
+        visibility:visible;
+        .contenido-img{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}

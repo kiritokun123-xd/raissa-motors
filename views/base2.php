@@ -15,7 +15,7 @@
     
     <div class="flex">
        <ul class="navbar-nav" id="navbar-nav">
-            <a href="" class="sidebar-brand">
+            <a href="/dashboard" class="sidebar-brand">
                 <div class="sidebar-brand-icon">
                     <i class='bx bxl-mastodon'></i>
                 </div>
@@ -27,7 +27,7 @@
             <hr class="siderbar-divider my-0">
 
             <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="/dashboard" class="nav-link">
                     <i class='bx bxs-dashboard bx-icon'></i>
                     <span class="span">Dashboard</span>
                 </a>
@@ -37,7 +37,37 @@
 
             <div class="sidebar-heading">Logística</div>
 
+            <li class="nav-item">
+                <a href="" class="nav-link navlink" data-paso="0">
+                    <i class='bx bx-cart-alt bx-icon'></i>
+                    <span class="span">Inventario General</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
 
+                <div class="nav-caja caja-query" >
+                    <div class="nav-caja-items">
+                        <h6>Pedidos y Compra:</h6>
+                        <a href="/logistica/inventario-articulos">Inventario Artículos</a>
+                        <a href="">Inventario Motos</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a href="" class="nav-link navlink" data-paso="1">
+                    <i class='bx bx-cart-alt bx-icon'></i>
+                    <span class="span">Operaciones</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
+
+                <div class="nav-caja caja-query" >
+                    <div class="nav-caja-items">
+                        <h6>Pedidos y Compra:</h6>
+                        <a href="">Gestionar Pedidos</a>
+                        <a href="">Ver Ordenes de Compra</a>
+                    </div>
+                </div>
+            </li>
 
             <hr class="siderbar-divider">
 
@@ -182,21 +212,21 @@
                             <div class="mensajes" id="mensajes">
                                 <h6>Centro de Mensaje</h6>
                                 <a href="" class="mensaje-flex">
-                                    <img src="imagenes/autor.svg" alt="">
+                                    <img src="/imagenes/autor.svg" alt="">
                                     <div class="info-mensajes">
                                         <div class="texto-truncado">Hola que tal! Te hablo para informarte sobre el pedido de....</div>
                                         <div class="autor">Angel</div>
                                     </div>
                                 </a>
                                 <a href="" class="mensaje-flex">
-                                    <img src="imagenes/autor2.svg" alt="">
+                                    <img src="/imagenes/autor2.svg" alt="">
                                     <div class="info-mensajes">
                                         <div class="texto-truncado">Hola Angel! Puedes revisar el pedido del señor...</div>
                                         <div class="autor">Raissa</div>
                                     </div>
                                 </a>
                                 <a href="" class="mensaje-flex">
-                                    <img src="imagenes/autor3.svg" alt="">
+                                    <img src="/imagenes/autor3.svg" alt="">
                                     <div class="info-mensajes">
                                         <div class="texto-truncado">Que tal! Tengo un pedido para entregar hoy a las ...</div>
                                         <div class="autor">Rene</div>
@@ -208,7 +238,7 @@
                         <li class="nav-item-li">
                             <a href="" id="nav-link-li" class="nav-link-li">
                                 <span class="name-link">Marco</span>
-                                <img src="imagenes/perfil.svg" class="img-perfil" alt="imagen del perfil">
+                                <img src="/imagenes/perfil.svg" class="img-perfil" alt="imagen del perfil">
                             </a>    
                             <div class="caja-perfil" id="caja-perfil">
                                 <a href class="perfil-item">
@@ -234,11 +264,12 @@
                         </li>
                     </ul>
                 </nav>
-           </header>
+            </header>
 
-           <div class="main">
-               <?php echo $contenido; ?>
-           </div>
+
+            <?php echo $contenido; ?>
+
+
        </div>
     </div>
 

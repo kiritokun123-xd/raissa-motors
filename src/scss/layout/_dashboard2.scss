@@ -17,7 +17,7 @@ ul{
 
 .flex{
     display: flex;
-    position: relative;
+    //position: relative;
     
     .navbar-nav{
         display: flex;
@@ -34,11 +34,18 @@ ul{
             width: 0;
             transform: translate(-2rem,0);
             overflow: hidden;
+            
         }
         @include tablet{
             width: auto;
             &.small{
                 width: 12rem;
+            }
+            &.ocultar{
+                width: auto;
+                transform: translate(0);
+                overflow: visible;
+                
             }
         }
         p{
@@ -207,6 +214,7 @@ hr{
 }
 
 .lateral{
+    margin-bottom: 1.5rem;
     visibility: hidden;
     text-align: center;
     i{
@@ -248,7 +256,7 @@ hr{
 .contenedor{
     width: 100%;
     flex-direction: column;
-    
+    overflow: hidden;
     background-color: $gris;
     .header{
         margin: 0;
@@ -426,6 +434,10 @@ hr{
         visibility: hidden;
         transform: scale(0.7);
         transition: 0.3s;
+        z-index: 1;
+        &.w-100{
+            width: calc(100vw - 5rem);
+        }
         &.mostrar{
             opacity: 1;
             visibility: visible;
@@ -436,13 +448,15 @@ hr{
         overflow: hidden;
         top: 6rem;
         right: -8rem; 
-        width: calc(100vw - 5rem);
+        width: calc(100vw - 15rem);
         border-radius: 0.5rem;
         box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
         @include tablet{
             width: 30rem;
             right: 0;
-            
+            &.w-100{
+                width: 30rem;
+            }
         }
         h6{
             margin: 0;
@@ -505,6 +519,7 @@ hr{
     border-radius: 0.5rem;
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
     padding: 1rem 0;
+    z-index: 1;
     transition: 0.3s;  
     &.quitar{
         visibility: hidden;
@@ -541,5 +556,7 @@ hr{
 }
 
 .main{
-    height: 90rem;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
 }

@@ -38,6 +38,7 @@ $router->post('/contacto',[PaginasController::class, 'contacto']);
 
 //Zona Dashboard
 $router->get('/dashboard',[DashboardController::class, 'inicio']);
+$router->get('/logistica/inventario-articulos',[DashboardController::class, 'invarticulo']);
 
 
 $router->comprobarRutas();

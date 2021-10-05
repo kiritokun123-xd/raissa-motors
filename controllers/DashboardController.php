@@ -11,4 +11,9 @@ class DashboardController{
             
         ]);
     }
+    public static function invarticulo(Router $router){
+        $router->render('dashboard/invarticulo',[
+            
+        ]);
+    }
 }

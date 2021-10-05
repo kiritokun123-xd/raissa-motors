@@ -5,15 +5,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     mostrarMensajes('nav-mensaje','mensajes','content');
     
-    ocultarNav('menu','navbar-nav');
+    ocultarNav('menu','navbar-nav','mensajes');
 
     ocultarNavLat('lateral','navbar-nav');
+
+    ampliarArticulo('.img-articulo','.contenido-img','.popup-img');
 });
 
 const mostrarMensajes = (navmensajeid,mensajeid,contentid) => {
     const navmensaje = document.getElementById(navmensajeid),
     mensaje = document.getElementById(mensajeid),
     content = document.getElementById(contentid)
+    
 
     if(navmensaje && mensaje && content){
         navmensaje.addEventListener('click', (e)=>{
@@ -44,24 +47,49 @@ const ocultarNavLat = (lateralid,navbarid) => {
     }
 
 }
-const ocultarNav = (menuid, navbarid) =>{
+const ocultarNav = (menuid, navbarid,mensajesid) =>{
     const menu = document.getElementById(menuid),
-    navbar = document.getElementById(navbarid)
+    navbar = document.getElementById(navbarid),
+    mensajes = document.getElementById(mensajesid)
 
     if(menu && navbar){
         menu.addEventListener('click', (e)=>{
             e.preventDefault();
 
             if(navbar.classList.contains("small")){
-                navbar.classList.remove("small");
+                navbar.classList.remove("small")
                 navbar.classList.add('ocultar')
+                mensajes.toggle('100-w')
             }else{
                // show navbar
                 navbar.classList.toggle('ocultar') 
+                mensajes.classList.toggle('w-100')
             }
             
         })
     }
+}
+
+const ampliarArticulo = (imgarticuloid,contenidoimgid,popupimagenid)=>{
+    const imgarticulo = document.querySelectorAll(imgarticuloid),
+    contenidoimg = document.querySelector(contenidoimgid),
+    popupimagen = document.querySelector(popupimagenid)
+
+    imgarticulo.forEach((img =>{
+        img.addEventListener('click', (e) =>{
+            let nombreimg = img.src.split('/')
+            let nombre = nombreimg[nombreimg.length - 1]
+            //gererar imagen
+            const imagen = document.createElement("IMG")
+            imagen.src = "/imagenes/" +  nombre;
+            contenidoimg.appendChild(imagen)
+            popupimagen.classList.add('active')
+            popupimagen.onclick = function(){
+                popupimagen.classList.remove('active')
+                imagen.remove()
+            }
+        })
+    }))
 }
 
 const mostrarSubmenu = (navlinkid, navcajaid, boxarrowid) =>{
