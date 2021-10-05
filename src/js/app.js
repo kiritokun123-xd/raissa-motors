@@ -12,7 +12,28 @@ document.addEventListener("DOMContentLoaded", function() {
     ampliarArticulo('.img-articulo','.contenido-img','.popup-img');
 
     verStock('.td-info-stock','content','popup-stock');
+
+    newArticulo('nuevo-articulo','popup-newarticulo','btn-cerrar','btn-cancelar');
 });
+
+const newArticulo = (nuevoarticuloid, popupnewarticuloid,btncerrarid,btncancelarid) =>{
+    const nuevoarticulo = document.getElementById(nuevoarticuloid),
+    popupnewarticulo = document.getElementById(popupnewarticuloid),
+    btncerrar = document.getElementById(btncerrarid),
+    btncancelar = document.getElementById(btncancelarid)
+
+    nuevoarticulo.addEventListener('click', (e) =>{
+        e.preventDefault()
+        popupnewarticulo.classList.add('active')
+        btncerrar.onclick = function(){
+            popupnewarticulo.classList.remove('active')
+        }
+        btncancelar.onclick = function(e){
+            e.preventDefault()
+            popupnewarticulo.classList.remove('active')
+        }
+    })
+}
 
 const mostrarMensajes = (navmensajeid,mensajeid,contentid) => {
     const navmensaje = document.getElementById(navmensajeid),

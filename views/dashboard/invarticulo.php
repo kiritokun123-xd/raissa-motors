@@ -6,7 +6,7 @@
             <h3>Gestionar Artículos</h3>
         </div>
         <div class="gestion-caja">
-            <div class="nuevo-articulo">
+            <div class="nuevo-articulo" id="nuevo-articulo">
                 <a href="">Nuevo Artículo</a>
             </div>
             <div class="buscar-articulo">
@@ -165,11 +165,11 @@
     </div>
 </div>
 
-<div class="popup-newarticulo">
+<div class="popup-newarticulo" id="popup-newarticulo">
     <div class="contenido-newarticulo">
         <div class="newarticulo-head">
             <h4>Nuevo Artículo</h4>
-            <div class="btn-cerrar">
+            <div class="btn-cerrar" id="btn-cerrar">
                 <i class='bx bx-x'></i>
             </div>
         </div>
@@ -183,6 +183,9 @@
                 <input type="number" id="articulo-costo" placeholder="Ingrese precio costo">
                 <label for="articulo-venta">Venta:</label>
                 <input type="number" id="articulo-venta" placeholder="Ingrese precio venta">
+
+                <label for="imagen">Imagen: </label>
+                <input type="file" id="imagen" accept="image/jpeg, image/png" name="propiedad[imagen]">
 
                 <div class="btns-form">
                     <input type="submit" value="Agregar" class="btn-guardar" id="btn-guardar">

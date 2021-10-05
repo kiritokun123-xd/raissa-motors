@@ -235,8 +235,8 @@
     justify-content: center;
     align-items: center;
     
-    //opacity: 0;
-    //visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
 
     .contenido-newarticulo{
         display: flex;
@@ -251,8 +251,8 @@
             width: 40%;
         }
         transition: 0.3s ease all;
-        //transform: scale(0.7);
-        //opacity: 0;   
+        transform: scale(0.7);
+        opacity: 0;   
         .newarticulo-head{
             display: flex;
             align-items: center;
@@ -270,7 +270,13 @@
             }
             .btn-cerrar{
                 i{
+                    cursor: pointer;
+                    padding: 1rem 1rem;
                     font-size: 2rem;
+                    border-radius: 50%;
+                    &:hover{
+                        background-color: #e6e6e6;
+                    }
                 }
             }
         }
@@ -279,9 +285,48 @@
             background-color: $blanco;
             .formulario{
                 padding: 1rem;
+                margin-bottom: 0;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                input{
+                    color: $gris-texto;
+                    font-size: 1.6rem;
+                    border: 1px solid #d1d3e2;
+                    font-weight: 400;
+                    border-radius: 0.5rem;
+                    padding: 1rem;
+                    &:focus{
+                        outline: none;
+                        border-color:cornflowerblue;
+                    }
+                    &::placeholder{
+                        color: $gris-icons;
+                    }
+                    
+                }
+                .btns-form{
+                    margin-top: 1rem;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    input{
+                        cursor: pointer;
+                        &:hover{
+                            background-color: #d1d1d1;
+                        }
+                    }
+                    a{
+                        padding: 0.5rem 1rem;
+                        background-color: #e74a3b;
+                        color: $blanco;
+                        font-weight: 600;
+                        border-radius: 0.5rem;
+                        &:hover{
+                            background-color: #f7766a;
+                        }
+                    }
+                }
             }
         }
     }
@@ -289,7 +334,7 @@
         opacity: 1;
         visibility:visible;
         transform: scale(1);
-        .contenido-stock{
+        .contenido-newarticulo{
             opacity: 1;
             transform: scale(1);
         }
