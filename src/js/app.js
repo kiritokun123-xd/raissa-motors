@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
     ocultarNavLat('lateral','navbar-nav');
 
     ampliarArticulo('.img-articulo','.contenido-img','.popup-img');
+
+    verStock('.td-info-stock','content','popup-stock');
 });
 
 const mostrarMensajes = (navmensajeid,mensajeid,contentid) => {
@@ -68,6 +70,24 @@ const ocultarNav = (menuid, navbarid,mensajesid) =>{
             
         })
     }
+}
+
+const verStock = (verstockid,contentid,popupstockid) =>{
+    const verstock = document.querySelectorAll(verstockid),
+    popupstock = document.getElementById(popupstockid),
+    content = document.getElementById(contentid)
+    
+    verstock.forEach( stock =>{
+        stock.addEventListener('click', (e) => {
+            e.preventDefault()
+            popupstock.classList.add('active')
+
+            popupstock.onclick = function(){
+                popupstock.classList.remove('active')
+            }
+            
+        })
+    })
 }
 
 const ampliarArticulo = (imgarticuloid,contenidoimgid,popupimagenid)=>{

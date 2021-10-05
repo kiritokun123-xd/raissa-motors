@@ -6,6 +6,76 @@
     text-align: left;
 }
 
+.gestion-articulo{
+    width: 100%;
+    background-color: $blanco;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    border: 1px solid #e3e6f0;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);;
+    .gestion-titulo{
+        background-color: #f8f9fc;
+        padding: 0.8rem 1.5rem;
+        border-bottom: 1px solid #e3e6f0;
+        h3{
+            margin: 0;
+            color: #4e73df;
+            font-weight: 700;
+            font-size: 1.8rem;
+            text-align: left;
+        }
+    }
+    .gestion-caja{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 1.5rem;
+        .nuevo-articulo{
+            cursor: pointer;
+            background-color: #36b9cc;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            &:hover{
+                background-color: #54d2e6;
+            }
+            a{
+                color: $blanco;
+                font-weight: 700;
+            }
+        }
+        .buscar-articulo{
+            display: flex;
+            //justify-content: center;
+            align-items: center;
+            label{
+                color: $gris-texto;
+                text-align: right;
+                @include tablet{
+                    text-align: left;
+                }
+            }
+            input{
+                color: $gris-texto;
+                font-size: 1.6rem;
+                border: 1px solid #d1d3e2;
+                font-weight: 400;
+                border-radius: 0.5rem;
+                margin-left: 0.5em;
+                padding: 1rem;
+                width: 10rem;
+                &:focus{
+                    outline: none;
+                    border-color: chartreuse;
+                }
+                @include tablet{
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
 .popup-img{
     background-color: rgba($color: #000000, $alpha: 0.3);
     position: fixed;
@@ -37,7 +107,189 @@
     &.active{
         opacity: 1;
         visibility:visible;
+        transform: scale(1);
         .contenido-img{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+
+.popup-stock{
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    opacity: 0;
+    visibility: hidden;
+    .contenido-stock{
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+        background-color: #f8f8f8;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        border: 1px solid #e3e6f0;
+        @include tablet{
+            //width: 60%;
+            flex-direction: row;
+        }
+        //width: 85%;
+        transition: 0.3s ease all;
+        transform: scale(0.7);
+        opacity: 0;   
+        img{
+            width: 25rem;
+            height: 25rem;
+        } 
+        .stock-info{
+            .stock-articulo{
+                background-color: #f8f9fc;
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
+                border-bottom: 1px solid #e3e6f0;
+                border-top: 1px solid #e3e6f0;
+                @include tablet{
+                    border-top: 0;
+                }
+                h4{
+                    margin: 0;
+                    color: #4e73df;
+                    font-weight: 700;
+                    font-size: 1.8rem;
+                }
+            }
+            .stock-almacen{
+                height: 20rem;
+                background-color: $blanco;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 1rem;
+                
+            }
+        }
+    }
+    .stock-img{
+        border-right: 0;
+        @include tablet{
+            border-right: 1px solid #e3e6f0;
+        }
+    }
+    &.active{
+        opacity: 1;
+        visibility:visible;
+        transform: scale(1);
+        .contenido-stock{
+            opacity: 1;
+            transform: scale(1);
+        }
+        .stock-img{
+            opacity: 1;
+            
+            transform: scale(1);
+        }
+    }
+}
+
+.stock-almacen{
+    .stock-cant{
+        display: flex;
+        justify-content: space-between;
+        input{
+            color: $gris-texto;
+            text-align: right;
+            font-size: 1.6rem;
+            border: 1px solid #d1d3e2;
+            font-weight: 400;
+            border-radius: 0.5rem;
+            margin-left: 0.5em;
+            padding: 1rem;
+            width: 8rem;
+            &:focus{
+                outline: none;
+                border-color: chartreuse;
+            }
+            @include tablet{
+                width: 8rem;
+            }
+        }
+    }
+}
+
+.popup-newarticulo{
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    //opacity: 0;
+    //visibility: hidden;
+
+    .contenido-newarticulo{
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+        background-color: #f8f8f8;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        border: 1px solid #e3e6f0;
+        width: 85%;
+        @include tablet{
+            width: 40%;
+        }
+        transition: 0.3s ease all;
+        //transform: scale(0.7);
+        //opacity: 0;   
+        .newarticulo-head{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f8f9fc;
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            border-bottom: 1px solid #e3e6f0;
+            h4{
+                margin: 0;
+                color: #4e73df;
+                font-weight: 700;
+                font-size: 1.8rem;
+            }
+            .btn-cerrar{
+                i{
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .newarticulo-info{
+            background-color: $blanco;
+            .formulario{
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+    }
+    &.active{
+        opacity: 1;
+        visibility:visible;
+        transform: scale(1);
+        .contenido-stock{
             opacity: 1;
             transform: scale(1);
         }
