@@ -195,3 +195,33 @@
         </div>
     </div>
 </div>
+<div class="popup-updarticulo" id="popup-updarticulo">
+    <div class="contenido-updarticulo">
+        <div class="updarticulo-head">
+            <h4>Actualizar Artículo</h4>
+            <div class="btn-cerrar" id="btn-cerrar-upd">
+                <i class='bx bx-x'></i>
+            </div>
+        </div>
+        <div class="updarticulo-info">
+            <form class="formulario" method="POST" action="" >
+                <label for="articulo-name">Nombre:</label>
+                <input type="text" id="articulo-name" placeholder="Ingrese nombre artículo">
+                <label for="articulo-descripcion">Descripción:</label>
+                <input type="text" id="articulo-descripcion" placeholder="Ingrese descripción">
+                <label for="articulo-costo">Costo:</label>
+                <input type="number" id="articulo-costo" placeholder="Ingrese precio costo">
+                <label for="articulo-venta">Venta:</label>
+                <input type="number" id="articulo-venta" placeholder="Ingrese precio venta">
+
+                <label for="imagen">Imagen: </label>
+                <input type="file" id="imagen" accept="image/jpeg, image/png" name="propiedad[imagen]">
+
+                <div class="btns-form">
+                    <input type="submit" value="Actualizar" class="btn-guardar" id="btn-guardar">
+                    <a href="" class="btn-cancelar" id="btn-cancelar-upd">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -14,7 +14,33 @@ document.addEventListener("DOMContentLoaded", function() {
     verStock('.td-info-stock','content','popup-stock');
 
     newArticulo('nuevo-articulo','popup-newarticulo','btn-cerrar','btn-cancelar');
+    updArticulo('.accion-actualizar','popup-updarticulo','btn-cerrar-upd','btn-cancelar-upd');
 });
+
+const updArticulo = (accionactualizarid,popupupdarticuloid,btncerrarupdid,btncancelarupdid) =>{
+    const accionactualizar = document.querySelectorAll(accionactualizarid),
+    popupupdarticulo = document.getElementById(popupupdarticuloid),
+    btncerrarupd = document.getElementById(btncerrarupdid),
+    btncancelarupd = document.getElementById(btncancelarupdid)
+
+    accionactualizar.forEach(actualizar => {
+        actualizar.addEventListener('click', (e) =>{
+            e.preventDefault()
+            console.log("hola")
+
+            popupupdarticulo.classList.add('active')
+
+            btncerrarupd.onclick = function(){
+                popupupdarticulo.classList.remove('active')
+            }
+            btncancelarupd.onclick = function(e){
+                e.preventDefault()
+                popupupdarticulo.classList.remove('active')
+            }
+
+        })
+    })
+}
 
 const newArticulo = (nuevoarticuloid, popupnewarticuloid,btncerrarid,btncancelarid) =>{
     const nuevoarticulo = document.getElementById(nuevoarticuloid),

@@ -49,6 +49,7 @@
                         <h6>Artículos y Motos:</h6>
                         <a href="/logistica/inventario-articulos">Inventario Artículos</a>
                         <a href="/logistica/inventario-motos">Inventario Motos</a>
+                        <a href="/logistica/inventario-motos">Inventario Motos</a>
                     </div>
                 </div>
             </li>

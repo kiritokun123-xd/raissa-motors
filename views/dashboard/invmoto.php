@@ -174,6 +174,65 @@
         </div>
         <div class="newarticulo-info">
             <form class="formulario" method="POST" action="" >
+                <div class="form-flex">
+                    <label for="articulo-modelo">Modelo:</label>
+                    <input type="text" id="articulo-modelo" placeholder="Ingrese modelo moto">
+                </div>
+                <div class="form-flex">
+                    <label for="articulo-descripcion">Descripción:</label>
+                    <input type="text" id="articulo-descripcion" placeholder="Ingrese descripción">
+                </div>
+                <div class="form-flex">
+                    <label for="articulo-vim">Vim:</label>
+                    <input type="number" id="articulo-vim" placeholder="Ingrese Nº Vim">
+                </div>
+                <div class="form-flex">
+                    <label for="articulo-motor">Motor:</label>
+                    <input type="number" id="articulo-motor" placeholder="Ingrese serie motor">
+                </div>
+                <div class="form-flex">
+                    <label for="articulo-dua">Dua:</label>
+                    <input type="number" id="articulo-dua" placeholder="Ingrese dua">
+                </div>
+                <div class="form-flex">
+                    <label for="articulo-color">Color:</label>
+                    <input type="text" id="articulo-color" placeholder="Ingrese color">
+                </div>
+                <div class="form-flex">
+                    <label for="articulo-peso">Peso:</label>
+                    <input type="number" id="articulo-peso" placeholder="Ingrese peso">
+                </div>
+                <div class="form-flex">
+                    <label for="articulo-estado">Estado:</label>
+                    <input type="text" id="articulo-estado" placeholder="Ingrese estado">
+                </div>
+                <div class="form-flex">
+                    <label for="imagen">Imagen: </label>
+                    <input type="file" id="imagen" accept="image/jpeg, image/png" name="propiedad[imagen]">
+                </div>
+                
+
+                <div class="btns-form">
+                    <input type="submit" value="Agregar" class="btn-guardar" id="btn-guardar">
+                    <a href="" class="btn-cancelar" id="btn-cancelar">Cancelar</a>
+                </div>
+
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="popup-updarticulo" id="popup-updarticulo">
+    <div class="contenido-updarticulo">
+        <div class="updarticulo-head">
+            <h4>Actualizar Moto</h4>
+            <div class="btn-cerrar" id="btn-cerrar-upd">
+                <i class='bx bx-x'></i>
+            </div>
+        </div>
+        <div class="updarticulo-info">
+            <form class="formulario" method="POST" action="" >
                 <label for="articulo-name">Nombre:</label>
                 <input type="text" id="articulo-name" placeholder="Ingrese nombre artículo">
                 <label for="articulo-descripcion">Descripción:</label>
@@ -187,8 +246,8 @@
                 <input type="file" id="imagen" accept="image/jpeg, image/png" name="propiedad[imagen]">
 
                 <div class="btns-form">
-                    <input type="submit" value="Agregar" class="btn-guardar" id="btn-guardar">
-                    <a href="" class="btn-cancelar" id="btn-cancelar">Cancelar</a>
+                    <input type="submit" value="Actualizar" class="btn-guardar" id="btn-guardar">
+                    <a href="" class="btn-cancelar" id="btn-cancelar-upd">Cancelar</a>
                 </div>
             </form>
         </div>
