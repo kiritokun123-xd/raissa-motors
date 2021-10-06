@@ -16,4 +16,9 @@ class DashboardController{
             
         ]);
     }
+    public static function invmoto(Router $router){
+        $router->render('dashboard/invmoto',[
+            
+        ]);
+    }
 }

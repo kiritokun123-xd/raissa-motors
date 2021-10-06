@@ -93,12 +93,12 @@ const ocultarNav = (menuid, navbarid,mensajesid) =>{
     }
 }
 
-const verStock = (verstockid,contentid,popupstockid) =>{
+const verStock = (verstockid,contentid,popupstockid) => {
     const verstock = document.querySelectorAll(verstockid),
     popupstock = document.getElementById(popupstockid),
     content = document.getElementById(contentid)
     
-    verstock.forEach( stock =>{
+    verstock.forEach( stock => {
         stock.addEventListener('click', (e) => {
             e.preventDefault()
             popupstock.classList.add('active')

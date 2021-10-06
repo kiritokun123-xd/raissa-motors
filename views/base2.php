@@ -46,9 +46,9 @@
 
                 <div class="nav-caja caja-query" >
                     <div class="nav-caja-items">
-                        <h6>Pedidos y Compra:</h6>
+                        <h6>Artículos y Motos:</h6>
                         <a href="/logistica/inventario-articulos">Inventario Artículos</a>
-                        <a href="">Inventario Motos</a>
+                        <a href="/logistica/inventario-motos">Inventario Motos</a>
                     </div>
                 </div>
             </li>
@@ -81,7 +81,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="" class="nav-link navlink" data-paso="1">
+                <a href="" class="nav-link navlink" data-paso="2">
                     <i class='bx bx-cart-alt bx-icon'></i>
                     <span class="span">Operaciones</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>

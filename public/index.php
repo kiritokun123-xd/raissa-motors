@@ -40,5 +40,7 @@ $router->post('/contacto',[PaginasController::class, 'contacto']);
 $router->get('/dashboard',[DashboardController::class, 'inicio']);
 $router->get('/logistica/inventario-articulos',[DashboardController::class, 'invarticulo']);
 
+$router->get('/logistica/inventario-motos',[DashboardController::class, 'invmoto']);
+
 
 $router->comprobarRutas();
