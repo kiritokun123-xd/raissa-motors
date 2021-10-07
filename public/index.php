@@ -42,5 +42,9 @@ $router->get('/logistica/inventario-articulos',[DashboardController::class, 'inv
 
 $router->get('/logistica/inventario-motos',[DashboardController::class, 'invmoto']);
 
+$router->get('/logistica/inventario-placas',[DashboardController::class, 'invplaca']);
+
+
+
 
 $router->comprobarRutas();

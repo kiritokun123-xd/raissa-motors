@@ -44,12 +44,12 @@
                     <i class='bx bxs-right-arrow bx-arrow'></i>
                 </a>
 
-                <div class="nav-caja caja-query" >
+                <div class="nav-caja t-3 caja-query" >
                     <div class="nav-caja-items">
                         <h6>Artículos y Motos:</h6>
                         <a href="/logistica/inventario-articulos">Inventario Artículos</a>
                         <a href="/logistica/inventario-motos">Inventario Motos</a>
-                        <a href="/logistica/inventario-motos">Inventario Motos</a>
+                        <a href="/logistica/inventario-placas">Inventario Placas</a>
                     </div>
                 </div>
             </li>

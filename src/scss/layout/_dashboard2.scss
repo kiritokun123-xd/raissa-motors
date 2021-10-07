@@ -339,6 +339,9 @@ hr{
     
         &.mostrar{
             //height: 12rem;
+            &.t-3{
+                height: 16rem;
+            }
             height: 12rem;
         }
     }

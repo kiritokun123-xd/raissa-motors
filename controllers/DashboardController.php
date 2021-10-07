@@ -21,4 +21,9 @@ class DashboardController{
             
         ]);
     }
+    public static function invplaca(Router $router){
+        $router->render('dashboard/invplaca',[
+            
+        ]);
+    }
 }

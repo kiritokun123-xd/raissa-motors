@@ -26,7 +26,6 @@ const updArticulo = (accionactualizarid,popupupdarticuloid,btncerrarupdid,btncan
     accionactualizar.forEach(actualizar => {
         actualizar.addEventListener('click', (e) =>{
             e.preventDefault()
-            console.log("hola")
 
             popupupdarticulo.classList.add('active')
 
@@ -48,17 +47,20 @@ const newArticulo = (nuevoarticuloid, popupnewarticuloid,btncerrarid,btncancelar
     btncerrar = document.getElementById(btncerrarid),
     btncancelar = document.getElementById(btncancelarid)
 
-    nuevoarticulo.addEventListener('click', (e) =>{
-        e.preventDefault()
-        popupnewarticulo.classList.add('active')
-        btncerrar.onclick = function(){
-            popupnewarticulo.classList.remove('active')
-        }
-        btncancelar.onclick = function(e){
+    if(nuevoarticulo && popupnewarticulo && btncerrar && btncancelar){
+        nuevoarticulo.addEventListener('click', (e) =>{
             e.preventDefault()
-            popupnewarticulo.classList.remove('active')
-        }
-    })
+            popupnewarticulo.classList.add('active')
+            btncerrar.onclick = function(){
+                popupnewarticulo.classList.remove('active')
+            }
+            btncancelar.onclick = function(e){
+                e.preventDefault()
+                popupnewarticulo.classList.remove('active')
+            }
+        })
+    }
+
 }
 
 const mostrarMensajes = (navmensajeid,mensajeid,contentid) => {
@@ -101,7 +103,7 @@ const ocultarNav = (menuid, navbarid,mensajesid) =>{
     navbar = document.getElementById(navbarid),
     mensajes = document.getElementById(mensajesid)
 
-    if(menu && navbar){
+    if(menu && navbar && mensajes){
         menu.addEventListener('click', (e)=>{
             e.preventDefault();
 
@@ -124,17 +126,19 @@ const verStock = (verstockid,contentid,popupstockid) => {
     popupstock = document.getElementById(popupstockid),
     content = document.getElementById(contentid)
     
-    verstock.forEach( stock => {
-        stock.addEventListener('click', (e) => {
-            e.preventDefault()
-            popupstock.classList.add('active')
-
-            popupstock.onclick = function(){
-                popupstock.classList.remove('active')
-            }
-            
+    if(verstock && popupstock){
+        verstock.forEach( stock => {
+            stock.addEventListener('click', (e) => {
+                e.preventDefault()
+                popupstock.classList.add('active')
+    
+                popupstock.onclick = function(){
+                    popupstock.classList.remove('active')
+                }
+                
+            })
         })
-    })
+    }
 }
 
 const ampliarArticulo = (imgarticuloid,contenidoimgid,popupimagenid)=>{
@@ -142,21 +146,23 @@ const ampliarArticulo = (imgarticuloid,contenidoimgid,popupimagenid)=>{
     contenidoimg = document.querySelector(contenidoimgid),
     popupimagen = document.querySelector(popupimagenid)
 
-    imgarticulo.forEach((img =>{
-        img.addEventListener('click', (e) =>{
-            let nombreimg = img.src.split('/')
-            let nombre = nombreimg[nombreimg.length - 1]
-            //gererar imagen
-            const imagen = document.createElement("IMG")
-            imagen.src = "/imagenes/" +  nombre;
-            contenidoimg.appendChild(imagen)
-            popupimagen.classList.add('active')
-            popupimagen.onclick = function(){
-                popupimagen.classList.remove('active')
-                imagen.remove()
-            }
-        })
-    }))
+    if(imgarticulo && contenidoimg && popupimagen){
+        imgarticulo.forEach((img =>{
+            img.addEventListener('click', (e) =>{
+                let nombreimg = img.src.split('/')
+                let nombre = nombreimg[nombreimg.length - 1]
+                //gererar imagen
+                const imagen = document.createElement("IMG")
+                imagen.src = "/imagenes/" +  nombre;
+                contenidoimg.appendChild(imagen)
+                popupimagen.classList.add('active')
+                popupimagen.onclick = function(){
+                    popupimagen.classList.remove('active')
+                    imagen.remove()
+                }
+            })
+        }))
+    }
 }
 
 const mostrarSubmenu = (navlinkid, navcajaid, boxarrowid) =>{

@@ -1,16 +1,16 @@
 <main class="main">
-    <h2 class="main-titulo">Inventario Motos</h2>
+    <h2 class="main-titulo">Inventario Placas</h2>
 
     <div class="gestion-articulo">
         <div class="gestion-titulo">
-            <h3>Gestionar Artículos</h3>
+            <h3>Gestionar Placas</h3>
         </div>
         <div class="gestion-caja">
             <div class="nuevo-articulo" id="nuevo-articulo">
-                <a href="">Nueva Moto</a>
+                <a href="">Nueva PLaca</a>
             </div>
             <div class="buscar-articulo">
-                <label for="buscarid">Buscar Moto:</label>
+                <label for="buscarid">Buscar Placa:</label>
                 <input type="text" id="buscarid">
             </div>
         </div>
@@ -20,30 +20,24 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Imagen</th>
-                    <th>Modelo</th>
-                    <th>Descripción</th>
+                    <th>Nº Placa</th>
+                    <th>Propietario</th>
                     <th>Vim</th>
-                    <th>Nº Motor</th>
-                    <th>Dua</th>
-                    <th>Color</th>
-                    <th>Peso</th>
+                    <th>Motor</th>
+                    <th>Nº Titulo</th>
+                    <th>Verficación</th>
                     <th>Acciones</th>
                     <th>Estado</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="td-img" >
-                        <img class="img-articulo"  src="/imagenes/rtmg1.webp" alt="">
-                    </td>
-                    <td>RTMG1</td>
-                    <td>MotoLineal 150cc casco kit de herramientas tarjeta de propiedad placa</td>
+                    <td>1502-QB</td>
+                    <td>LOPEZ SAAVEDRA DAVID ANGEL</td>
                     <td>LCS0GC200213</td>
                     <td>162FMC200213</td>
-                    <td>2021-10-08545</td>
-                    <td>Rojo</td>
-                    <td>250KG</td>
+                    <td>518480</td>
+                    <td>062822</td>
                     <td class="td-acciones"> 
                         <div class="div-acciones">
                             <a href="" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
@@ -54,19 +48,15 @@
                             </form>
                         </div>
                     </td>
-                    <td>En Stock</td>
+                    <td>En tienda</td>
                 </tr>
                 <tr>
-                    <td class="td-img" >
-                        <img class="img-articulo"  src="/imagenes/rtmg2.webp" alt="">
-                    </td>
-                    <td>RTMG1</td>
-                    <td>MotoLineal 150cc casco kit de herramientas tarjeta de propiedad placa</td>
+                    <td>1502-QB</td>
+                    <td>LOPEZ SAAVEDRA DAVID ANGEL</td>
                     <td>LCS0GC200213</td>
                     <td>162FMC200213</td>
-                    <td>2021-10-08545</td>
-                    <td>Rojo</td>
-                    <td>250KG</td>
+                    <td>518480</td>
+                    <td>062822</td>
                     <td class="td-acciones"> 
                         <div class="div-acciones">
                             <a href="" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
@@ -77,19 +67,15 @@
                             </form>
                         </div>
                     </td>
-                    <td>En Stock</td>
+                    <td>En tienda</td>
                 </tr>
                 <tr>
-                    <td class="td-img" >
-                        <img class="img-articulo"  src="/imagenes/rtm200.webp" alt="">
-                    </td>
-                    <td>RTMG1</td>
-                    <td>MotoLineal 150cc casco kit de herramientas tarjeta de propiedad placa</td>
+                    <td>1502-QB</td>
+                    <td>LOPEZ SAAVEDRA DAVID ANGEL</td>
                     <td>LCS0GC200213</td>
                     <td>162FMC200213</td>
-                    <td>2021-10-08545</td>
-                    <td>Rojo</td>
-                    <td>250KG</td>
+                    <td>518480</td>
+                    <td>062822</td>
                     <td class="td-acciones"> 
                         <div class="div-acciones">
                             <a href="" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
@@ -100,32 +86,9 @@
                             </form>
                         </div>
                     </td>
-                    <td>En Stock</td>
+                    <td>En tienda</td>
                 </tr>
-                <tr>
-                    <td class="td-img" >
-                        <img class="img-articulo"  src="/imagenes/rtmg1.webp" alt="">
-                    </td>
-                    <td>RTMG1</td>
-                    <td>MotoLineal 150cc casco kit de herramientas tarjeta de propiedad placa</td>
-                    <td>LCS0GC200213</td>
-                    <td>162FMC200213</td>
-                    <td>2021-10-08545</td>
-                    <td>Rojo</td>
-                    <td>250KG</td>
-                    <td class="td-acciones"> 
-                        <div class="div-acciones">
-                            <a href="" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
-                            <form  method="POST" class="" action="">
-                                <input type="hidden" value="" name="id">
-                                <input type="hidden" value="propiedad" name="tipo">
-                                <i class='bx bxs-trash-alt bx-eliminar'><input class="input-eliminar" type="submit" value="" class=""></i>
-                            </form>
-                        </div>
-                    </td>
-                    <td>En Stock</td>
-                </tr>
-             
+                
             </tbody>
         </table>
     </div>
@@ -167,7 +130,7 @@
 <div class="popup-newarticulo" id="popup-newarticulo">
     <div class="contenido-newarticulo">
         <div class="newarticulo-head">
-            <h4>Nueva Moto</h4>
+            <h4>Nueva Placa</h4>
             <div class="btn-cerrar" id="btn-cerrar">
                 <i class='bx bx-x'></i>
             </div>
@@ -175,12 +138,12 @@
         <div class="newarticulo-info">
             <form class="formulario" method="POST" action="" >
                 <div class="form-flex">
-                    <label for="articulo-modelo">Modelo:</label>
-                    <input type="text" id="articulo-modelo" placeholder="Ingrese modelo moto">
+                    <label for="articulo-modelo">Nº Placa:</label>
+                    <input type="text" id="articulo-modelo" placeholder="Ingrese Nº Placa">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-descripcion">Descripción:</label>
-                    <input type="text" id="articulo-descripcion" placeholder="Ingrese descripción">
+                    <label for="articulo-descripcion">Propietario:</label>
+                    <input type="text" id="articulo-descripcion" placeholder="Ingrese Propietario">
                 </div>
                 <div class="form-flex">
                     <label for="articulo-vim">Vim:</label>
@@ -191,24 +154,16 @@
                     <input type="number" id="articulo-motor" placeholder="Ingrese serie motor">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-dua">Dua:</label>
-                    <input type="number" id="articulo-dua" placeholder="Ingrese dua">
+                    <label for="articulo-dua">Título:</label>
+                    <input type="number" id="articulo-dua" placeholder="Ingrese Nº Título">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-color">Color:</label>
-                    <input type="text" id="articulo-color" placeholder="Ingrese color">
+                    <label for="articulo-color">Verificación:</label>
+                    <input type="number" id="articulo-color" placeholder="Ingrese Nº Verificación">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-peso">Peso:</label>
-                    <input type="number" id="articulo-peso" placeholder="Ingrese peso">
-                </div>
-                <div class="form-flex">
-                    <label for="articulo-estado">Estado:</label>
-                    <input type="text" id="articulo-estado" placeholder="Ingrese estado">
-                </div>
-                <div class="form-flex">
-                    <label for="imagen">Imagen: </label>
-                    <input type="file" id="imagen" accept="image/jpeg, image/png" name="propiedad[imagen]">
+                    <label for="articulo-peso">Estado:</label>
+                    <input type="text" id="articulo-peso" placeholder="Ingrese Estado">
                 </div>
                 
 
@@ -226,48 +181,40 @@
 <div class="popup-updarticulo" id="popup-updarticulo">
     <div class="contenido-updarticulo">
         <div class="updarticulo-head">
-            <h4>Actualizar Moto</h4>
+            <h4>Actualizar Placa</h4>
             <div class="btn-cerrar" id="btn-cerrar-upd">
                 <i class='bx bx-x'></i>
             </div>
         </div>
         <div class="updarticulo-info">
             <form class="formulario" method="POST" action="" >
-            <div class="form-flex">
-                    <label for="articulo-modelo-upd">Modelo:</label>
-                    <input type="text" id="articulo-modelo-upd" placeholder="Ingrese modelo moto">
+                <div class="form-flex">
+                    <label for="articulo-modelo">Nº Placa:</label>
+                    <input type="text" id="articulo-modelo" placeholder="Ingrese Nº Placa">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-descripcion-upd">Descripción:</label>
-                    <input type="text" id="articulo-descripcion-upd" placeholder="Ingrese descripción">
+                    <label for="articulo-descripcion">Propietario:</label>
+                    <input type="text" id="articulo-descripcion" placeholder="Ingrese Propietario">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-vim-upd">Vim:</label>
-                    <input type="number" id="articulo-vim-upd" placeholder="Ingrese Nº Vim">
+                    <label for="articulo-vim">Vim:</label>
+                    <input type="number" id="articulo-vim" placeholder="Ingrese Nº Vim">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-motor-upd">Motor:</label>
-                    <input type="number" id="articulo-motor-upd" placeholder="Ingrese serie motor">
+                    <label for="articulo-motor">Motor:</label>
+                    <input type="number" id="articulo-motor" placeholder="Ingrese serie motor">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-dua-upd">Dua:</label>
-                    <input type="number" id="articulo-dua-upd" placeholder="Ingrese dua">
+                    <label for="articulo-dua">Título:</label>
+                    <input type="number" id="articulo-dua" placeholder="Ingrese Nº Título">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-color-upd">Color:</label>
-                    <input type="text" id="articulo-color-upd" placeholder="Ingrese color">
+                    <label for="articulo-color">Verificación:</label>
+                    <input type="number" id="articulo-color" placeholder="Ingrese Nº Verificación">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-peso-upd">Peso:</label>
-                    <input type="number" id="articulo-peso-upd"-upd placeholder="Ingrese peso">
-                </div>
-                <div class="form-flex">
-                    <label for="articulo-estado-upd">Estado:</label>
-                    <input type="text" id="articulo-estado-upd" placeholder="Ingrese estado">
-                </div>
-                <div class="form-flex">
-                    <label for="imagen-upd">Imagen: </label>
-                    <input type="file" id="imagen-upd" accept="image/jpeg, image/png" name="propiedad[imagen]">
+                    <label for="articulo-peso">Estado:</label>
+                    <input type="text" id="articulo-peso" placeholder="Ingrese Estado">
                 </div>
 
                 <div class="btns-form">
