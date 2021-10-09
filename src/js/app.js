@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     verStock('.td-info-stock','content','popup-stock');
 
-    newArticulo('nuevo-articulo','popup-newarticulo','btn-cerrar','btn-cancelar');
-    updArticulo('.accion-actualizar','popup-updarticulo','btn-cerrar-upd','btn-cancelar-upd');
+    //newArticulo('nuevo-articulo','popup-newarticulo','btn-cerrar','btn-cancelar');
+    //updArticulo('.accion-actualizar','popup-updarticulo','btn-cerrar-upd','btn-cancelar-upd');
 });
 
 const updArticulo = (accionactualizarid,popupupdarticuloid,btncerrarupdid,btncancelarupdid) =>{

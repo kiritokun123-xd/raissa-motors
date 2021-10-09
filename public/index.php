@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
-use Controllers\AdminController;
+use Controllers\LogisticaController;
 use Controllers\DashboardController;
 use MVC\Router;
 use Controllers\PropiedadController;
@@ -38,13 +38,20 @@ $router->post('/contacto',[PaginasController::class, 'contacto']);
 
 //Zona Dashboard
 $router->get('/dashboard',[DashboardController::class, 'inicio']);
-$router->get('/logistica/inventario-articulos',[DashboardController::class, 'invarticulo']);
 
-$router->get('/logistica/inventario-motos',[DashboardController::class, 'invmoto']);
+$router->get('/logistica/inventario-articulos',[LogisticaController::class, 'invarticulo']);
+$router->get('/logistica/nuevo-articulo',[LogisticaController::class, 'newarticulo']);
+$router->get('/logistica/actualizar-articulo',[LogisticaController::class, 'updarticulo']);
 
-$router->get('/logistica/inventario-placas',[DashboardController::class, 'invplaca']);
+$router->get('/logistica/inventario-motos',[LogisticaController::class, 'invmoto']);
+$router->get('/logistica/nueva-moto',[LogisticaController::class, 'newmoto']);
+$router->get('/logistica/actualizar-moto',[LogisticaController::class, 'updmoto']);
 
-$router->get('/tienda/inventario',[DashboardController::class, 'invtienda']);
+$router->get('/logistica/inventario-placas',[LogisticaController::class, 'invplaca']);
+
+$router->get('/logistica/nueva-placa',[LogisticaController::class, 'newplaca']);
+
+$router->get('/tienda/inventario',[LogisticaController::class, 'invtienda']);
 
 
 

@@ -32,15 +32,23 @@
         align-items: center;
         padding: 0.8rem 1.5rem;
         .nuevo-articulo{
+            text-decoration: none;
             cursor: pointer;
             background-color: #36b9cc;
             padding: 0.5rem;
             border-radius: 0.5rem;
+            &.atras{
+                background-color: #f6c23e;
+                &:hover{
+                    background-color: #f8cf69;
+                }
+            }
             &:hover{
                 background-color: #54d2e6;
             }
-            a{
+            p{
                 color: $blanco;
+                font-size: 1.6rem;
                 font-weight: 700;
             }
         }
@@ -239,19 +247,8 @@
 
 
 .popup-newarticulo{
-    background-color: rgba($color: #000000, $alpha: 0.3);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    opacity: 0;
-    visibility: hidden;
-
+    margin-top: 1rem;
+    width: 100%;
     .contenido-newarticulo{
         display: flex;
         flex-direction: column;
@@ -261,13 +258,10 @@
         overflow: hidden;
         border-radius: 0.5rem;
         border: 1px solid #e3e6f0;
-        width: 85%;
-        @include tablet{
-            width: 40%;
-        }
-        transition: 0.3s ease all;
-        transform: scale(0.7);
-        opacity: 0;   
+        overflow-x: auto;
+        //transition: 0.3s ease all;
+        //transform: scale(0.7);
+        //opacity: 0;   
         .newarticulo-head{
             display: flex;
             align-items: center;
@@ -284,7 +278,9 @@
                 font-size: 1.8rem;
             }
             .btn-cerrar{
+                text-decoration: none;
                 i{
+                    color: $grisOscuro;
                     cursor: pointer;
                     padding: 1rem 1rem;
                     font-size: 2rem;
@@ -356,19 +352,8 @@
     }
 }
 .popup-updarticulo{
-    background-color: rgba($color: #000000, $alpha: 0.3);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    opacity: 0;
-    visibility: hidden;
-
+    width: 100%;
+    margin-top: 1rem;
     .contenido-updarticulo{
         display: flex;
         flex-direction: column;
@@ -377,13 +362,9 @@
         overflow: hidden;
         border-radius: 0.5rem;
         border: 1px solid #e3e6f0;
-        width: 85%;
-        @include tablet{
-            width: 40%;
-        }
-        transition: 0.3s ease all;
-        transform: scale(0.7);
-        opacity: 0;   
+        //transition: 0.3s ease all;
+        //transform: scale(0.7);
+        //opacity: 0;   
         .updarticulo-head{
             display: flex;
             align-items: center;
@@ -400,7 +381,9 @@
                 font-size: 1.8rem;
             }
             .btn-cerrar{
+                text-decoration: none;
                 i{
+                    color: $grisOscuro;
                     cursor: pointer;
                     padding: 1rem 1rem;
                     font-size: 2rem;
