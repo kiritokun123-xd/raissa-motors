@@ -21,8 +21,8 @@
             <thead>
                 <tr>
                     <th>Imagen</th>
+                    <th>Id</th>
                     <th>Modelo</th>
-                    <th>Descripción</th>
                     <th>Vim</th>
                     <th>Nº Motor</th>
                     <th>Dua</th>
@@ -37,8 +37,8 @@
                     <td class="td-img" >
                         <img class="img-articulo"  src="/imagenes/rtmg1.webp" alt="">
                     </td>
+                    <td>1</td>
                     <td>RTMG1</td>
-                    <td>MotoLineal 150cc casco kit de herramientas tarjeta de propiedad placa</td>
                     <td>LCS0GC200213</td>
                     <td>162FMC200213</td>
                     <td>2021-10-08545</td>
@@ -60,8 +60,8 @@
                     <td class="td-img" >
                         <img class="img-articulo"  src="/imagenes/rtmg2.webp" alt="">
                     </td>
+                    <td>2</td>
                     <td>RTMG1</td>
-                    <td>MotoLineal 150cc casco kit de herramientas tarjeta de propiedad placa</td>
                     <td>LCS0GC200213</td>
                     <td>162FMC200213</td>
                     <td>2021-10-08545</td>
@@ -83,8 +83,8 @@
                     <td class="td-img" >
                         <img class="img-articulo"  src="/imagenes/rtm200.webp" alt="">
                     </td>
+                    <td>3</td>
                     <td>RTMG1</td>
-                    <td>MotoLineal 150cc casco kit de herramientas tarjeta de propiedad placa</td>
                     <td>LCS0GC200213</td>
                     <td>162FMC200213</td>
                     <td>2021-10-08545</td>
@@ -106,8 +106,8 @@
                     <td class="td-img" >
                         <img class="img-articulo"  src="/imagenes/rtmg1.webp" alt="">
                     </td>
+                    <td>4</td>
                     <td>RTMG1</td>
-                    <td>MotoLineal 150cc casco kit de herramientas tarjeta de propiedad placa</td>
                     <td>LCS0GC200213</td>
                     <td>162FMC200213</td>
                     <td>2021-10-08545</td>
@@ -175,40 +175,36 @@
         <div class="newarticulo-info">
             <form class="formulario" method="POST" action="" >
                 <div class="form-flex">
-                    <label for="articulo-modelo">Modelo:</label>
-                    <input type="text" id="articulo-modelo" placeholder="Ingrese modelo moto">
+                    <label for="new-articulo-modelo">Modelo:</label>
+                    <input type="text" id="new-articulo-modelo" placeholder="Ingrese modelo moto">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-descripcion">Descripción:</label>
-                    <input type="text" id="articulo-descripcion" placeholder="Ingrese descripción">
+                    <label for="new-articulo-vim">Vim:</label>
+                    <input type="number" id="new-articulo-vim" placeholder="Ingrese Nº Vim">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-vim">Vim:</label>
-                    <input type="number" id="articulo-vim" placeholder="Ingrese Nº Vim">
-                </div>
-                <div class="form-flex">
-                    <label for="articulo-motor">Motor:</label>
-                    <input type="number" id="articulo-motor" placeholder="Ingrese serie motor">
+                    <label for="new-articulo-motor">Motor:</label>
+                    <input type="number" id="new-articulo-motor" placeholder="Ingrese serie motor">
                 </div>
                 <div class="form-flex">
                     <label for="articulo-dua">Dua:</label>
                     <input type="number" id="articulo-dua" placeholder="Ingrese dua">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-color">Color:</label>
-                    <input type="text" id="articulo-color" placeholder="Ingrese color">
+                    <label for="new-articulo-color">Color:</label>
+                    <input type="text" id="new-articulo-color" placeholder="Ingrese color">
                 </div>
                 <div class="form-flex">
                     <label for="articulo-peso">Peso:</label>
                     <input type="number" id="articulo-peso" placeholder="Ingrese peso">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-estado">Estado:</label>
-                    <input type="text" id="articulo-estado" placeholder="Ingrese estado">
+                    <label for="new-articulo-estado">Estado:</label>
+                    <input type="text" id="new-articulo-estado" placeholder="Ingrese estado">
                 </div>
                 <div class="form-flex">
-                    <label for="imagen">Imagen: </label>
-                    <input type="file" id="imagen" accept="image/jpeg, image/png" name="propiedad[imagen]">
+                    <label for="new-imagen">Imagen: </label>
+                    <input type="file" id="new-imagen" accept="image/jpeg, image/png" name="propiedad[imagen]">
                 </div>
                 
 
@@ -233,41 +229,41 @@
         </div>
         <div class="updarticulo-info">
             <form class="formulario" method="POST" action="" >
-            <div class="form-flex">
-                    <label for="articulo-modelo-upd">Modelo:</label>
-                    <input type="text" id="articulo-modelo-upd" placeholder="Ingrese modelo moto">
+                <div class="form-flex">
+                    <label for="upd-articulo-id">Id:</label>
+                    <input type="text" id="upd-articulo-id" disabled value="1">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-descripcion-upd">Descripción:</label>
-                    <input type="text" id="articulo-descripcion-upd" placeholder="Ingrese descripción">
+                    <label for="upd-articulo-modelo">Modelo:</label>
+                    <input type="text" id="upd-articulo-modelo" placeholder="Ingrese modelo moto">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-vim-upd">Vim:</label>
-                    <input type="number" id="articulo-vim-upd" placeholder="Ingrese Nº Vim">
+                    <label for="upd-articulo-vim">Vim:</label>
+                    <input type="number" id="upd-articulo-vim" placeholder="Ingrese Nº Vim">
                 </div>
                 <div class="form-flex">
                     <label for="articulo-motor-upd">Motor:</label>
                     <input type="number" id="articulo-motor-upd" placeholder="Ingrese serie motor">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-dua-upd">Dua:</label>
-                    <input type="number" id="articulo-dua-upd" placeholder="Ingrese dua">
+                    <label for="upd-articulo-dua">Dua:</label>
+                    <input type="number" id="upd-articulo-dua" placeholder="Ingrese dua">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-color-upd">Color:</label>
-                    <input type="text" id="articulo-color-upd" placeholder="Ingrese color">
+                    <label for="upd-articulo-color">Color:</label>
+                    <input type="text" id="upd-articulo-color" placeholder="Ingrese color">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-peso-upd">Peso:</label>
-                    <input type="number" id="articulo-peso-upd"-upd placeholder="Ingrese peso">
+                    <label for="upd-articulo-peso">Peso:</label>
+                    <input type="number" id="upd-articulo-peso"-upd placeholder="Ingrese peso">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-estado-upd">Estado:</label>
-                    <input type="text" id="articulo-estado-upd" placeholder="Ingrese estado">
+                    <label for="upd-articulo-estado">Estado:</label>
+                    <input type="text" id="upd-articulo-estado" placeholder="Ingrese estado">
                 </div>
                 <div class="form-flex">
-                    <label for="imagen-upd">Imagen: </label>
-                    <input type="file" id="imagen-upd" accept="image/jpeg, image/png" name="propiedad[imagen]">
+                    <label for="upd-imagen">Imagen: </label>
+                    <input type="file" id="upd-imagen" accept="image/jpeg, image/png" name="propiedad[imagen]">
                 </div>
 
                 <div class="btns-form">

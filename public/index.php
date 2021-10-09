@@ -44,6 +44,7 @@ $router->get('/logistica/inventario-motos',[DashboardController::class, 'invmoto
 
 $router->get('/logistica/inventario-placas',[DashboardController::class, 'invplaca']);
 
+$router->get('/tienda/inventario',[DashboardController::class, 'invtienda']);
 
 
 

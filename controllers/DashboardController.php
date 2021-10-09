@@ -26,4 +26,9 @@ class DashboardController{
             
         ]);
     }
+    public static function invtienda(Router $router){
+        $router->render('dashboard/invtienda',[
+            
+        ]);
+    }
 }

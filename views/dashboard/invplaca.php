@@ -20,6 +20,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Nº Placa</th>
                     <th>Propietario</th>
                     <th>Vim</th>
@@ -32,6 +33,7 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>1</td>
                     <td>1502-QB</td>
                     <td>LOPEZ SAAVEDRA DAVID ANGEL</td>
                     <td>LCS0GC200213</td>
@@ -51,6 +53,7 @@
                     <td>En tienda</td>
                 </tr>
                 <tr>
+                    <td>2</td>
                     <td>1502-QB</td>
                     <td>LOPEZ SAAVEDRA DAVID ANGEL</td>
                     <td>LCS0GC200213</td>
@@ -70,6 +73,7 @@
                     <td>En tienda</td>
                 </tr>
                 <tr>
+                    <td>3</td>
                     <td>1502-QB</td>
                     <td>LOPEZ SAAVEDRA DAVID ANGEL</td>
                     <td>LCS0GC200213</td>
@@ -138,32 +142,32 @@
         <div class="newarticulo-info">
             <form class="formulario" method="POST" action="" >
                 <div class="form-flex">
-                    <label for="articulo-modelo">Nº Placa:</label>
-                    <input type="text" id="articulo-modelo" placeholder="Ingrese Nº Placa">
+                    <label for="new-articulo-modelo">Nº Placa:</label>
+                    <input type="text" id="new-articulo-modelo" placeholder="Ingrese Nº Placa">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-descripcion">Propietario:</label>
-                    <input type="text" id="articulo-descripcion" placeholder="Ingrese Propietario">
+                    <label for="new-articulo-descripcion">Propietario:</label>
+                    <input type="text" id="new-articulo-descripcion" placeholder="Ingrese Propietario">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-vim">Vim:</label>
-                    <input type="number" id="articulo-vim" placeholder="Ingrese Nº Vim">
+                    <label for="new-articulo-vim">Vim:</label>
+                    <input type="number" id="new-articulo-vim" placeholder="Ingrese Nº Vim">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-motor">Motor:</label>
-                    <input type="number" id="articulo-motor" placeholder="Ingrese serie motor">
+                    <label for="new-articulo-motor">Motor:</label>
+                    <input type="number" id="new-articulo-motor" placeholder="Ingrese serie motor">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-dua">Título:</label>
-                    <input type="number" id="articulo-dua" placeholder="Ingrese Nº Título">
+                    <label for="new-articulo-dua">Título:</label>
+                    <input type="number" id="new-articulo-dua" placeholder="Ingrese Nº Título">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-color">Verificación:</label>
-                    <input type="number" id="articulo-color" placeholder="Ingrese Nº Verificación">
+                    <label for="new-articulo-color">Verificación:</label>
+                    <input type="number" id="new-articulo-color" placeholder="Ingrese Nº Verificación">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-peso">Estado:</label>
-                    <input type="text" id="articulo-peso" placeholder="Ingrese Estado">
+                    <label for="new-articulo-peso">Estado:</label>
+                    <input type="text" id="new-articulo-peso" placeholder="Ingrese Estado">
                 </div>
                 
 
@@ -189,32 +193,36 @@
         <div class="updarticulo-info">
             <form class="formulario" method="POST" action="" >
                 <div class="form-flex">
-                    <label for="articulo-modelo">Nº Placa:</label>
-                    <input type="text" id="articulo-modelo" placeholder="Ingrese Nº Placa">
+                    <label for="upd-articulo-id">Id:</label>
+                    <input type="text" id="upd-articulo-id" disabled value="1">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-descripcion">Propietario:</label>
-                    <input type="text" id="articulo-descripcion" placeholder="Ingrese Propietario">
+                    <label for="upd-articulo-modelo">Nº Placa:</label>
+                    <input type="text" id="upd-articulo-modelo" placeholder="Ingrese Nº Placa">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-vim">Vim:</label>
-                    <input type="number" id="articulo-vim" placeholder="Ingrese Nº Vim">
+                    <label for="upd-articulo-descripcion">Propietario:</label>
+                    <input type="text" id="upd-articulo-descripcion" placeholder="Ingrese Propietario">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-motor">Motor:</label>
-                    <input type="number" id="articulo-motor" placeholder="Ingrese serie motor">
+                    <label for="upd-articulo-vim">Vim:</label>
+                    <input type="number" id="upd-articulo-vim" placeholder="Ingrese Nº Vim">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-dua">Título:</label>
-                    <input type="number" id="articulo-dua" placeholder="Ingrese Nº Título">
+                    <label for="upd-articulo-motor">Motor:</label>
+                    <input type="number" id="upd-articulo-motor" placeholder="Ingrese serie motor">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-color">Verificación:</label>
-                    <input type="number" id="articulo-color" placeholder="Ingrese Nº Verificación">
+                    <label for="upd-articulo-dua">Título:</label>
+                    <input type="number" id="upd-articulo-dua" placeholder="Ingrese Nº Título">
                 </div>
                 <div class="form-flex">
-                    <label for="articulo-peso">Estado:</label>
-                    <input type="text" id="articulo-peso" placeholder="Ingrese Estado">
+                    <label for="upd-articulo-color">Verificación:</label>
+                    <input type="number" id="upd-articulo-color" placeholder="Ingrese Nº Verificación">
+                </div>
+                <div class="form-flex">
+                    <label for="upd-articulo-peso">Estado:</label>
+                    <input type="text" id="upd-articulo-peso" placeholder="Ingrese Estado">
                 </div>
 
                 <div class="btns-form">

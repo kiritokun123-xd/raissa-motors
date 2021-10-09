@@ -1,5 +1,5 @@
 <main class="main">
-    <h2 class="main-titulo">Inventario Artículos</h2>
+    <h2 class="main-titulo">Inventario Tienda</h2>
 
     <div class="gestion-articulo">
         <div class="gestion-titulo">
@@ -40,11 +40,7 @@
                     <td class="td-descripcion">Motion Pro 02-0091 Frente Freno Cable Para Honda AC200M ATC200S ATC200ES ATC185S</td>
                     <td>S/8.00</td>
                     <td>S/10.00</td>
-                    <td class="td-stock">
-                        <div class="td-info-stock">
-                            <a href="" >Ver Stock</a>
-                        </div>
-                    </td>
+                    <td>10</td>
                     <td class="td-acciones"> 
                         <div class="div-acciones">
                             <a href="" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
@@ -65,11 +61,7 @@
                     <td class="td-descripcion">Suspensión amortiguador de choque 10.236 in 10.25 "Mono Shock reemplazo para SDG SSR Pitster Lifan  200cc 250cc</td>
                     <td>S/8.00</td>
                     <td>S/10.00</td>
-                    <td class="td-stock">
-                        <div class="td-info-stock">
-                            <a href="">Ver Stock</a>
-                        </div>
-                    </td>
+                    <td>10</td>
                     <td class="td-acciones"> 
                         <div class="div-acciones">
                             <a href="" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
@@ -90,11 +82,7 @@
                     <td class="td-descripcion">Motion Pro 02-0091 Frente Freno Cable Para Honda AC200M ATC200S ATC200ES ATC185S</td>
                     <td>S/8.00</td>
                     <td>S/10.00</td>
-                    <td class="td-stock">
-                        <div class="td-info-stock">
-                            <a href="">Ver Stock</a>
-                        </div>
-                    </td>
+                    <td>10</td>
                     <td class="td-acciones"> 
                         <div class="div-acciones">
                             <a href="" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
@@ -115,11 +103,7 @@
                     <td class="td-descripcion">Motion Pro 02-0091 Frente Freno Cable Para Honda AC200M ATC200S ATC200ES ATC185S</td>
                     <td>S/8.00</td>
                     <td>S/10.00</td>
-                    <td class="td-stock">
-                        <div class="td-info-stock">
-                            <a href="">Ver Stock</a>
-                        </div>
-                    </td>
+                    <td>10</td>
                     <td class="td-acciones"> 
                         <div class="div-acciones">
                             <a href="" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
@@ -188,6 +172,8 @@
                 <input type="number" id="new-articulo-costo" placeholder="Ingrese precio costo">
                 <label for="new-articulo-venta">Venta:</label>
                 <input type="number" id="new-articulo-venta" placeholder="Ingrese precio venta">
+                <label for="new-articulo-stock">Stock:</label>
+                <input type="number" id="new-articulo-stock" placeholder="Ingrese stock">
 
                 <label for="new-imagen">Imagen: </label>
                 <input type="file" id="new-imagen" accept="image/jpeg, image/png" name="propiedad[imagen]">
@@ -220,6 +206,8 @@
                 <input type="number" id="upd-articulo-costo" placeholder="Ingrese precio costo">
                 <label for="upd-articulo-venta">Venta:</label>
                 <input type="number" id="upd-articulo-venta" placeholder="Ingrese precio venta">
+                <label for="upd-articulo-stock">Stock:</label>
+                <input type="number" id="upd-articulo-stock" placeholder="Ingrese precio stock">
 
                 <label for="upd-imagen">Imagen: </label>
                 <input type="file" id="upd-imagen" accept="image/jpeg, image/png" name="propiedad[imagen]">

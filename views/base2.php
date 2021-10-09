@@ -75,7 +75,7 @@
             <div class="sidebar-heading">Almacén Tienda</div>
 
             <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="/tienda/inventario" class="nav-link">
                     <i class='bx bxs-store-alt bx-icon'></i>
                     <span class="span">Inventario</span>
                 </a> 
