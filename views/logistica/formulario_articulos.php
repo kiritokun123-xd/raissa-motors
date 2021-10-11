@@ -11,7 +11,7 @@
 <input type="number" id="new-articulo-venta" name="articulo[venta]" placeholder="Ingrese precio venta" value="<?php echo s($articulo->venta); ?>">
 
 <label for="new-imagen">Imagen: </label>
-<input type="file" id="new-imagen" name="articulo[imagen]" accept="image/jpeg, image/png" name="articulo[imagen]">
+<input type="file" id="new-imagen" accept="image/jpeg, image/png" name="articulo[imagen]">
 
 <?php if($articulo->imagen) : ?>
     <img src="/imagenes/<?php echo $articulo->imagen ?>" alt="" class="imagen-small">

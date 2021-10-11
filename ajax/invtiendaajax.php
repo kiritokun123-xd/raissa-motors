@@ -11,19 +11,10 @@ foreach($articulos as $articulo) :
         <td class="td-descripcion">'. $articulo->descripcion .'</td>
         <td>S/ '. $articulo->costo .'</td>
         <td>S/ '. $articulo->venta .'</td>
-        <td class="td-stock">
-            <div class="td-info-stock">
-                <a href="" >Ver Stock</a>
-            </div>
-        </td>
+        <td>'. $articulo->venta .'</td>
         <td class="td-acciones"> 
             <div class="div-acciones">
-                <a href="/logistica/actualizar-articulo?id='. $articulo->id .'" class="accion-actualizar"><i class="bx bxs-pencil"></i></a>
-                <form  method="POST" class="" action="">
-                    <input type="hidden" value="" name="id">
-                    <input type="hidden" value="propiedad" name="tipo">
-                    <i class="bx bxs-trash-alt bx-eliminar"><input class="input-eliminar" type="submit" value="" class=""></i>
-                </form>
+                <a href="" class="accion-actualizar"><i class="bx bxs-pencil"></i></a>
             </div>
         </td>
     </tr>';

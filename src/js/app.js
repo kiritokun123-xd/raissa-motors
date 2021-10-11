@@ -14,7 +14,42 @@ document.addEventListener("DOMContentLoaded", function() {
     verStock('.td-info-stock','popup-stock');
 
 });
-
+function invMotosAjaxId(){
+    $('#buscarid').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invmotoAjaxId", { filtro: filtro }, function(data) {
+            $("#invmoto-body").html(data);
+            
+        });  
+    })            
+}
+function invMotosAjax(){
+    $('#buscarvim').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invmotoAjax", { filtro: filtro }, function(data) {
+            $("#invmoto-body").html(data);
+            
+        });  
+    })            
+}
+function invPlacasAjaxP(){
+    $('#buscarplaca').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invplacaAjaxP", { filtro: filtro }, function(data) {
+            $("#invplaca-body").html(data);
+            
+        });  
+    })            
+}
+function invPlacasAjaxN(){
+    $('#buscarpropietario').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invplacaAjaxN", { filtro: filtro }, function(data) {
+            $("#invplaca-body").html(data);
+            
+        });  
+    })            
+}
 function invArticuloAjaxId(){
     $('#buscarid').on('input',function(){
         var filtro = $(this).val();
@@ -24,6 +59,25 @@ function invArticuloAjaxId(){
         });  
     })            
 }
+function invtienda(){
+    $('#buscarid').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invtienda", { filtro: filtro }, function(data) {
+            $("#invtienda-body").html(data);
+            
+        });  
+    })            
+}
+function invtiendaN(){
+    $('#buscararticulo').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invtiendaN", { filtro: filtro }, function(data) {
+            $("#invtienda-body").html(data);
+            
+        });  
+    })            
+}
+
 function invArticuloAjax(){
     $('#buscararticulo').on('input',function(){
         var filtro = $(this).val();

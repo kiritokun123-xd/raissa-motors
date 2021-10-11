@@ -17,7 +17,16 @@
         $(document).ready(function(){
             invArticuloAjaxId()
             invArticuloAjax()    
-            stockArticuloAjax()       
+            stockArticuloAjax()     
+            
+            invMotosAjaxId()
+            invMotosAjax()
+            
+            invPlacasAjaxP()
+            invPlacasAjaxN()
+
+            invtienda()
+            invtiendaN()
         })
         
     </script>
@@ -29,7 +38,7 @@
        <ul class="navbar-nav" id="navbar-nav">
             <a href="/dashboard" class="sidebar-brand">
                 <div class="sidebar-brand-icon">
-                    <i class='bx bxl-mastodon'></i>
+                    <img class="logo" src="../imagenes/logo.png" alt="">
                 </div>
                 <div class="sidebar-brand-text">
                     RAISSAMOTOR'S

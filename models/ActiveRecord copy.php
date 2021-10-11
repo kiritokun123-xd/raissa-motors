@@ -8,6 +8,7 @@ class ActiveRecord{
     protected static $columnasDB = [];
     protected static $tabla = '';
     protected static $redireccion = '';
+    protected static $redireccionar = true;
 
     //ERRORES
     protected static $errores = [];
@@ -69,7 +70,7 @@ class ActiveRecord{
         
         $resultado  = self::$db->query($query);  
         //
-        if($resultado){
+        if($resultado && self::$redireccionar){
             //REDIRECIONAR AL USUARIO
             header('Location: '. static::$redireccion .'?resultado=1');
         }

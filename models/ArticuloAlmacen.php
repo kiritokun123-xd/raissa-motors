@@ -1,10 +1,13 @@
 <?php
 namespace Model;
 
+use mysqli;
+
 class ArticuloAlmacen extends ActiveRecord{
     
     protected static $tabla = 'articuloalmacen';
     protected static $columnasDB = ['articuloId', 'almacenId', 'stock',];
+    protected static $redireccion = '/logistica/inventario-articulos';
 
     public $articuloId;
     public $almacenId;
@@ -16,18 +19,23 @@ class ArticuloAlmacen extends ActiveRecord{
         $this->almacenId = $args['almacenId'] ?? '';
         $this->stock = $args['stock'] ?? '';
     }
+    public function crearStock(){
+        
+        $query = "SELECT MAX(id) AS id FROM articulos";
+        
+        $resultado  = self::$db->query($query);  
+        
+        $id = mysqli_fetch_assoc($resultado)['id'];
 
-    // public function validar(){
-    //     if(!$this->nombre){
-    //         self::$errores[] = "El nombre es obligatorio";
-    //     }
-    //     if(!$this->costo){
-    //         self::$errores[] = "El costo es obligatorio";
-    //     }
-    //     if(!$this->venta){
-    //         self::$errores[] = "La venta es obligatoria";
-    //     }
+        $query = "INSERT INTO articuloalmacen (articuloId, almacenId, stock) VALUES 
+        (". $id .",1,0),(". $id .",2,0),(". $id .",3,0);";
 
-    //     return self::$errores;
-    // }
+        $resultado  = self::$db->query($query); 
+
+        if($resultado){
+            //REDIRECIONAR AL USUARIO
+            header('Location: '. static::$redireccion .'?resultado=1');
+        }
+        
+    }
 }

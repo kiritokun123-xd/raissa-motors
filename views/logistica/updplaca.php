@@ -1,5 +1,5 @@
 <main class="main">
-    <h2 class="main-titulo">Inventario Motos - Actualizar Moto</h2>
+    <h2 class="main-titulo">Inventario Placas - Actualizar Placa</h2>
     <?php
         foreach($errores as $error){ ?>
             <div class="alerta error">
@@ -12,18 +12,18 @@
         <div class="contenido-newarticulo">
             <div class="newarticulo-head">
                 <h4>Actualizar Moto</h4>
-                <a href="/logistica/inventario-motos" class="btn-cerrar" id="btn-cerrar">
+                <a href="/logistica/inventario-placas" class="btn-cerrar" id="btn-cerrar">
                     <i class='bx bx-arrow-back'></i>
                 </a>
             </div>
             <div class="newarticulo-info">
                 <form class="formulario" method="POST" enctype="multipart/form-data">
-                    <?php include __DIR__ . '/formulario_motos.php'; ?>
+                    <?php include __DIR__ . '/formulario_placas.php'; ?>
                     
 
                     <div class="btns-form">
                         <input type="submit" value="Actualizar" class="btn-guardar" id="btn-guardar">
-                        <a href="/logistica/inventario-motos" class="btn-cancelar" id="btn-cancelar">Atras</a>
+                        <a href="/logistica/inventario-placas" class="btn-cancelar" id="btn-cancelar">Atras</a>
                     </div>
 
                     

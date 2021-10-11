@@ -5,6 +5,7 @@ class Moto extends ActiveRecord{
     
     protected static $tabla = 'motos';
     protected static $columnasDB = ['id', 'nombre', 'vim', 'motor', 'dua', 'color','peso','estado','imagen'];
+    protected static $redireccion = '/logistica/inventario-motos';
 
     public $id;
     public $nombre;
@@ -29,20 +30,30 @@ class Moto extends ActiveRecord{
         $this->imagen = $args['imagen'] ?? '';
     }
 
-    // public function validar(){
-    //     if(!$this->nombre){
-    //         self::$errores[] = "El nombre es obligatorio";
-    //     }
-    //     if(!$this->apellido){
-    //         self::$errores[] = "El apellido es obligatorio";
-    //     }
-    //     if(!$this->telefono){
-    //         self::$errores[] = "El teléfono es obligatorio";
-    //     }
-    //     if(!preg_match('/[0-9]{9}/',$this->telefono)){
-    //         self::$errores[] = "Formato no válido";
-    //     }
+    public function validar(){
+        if(!$this->nombre){
+            self::$errores[] = "El modelo es obligatorio";
+        }
+        if(!$this->vim){
+            self::$errores[] = "El Nº VIM es obligatorio";
+        }
+        if(!$this->motor){
+            self::$errores[] = "El Nº motor es obligatorio";
+        }
+        if(!$this->dua){
+            self::$errores[] = "El Nº dua es obligatorio";
+        }
+        if(!$this->color){
+            self::$errores[] = "El color es obligatorio";
+        }
+        if(!$this->peso){
+            self::$errores[] = "El peso es obligatorio";
+        }
+        if(!$this->estado){
+            self::$errores[] = "El estado es obligatorio";
+        }
 
-    //     return self::$errores;
-    // }
+        return self::$errores;
+    }
+
 }

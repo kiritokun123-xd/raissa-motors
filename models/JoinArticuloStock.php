@@ -1,7 +1,7 @@
 <?php
 namespace Model;
 
-class Articulo extends ActiveRecord{
+class JoinArticuloStock extends ActiveRecord{
     
     protected static $tabla = 'articulos';
     protected static $columnasDB = ['id', 'nombre', 'descripcion', 'costo', 'venta', 'imagen'];
