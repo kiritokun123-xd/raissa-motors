@@ -41,7 +41,9 @@ $router->get('/dashboard',[DashboardController::class, 'inicio']);
 
 $router->get('/logistica/inventario-articulos',[LogisticaController::class, 'invarticulo']);
 $router->get('/logistica/nuevo-articulo',[LogisticaController::class, 'newarticulo']);
+$router->post('/logistica/nuevo-articulo',[LogisticaController::class, 'newarticulo']);
 $router->get('/logistica/actualizar-articulo',[LogisticaController::class, 'updarticulo']);
+$router->post('/logistica/actualizar-articulo',[LogisticaController::class, 'updarticulo']);
 
 $router->get('/logistica/inventario-motos',[LogisticaController::class, 'invmoto']);
 $router->get('/logistica/nueva-moto',[LogisticaController::class, 'newmoto']);
@@ -53,6 +55,9 @@ $router->get('/logistica/nueva-placa',[LogisticaController::class, 'newplaca']);
 
 $router->get('/tienda/inventario',[LogisticaController::class, 'invtienda']);
 
-
+//zona ajax
+$router->post('/ajax/invarticuloAjax',[LogisticaController::class, 'invarticuloajax']);
+$router->post('/ajax/invarticuloAjaxId',[LogisticaController::class, 'invarticuloajaxid']);
+$router->post('/ajax/stockarticuloAjax',[LogisticaController::class, 'stockarticuloajax']);
 
 $router->comprobarRutas();

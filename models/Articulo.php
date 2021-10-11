@@ -23,20 +23,17 @@ class Articulo extends ActiveRecord{
         $this->imagen = $args['imagen'] ?? '';
     }
 
-    // public function validar(){
-    //     if(!$this->nombre){
-    //         self::$errores[] = "El nombre es obligatorio";
-    //     }
-    //     if(!$this->apellido){
-    //         self::$errores[] = "El apellido es obligatorio";
-    //     }
-    //     if(!$this->telefono){
-    //         self::$errores[] = "El teléfono es obligatorio";
-    //     }
-    //     if(!preg_match('/[0-9]{9}/',$this->telefono)){
-    //         self::$errores[] = "Formato no válido";
-    //     }
+    public function validar(){
+        if(!$this->nombre){
+            self::$errores[] = "El nombre es obligatorio";
+        }
+        if(!$this->costo){
+            self::$errores[] = "El costo es obligatorio";
+        }
+        if(!$this->venta){
+            self::$errores[] = "La venta es obligatoria";
+        }
 
-    //     return self::$errores;
-    // }
+        return self::$errores;
+    }
 }

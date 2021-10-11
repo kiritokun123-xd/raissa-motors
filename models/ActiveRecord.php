@@ -48,7 +48,7 @@ class ActiveRecord{
         
         if($resultado){
             //REDIRECIONAR AL USUARIO
-            header('Location: /admin?resultado=2');
+            header('Location: /logistica/inventario-articulos?resultado=2');
         }
     }
     public function crear(){
@@ -67,7 +67,7 @@ class ActiveRecord{
         //
         if($resultado){
             //REDIRECIONAR AL USUARIO
-            header('Location: /admin?resultado=1');
+            header('Location: /logistica/inventario-articulos?resultado=1');
         }
     }
 
@@ -141,7 +141,26 @@ class ActiveRecord{
 
         return $resultado;
     }
-    
+
+    //lista por busqueda ajax
+    public static function nombreAjax($filtro){
+        //ESCRIBIR EL QUERY
+        $query = "SELECT * FROM " . static::$tabla . " WHERE nombre LIKE " . "'%".$filtro."%'";
+        $resultado = self::constularSQL($query);
+        return $resultado;
+    }
+    public static function idAjax($filtro){
+        //ESCRIBIR EL QUERY
+        $query = "SELECT * FROM " . static::$tabla . " WHERE id LIKE " . "'%".$filtro."%'";
+        $resultado = self::constularSQL($query);
+        return $resultado;
+    }
+    public static function someAjax($id){
+        //ESCRIBIR EL QUERY
+        $query = "SELECT * FROM " . static::$tabla . " WHERE articuloId = " . $id;
+        $resultado = self::constularSQL($query);
+        return $resultado;
+    }
     // Obtiene determinado número de registros
     public static function get($cantidad){
         //ESCRIBIR EL QUERY

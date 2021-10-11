@@ -100,7 +100,9 @@ class PropiedadController{
             if(empty($errores)){
                 if($_FILES['propiedad']['tmp_name']['imagen']){
                     //GUARDA LA IMAGEN EN EL SERVIDOR
-                    $image->save(CARPETA_IMAGENES . $nombreImagen);
+                    if($image){
+                        $image->save(CARPETA_IMAGENES . $nombreImagen);
+                    }
                 }
                 
                 $propiedad->guardar();

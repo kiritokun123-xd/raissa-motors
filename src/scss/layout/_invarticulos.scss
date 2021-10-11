@@ -28,12 +28,21 @@
     .gestion-caja{
         width: 100%;
         display: flex;
+        flex-direction: column;
+        @include tablet{
+            flex-direction: row;
+        }
         justify-content: space-between;
         align-items: center;
         padding: 0.8rem 1.5rem;
         .nuevo-articulo{
+            text-align: center;
             text-decoration: none;
             cursor: pointer;
+            width: 100%;
+            @include tablet{
+                width: auto;
+            }
             background-color: #36b9cc;
             padding: 0.5rem;
             border-radius: 0.5rem;
@@ -53,14 +62,36 @@
             }
         }
         .buscar-articulo{
+            margin-top: 1rem;
             display: flex;
-            //justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            width: 100%;
+            @include tablet{
+                width: auto;
+            }
             label{
                 color: $gris-texto;
                 text-align: right;
                 @include tablet{
                     text-align: left;
+                }
+            }
+            .input-id{
+                color: $gris-texto;
+                font-size: 1.6rem;
+                border: 1px solid #d1d3e2;
+                font-weight: 400;
+                border-radius: 0.5rem;
+                margin-left: 0.5em;
+                padding: 1rem;
+                width: auto;
+                &:focus{
+                    outline: none;
+                    border-color: #4e73df;
+                }
+                @include tablet{
+                    width: 10rem;
                 }
             }
             input{
@@ -71,14 +102,12 @@
                 border-radius: 0.5rem;
                 margin-left: 0.5em;
                 padding: 1rem;
-                width: 10rem;
+                width: auto;
                 &:focus{
                     outline: none;
-                    border-color: chartreuse;
+                    border-color: #4e73df;
                 }
-                @include tablet{
-                    width: auto;
-                }
+                
             }
         }
     }
@@ -316,6 +345,10 @@
                     }
                     
                 }
+                .imagen-small{
+                    padding: 1rem;
+                    width: 10rem;
+                }
                 .btns-form{
                     margin-top: 1rem;
                     display: flex;
@@ -452,5 +485,21 @@
             opacity: 1;
             transform: scale(1);
         }
+    }
+}
+
+.alerta{
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $blanco;
+    border-radius: 0.5rem;
+    text-align: center;
+    &.error{
+        background-color: #f7766a;
+    }
+    margin-bottom: 0.5rem;
+    &:last-of-type{
+        margin-bottom: 0;
     }
 }

@@ -32,6 +32,10 @@ class ComposerStaticInit887ceee37143e5e9574b66964c8d20d7
         array (
             'Controllers\\' => 12,
         ),
+        'A' => 
+        array (
+            'Ajax\\' => 5,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -59,6 +63,10 @@ class ComposerStaticInit887ceee37143e5e9574b66964c8d20d7
         'Controllers\\' => 
         array (
             0 => __DIR__ . '/../..' . '/controllers',
+        ),
+        'Ajax\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/ajax',
         ),
     );
 

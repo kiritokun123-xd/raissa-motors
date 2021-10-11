@@ -12,4 +12,5 @@ return array(
     'Intervention\\Image\\' => array($vendorDir . '/intervention/image/src/Intervention/Image'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'Controllers\\' => array($baseDir . '/controllers'),
+    'Ajax\\' => array($baseDir . '/ajax'),
 );

@@ -47,4 +47,18 @@ class Router{
         include __DIR__ . "/views/base2.php";
 
     }
+    //muestra ajax
+    public function renderAjax($view, $datos = []){
+
+        foreach($datos as $key=>$value){
+            //Crea variables desde el key : mensaje ----> $mensaje
+            $$key = $value;     
+        }
+        //inicia un almacenamiento en MEMORIA durante un momento
+        ob_start();
+
+        include __DIR__ . "/ajax/$view.php";
+
+    }
+
 }

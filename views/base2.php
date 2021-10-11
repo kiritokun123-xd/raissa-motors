@@ -10,6 +10,18 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- CSS -->
     <link rel="stylesheet" href="../build/css/app.css">
+    <script src="../build/js/bundle.min.js"></script>
+    <script src="../build/js/jquery-3.6.0.min.js"></script>
+    
+    <script >
+        $(document).ready(function(){
+            invArticuloAjaxId()
+            invArticuloAjax()    
+            stockArticuloAjax()       
+        })
+        
+    </script>
+
 </head>
 <body id="content">
     
@@ -277,6 +289,6 @@
 
     
 
-    <script src="../build/js/bundle.min.js"></script>
+    
 </body>
 </html>
