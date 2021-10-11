@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 });
+function mensajeAlerta(titulo,texto,icono,boton){
+    Swal.fire({
+        title: titulo,
+        text: texto,
+        icon: icono,
+        confirmButtonText: boton
+    })
+}
 function invMotosAjaxId(){
     $('#buscarid').on('input',function(){
         var filtro = $(this).val();

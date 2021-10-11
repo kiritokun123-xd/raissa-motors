@@ -14,8 +14,11 @@ class LogisticaController{
     public static function invarticulo(Router $router){
         $articulos = Articulo::all();
 
+        $resultado = $_GET['resultado'] ?? null;
+
         $router->render('logistica/invarticulo',[
-            'articulos' => $articulos
+            'articulos' => $articulos,
+            'resultado' => $resultado
         ]);
     }
     public static function invarticuloajaxid(Router $router){

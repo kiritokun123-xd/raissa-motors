@@ -54,7 +54,7 @@ class EnsamblajeController{
 
         $articulos = JoinArticuloStock::filtrarAjaxMul(2,'id',$filtro);
 
-        $router->renderAjax('invtiendaajax',[
+        $router->renderAjax('invensamblajeajax',[
             'articulos' => $articulos
         ]);
     }
@@ -63,7 +63,7 @@ class EnsamblajeController{
 
         $articulos = JoinArticuloStock::filtrarAjaxMul(2,'nombre',$filtro);
 
-        $router->renderAjax('invtiendaajax',[
+        $router->renderAjax('invensamblajeajax',[
             'articulos' => $articulos
         ]);
     }

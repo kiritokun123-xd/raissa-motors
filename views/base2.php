@@ -10,11 +10,16 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- CSS -->
     <link rel="stylesheet" href="../build/css/app.css">
+    <!--==SWEET ALERT-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+
     <script src="../build/js/bundle.min.js"></script>
     <script src="../build/js/jquery-3.6.0.min.js"></script>
     
     <script >
         $(document).ready(function(){
+            
             invArticuloAjaxId()
             invArticuloAjax()    
             stockArticuloAjax()     
@@ -97,33 +102,6 @@
                 </div>
             </li>
 
-            <hr class="siderbar-divider">
-
-            <div class="sidebar-heading">Almacén Tienda</div>
-
-            <li class="nav-item">
-                <a href="/tienda/inventario" class="nav-link">
-                    <i class='bx bxs-store-alt bx-icon'></i>
-                    <span class="span">Inventario</span>
-                </a> 
-            </li>
-
-            <li class="nav-item">
-                <a href="" class="nav-link navlink" data-paso="2">
-                    <i class='bx bx-cart-alt bx-icon'></i>
-                    <span class="span">Operaciones</span>
-                    <i class='bx bxs-right-arrow bx-arrow'></i>
-                </a>
-
-                <div class="nav-caja caja-query" >
-                    <div class="nav-caja-items">
-                        <h6>Pedidos y Compra:</h6>
-                        <a href="">Ver Pedidos</a>
-                        <a href="">Ver Orden de Compra</a>
-                    </div>
-                </div>
-            </li>
-
             <li class="nav-item">
                 <a href="" class="nav-link navlink" data-paso="2">
                     <i class='bx bxs-user-detail bx-icon'></i>
@@ -136,6 +114,33 @@
                         <h6>Proveedor y precios: </h6>
                         <a href="">Artículos y precios</a>
                         <a href="">Administrar Proveedor </a>
+                    </div>
+                </div>
+            </li>
+
+            <hr class="siderbar-divider">
+
+            <div class="sidebar-heading">Almacén Tienda</div>
+
+            <li class="nav-item">
+                <a href="/tienda/inventario" class="nav-link">
+                    <i class='bx bxs-store-alt bx-icon'></i>
+                    <span class="span">Inventario</span>
+                </a> 
+            </li>
+
+            <li class="nav-item">
+                <a href="" class="nav-link navlink" data-paso="3">
+                    <i class='bx bx-cart-alt bx-icon'></i>
+                    <span class="span">Operaciones</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
+
+                <div class="nav-caja caja-query" >
+                    <div class="nav-caja-items">
+                        <h6>Pedidos y Compra:</h6>
+                        <a href="">Ver Pedidos</a>
+                        <a href="">Gestionar Orden de Compra</a>
                     </div>
                 </div>
             </li>
@@ -162,12 +167,12 @@
                     <div class="nav-caja-items">
                         <h6>Pedidos y Compra:</h6>
                         <a href="">Ver Pedidos</a>
-                        <a href="">Crear Orden de Compra</a>
+                        <a href="">Gestionar Orden de Compra</a>
                     </div>
                 </div>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="" class="nav-link navlink" data-paso="5">
                     <i class='bx bx-cycling bx-icon'></i>
                     <span class="span">Motos</span>
@@ -181,7 +186,7 @@
                         <a href="">Adminitrar Motos</a>
                     </div>
                 </div>
-            </li>
+            </li> -->
 
             <hr class="siderbar-divider">
 
@@ -195,7 +200,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="" class="nav-link navlink" data-paso="7">
+                <a href="" class="nav-link navlink" data-paso="5">
                     <i class='bx bx-cart-alt bx-icon'></i>
                     <span class="span">Operaciones</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
@@ -205,10 +210,12 @@
                     <div class="nav-caja-items">
                         <h6>Pedidos y Compra:</h6>
                         <a href="">Ver Pedidos</a>
-                        <a href="">Crear Orden de Compra</a>
+                        <a href="">Gestionar Orden de Compra</a>
                     </div>
                 </div>
             </li>
+
+            <hr class="siderbar-divider">
 
             <li class="nav-item">
                 <a href="" class="nav-link">
