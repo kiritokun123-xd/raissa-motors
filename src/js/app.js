@@ -69,6 +69,42 @@ function invtienda(){
         });  
     })            
 }
+function invensamblaje(){
+    $('#buscarid').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invensamblaje", { filtro: filtro }, function(data) {
+            $("#invensamblaje-body").html(data);
+            
+        });  
+    })            
+}
+function invsoldadura(){
+    $('#buscarid').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/insoldadura", { filtro: filtro }, function(data) {
+            $("#invsoldadura-body").html(data);
+            
+        });  
+    })            
+}
+function invsoldaduraN(){
+    $('#buscararticulo').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/insoldaduraN", { filtro: filtro }, function(data) {
+            $("#invsoldadura-body").html(data);
+            
+        });  
+    })            
+}
+function invensamblajeN(){
+    $('#buscararticulo').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invensamblajeN", { filtro: filtro }, function(data) {
+            $("#invensamblaje-body").html(data);
+            
+        });  
+    })            
+}
 function invtiendaN(){
     $('#buscararticulo').on('input',function(){
         var filtro = $(this).val();

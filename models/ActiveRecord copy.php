@@ -2,13 +2,12 @@
 
 namespace Model;
 
-class ActiveRecord{
+class ActiveRecordCopia{
     //BASE DE DATOS
     protected static $db;
     protected static $columnasDB = [];
     protected static $tabla = '';
     protected static $redireccion = '';
-    protected static $redireccionar = true;
 
     //ERRORES
     protected static $errores = [];
@@ -70,7 +69,7 @@ class ActiveRecord{
         
         $resultado  = self::$db->query($query);  
         //
-        if($resultado && self::$redireccionar){
+        if($resultado){
             //REDIRECIONAR AL USUARIO
             header('Location: '. static::$redireccion .'?resultado=1');
         }
@@ -147,6 +146,14 @@ class ActiveRecord{
 
         return $resultado;
     }
+    public static function allMul($almacen){
+        //ESCRIBIR EL QUERY
+        $query = "SELECT * FROM " . static::$tabla . " WHERE almacenId = " . $almacen . " ORDER BY id";
+
+        $resultado = self::constularSQL($query);
+
+        return $resultado;
+    }
 
     //lista por busqueda ajax
     public static function filtrarAjax($columna,$filtro){
@@ -155,10 +162,16 @@ class ActiveRecord{
         $resultado = self::constularSQL($query);
         return $resultado;
     }
+    public static function filtrarAjaxMul($almacen, $columna,$filtro){
+        //ESCRIBIR EL QUERY
+        $query = "SELECT * FROM " . static::$tabla . " WHERE almacenId = ". $almacen ." AND ". $columna ." LIKE " . "'%".$filtro."%'";
+        $resultado = self::constularSQL($query);
+        return $resultado;
+    }
    
     public static function someAjax($id){
         //ESCRIBIR EL QUERY
-        $query = "SELECT * FROM " . static::$tabla . " WHERE articuloId = " . $id . " ORDER BY almacenId";
+        $query = "SELECT * FROM " . static::$tabla . " WHERE articuloId = " . $id;
         $resultado = self::constularSQL($query);
         return $resultado;
     }

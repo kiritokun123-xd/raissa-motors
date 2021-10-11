@@ -28,6 +28,11 @@
             invtienda()
             invtiendaN()
 
+            invensamblaje()
+            invensamblajeN()
+
+            invsoldadura()
+            invsoldaduraN()
         })
         
     </script>
@@ -140,7 +145,7 @@
             <div class="sidebar-heading">Almacén Ensamblaje</div>
 
             <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="/ensamblaje/inventario" class="nav-link">
                     <i class='bx bxs-store-alt bx-icon'></i>
                     <span class="span">Inventario</span>
                 </a> 
@@ -183,7 +188,7 @@
             <div class="sidebar-heading">Almacén Soldadura</div>
 
             <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="/soldadura/inventario" class="nav-link">
                     <i class='bx bxs-store-alt bx-icon'></i>
                     <span class="span">Inventario</span>
                 </a> 

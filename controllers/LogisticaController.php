@@ -84,7 +84,7 @@ class LogisticaController{
                 }
 
                 //SUBE A LA BD
-                $articulo->guardar();
+                $articulo->guardar('/logistica/inventario-articulos');
                 $articuloalmacen->crearStock();
             }
         }

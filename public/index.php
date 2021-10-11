@@ -5,6 +5,8 @@ require_once __DIR__ . '/../includes/app.php';
 use Controllers\LogisticaController;
 use Controllers\DashboardController;
 use Controllers\TiendaController;
+use Controllers\EnsamblajeController;
+use Controllers\SoldaduraController;
 
 use MVC\Router;
 use Controllers\PropiedadController;
@@ -64,6 +66,16 @@ $router->post('/logistica/actualizar-placa',[LogisticaController::class, 'updpla
 $router->get('/tienda/inventario',[TiendaController::class, 'inventario']);
 $router->get('/tienda/actualizar-stock',[TiendaController::class, 'updinventario']);
 $router->post('/tienda/actualizar-stock',[TiendaController::class, 'updinventario']);
+//=======ENSAMBLAJE=============//
+
+$router->get('/ensamblaje/inventario',[EnsamblajeController::class, 'inventario']);
+$router->get('/ensamblaje/actualizar-stock',[EnsamblajeController::class, 'updinventario']);
+$router->post('/ensamblaje/actualizar-stock',[EnsamblajeController::class, 'updinventario']);
+//=======SOLDADURA=============//
+
+$router->get('/soldadura/inventario',[SoldaduraController::class, 'inventario']);
+$router->get('/soldadura/actualizar-stock',[SoldaduraController::class, 'updinventario']);
+$router->post('/soldadura/actualizar-stock',[SoldaduraController::class, 'updinventario']);
 
 //==========================zona ajax=================
 $router->post('/ajax/invarticuloAjax',[LogisticaController::class, 'invarticuloajax']);
@@ -79,6 +91,12 @@ $router->post('/ajax/invplacaAjaxN',[LogisticaController::class, 'invplacaajaxn'
 
 $router->post('/ajax/invtienda',[TiendaController::class, 'invtienda']);
 $router->post('/ajax/invtiendaN',[TiendaController::class, 'invtiendaN']);
+
+$router->post('/ajax/invensamblaje',[EnsamblajeController::class, 'invensamblaje']);
+$router->post('/ajax/invensamblajeN',[EnsamblajeController::class, 'invensamblajeN']);
+
+$router->post('/ajax/insoldadura',[SoldaduraController::class, 'invsoldadura']);
+$router->post('/ajax/insoldaduraN',[SoldaduraController::class, 'invsoldaduraN']);
 
 
 $router->comprobarRutas();

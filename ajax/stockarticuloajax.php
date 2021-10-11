@@ -54,5 +54,5 @@ echo
 
 <script>
 verStock('.td-info-stock','popup-stock')
-ampliarArticulo('.img-articulo','.contenido-img','.popup-img')
+//ampliarArticulo('.img-articulo','.contenido-img','.popup-img')
 </script>

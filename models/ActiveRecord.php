@@ -71,7 +71,7 @@ class ActiveRecord{
         //
         if($resultado){
             //REDIRECIONAR AL USUARIO
-            header('Location: '. static::$redireccion .'?resultado=1');
+            header('Location: '. self::$redireccion .'?resultado=1');
         }
     }
 

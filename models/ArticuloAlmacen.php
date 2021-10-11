@@ -26,13 +26,13 @@ class ArticuloAlmacen extends ActiveRecord{
         return self::$errores;
     }
 
-    public function guardar(){
+    public function guardarRedi($redireccion){
         
         //debuguear($this);
         if(!is_null($this->articuloId)){
             //Actualizar
             //debuguear("actualizando...");
-            $this->actualizar();
+            $this->actualizarRedi($redireccion);
              
         }else{
             //Creando un nuevo registo
@@ -41,7 +41,7 @@ class ArticuloAlmacen extends ActiveRecord{
             
         }
     }
-    public function actualizar(){
+    public function actualizarRedi($redireccion){
         
         //SANITIZAR LOS DATOS
         $atributos = $this->sanitizarAtributos();
@@ -61,7 +61,7 @@ class ArticuloAlmacen extends ActiveRecord{
         
         if($resultado){
             //REDIRECIONAR AL USUARIO
-            header('Location: /tienda/inventario?resultado=2');
+            header('Location: '. $redireccion .'?resultado=2');
         }
     }
     public static function findMul($id, $almacen){

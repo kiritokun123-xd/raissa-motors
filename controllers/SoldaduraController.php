@@ -9,21 +9,21 @@ use Model\JoinArticuloStock;
 use Intervention\Image\ImageManagerStatic as Image;
 
 
-class TiendaController{
+class SoldaduraController{
 
     public static function inventario(Router $router){
-        $articulos = JoinArticuloStock::allMul(1);
+        $articulos = JoinArticuloStock::allMul(3);
 
-        $router->render('tienda/inventario',[
+        $router->render('soldadura/inventario',[
             'articulos' => $articulos
         ]);
     }
     public static function updinventario(Router $router){
-        $id = validarORedireccionar('/tienda/inventario');
+        $id = validarORedireccionar('/soldadura/inventario');
 
-        $articulo = JoinArticuloStock::findMul($id,1);
+        $articulo = JoinArticuloStock::findMul($id,3);
 
-        $articuloalmacen = ArticuloAlmacen::findMul($id,1);
+        $articuloalmacen = ArticuloAlmacen::findMul($id,3);
 
         //debuguear($articuloalmacen);
 
@@ -39,31 +39,31 @@ class TiendaController{
 
              if(empty($errores)){
                 
-                $articuloalmacen->guardarRedi('/tienda/inventario');
+                $articuloalmacen->guardarRedi('/soldadura/inventario');
             }
         }
 
-        $router->render('tienda/updinventario',[
+        $router->render('soldadura/updinventario',[
             'articulo' => $articulo,
             'errores' => $errores
         ]);
     }
 
-    public static function invtienda(Router $router){
+    public static function invsoldadura(Router $router){
         $filtro = $_POST['filtro'];
 
-        $articulos = JoinArticuloStock::filtrarAjaxMul(1,'id',$filtro);
+        $articulos = JoinArticuloStock::filtrarAjaxMul(3,'id',$filtro);
 
-        $router->renderAjax('invtiendaajax',[
+        $router->renderAjax('invsoldaduraajax',[
             'articulos' => $articulos
         ]);
     }
-    public static function invtiendaN(Router $router){
+    public static function invsoldaduraN(Router $router){
         $filtro = $_POST['filtro'];
 
-        $articulos = JoinArticuloStock::filtrarAjaxMul(1,'nombre',$filtro);
+        $articulos = JoinArticuloStock::filtrarAjaxMul(3,'nombre',$filtro);
 
-        $router->renderAjax('invtiendaajax',[
+        $router->renderAjax('invsoldaduraajax',[
             'articulos' => $articulos
         ]);
     }
