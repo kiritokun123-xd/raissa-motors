@@ -158,7 +158,7 @@ class ActiveRecord{
    
     public static function someAjax($id){
         //ESCRIBIR EL QUERY
-        $query = "SELECT * FROM " . static::$tabla . " WHERE articuloId = " . $id;
+        $query = "SELECT * FROM " . static::$tabla . " WHERE articuloId = " . $id . " ORDER BY almacenId";
         $resultado = self::constularSQL($query);
         return $resultado;
     }

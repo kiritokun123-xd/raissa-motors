@@ -12,32 +12,38 @@ echo
     <div class="stock-cant">
         <label for="stock-cant">Tienda</label>
         <input id="stock-cant" type="text" value="';
-        if(isset($articuloalmacen[0])){
+        if(($articuloalmacen[0]->almacenId == 1)){
             echo $articuloalmacen[0]->stock;
-        }else{
-            echo '0';
+        }else if(($articuloalmacen[1]->almacenId == 1)){
+            echo $articuloalmacen[1]->stock;
+        }else if(($articuloalmacen[2]->almacenId == 1)){
+            echo $articuloalmacen[2]->stock;
         }
     echo '">
     </div>
     <div class="stock-cant">
         <label for="stock-cant">Ensamblaje</label>
         <input id="stock-cant" type="text" value="';
-        if(isset($articuloalmacen[1])){
+        if(($articuloalmacen[1]->almacenId == 2)){
             echo $articuloalmacen[1]->stock;
-        }else{
-            echo '0';
+        }else if(($articuloalmacen[0]->almacenId == 2)){
+            echo $articuloalmacen[0]->stock;
+        }else if(($articuloalmacen[2]->almacenId == 2)){
+            echo $articuloalmacen[2]->stock;
         }
         echo '">
     </div>
     <div class="stock-cant">
         <label for="stock-cant">Soldadura</label>
         <input id="stock-cant" type="text" value="'; 
-        if(isset($articuloalmacen[2])){
-        echo $articuloalmacen[2]->stock;
-        }else{
-            echo '0';
+        if(($articuloalmacen[2]->almacenId == 3)){
+            echo $articuloalmacen[2]->stock;
+        }else if(($articuloalmacen[0]->almacenId == 3)){
+            echo $articuloalmacen[0]->stock;
+        }else if(($articuloalmacen[1]->almacenId == 3)){
+            echo $articuloalmacen[1]->stock;
         }
-        echo   '">
+        echo '">
     </div>
 </div>
 </div>'
@@ -45,3 +51,8 @@ echo
 
 
 ?>
+
+<script>
+verStock('.td-info-stock','popup-stock')
+ampliarArticulo('.img-articulo','.contenido-img','.popup-img')
+</script>

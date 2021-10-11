@@ -12,7 +12,7 @@ foreach($articulos as $articulo) :
         <td>S/ '. $articulo->costo .'</td>
         <td>S/ '. $articulo->venta .'</td>
         <td class="td-stock">
-            <div class="td-info-stock">
+            <div class="td-info-stock" data-paso="'. $articulo->id .'">
                 <a href="" >Ver Stock</a>
             </div>
         </td>
@@ -34,4 +34,5 @@ endforeach;
 <script>
 verStock('.td-info-stock','popup-stock')
 ampliarArticulo('.img-articulo','.contenido-img','.popup-img')
+stockArticuloAjax()
 </script>

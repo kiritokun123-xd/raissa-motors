@@ -11,10 +11,10 @@ foreach($articulos as $articulo) :
         <td class="td-descripcion">'. $articulo->descripcion .'</td>
         <td>S/ '. $articulo->costo .'</td>
         <td>S/ '. $articulo->venta .'</td>
-        <td>'. $articulo->venta .'</td>
+        <td>'. $articulo->stock .'</td>
         <td class="td-acciones"> 
-            <div class="div-acciones">
-                <a href="" class="accion-actualizar"><i class="bx bxs-pencil"></i></a>
+            <div class="div-acciones td-stock">
+                <a href="/tienda/actualizar-stock?id='. $articulo->id .'" class="accion-actualizar"><i class="bx bxs-pencil"></i></a>
             </div>
         </td>
     </tr>';

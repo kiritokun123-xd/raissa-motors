@@ -27,6 +27,7 @@
 
             invtienda()
             invtiendaN()
+
         })
         
     </script>

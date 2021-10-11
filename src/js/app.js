@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     verStock('.td-info-stock','popup-stock');
 
+
 });
 function invMotosAjaxId(){
     $('#buscarid').on('input',function(){
@@ -172,8 +173,6 @@ const verStock = (verstockid,popupstockid) => {
                 
             })
         })
-    }else{
-        console.log("No existe pdibe :'v")
     }
 }
 

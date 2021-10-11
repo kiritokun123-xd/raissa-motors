@@ -146,11 +146,25 @@ class ActiveRecord{
 
         return $resultado;
     }
+    public static function allMul($almacen){
+        //ESCRIBIR EL QUERY
+        $query = "SELECT * FROM " . static::$tabla . " WHERE almacenId = " . $almacen . " ORDER BY id";
+
+        $resultado = self::constularSQL($query);
+
+        return $resultado;
+    }
 
     //lista por busqueda ajax
     public static function filtrarAjax($columna,$filtro){
         //ESCRIBIR EL QUERY
         $query = "SELECT * FROM " . static::$tabla . " WHERE ". $columna ." LIKE " . "'%".$filtro."%'";
+        $resultado = self::constularSQL($query);
+        return $resultado;
+    }
+    public static function filtrarAjaxMul($almacen, $columna,$filtro){
+        //ESCRIBIR EL QUERY
+        $query = "SELECT * FROM " . static::$tabla . " WHERE almacenId = ". $almacen ." AND ". $columna ." LIKE " . "'%".$filtro."%'";
         $resultado = self::constularSQL($query);
         return $resultado;
     }

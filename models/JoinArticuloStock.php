@@ -3,7 +3,7 @@ namespace Model;
 
 class JoinArticuloStock extends ActiveRecord{
     
-    protected static $tabla = 'articulos';
+    protected static $tabla = 'articulos LEFT JOIN articuloalmacen ON articuloalmacen.articuloId = articulos.id';
     protected static $columnasDB = ['id', 'nombre', 'descripcion', 'costo', 'venta', 'imagen'];
     protected static $redireccion = '/logistica/inventario-articulos';
     protected static $redireccionar = false;
@@ -14,6 +14,8 @@ class JoinArticuloStock extends ActiveRecord{
     public $costo;
     public $venta;
     public $imagen;
+    public $almacenId;
+    public $stock;
 
     public function __construct($args = [])
     {
@@ -23,19 +25,17 @@ class JoinArticuloStock extends ActiveRecord{
         $this->costo = $args['costo'] ?? '';
         $this->venta = $args['venta'] ?? '';
         $this->imagen = $args['imagen'] ?? '';
+        $this->almacenId = $args['almacenId'] ?? '';
+        $this->stock = $args['stock'] ?? '';
     }
 
-    public function validar(){
-        if(!$this->nombre){
-            self::$errores[] = "El nombre es obligatorio";
-        }
-        if(!$this->costo){
-            self::$errores[] = "El costo es obligatorio";
-        }
-        if(!$this->venta){
-            self::$errores[] = "La venta es obligatoria";
-        }
 
-        return self::$errores;
+
+    public static function findMul($id, $almacen){
+        $query = "SELECT * FROM " . static::$tabla . " WHERE articuloId = ${id} AND almacenId = ${almacen}";
+
+        $resultado = self::constularSQL($query);
+
+        return array_shift($resultado);
     }
 }

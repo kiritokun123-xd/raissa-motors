@@ -42,10 +42,10 @@
                     <td class="td-descripcion"><?php echo $articulo->descripcion; ?></td>
                     <td>S/ <?php echo $articulo->costo; ?></td>
                     <td>S/ <?php echo $articulo->venta; ?></td>
-                    <td><?php echo $articulo->venta; ?></td>
+                    <td><?php echo $articulo->stock; ?></td>
                     <td class="td-acciones"> 
-                        <div class="div-acciones">
-                            <a href="" class="accion-actualizar"><i class="bx bxs-pencil"></i></a>
+                        <div class="div-acciones td-stock">
+                            <a href="/tienda/actualizar-stock?id=<?php echo $articulo->id; ?>" class="accion-actualizar"><i class="bx bxs-pencil"></i></a>
                         </div>
                     </td>
                 </tr>
@@ -63,7 +63,7 @@
 </div>
 
 <div class="popup-stock" id="popup-stock">
-    <div class="contenido-stock" id="contenido-stock">
+    <div class="contenido-stock" id="cont-stock">
         
     </div>
 </div>

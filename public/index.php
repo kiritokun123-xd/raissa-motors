@@ -62,11 +62,14 @@ $router->post('/logistica/actualizar-placa',[LogisticaController::class, 'updpla
 //=======TIENDA=============//
 
 $router->get('/tienda/inventario',[TiendaController::class, 'inventario']);
+$router->get('/tienda/actualizar-stock',[TiendaController::class, 'updinventario']);
+$router->post('/tienda/actualizar-stock',[TiendaController::class, 'updinventario']);
 
 //==========================zona ajax=================
 $router->post('/ajax/invarticuloAjax',[LogisticaController::class, 'invarticuloajax']);
 $router->post('/ajax/invarticuloAjaxId',[LogisticaController::class, 'invarticuloajaxid']);
 $router->post('/ajax/stockarticuloAjax',[LogisticaController::class, 'stockarticuloajax']);
+
 
 $router->post('/ajax/invmotoAjaxId',[LogisticaController::class, 'invmotoajaxid']);
 $router->post('/ajax/invmotoAjax',[LogisticaController::class, 'invmotoajax']);
