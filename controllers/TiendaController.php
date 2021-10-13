@@ -12,10 +12,12 @@ use Intervention\Image\ImageManagerStatic as Image;
 class TiendaController{
 
     public static function inventario(Router $router){
+        $resultado = $_GET['resultado'] ?? null;
         $articulos = JoinArticuloStock::allMul(1);
 
         $router->render('tienda/inventario',[
-            'articulos' => $articulos
+            'articulos' => $articulos,
+            'resultado' => $resultado
         ]);
     }
     public static function updinventario(Router $router){

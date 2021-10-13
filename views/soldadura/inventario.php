@@ -67,3 +67,15 @@
         
     </div>
 </div>
+
+<?php 
+    if($resultado){
+        if($resultado == 2){
+            ?>
+            <script>
+                mensajeAlerta('!Éxito!','Stock Actualizado Correctamente','success','Ok')
+            </script>
+            <?php
+        }
+    }
+?>

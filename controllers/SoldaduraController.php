@@ -6,16 +6,17 @@ use Model\Articulo;
 use Model\ArticuloAlmacen;
 use Model\JoinArticuloStock;
 
-use Intervention\Image\ImageManagerStatic as Image;
 
 
 class SoldaduraController{
 
     public static function inventario(Router $router){
+        $resultado = $_GET['resultado'] ?? null;
         $articulos = JoinArticuloStock::allMul(3);
 
         $router->render('soldadura/inventario',[
-            'articulos' => $articulos
+            'articulos' => $articulos,
+            'resultado' => $resultado
         ]);
     }
     public static function updinventario(Router $router){

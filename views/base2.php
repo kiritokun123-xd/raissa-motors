@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../build/css/app.css">
     <!--==SWEET ALERT-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="sweetalert2.all.min.js"></script>
+    <!-- <script src="sweetalert2.all.min.js"></script> -->
 
     <script src="../build/js/bundle.min.js"></script>
     <script src="../build/js/jquery-3.6.0.min.js"></script>
@@ -58,7 +58,7 @@
 
             <hr class="siderbar-divider my-0">
 
-            <li class="nav-item">
+            <li class="nav-item not-visible">
                 <a href="/dashboard" class="nav-link">
                     <i class='bx bxs-dashboard bx-icon'></i>
                     <span class="span">Dashboard</span>
@@ -86,7 +86,7 @@
                 </div>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item not-visible"">
                 <a href="" class="nav-link navlink" data-paso="1">
                     <i class='bx bx-cart-alt bx-icon'></i>
                     <span class="span">Operaciones</span>
@@ -102,7 +102,7 @@
                 </div>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item not-visible"">
                 <a href="" class="nav-link navlink" data-paso="2">
                     <i class='bx bxs-user-detail bx-icon'></i>
                     <span class="span">Proveedores</span>
@@ -129,7 +129,7 @@
                 </a> 
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item not-visible"">
                 <a href="" class="nav-link navlink" data-paso="3">
                     <i class='bx bx-cart-alt bx-icon'></i>
                     <span class="span">Operaciones</span>
@@ -145,7 +145,7 @@
                 </div>
             </li>
             
-            <hr class="siderbar-divider">
+            <hr class="siderbar-divider ">
 
             <div class="sidebar-heading">Almacén Ensamblaje</div>
 
@@ -156,7 +156,7 @@
                 </a> 
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item not-visible"">
                 <a href="" class="nav-link navlink" data-paso="4">
                     <i class='bx bx-cart-alt bx-icon'></i>
                     <span class="span">Operaciones</span>
@@ -199,7 +199,7 @@
                 </a> 
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item not-visible"">
                 <a href="" class="nav-link navlink" data-paso="5">
                     <i class='bx bx-cart-alt bx-icon'></i>
                     <span class="span">Operaciones</span>
