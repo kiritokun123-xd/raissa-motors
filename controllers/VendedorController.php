@@ -20,7 +20,7 @@ class VendedorController{
             //No hay errores
             if(empty($errores)){
                 //Sube BD
-                $vendedor->guardar();
+                $vendedor->guardar('');
             }
         }
 

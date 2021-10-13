@@ -130,7 +130,7 @@ class LogisticaController{
                     }
                 }
                 
-                $articulo->guardar();
+                $articulo->guardar('/logistica/inventario-articulos');
             }
 
         }
@@ -249,7 +249,7 @@ class LogisticaController{
                     }
                 }
                 
-                $moto->guardar();
+                $moto->guardar('/logistica/inventario-motos');
             }
 
         }
@@ -350,7 +350,7 @@ class LogisticaController{
                 //     }
                 // }
                 
-                $placa->guardar();
+                $placa->guardar('/logistica/inventario-placas');
             }
 
         }

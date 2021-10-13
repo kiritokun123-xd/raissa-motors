@@ -24,7 +24,7 @@ class ActiveRecord{
         if(!is_null($this->id)){
             //Actualizar
             //debuguear("actualizando...");
-            $this->actualizar();
+            $this->actualizar($redireccion);
              
         }else{
             //Creando un nuevo registo
@@ -33,7 +33,7 @@ class ActiveRecord{
             
         }
     }
-    public function actualizar(){
+    public function actualizar($redireccion){
         
         //SANITIZAR LOS DATOS
         $atributos = $this->sanitizarAtributos();
@@ -52,7 +52,7 @@ class ActiveRecord{
         
         if($resultado){
             //REDIRECIONAR AL USUARIO
-            header('Location: '. static::$redireccion .'?resultado=2');
+            header('Location: '. $redireccion .'?resultado=2');
         }
     }
     public function crear($redireccion){
