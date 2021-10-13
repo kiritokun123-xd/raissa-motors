@@ -24,7 +24,7 @@ class ActiveRecord{
         if(!is_null($this->id)){
             //Actualizar
             //debuguear("actualizando...");
-            $this->actualizar();
+            $this->actualizar($redireccion);
              
         }else{
             //Creando un nuevo registo
