@@ -18,7 +18,7 @@ class ActiveRecord{
         Self::$db = $database;
     }
 
-    public function guardar(){
+    public function guardar($redireccion){
         
         //debuguear($this);
         if(!is_null($this->id)){
@@ -29,7 +29,7 @@ class ActiveRecord{
         }else{
             //Creando un nuevo registo
             //debuguear("Creando...."); 
-            $this->crear(); 
+            $this->crear($redireccion); 
             
         }
     }
@@ -55,7 +55,7 @@ class ActiveRecord{
             header('Location: '. static::$redireccion .'?resultado=2');
         }
     }
-    public function crear(){
+    public function crear($redireccion){
         
         //SANITIZAR LOS DATOS
         $atributos = $this->sanitizarAtributos();
@@ -71,7 +71,7 @@ class ActiveRecord{
         //
         if($resultado){
             //REDIRECIONAR AL USUARIO
-            header('Location: '. self::$redireccion .'?resultado=1');
+            header('Location: '. $redireccion .'?resultado=1');
         }
     }
 

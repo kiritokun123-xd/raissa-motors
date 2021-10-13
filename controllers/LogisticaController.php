@@ -142,10 +142,12 @@ class LogisticaController{
     }
 
     public static function invmoto(Router $router){
+        $resultado = $_GET['resultado'] ?? null;
         $motos = Moto::all();
     
         $router->render('logistica/invmoto',[
-            'motos' => $motos
+            'motos' => $motos,
+            'resultado' => $resultado
         ]);
     }
     public static function invmotoajax(Router $router){
@@ -200,7 +202,7 @@ class LogisticaController{
                 }
 
                 //SUBE A LA BD
-                $moto->guardar();
+                $moto->guardar('/logistica/inventario-motos');
                 
             }
         }
@@ -260,9 +262,11 @@ class LogisticaController{
     
     public static function invplaca(Router $router){
         $placas = Placa::all();
+        $resultado = $_GET['resultado'] ?? null;
 
         $router->render('logistica/invplaca',[
-            'placas' => $placas
+            'placas' => $placas,
+            'resultado' => $resultado
         ]);
     }
     public static function newplaca(Router $router){
@@ -299,7 +303,7 @@ class LogisticaController{
                 // }
 
                 //SUBE A LA BD
-                $placa->guardar();
+                $placa->guardar('/logistica/inventario-placas');
                 
             }
         }

@@ -37,7 +37,7 @@ class ArticuloAlmacen extends ActiveRecord{
         }else{
             //Creando un nuevo registo
             //debuguear("Creando...."); 
-            $this->crear(); 
+            $this->crear($redireccion); 
             
         }
     }

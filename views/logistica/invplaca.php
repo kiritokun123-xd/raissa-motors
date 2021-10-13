@@ -64,3 +64,21 @@
     </div>
 
 </main>
+<?php 
+    if($resultado){
+        if($resultado == 1){
+            ?>
+            <script>
+                mensajeAlerta('!Éxito!','Artículo agregado Correctamente','success','Ok')
+            </script>
+            <?php
+        }
+        if($resultado == 2){
+            ?>
+            <script>
+                mensajeAlerta('!Éxito!','Artículo Actualizado Correctamente','success','Ok')
+            </script>
+            <?php
+        }
+    }
+?>

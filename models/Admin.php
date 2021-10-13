@@ -26,6 +26,7 @@ class Admin extends ActiveRecord{
         $query = "INSERT INTO usuarios (nombre, password) VALUES ('${nombre}','${passwordHash}')";
    
         $resultado = self::$db->query($query); 
+        debuguear($resultado);
     }
 
     public function validar(){
