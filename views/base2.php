@@ -20,24 +20,7 @@
     <script >
         $(document).ready(function(){
             
-            invArticuloAjaxId()
-            invArticuloAjax()    
-            stockArticuloAjax()     
-            
-            invMotosAjaxId()
-            invMotosAjax()
-            
-            invPlacasAjaxP()
-            invPlacasAjaxN()
-
-            invtienda()
-            invtiendaN()
-
-            invensamblaje()
-            invensamblajeN()
-
-            invsoldadura()
-            invsoldaduraN()
+            functionsAjax()
         })
         
     </script>
@@ -58,7 +41,7 @@
 
             <hr class="siderbar-divider my-0">
 
-            <li class="nav-item not-visible">
+            <li class="nav-item ">
                 <a href="/dashboard" class="nav-link">
                     <i class='bx bxs-dashboard bx-icon'></i>
                     <span class="span">Dashboard</span>
@@ -272,7 +255,7 @@
                         <div class="bloque-nav"></div>
                         <li class="nav-item-li">
                             <a href="" id="nav-link-li" class="nav-link-li">
-                                <span class="name-link">Marco</span>
+                                <span class="name-link">Coseca</span>
                                 <img src="/imagenes/perfil.svg" class="img-perfil" alt="imagen del perfil">
                             </a>    
                             <div class="caja-perfil" id="caja-perfil">
@@ -291,7 +274,7 @@
                                 
                                 <div class="divider-perfil"></div>
 
-                                <a href class="perfil-item">
+                                <a href="/logout" class="perfil-item">
                                     <i class='bx bx-log-out'></i>   
                                     <span>Salir</span>
                                 </a>

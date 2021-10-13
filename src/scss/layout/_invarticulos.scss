@@ -12,7 +12,7 @@
     overflow: hidden;
     border-radius: 0.5rem;
     border: 1px solid #e3e6f0;
-    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
     .gestion-titulo{
         background-color: #f8f9fc;
         padding: 0.8rem 1.5rem;
@@ -60,6 +60,16 @@
                 font-size: 1.6rem;
                 font-weight: 700;
             }
+        }
+        .icono-caja{
+            font-size: 15rem;
+            color: #4e73df;
+        }
+        .mensaje{
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #858796;
         }
         .buscar-articulo{
             margin-top: 1rem;
@@ -550,4 +560,58 @@
 .not-visible{
     display: none;
     visibility: hidden;
+}
+
+.contenedor-accesos{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    @include tablet{
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2rem;
+    }
+    a{
+        transition: 0.3s;
+    }
+    a:hover{
+        box-shadow: 0px 0px 0px 3px rgba(127,201,235,0.29);
+    }
+    .acceso-articulo{
+        width: 100%;
+        background-color: $blanco;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        border: 1px solid #e3e6f0;
+        box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+        .acceso-titulo{
+            background-color: #f8f9fc;
+            padding: 0.8rem 1.5rem;
+            border-bottom: 1px solid #e3e6f0;
+            h3{
+                margin: 0;
+                color: #4e73df;
+                font-weight: 700;
+                font-size: 1.8rem;
+                text-align: center;
+                &.verde{
+                    color: #1cc88a;
+                }
+                &.rojo{
+                    color: #e74a3b;
+                }
+            }
+        }
+        .acceso-caja{
+            text-align: center;
+            font-size: 15rem;
+            color: #4e73df;
+            &.verde{
+                color: #1cc88a;
+            }
+            &.rojo{
+                color: #e74a3b;
+            }
+        }
+    }
 }

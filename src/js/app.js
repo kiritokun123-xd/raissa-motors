@@ -15,6 +15,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 });
+function functionsAjax() {
+    invArticuloAjaxId()
+    invArticuloAjax()    
+    stockArticuloAjax()     
+    
+    invMotosAjaxId()
+    invMotosAjax()
+    
+    invPlacasAjaxP()
+    invPlacasAjaxN()
+
+    invtienda()
+    invtiendaN()
+
+    invensamblaje()
+    invensamblajeN()
+
+    invsoldadura()
+    invsoldaduraN()
+}
 function mensajeAlerta(titulo,texto,icono,boton){
     Swal.fire({
         title: titulo,
