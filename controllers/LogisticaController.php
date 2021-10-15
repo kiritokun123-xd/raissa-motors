@@ -26,7 +26,7 @@ class LogisticaController{
 
         $articulos = Articulo::filtrarAjax('id',$filtro);
 
-        $router->renderAjax('invarticuloAjax',[
+        $router->renderAjax('invarticuloajax',[
             'articulos' => $articulos
         ]);
     }
@@ -47,7 +47,7 @@ class LogisticaController{
 
         $articulos = Articulo::filtrarAjax('nombre',$filtro);
 
-        $router->renderAjax('invarticuloAjax',[
+        $router->renderAjax('invarticuloajax',[
             'articulos' => $articulos
         ]);
     }
