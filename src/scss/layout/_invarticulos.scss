@@ -40,19 +40,7 @@
             flex-direction: row;
            
         }
-        .link-pag{
-            color: #4e73df;
-            padding: 0.4rem 1rem;
-            border-left: 1px solid #d1d3e2;
-            border-top: 1px solid #d1d3e2;
-            border-bottom: 1px solid #d1d3e2;
-            &:last-of-type{
-                border-right: 1px solid #d1d3e2;
-            }
-            &:hover{
-                background-color: #d1d3e2;
-            }
-        }
+        
         .nuevo-articulo{
             text-align: center;
             text-decoration: none;
