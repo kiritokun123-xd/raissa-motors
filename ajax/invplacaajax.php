@@ -20,7 +20,7 @@
                 </form>
             </div>
         </td>
-        <td>En tienda</td>
+        <td>' .$placa->estado .'</td>
     </tr>';
     endforeach; 
 

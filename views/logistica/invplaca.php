@@ -55,7 +55,7 @@
                             </form>
                         </div>
                     </td>
-                    <td>En tienda</td>
+                    <td><?php echo $placa->estado ?></td>
                 </tr>
                 <?php endforeach; ?>
                 

@@ -17,7 +17,7 @@ class Admin extends ActiveRecord{
     }
 
     public function crearusuario(){
-        $nombre = "coseca123456";
+        $nombre = "flor@coseca.com";
         $password = "123456";
 
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
