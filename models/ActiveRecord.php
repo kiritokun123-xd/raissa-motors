@@ -138,17 +138,27 @@ class ActiveRecord{
     }
 
     //Lista todos los registros
-    public static function all(){
+    public static function all($offset,$cantidad){
         //ESCRIBIR EL QUERY
-        $query = "SELECT * FROM " . static::$tabla;
+        $query = "SELECT * FROM " . static::$tabla . " LIMIT " . $offset . " , " . $cantidad;
         
         $resultado = self::constularSQL($query);
 
         return $resultado;
     }
-    public static function allMul($almacen){
+    public static function totalPagina(){
         //ESCRIBIR EL QUERY
-        $query = "SELECT * FROM " . static::$tabla . " WHERE almacenId = " . $almacen . " ORDER BY id";
+        $query = "SELECT * FROM " . static::$tabla;
+        
+        $resultado = self::constularSQL($query);
+
+        $totalPagina = count($resultado);
+
+        return $totalPagina;
+    }
+    public static function allMul($almacen, $offset, $cantidad){
+        //ESCRIBIR EL QUERY
+        $query = "SELECT * FROM " . static::$tabla . " WHERE almacenId = " . $almacen . " ORDER BY id" . " LIMIT " . $offset . " , " . $cantidad;
 
         $resultado = self::constularSQL($query);
 

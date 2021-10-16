@@ -63,6 +63,14 @@
         </table>
     </div>
 
+    <div class="gestion-articulo">
+        <div class="gestion-caja paginador">
+        <?php for($i = 1 ;$i<=$totalLink; $i++) : ?>
+            <a href="/logistica/inventario-placas?pag=<?php echo $i ?>" class="link-pag"><?php echo $i ?></a>
+        <?php endfor; ?>
+        </div>
+    </div>
+
 </main>
 <?php 
     if($resultado){

@@ -233,6 +233,12 @@ const verStock = (verstockid,popupstockid) => {
     
                 popupstock.onclick = function(){
                     popupstock.classList.remove('active')
+                    // const stockimg = document.querySelector('.stock-img'),
+                    // stockinfo = document.querySelector('.stock-info')
+
+                    // contenidostock.removeChild(stockimg)
+                    // contenidostock.removeChild(stockinfo)
+
                 }
                 
             })

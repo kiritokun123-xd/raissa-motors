@@ -13,11 +13,30 @@ class EnsamblajeController{
 
     public static function inventario(Router $router){
         $resultado = $_GET['resultado'] ?? null;
-        $articulos = JoinArticuloStock::allMul(2);
+
+        $limite = 10;
+        
+        $pag = $_GET['pag'] ?? null;
+
+        $offset = 0;
+
+        $totalPagina = Articulo::totalPagina();
+
+        $totalLink = ceil($totalPagina/ $limite);
+        
+        if(isset($pag)){
+            if($pag < 1){
+                $pag = 1;
+            }
+            $offset = ($pag - 1) * $limite;    
+        }
+
+        $articulos = JoinArticuloStock::allMul(2, $offset, $limite);
 
         $router->render('ensamblaje/inventario',[
             'articulos' => $articulos,
-            'resultado' => $resultado
+            'resultado' => $resultado,
+            'totalLink' => $totalLink
         ]);
     }
     public static function updinventario(Router $router){

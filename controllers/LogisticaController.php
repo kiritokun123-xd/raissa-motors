@@ -11,14 +11,34 @@ use Model\Placa;
 
 class LogisticaController{
 
-    public static function invarticulo(Router $router){
-        $articulos = Articulo::all();
+    //=====ARTICULO======//
 
+    public static function invarticulo(Router $router){
         $resultado = $_GET['resultado'] ?? null;
+
+        $limite = 10;
+        
+        $pag = $_GET['pag'] ?? null;
+
+        $offset = 0;
+
+        $totalPagina = Articulo::totalPagina();
+
+        $totalLink = ceil($totalPagina/ $limite);
+        
+        if(isset($pag)){
+            if($pag < 1){
+                $pag = 1;
+            }
+            $offset = ($pag - 1) * $limite;    
+        }
+
+        $articulos = Articulo::all($offset, $limite);
 
         $router->render('logistica/invarticulo',[
             'articulos' => $articulos,
-            'resultado' => $resultado
+            'resultado' => $resultado,
+            'totalLink' => $totalLink
         ]);
     }
     public static function invarticuloajaxid(Router $router){
@@ -141,13 +161,33 @@ class LogisticaController{
         ]);
     }
 
+    //=====MOTO======//
+
     public static function invmoto(Router $router){
         $resultado = $_GET['resultado'] ?? null;
-        $motos = Moto::all();
+
+        $limite = 10;
+        
+        $pag = $_GET['pag'] ?? null;
+
+        $offset = 0;
+
+        $totalPagina = Moto::totalPagina();
+
+        $totalLink = ceil($totalPagina/ $limite);
+        
+        if(isset($pag)){
+            if($pag < 1){
+                $pag = 1;
+            }
+            $offset = ($pag - 1) * $limite;    
+        }
+        $motos = Moto::all($offset, $limite);
     
         $router->render('logistica/invmoto',[
             'motos' => $motos,
-            'resultado' => $resultado
+            'resultado' => $resultado,
+            'totalLink' => $totalLink
         ]);
     }
     public static function invmotoajax(Router $router){
@@ -259,14 +299,34 @@ class LogisticaController{
             'errores' => $errores
         ]);
     }
+
+    //=====PLACA======//
     
     public static function invplaca(Router $router){
-        $placas = Placa::all();
         $resultado = $_GET['resultado'] ?? null;
 
+        $limite = 10;
+        
+        $pag = $_GET['pag'] ?? null;
+
+        $offset = 0;
+
+        $totalPagina = Placa::totalPagina();
+
+        $totalLink = ceil($totalPagina/ $limite);
+        
+        if(isset($pag)){
+            if($pag < 1){
+                $pag = 1;
+            }
+            $offset = ($pag - 1) * $limite;    
+        }
+        
+        $placas = Placa::all($offset,$limite);
         $router->render('logistica/invplaca',[
             'placas' => $placas,
-            'resultado' => $resultado
+            'resultado' => $resultado,
+            'totalLink' => $totalLink
         ]);
     }
     public static function newplaca(Router $router){
