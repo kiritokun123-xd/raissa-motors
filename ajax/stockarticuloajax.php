@@ -1,5 +1,4 @@
 <?php
-
 echo 
 '<div class="stock-img">
 <img id="img-articulo" src="/imagenes/' . $articulo->imagen . '" alt="">
@@ -53,6 +52,6 @@ echo
 ?>
 
 <script>
-verStock('.td-info-stock','popup-stock')
+//verStock('.td-info-stock','popup-stock')
 //ampliarArticulo('.img-articulo','.contenido-img','.popup-img')
 </script>

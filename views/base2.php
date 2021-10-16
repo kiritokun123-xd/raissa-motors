@@ -20,8 +20,8 @@
     
     <script >
         $(document).ready(function(){
-            
             functionsAjax()
+            
         })
         
     </script>
