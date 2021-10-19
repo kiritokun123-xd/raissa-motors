@@ -17,6 +17,8 @@
 
     <script src="../build/js/bundle.min.js"></script>
     <script src="../build/js/jquery-3.6.0.min.js"></script>
+    <!--====CHARTJS===-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <script >
         $(document).ready(function(){
