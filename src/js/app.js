@@ -34,6 +34,9 @@ function functionsAjax() {
 
     invsoldadura()
     invsoldaduraN()
+
+    invUsuariosAjaxId()
+    invUsuariosAjaxN()  
 }
 function mensajeAlerta(titulo,texto,icono,boton){
     Swal.fire({
@@ -42,6 +45,24 @@ function mensajeAlerta(titulo,texto,icono,boton){
         icon: icono,
         confirmButtonText: boton
     })
+}
+function invUsuariosAjaxId(){
+    $('#buscarid').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invusuarioAjaxId", { filtro: filtro }, function(data) {
+            $("#usuario-body").html(data);
+            
+        });  
+    })            
+}
+function invUsuariosAjaxN(){
+    $('#buscarnombre').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invusuarioAjaxN", { filtro: filtro }, function(data) {
+            $("#usuario-body").html(data);
+            
+        });  
+    })            
 }
 function invMotosAjaxId(){
     $('#buscarid').on('input',function(){

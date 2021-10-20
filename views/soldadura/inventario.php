@@ -58,7 +58,7 @@
     <div class="gestion-articulo">
         <div class="gestion-caja paginador">
         <?php for($i = 1 ;$i<=$totalLink; $i++) : ?>
-            <a href="/tienda/inventario?pag=<?php echo $i ?>" class="paginas"><?php echo $i ?></a>
+            <a href="/soldadura/inventario?pag=<?php echo $i ?>" class="paginas"><?php echo $i ?></a>
         <?php endfor; ?>
         </div>
     </div>

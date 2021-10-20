@@ -200,9 +200,18 @@
                     </div>
                 </div>
             </li>
-
+            
             <hr class="siderbar-divider">
 
+            <li class="nav-item">
+                <a href="/acceso/usuario" class="nav-link">
+                    <i class='bx bx-user bx-icon'></i>
+                    <span class="span">Accesos y Usuarios</span>
+                </a>
+            </li>
+            
+            <hr class="siderbar-divider">
+            
             <li class="nav-item">
                 <a href="" class="nav-link">
                     <i class='bx bx-laptop bx-icon'></i>
