@@ -5,12 +5,15 @@ use MVC\Router;
 use Model\Articulo;
 use Model\ArticuloAlmacen;
 use Model\JoinArticuloStock;
-
+use Model\UsuarioPermiso;
 
 
 class SoldaduraController{
 
     public static function inventario(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        
         $resultado = $_GET['resultado'] ?? null;
 
         $limite = 10;
@@ -36,10 +39,14 @@ class SoldaduraController{
         $router->render('soldadura/inventario',[
             'articulos' => $articulos,
             'resultado' => $resultado,
-            'totalLink' => $totalLink
+            'totalLink' => $totalLink,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
     public static function updinventario(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $id = validarORedireccionar('/soldadura/inventario');
 
         $articulo = JoinArticuloStock::findMul($id,3);
@@ -66,7 +73,8 @@ class SoldaduraController{
 
         $router->render('soldadura/updinventario',[
             'articulo' => $articulo,
-            'errores' => $errores
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
 

@@ -86,9 +86,15 @@ class Admin extends ActiveRecord{
     public function autenticar(){
         session_start();
 
+        $query = " SELECT id FROM " . self::$tabla . " WHERE nombre = '" . $this->nombre . "' LIMIT 1";
+
+        $id = self::$db->query($query);  
+ 
+        $id = mysqli_fetch_assoc($id)['id'];
+        
         //llenar arreglo de sesion
-        $_SESSION['usuario'] = $this->email;
         $_SESSION['login'] = true;
+        $_SESSION['id'] = $id[0];
 
         header('Location: /dashboard');
     }

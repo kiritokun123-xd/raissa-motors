@@ -1,5 +1,5 @@
 <main class="main">
-    <h2 class="main-titulo">Accesos - Actualizar Usuario</h2>
+    <h2 class="main-titulo">Accesos - Actualizar Permisos</h2>
 
     <div class="popup-newarticulo" id="popup-newarticulo">
         <div class="contenido-newarticulo">

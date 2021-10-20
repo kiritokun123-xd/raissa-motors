@@ -53,10 +53,10 @@
 
             <hr class="siderbar-divider">
 
-            <div class="sidebar-heading">Logística</div>
+            <div class="sidebar-heading" <?php echo (noTienePermiso(1,$arrayPermisos))? 'style="display: none"': ''; ?>>Logística</div>
 
-            <li class="nav-item">
-                <a href="" class="nav-link navlink" data-paso="0">
+            <li class="nav-item" <?php echo (noTienePermiso(1,$arrayPermisos))? 'style="display: none"': ''; ?>>
+                <a href="" class="nav-link navlink"  data-paso="0">
                     <i class='bx bx-cart-alt bx-icon'></i>
                     <span class="span">Inventario General</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
@@ -72,7 +72,7 @@
                 </div>
             </li>
 
-            <li class="nav-item not-visible"">
+            <li class="nav-item not-visible" >
                 <a href="" class="nav-link navlink" data-paso="1">
                     <i class='bx bx-cart-alt bx-icon'></i>
                     <span class="span">Operaciones</span>
@@ -106,16 +106,16 @@
 
             <hr class="siderbar-divider">
 
-            <div class="sidebar-heading">Almacén Tienda</div>
+            <div class="sidebar-heading" <?php echo (noTienePermiso(2,$arrayPermisos))? 'style="display: none"': ''; ?>>Almacén Tienda</div>
 
-            <li class="nav-item">
+            <li class="nav-item" <?php echo (noTienePermiso(2,$arrayPermisos))? 'style="display: none"': ''; ?>>
                 <a href="/tienda/inventario" class="nav-link">
                     <i class='bx bxs-store-alt bx-icon'></i>
                     <span class="span">Inventario</span>
                 </a> 
             </li>
 
-            <li class="nav-item not-visible"">
+            <li class="nav-item not-visible">
                 <a href="" class="nav-link navlink" data-paso="3">
                     <i class='bx bx-cart-alt bx-icon'></i>
                     <span class="span">Operaciones</span>
@@ -133,9 +133,9 @@
             
             <hr class="siderbar-divider ">
 
-            <div class="sidebar-heading">Almacén Ensamblaje</div>
+            <div class="sidebar-heading" <?php echo (noTienePermiso(3,$arrayPermisos))? 'style="display: none"': ''; ?>>Almacén Ensamblaje</div>
 
-            <li class="nav-item">
+            <li class="nav-item" <?php echo (noTienePermiso(3,$arrayPermisos))? 'style="display: none"': ''; ?>>
                 <a href="/ensamblaje/inventario" class="nav-link">
                     <i class='bx bxs-store-alt bx-icon'></i>
                     <span class="span">Inventario</span>
@@ -176,9 +176,9 @@
 
             <hr class="siderbar-divider">
 
-            <div class="sidebar-heading">Almacén Soldadura</div>
+            <div class="sidebar-heading" <?php echo (noTienePermiso(4,$arrayPermisos))? 'style="display: none"': ''; ?>>Almacén Soldadura</div>
 
-            <li class="nav-item">
+            <li class="nav-item" <?php echo (noTienePermiso(4,$arrayPermisos))? 'style="display: none"': ''; ?>>
                 <a href="/soldadura/inventario" class="nav-link">
                     <i class='bx bxs-store-alt bx-icon'></i>
                     <span class="span">Inventario</span>
@@ -203,7 +203,7 @@
             
             <hr class="siderbar-divider">
 
-            <li class="nav-item">
+            <li class="nav-item" <?php echo (noTienePermiso(1,$arrayPermisos))? 'style="display: none"': ''; ?>>
                 <a href="/acceso/usuario" class="nav-link">
                     <i class='bx bx-user bx-icon'></i>
                     <span class="span">Accesos y Usuarios</span>
@@ -212,7 +212,7 @@
             
             <hr class="siderbar-divider">
             
-            <li class="nav-item">
+            <li class="nav-item" <?php echo (noTienePermiso(1,$arrayPermisos))? 'style="display: none"': ''; ?>>
                 <a href="" class="nav-link">
                     <i class='bx bx-laptop bx-icon'></i>
                     <span class="span">Administrar Página</span>

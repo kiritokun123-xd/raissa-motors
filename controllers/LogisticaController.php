@@ -5,6 +5,7 @@ use MVC\Router;
 use Model\Articulo;
 use Model\Moto;
 use Model\ArticuloAlmacen;
+use Model\UsuarioPermiso;
 
 use Intervention\Image\ImageManagerStatic as Image;
 use Model\Placa;
@@ -14,7 +15,11 @@ class LogisticaController{
     //=====ARTICULO======//
 
     public static function invarticulo(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $resultado = $_GET['resultado'] ?? null;
+        
 
         $limite = 10;
         
@@ -38,7 +43,8 @@ class LogisticaController{
         $router->render('logistica/invarticulo',[
             'articulos' => $articulos,
             'resultado' => $resultado,
-            'totalLink' => $totalLink
+            'totalLink' => $totalLink,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
     public static function invarticuloajaxid(Router $router){
@@ -72,6 +78,9 @@ class LogisticaController{
         ]);
     }
     public static function newarticulo(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $articulo = new Articulo();
 
         $errores = Articulo::getErrores();
@@ -114,10 +123,14 @@ class LogisticaController{
 
         $router->render('logistica/newarticulo',[
             'articulo' => $articulo,
-            'errores' => $errores
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
     public static function updarticulo(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $id = validarORedireccionar('/logistica/inventario-articulos');
 
         $articulo = Articulo::find($id);
@@ -157,13 +170,17 @@ class LogisticaController{
 
         $router->render('logistica/updarticulo',[
             'articulo' => $articulo,
-            'errores' => $errores
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
 
     //=====MOTO======//
 
     public static function invmoto(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $resultado = $_GET['resultado'] ?? null;
 
         $limite = 10;
@@ -187,7 +204,8 @@ class LogisticaController{
         $router->render('logistica/invmoto',[
             'motos' => $motos,
             'resultado' => $resultado,
-            'totalLink' => $totalLink
+            'totalLink' => $totalLink,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
     public static function invmotoajax(Router $router){
@@ -209,6 +227,9 @@ class LogisticaController{
         ]);
     }
     public static function newmoto(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $moto = new Moto();
 
         $errores = Moto::getErrores();
@@ -248,10 +269,14 @@ class LogisticaController{
         }
         $router->render('logistica/newmoto',[
             'moto' => $moto,
-            'errores' => $errores
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
     public static function updmoto(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $id = validarORedireccionar('/logistica/inventario-motos');
 
         $moto = Moto::find($id);
@@ -296,13 +321,17 @@ class LogisticaController{
 
         $router->render('logistica/updmoto',[
             'moto' => $moto,
-            'errores' => $errores
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
 
     //=====PLACA======//
     
     public static function invplaca(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $resultado = $_GET['resultado'] ?? null;
 
         $limite = 10;
@@ -326,10 +355,14 @@ class LogisticaController{
         $router->render('logistica/invplaca',[
             'placas' => $placas,
             'resultado' => $resultado,
-            'totalLink' => $totalLink
+            'totalLink' => $totalLink,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
     public static function newplaca(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $placa = new Placa();
 
         $errores = Placa::getErrores();
@@ -340,27 +373,12 @@ class LogisticaController{
             //GENERAR UN NOMBRE UNICO
             $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
 
-            //SETEAR LA IMAGEN
-            //realiza un RESIZE A LA IMAGEN CON INTERVENTION
-            // if($_FILES['placa']['tmp_name']['imagen']){
-            //     $image = Image::make($_FILES['placa']['tmp_name']['imagen'])->fit(600,600);
-            //     $placa->setImagen($nombreImagen);
-            // }
 
             /*VALIDAR*/
             $errores = $placa->validar();
 
             //REVISAR QUE EL ARREGLO DE ERRORES ESTE VACIO
             if(empty($errores)){
-                //crear la carpeta imagenes
-                // if(!is_dir(CARPETA_IMAGENES)){
-                //     mkdir(CARPETA_IMAGENES);
-                // }
-
-                // //GUARDA LA IMAGEN EN EL SERVIDOR
-                // if(isset($image)){
-                //     $image->save(CARPETA_IMAGENES . $nombreImagen);
-                // }
 
                 //SUBE A LA BD
                 $placa->guardar('/logistica/inventario-placas');
@@ -369,10 +387,14 @@ class LogisticaController{
         }
         $router->render('logistica/newplaca',[
             'placa' => $placa,
-            'errores' => $errores
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
     public static function updplaca(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $id = validarORedireccionar('/logistica/inventario-placas');
 
         $placa = Placa::find($id);
@@ -388,27 +410,9 @@ class LogisticaController{
             
             $errores = $placa->validar();
             
-            //Validación subida de archivos
-            //GENERAR UN NOMBRE UNICO
-            //$nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
-            
-            // if($_FILES['placa']['tmp_name']['imagen']){
-                
-            //     $image = Image::make($_FILES['placa']['tmp_name']['imagen'])->fit(600,600);
-            //     $placa->setImagen($nombreImagen);
-                
-            // }
-            
 
             //REVISAR QUE EL AAREGLO DE ERRORES ESTE VACIO
             if(empty($errores)){
-                // if($_FILES['placa']['tmp_name']['imagen']){
-                //     //GUARDA LA IMAGEN EN EL SERVIDOR
-                //     if($image){
-                //         $image->save(CARPETA_IMAGENES . $nombreImagen);
-                        
-                //     }
-                // }
                 
                 $placa->guardar('/logistica/inventario-placas');
             }
@@ -417,7 +421,8 @@ class LogisticaController{
 
         $router->render('logistica/updplaca',[
             'placa' => $placa,
-            'errores' => $errores
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
     public static function invplacaajaxn(Router $router){

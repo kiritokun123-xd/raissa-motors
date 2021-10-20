@@ -9,6 +9,9 @@ use Model\UsuarioPermiso;
 class UsuarioController{
 
     public static function usuario(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $resultado = $_GET['resultado'] ?? null;
 
         $limite = 10;
@@ -34,10 +37,14 @@ class UsuarioController{
         $router->render('acceso/usuario',[
             'usuarios' => $usuarios,
             'resultado' => $resultado,
-            'totalLink' => $totalLink
+            'totalLink' => $totalLink,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
     public static function newusuario(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        
         $usuario = new Admin();
 
         $usuarioPermiso = new UsuarioPermiso();
@@ -63,7 +70,8 @@ class UsuarioController{
         }
         $router->render('acceso/newusuario',[
             'usuario' => $usuario,
-            'errores' => $errores
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
 
@@ -87,6 +95,9 @@ class UsuarioController{
     }
 
     public static function updusuario(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $id = validarORedireccionar('/acceso/usuario');
 
         $usuario = Admin::find($id);
@@ -113,10 +124,14 @@ class UsuarioController{
 
         $router->render('acceso/updusuario',[
             'usuario' => $usuario,
-            'errores' => $errores
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
     public static function permiso(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $id = validarORedireccionar('/acceso/usuario');
 
         $usuario = Admin::find($id);
@@ -137,7 +152,8 @@ class UsuarioController{
 
         $router->render('acceso/permisos',[
             'usuario' => $usuario,
-            'usuariopermisos' => $usuariopermisos
+            'usuariopermisos' => $usuariopermisos,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
 }

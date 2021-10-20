@@ -69,3 +69,19 @@ function validarORedireccionar(string $url){
     }
     return $id;
 }
+function noTienePermiso($area, $objeto){
+    foreach($objeto as $obj){
+        if($obj->permisoId == $area){
+            if($obj->permitido == 'no'){
+                return true;
+            }
+        }     
+    }
+    return false;
+}
+
+function ocultarDiv($nivel){
+    if(!$nivel){
+        echo 'style="display: none"';
+    }
+}
