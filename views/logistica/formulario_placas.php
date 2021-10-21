@@ -5,13 +5,13 @@
 <input type="text" id="new-articulo-descripcion" name="placa[propietario]" placeholder="Ingrese Propietario" value="<?php echo s($placa->propietario); ?>">
 
 <label for="new-articulo-vim">Vim:</label>
-<input type="number" id="new-articulo-vim" name="placa[vim]" placeholder="Ingrese Nº Vim" value="<?php echo s($placa->vim); ?>">
+<input type="text" id="new-articulo-vim" name="placa[vim]" placeholder="Ingrese Nº Vim" value="<?php echo s($placa->vim); ?>">
 
 <label for="new-articulo-motor">Motor:</label>
-<input type="number" id="new-articulo-motor" name="placa[motor]" placeholder="Ingrese serie motor" value="<?php echo s($placa->motor); ?>">
+<input type="text" id="new-articulo-motor" name="placa[motor]" placeholder="Ingrese serie motor" value="<?php echo s($placa->motor); ?>">
 
 <label for="new-articulo-dua">Título:</label>
-<input type="number" id="new-articulo-dua" name="placa[titulo]" placeholder="Ingrese Nº Título" value="<?php echo s($placa->titulo); ?>">
+<input type="text" id="new-articulo-dua" name="placa[titulo]" placeholder="Ingrese Nº Título" value="<?php echo s($placa->titulo); ?>">
 
 <label for="new-articulo-color">Verificación:</label>
 <input type="number" id="new-articulo-color" name="placa[verificacion]" placeholder="Ingrese Nº Verificación" value="<?php echo s($placa->verificacion); ?>">

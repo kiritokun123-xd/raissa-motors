@@ -5,22 +5,47 @@ use MVC\Router;
 use Model\Articulo;
 use Model\ArticuloAlmacen;
 use Model\JoinArticuloStock;
-
-use Intervention\Image\ImageManagerStatic as Image;
+use Model\UsuarioPermiso;
 
 
 class EnsamblajeController{
 
     public static function inventario(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $resultado = $_GET['resultado'] ?? null;
-        $articulos = JoinArticuloStock::allMul(2);
+
+        $limite = 10;
+        
+        $pag = $_GET['pag'] ?? null;
+
+        $offset = 0;
+
+        $totalPagina = Articulo::totalPagina();
+
+        $totalLink = ceil($totalPagina/ $limite);
+        
+        if(isset($pag)){
+            if($pag < 1){
+                $pag = 1;
+            }
+            $offset = ($pag - 1) * $limite;    
+        }
+
+        $articulos = JoinArticuloStock::allMul(2, $offset, $limite);
 
         $router->render('ensamblaje/inventario',[
             'articulos' => $articulos,
-            'resultado' => $resultado
+            'resultado' => $resultado,
+            'totalLink' => $totalLink,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
     public static function updinventario(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $id = validarORedireccionar('/ensamblaje/inventario');
 
         $articulo = JoinArticuloStock::findMul($id,2);
@@ -47,7 +72,8 @@ class EnsamblajeController{
 
         $router->render('ensamblaje/updinventario',[
             'articulo' => $articulo,
-            'errores' => $errores
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
 

@@ -5,21 +5,48 @@ use MVC\Router;
 use Model\Articulo;
 use Model\ArticuloAlmacen;
 use Model\JoinArticuloStock;
-
+use Model\UsuarioPermiso;
 
 
 class SoldaduraController{
 
     public static function inventario(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        
         $resultado = $_GET['resultado'] ?? null;
-        $articulos = JoinArticuloStock::allMul(3);
+
+        $limite = 10;
+        
+        $pag = $_GET['pag'] ?? null;
+
+        $offset = 0;
+
+        $totalPagina = Articulo::totalPagina();
+
+        $totalLink = ceil($totalPagina/ $limite);
+        
+        if(isset($pag)){
+            if($pag < 1){
+                $pag = 1;
+            }
+            $offset = ($pag - 1) * $limite;    
+        }
+
+
+        $articulos = JoinArticuloStock::allMul(3, $offset, $limite);
 
         $router->render('soldadura/inventario',[
             'articulos' => $articulos,
-            'resultado' => $resultado
+            'resultado' => $resultado,
+            'totalLink' => $totalLink,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
     public static function updinventario(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $id = validarORedireccionar('/soldadura/inventario');
 
         $articulo = JoinArticuloStock::findMul($id,3);
@@ -46,7 +73,8 @@ class SoldaduraController{
 
         $router->render('soldadura/updinventario',[
             'articulo' => $articulo,
-            'errores' => $errores
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
 

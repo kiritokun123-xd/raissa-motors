@@ -35,6 +35,12 @@
         justify-content: space-between;
         align-items: center;
         padding: 0.8rem 1.5rem;
+        &.paginador{
+            justify-content: left;
+            flex-direction: row;
+           
+        }
+        
         .nuevo-articulo{
             text-align: center;
             text-decoration: none;
@@ -563,7 +569,7 @@
 }
 
 .contenedor-accesos{
-    margin-top: 2rem;
+    margin: 2rem 0;
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 2rem;

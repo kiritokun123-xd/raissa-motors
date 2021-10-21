@@ -7,40 +7,13 @@ use Controllers\DashboardController;
 use Controllers\TiendaController;
 use Controllers\EnsamblajeController;
 use Controllers\SoldaduraController;
+use Controllers\UsuarioController;
+use Controllers\LoginController;
 
 use MVC\Router;
-use Controllers\PropiedadController;
-use Controllers\VendedorController;
-use Controllers\PaginasController;
-
-use Controllers\LoginController;
 
 $router = new Router();
 
-//Zona privada
-$router->get('/admin', [PropiedadController::class,'index']);
-
-$router->get('/propiedades/crear', [PropiedadController::class,'crear']);
-$router->post('/propiedades/crear', [PropiedadController::class,'crear']);
-$router->get('/propiedades/actualizar', [PropiedadController::class,'actualizar']);
-$router->post('/propiedades/actualizar', [PropiedadController::class,'actualizar']);
-$router->post('/propiedades/eliminar', [PropiedadController::class,'eliminar']);
-
-$router->get('/vendedores/crear', [VendedorController::class,'crear']);
-$router->post('/vendedores/crear', [VendedorController::class,'crear']);
-$router->get('/vendedores/actualizar', [VendedorController::class,'actualizar']);
-$router->post('/vendedores/actualizar', [VendedorController::class,'actualizar']);
-$router->post('/vendedores/eliminar', [VendedorController::class,'eliminar']);
-
-//Zona pública
-$router->get('/',[PaginasController::class, 'index']);
-$router->get('/nosotros',[PaginasController::class, 'nosotros']);
-$router->get('/propiedades',[PaginasController::class, 'propiedades']);
-$router->get('/propiedad',[PaginasController::class, 'propiedad']);
-$router->get('/blog',[PaginasController::class, 'blog']);
-$router->get('/entrada',[PaginasController::class, 'entrada']);
-$router->get('/contacto',[PaginasController::class, 'contacto']);
-$router->post('/contacto',[PaginasController::class, 'contacto']);
 
 //Zona Dashboard
 $router->get('/dashboard',[DashboardController::class, 'inicio']);
@@ -80,6 +53,15 @@ $router->get('/soldadura/inventario',[SoldaduraController::class, 'inventario'])
 $router->get('/soldadura/actualizar-stock',[SoldaduraController::class, 'updinventario']);
 $router->post('/soldadura/actualizar-stock',[SoldaduraController::class, 'updinventario']);
 
+//=======ACCESOS=============//
+$router->get('/acceso/usuario',[UsuarioController::class, 'usuario']);
+$router->get('/acceso/nuevo-usuario',[UsuarioController::class, 'newusuario']);
+$router->post('/acceso/nuevo-usuario',[UsuarioController::class, 'newusuario']);
+$router->get('/acceso/actualizar-usuario',[UsuarioController::class, 'updusuario']);
+$router->post('/acceso/actualizar-usuario',[UsuarioController::class, 'updusuario']);
+$router->get('/acceso/permiso-usuario',[UsuarioController::class, 'permiso']);
+$router->post('/acceso/permiso-usuario',[UsuarioController::class, 'permiso']);
+
 //==========================zona ajax=================
 $router->post('/ajax/invarticuloAjax',[LogisticaController::class, 'invarticuloajax']);
 $router->post('/ajax/invarticuloAjaxId',[LogisticaController::class, 'invarticuloajaxid']);
@@ -94,6 +76,8 @@ $router->post('/ajax/invensamblaje',[EnsamblajeController::class, 'invensamblaje
 $router->post('/ajax/invensamblajeN',[EnsamblajeController::class, 'invensamblajeN']);
 $router->post('/ajax/insoldadura',[SoldaduraController::class, 'invsoldadura']);
 $router->post('/ajax/insoldaduraN',[SoldaduraController::class, 'invsoldaduraN']);
+$router->post('/ajax/invusuarioAjaxId',[UsuarioController::class, 'invusuarioajaxid']);
+$router->post('/ajax/invusuarioAjaxN',[UsuarioController::class, 'invusuarioajaxN']);
 
 // AUTENTIFICAION
 $router->get('/login',[LoginController::class,'login']);

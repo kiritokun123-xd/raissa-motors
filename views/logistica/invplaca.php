@@ -55,12 +55,20 @@
                             </form>
                         </div>
                     </td>
-                    <td>En tienda</td>
+                    <td><?php echo $placa->estado ?></td>
                 </tr>
                 <?php endforeach; ?>
                 
             </tbody>
         </table>
+    </div>
+
+    <div class="gestion-articulo">
+        <div class="gestion-caja paginador">
+        <?php for($i = 1 ;$i<=$totalLink; $i++) : ?>
+            <a href="/logistica/inventario-placas?pag=<?php echo $i ?>" class="paginas"><?php echo $i ?></a>
+        <?php endfor; ?>
+        </div>
     </div>
 
 </main>

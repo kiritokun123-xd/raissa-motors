@@ -16,17 +16,34 @@ class Admin extends ActiveRecord{
         $this->password = $args['password'] ?? '';
     }
 
-    public function crearusuario(){
-        $nombre = "coseca123456";
-        $password = "123456";
+    public function validarPassword($passwordC){
+        if($this->password != $passwordC){
+            self::$errores[] = "Las contraseña no coinciden";
+        }
+    }
 
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+    public function crearusuario(){
+
+        $passwordHash = password_hash($this->password, PASSWORD_DEFAULT);
 
         //QUERY PARA CREAR AL USUARIO
-        $query = "INSERT INTO usuarios (nombre, password) VALUES ('${nombre}','${passwordHash}')";
+        $query = "INSERT INTO usuarios (nombre, password) VALUES ('". $this->nombre ."','". $passwordHash ."')";
    
         $resultado = self::$db->query($query); 
-        debuguear($resultado);
+
+    }
+    public function actualizarusuario(){
+
+        $passwordHash = password_hash($this->password, PASSWORD_DEFAULT);
+
+        //QUERY PARA CREAR AL USUARIO
+        $query = "UPDATE usuarios SET nombre = '". $this->nombre ."', password = '". $passwordHash ."' WHERE id = ". $this->id ."";
+   
+        $resultado = self::$db->query($query); 
+
+        if($resultado){
+            header('Location: /acceso/usuario?resultado=2');
+        }
     }
 
     public function validar(){
@@ -69,9 +86,15 @@ class Admin extends ActiveRecord{
     public function autenticar(){
         session_start();
 
+        $query = " SELECT id FROM " . self::$tabla . " WHERE nombre = '" . $this->nombre . "' LIMIT 1";
+
+        $id = self::$db->query($query);  
+ 
+        $id = mysqli_fetch_assoc($id)['id'];
+        
         //llenar arreglo de sesion
-        $_SESSION['usuario'] = $this->email;
         $_SESSION['login'] = true;
+        $_SESSION['id'] = $id[0];
 
         header('Location: /dashboard');
     }

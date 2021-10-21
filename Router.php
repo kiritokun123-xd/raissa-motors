@@ -78,6 +78,7 @@ class Router{
 
         include __DIR__ . "/ajax/$view.php";
 
+
     }
 
 }

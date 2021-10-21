@@ -3,15 +3,16 @@
 namespace Controllers;
 
 use MVC\Router;
-use Model\Admin;
+use Model\UsuarioPermiso;
 
 class DashboardController{
 
     public static function inicio(Router $router){
-        // $auth = new Admin();
-        // $auth->crearusuario();
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+
         $router->render('dashboard/inicio',[
-            
+            'arrayPermisos' => $arrayPermisos
         ]);
     }
 }

@@ -1,7 +1,6 @@
 <?php
 namespace Model;
 
-use mysqli;
 
 class ArticuloAlmacen extends ActiveRecord{
     
