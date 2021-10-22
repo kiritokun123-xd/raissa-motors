@@ -3,16 +3,18 @@ namespace Model;
 
 class Admin extends ActiveRecord{
     protected static $tabla = 'usuarios';
-    protected static $columnasDB = ['id','nombre','password'];
+    protected static $columnasDB = ['id','nombre','nick','password'];
 
     public $id;
     public $nombre;
+    public $nick;
     public $password;
 
     public function __construct($args = [])
     {
         $this->id = $args['id'] ?? null;
         $this->nombre = $args['nombre'] ?? '';
+        $this->nick = $args['nick'] ?? '';
         $this->password = $args['password'] ?? '';
     }
 
@@ -27,7 +29,7 @@ class Admin extends ActiveRecord{
         $passwordHash = password_hash($this->password, PASSWORD_DEFAULT);
 
         //QUERY PARA CREAR AL USUARIO
-        $query = "INSERT INTO usuarios (nombre, password) VALUES ('". $this->nombre ."','". $passwordHash ."')";
+        $query = "INSERT INTO usuarios (nombre, nick, password) VALUES ('". $this->nombre ."', nick = '". $this->nick ."','". $passwordHash ."')";
    
         $resultado = self::$db->query($query); 
 
@@ -37,7 +39,7 @@ class Admin extends ActiveRecord{
         $passwordHash = password_hash($this->password, PASSWORD_DEFAULT);
 
         //QUERY PARA CREAR AL USUARIO
-        $query = "UPDATE usuarios SET nombre = '". $this->nombre ."', password = '". $passwordHash ."' WHERE id = ". $this->id ."";
+        $query = "UPDATE usuarios SET nombre = '". $this->nombre ."', nick = '". $this->nick ."', password = '". $passwordHash ."' WHERE id = ". $this->id ."";
    
         $resultado = self::$db->query($query); 
 
@@ -56,6 +58,16 @@ class Admin extends ActiveRecord{
         }
 
         return self::$errores;
+    }
+    
+    public static function mostrarNombre($id){
+        $query = " SELECT nick FROM " . self::$tabla . " WHERE id = '" . $id . "' LIMIT 1";
+
+        $resultado = self::$db->query($query);
+
+        $resultado = $resultado->fetch_assoc();
+
+        return $resultado['nick'];
     }
 
     public function existeUsuario(){

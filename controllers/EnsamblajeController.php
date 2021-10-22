@@ -6,13 +6,14 @@ use Model\Articulo;
 use Model\ArticuloAlmacen;
 use Model\JoinArticuloStock;
 use Model\UsuarioPermiso;
-
+use Model\Admin;
 
 class EnsamblajeController{
 
     public static function inventario(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $resultado = $_GET['resultado'] ?? null;
 
@@ -39,7 +40,8 @@ class EnsamblajeController{
             'articulos' => $articulos,
             'resultado' => $resultado,
             'totalLink' => $totalLink,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
     public static function updinventario(Router $router){

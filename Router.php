@@ -2,6 +2,8 @@
 
 namespace MVC;
 
+use Model\UsuarioPermiso;
+
 class Router{
     
     public $rutasGET = [];
@@ -17,14 +19,44 @@ class Router{
     public function comprobarRutas(){
         session_start();
         $auth = $_SESSION['login'] ?? null;
+        $id = $_SESSION['id'] ?? null;
 
         //==ARREGLO DE RUTAS PROTEGIDAS==
-        $rutas_protegidas = ['/dashboard','/logistica/inventario-articulos','/logistica/nuevo-articulo','/logistica/actualizar-articulo','/logistica/inventario-motos','/logistica/nueva-moto','/logistica/actualizar-moto','/logistica/inventario-placas','/logistica/actualizar-placa','/tienda/inventario','/tienda/actualizar-stock','/ensamblaje/inventario','/ensamblaje/actualizar-stock','/ensamblaje/inventario','/ensamblaje/actualizar-stock','/soldadura/inventario','/soldadura/actualizar-stock','/ajax/invarticuloAjax','/ajax/invarticuloAjaxId','/ajax/stockarticuloAjax','/ajax/invmotoAjaxId','/ajax/invmotoAjax','/ajax/invplacaAjaxP','/ajax/invplacaAjaxN','/ajax/invtienda','/ajax/invtiendaN','/ajax/invensamblaje','/ajax/invensamblajeN','/ajax/insoldadura','/ajax/insoldaduraN',];
+        $rutas_protegidas2 = [];
+        $rutas_administrador = ['/logistica/inventario-articulos','/logistica/nuevo-articulo','/logistica/actualizar-articulo','/logistica/inventario-motos','/logistica/nueva-moto','/logistica/actualizar-moto','/logistica/inventario-placas','/logistica/actualizar-placa','/acceso/usuario','/acceso/nuevo-usuario','/acceso/actualizar-usuario','/acceso/permiso-usuario',];
+        $rutas_tienda = ['/tienda/inventario','/tienda/actualizar-stock'];
+        $rutas_ensamblaje = ['/ensamblaje/inventario','/ensamblaje/actualizar-stock'];
+        $rutas_soldadura = ['/soldadura/inventario','/soldadura/actualizar-stock'];
+        $rutas_ajax = ['/ajax/invarticuloAjax','/ajax/invarticuloAjaxId','/ajax/stockarticuloAjax','/ajax/invmotoAjaxId','/ajax/invmotoAjax','/ajax/invplacaAjaxP','/ajax/invplacaAjaxN','/ajax/invtienda','/ajax/invtiendaN','/ajax/invensamblaje','/ajax/invensamblajeN','/ajax/insoldadura','/ajax/insoldaduraN','/ajax/invusuarioAjaxId'];
+        $rutas_protegidas = ['/dashboard','/logistica/inventario-articulos','/logistica/nuevo-articulo','/logistica/actualizar-articulo','/logistica/inventario-motos','/logistica/nueva-moto','/logistica/actualizar-moto','/logistica/inventario-placas','/logistica/actualizar-placa','/tienda/inventario','/tienda/actualizar-stock','/ensamblaje/inventario','/ensamblaje/actualizar-stock','/ensamblaje/inventario','/ensamblaje/actualizar-stock','/soldadura/inventario','/soldadura/actualizar-stock','/acceso/usuario','/acceso/nuevo-usuario','/acceso/actualizar-usuario','/acceso/permiso-usuario','/ajax/invarticuloAjax','/ajax/invarticuloAjaxId','/ajax/stockarticuloAjax','/ajax/invmotoAjaxId','/ajax/invmotoAjax','/ajax/invplacaAjaxP','/ajax/invplacaAjaxN','/ajax/invtienda','/ajax/invtiendaN','/ajax/invensamblaje','/ajax/invensamblajeN','/ajax/insoldadura','/ajax/insoldaduraN','/ajax/invusuarioAjaxId'];
+
+        if($id){
+            $permisos = UsuarioPermiso::mostrarPermisos($id);
+            
+            if($permisos[0]->permitido == 'no'){
+                
+                $rutas_protegidas2 = array_merge($rutas_protegidas2, $rutas_administrador);
+            }
+            if($permisos[1]->permitido == 'no'){
+                
+                $rutas_protegidas2 = array_merge($rutas_protegidas2, $rutas_tienda);
+            }
+            if($permisos[2]->permitido == 'no'){
+                
+                $rutas_protegidas2 = array_merge($rutas_protegidas2, $rutas_ensamblaje);
+            }
+            if($permisos[3]->permitido == 'no'){
+                
+                $rutas_protegidas2 = array_merge($rutas_protegidas2, $rutas_soldadura);
+            }
+        }
 
         $urlActual = $_SERVER['PATH_INFO'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 
         //debuguear($_SERVER);
+
+        //debuguear($_SESSION);
 
         if($metodo === 'GET'){
             $fn = $this->rutasGET[$urlActual] ?? null;
@@ -33,11 +65,14 @@ class Router{
         }
 
         //=== proteger las rutas===
+        if(in_array($urlActual, $rutas_protegidas2)){
+            header('Location: /dashboard');
+        }
         if(in_array($urlActual,$rutas_protegidas) && !$auth){
             header('Location: /login');
         }
 
-        if($fn){
+        if($fn){    
             // La URL existe y hay una funcion asociada
             call_user_func($fn, $this);
         }else{

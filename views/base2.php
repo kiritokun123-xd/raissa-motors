@@ -267,7 +267,7 @@
                         <div class="bloque-nav"></div>
                         <li class="nav-item-li">
                             <a href="" id="nav-link-li" class="nav-link-li">
-                                <span class="name-link">Coseca</span>
+                                <span class="name-link"><?php echo $nick ?></span>
                                 <img src="/imagenes/perfil.svg" class="img-perfil" alt="imagen del perfil">
                             </a>    
                             <div class="caja-perfil" id="caja-perfil">

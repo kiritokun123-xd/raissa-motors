@@ -26,6 +26,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Usuario</th>
+                    <th>Nombre</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -34,6 +35,7 @@
                 <tr>
                     <td><?php echo $usuario->id ?></td>
                     <td><?php echo $usuario->nombre ?></td>
+                    <td><?php echo $usuario->nick ?></td>
                     <td class="td-acciones"> 
                         <div class="div-acciones">
                             <a href="/acceso/actualizar-usuario?id=<?php echo $usuario->id; ?>" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
