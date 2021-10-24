@@ -11,6 +11,7 @@ class UsuarioController{
     public static function usuario(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $resultado = $_GET['resultado'] ?? null;
 
@@ -38,12 +39,14 @@ class UsuarioController{
             'usuarios' => $usuarios,
             'resultado' => $resultado,
             'totalLink' => $totalLink,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
     public static function newusuario(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
         
         $usuario = new Admin();
 
@@ -71,7 +74,8 @@ class UsuarioController{
         $router->render('acceso/newusuario',[
             'usuario' => $usuario,
             'errores' => $errores,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
 
@@ -97,6 +101,7 @@ class UsuarioController{
     public static function updusuario(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $id = validarORedireccionar('/acceso/usuario');
 
@@ -125,12 +130,14 @@ class UsuarioController{
         $router->render('acceso/updusuario',[
             'usuario' => $usuario,
             'errores' => $errores,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
     public static function permiso(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $id = validarORedireccionar('/acceso/usuario');
 
@@ -153,7 +160,8 @@ class UsuarioController{
         $router->render('acceso/permisos',[
             'usuario' => $usuario,
             'usuariopermisos' => $usuariopermisos,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
 }

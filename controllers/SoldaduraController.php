@@ -6,6 +6,7 @@ use Model\Articulo;
 use Model\ArticuloAlmacen;
 use Model\JoinArticuloStock;
 use Model\UsuarioPermiso;
+USE Model\Admin;
 
 
 class SoldaduraController{
@@ -13,6 +14,7 @@ class SoldaduraController{
     public static function inventario(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
         
         $resultado = $_GET['resultado'] ?? null;
 
@@ -40,12 +42,14 @@ class SoldaduraController{
             'articulos' => $articulos,
             'resultado' => $resultado,
             'totalLink' => $totalLink,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
     public static function updinventario(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $id = validarORedireccionar('/soldadura/inventario');
 
@@ -74,7 +78,8 @@ class SoldaduraController{
         $router->render('soldadura/updinventario',[
             'articulo' => $articulo,
             'errores' => $errores,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
 

@@ -6,6 +6,7 @@ use Model\Articulo;
 use Model\Moto;
 use Model\ArticuloAlmacen;
 use Model\UsuarioPermiso;
+use Model\Admin;
 
 use Intervention\Image\ImageManagerStatic as Image;
 use Model\Placa;
@@ -17,6 +18,7 @@ class LogisticaController{
     public static function invarticulo(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $resultado = $_GET['resultado'] ?? null;
         
@@ -44,7 +46,8 @@ class LogisticaController{
             'articulos' => $articulos,
             'resultado' => $resultado,
             'totalLink' => $totalLink,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
     public static function invarticuloajaxid(Router $router){
@@ -80,6 +83,7 @@ class LogisticaController{
     public static function newarticulo(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $articulo = new Articulo();
 
@@ -124,12 +128,14 @@ class LogisticaController{
         $router->render('logistica/newarticulo',[
             'articulo' => $articulo,
             'errores' => $errores,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
     public static function updarticulo(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $id = validarORedireccionar('/logistica/inventario-articulos');
 
@@ -171,7 +177,8 @@ class LogisticaController{
         $router->render('logistica/updarticulo',[
             'articulo' => $articulo,
             'errores' => $errores,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
 
@@ -180,6 +187,7 @@ class LogisticaController{
     public static function invmoto(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $resultado = $_GET['resultado'] ?? null;
 
@@ -205,7 +213,8 @@ class LogisticaController{
             'motos' => $motos,
             'resultado' => $resultado,
             'totalLink' => $totalLink,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
     public static function invmotoajax(Router $router){
@@ -229,6 +238,7 @@ class LogisticaController{
     public static function newmoto(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $moto = new Moto();
 
@@ -270,12 +280,14 @@ class LogisticaController{
         $router->render('logistica/newmoto',[
             'moto' => $moto,
             'errores' => $errores,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
     public static function updmoto(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $id = validarORedireccionar('/logistica/inventario-motos');
 
@@ -322,7 +334,8 @@ class LogisticaController{
         $router->render('logistica/updmoto',[
             'moto' => $moto,
             'errores' => $errores,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
 
@@ -331,6 +344,7 @@ class LogisticaController{
     public static function invplaca(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $resultado = $_GET['resultado'] ?? null;
 
@@ -356,12 +370,14 @@ class LogisticaController{
             'placas' => $placas,
             'resultado' => $resultado,
             'totalLink' => $totalLink,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
     public static function newplaca(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $placa = new Placa();
 
@@ -388,12 +404,14 @@ class LogisticaController{
         $router->render('logistica/newplaca',[
             'placa' => $placa,
             'errores' => $errores,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
     public static function updplaca(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $id = validarORedireccionar('/logistica/inventario-placas');
 
@@ -422,7 +440,8 @@ class LogisticaController{
         $router->render('logistica/updplaca',[
             'placa' => $placa,
             'errores' => $errores,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
     public static function invplacaajaxn(Router $router){

@@ -6,6 +6,7 @@ use Model\Articulo;
 use Model\ArticuloAlmacen;
 use Model\JoinArticuloStock;
 use Model\UsuarioPermiso;
+use Model\Admin;
 
 
 
@@ -14,6 +15,7 @@ class TiendaController{
     public static function inventario(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $resultado = $_GET['resultado'] ?? null;
 
@@ -40,12 +42,14 @@ class TiendaController{
             'articulos' => $articulos,
             'resultado' => $resultado,
             'totalLink' => $totalLink,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
     public static function updinventario(Router $router){
         $auth = $_SESSION['id'];
         $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
 
         $id = validarORedireccionar('/tienda/inventario');
 
@@ -74,7 +78,8 @@ class TiendaController{
         $router->render('tienda/updinventario',[
             'articulo' => $articulo,
             'errores' => $errores,
-            'arrayPermisos' => $arrayPermisos
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
 
