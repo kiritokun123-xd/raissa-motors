@@ -14,7 +14,7 @@
 <input type="text" id="new-articulo-color" name="moto[color]" placeholder="Ingrese color" value="<?php echo s($moto->color); ?>">
 
 <label for="articulo-peso">Peso:</label>
-<input type="number" id="articulo-peso" name="moto[peso]" placeholder="Ingrese peso" value="<?php echo s($moto->peso); ?>">
+<input type="number" step="0.01" id="articulo-peso" name="moto[peso]" placeholder="Ingrese peso" value="<?php echo s($moto->peso); ?>">
 
 <label for="new-articulo-estado">Estado:</label>
 <input type="text" id="new-articulo-estado" name="moto[estado]" placeholder="Ingrese estado" value="<?php echo s($moto->estado); ?>">
