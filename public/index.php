@@ -9,6 +9,7 @@ use Controllers\EnsamblajeController;
 use Controllers\SoldaduraController;
 use Controllers\UsuarioController;
 use Controllers\LoginController;
+use Controllers\IndicadorController;
 
 use MVC\Router;
 
@@ -17,6 +18,18 @@ $router = new Router();
 
 //Zona Dashboard
 $router->get('/dashboard',[DashboardController::class, 'inicio']);
+
+$router->get('/indicador/rot-mercancia',[IndicadorController::class, 'indicador1']);
+$router->get('/indicador/actualizar-indicador',[IndicadorController::class, 'updindicador1']);
+$router->post('/indicador/actualizar-indicador',[IndicadorController::class, 'updindicador1']);
+$router->get('/indicador/nuevo-indicador',[IndicadorController::class, 'newindicador1']);
+$router->post('/indicador/nuevo-indicador',[IndicadorController::class, 'newindicador1']);
+
+$router->get('/indicador/cost-uni-alma',[IndicadorController::class, 'indicador2']);
+$router->get('/indicador/actualizar-indicador2',[IndicadorController::class, 'updindicador2']);
+$router->post('/indicador/actualizar-indicador2',[IndicadorController::class, 'updindicador2']);
+$router->get('/indicador/nuevo-indicador2',[IndicadorController::class, 'newindicador2']);
+$router->post('/indicador/nuevo-indicador2',[IndicadorController::class, 'newindicador2']);
 //ZONA LOGISTICA
 $router->get('/logistica/inventario-articulos',[LogisticaController::class, 'invarticulo']);
 $router->post('/logistica/inventario-articulos',[LogisticaController::class, 'invarticulo']);
@@ -78,6 +91,12 @@ $router->post('/ajax/insoldadura',[SoldaduraController::class, 'invsoldadura']);
 $router->post('/ajax/insoldaduraN',[SoldaduraController::class, 'invsoldaduraN']);
 $router->post('/ajax/invusuarioAjaxId',[UsuarioController::class, 'invusuarioajaxid']);
 $router->post('/ajax/invusuarioAjaxN',[UsuarioController::class, 'invusuarioajaxN']);
+
+$router->post('/ajax/indicador1Ajax',[IndicadorController::class, 'indicador1ajax']);
+$router->post('/ajax/indicador1AjaxG',[IndicadorController::class, 'indicador1ajaxG']);
+
+$router->post('/ajax/indicador2Ajax',[IndicadorController::class, 'indicador2ajax']);
+$router->post('/ajax/indicador2AjaxG',[IndicadorController::class, 'indicador2ajaxG']);
 
 // AUTENTIFICAION
 $router->get('/login',[LoginController::class,'login']);

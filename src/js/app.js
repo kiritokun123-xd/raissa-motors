@@ -36,7 +36,13 @@ function functionsAjax() {
     invsoldaduraN()
 
     invUsuariosAjaxId()
-    invUsuariosAjaxN()  
+    invUsuariosAjaxN() 
+    
+    indicador1Ajax()
+    indicador1AjaxG()
+
+    indicador2Ajax()
+    indicador2AjaxG()
 }
 function mensajeAlerta(titulo,texto,icono,boton){
     Swal.fire({
@@ -45,6 +51,42 @@ function mensajeAlerta(titulo,texto,icono,boton){
         icon: icono,
         confirmButtonText: boton
     })
+}
+function indicador2AjaxG(){
+    $('#verindicador2').on('change',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/indicador2AjaxG", { filtro: filtro }, function(data) {
+            $("#myChart2").html(data);
+            
+        });  
+    })            
+}
+function indicador2Ajax(){
+    $('#buscarindicador2').on('change',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/indicador2Ajax", { filtro: filtro }, function(data) {
+            $("#invindicador2-body").html(data);
+            
+        });  
+    })            
+}
+function indicador1AjaxG(){
+    $('#verindicador').on('change',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/indicador1AjaxG", { filtro: filtro }, function(data) {
+            $("#myChart").html(data);
+            
+        });  
+    })            
+}
+function indicador1Ajax(){
+    $('#buscarindicador').on('change',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/indicador1Ajax", { filtro: filtro }, function(data) {
+            $("#invindicador1-body").html(data);
+            
+        });  
+    })            
 }
 function invUsuariosAjaxId(){
     $('#buscarid').on('input',function(){

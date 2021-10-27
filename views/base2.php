@@ -51,12 +51,28 @@
                 </a>
             </li>
 
+            <li class="nav-item" <?php echo (noTienePermiso(1,$arrayPermisos))? 'style="display: none"': ''; ?>>
+                <a href="" class="nav-link navlink"  data-paso="0">
+                    <i class='bx bx-cart-alt bx-icon'></i>
+                    <span class="span">Indicadores</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
+
+                <div class="nav-caja t-2 caja-query" >
+                    <div class="nav-caja-items">
+                        <h6>Indicadores de:</h6>
+                        <a href="/indicador/rot-mercancia">Rotación Mercancia</a>
+                        <a href="/indicador/cost-uni-alma">C/U almacenada</a>
+                    </div>
+                </div>
+            </li>
+
             <hr class="siderbar-divider">
 
             <div class="sidebar-heading" <?php echo (noTienePermiso(1,$arrayPermisos))? 'style="display: none"': ''; ?>>Logística</div>
 
             <li class="nav-item" <?php echo (noTienePermiso(1,$arrayPermisos))? 'style="display: none"': ''; ?>>
-                <a href="" class="nav-link navlink"  data-paso="0">
+                <a href="" class="nav-link navlink"  data-paso="1">
                     <i class='bx bx-cart-alt bx-icon'></i>
                     <span class="span">Inventario General</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>

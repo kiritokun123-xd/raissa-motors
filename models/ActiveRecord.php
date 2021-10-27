@@ -146,6 +146,14 @@ class ActiveRecord{
 
         return $resultado;
     }
+    public static function allFecha($offset,$cantidad){
+        //ESCRIBIR EL QUERY
+        $query = "SELECT * FROM " . static::$tabla . " LIMIT " . $offset . " , " . $cantidad . " ORDER BY fecha";
+        
+        $resultado = self::constularSQL($query);
+
+        return $resultado;
+    }
     public static function totalPagina(){
         //ESCRIBIR EL QUERY
         $query = "SELECT * FROM " . static::$tabla;
