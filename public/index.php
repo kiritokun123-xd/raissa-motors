@@ -10,11 +10,15 @@ use Controllers\SoldaduraController;
 use Controllers\UsuarioController;
 use Controllers\LoginController;
 use Controllers\IndicadorController;
+use Controllers\PaginasController;
 
 use MVC\Router;
 
 $router = new Router();
 
+//ZONA PUBLICA
+
+$router->get('/',[PaginasController::class,'index']);
 
 //Zona Dashboard
 $router->get('/dashboard',[DashboardController::class, 'inicio']);
