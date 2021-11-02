@@ -50,7 +50,7 @@ class UsuarioPermiso extends ActiveRecord{
         }
         $query = "";
         for($i=0; $i<4; $i++){
-            $query = "UPDATE usuariopermiso SET permitido = '". $valores[$i] ."' WHERE usuarioID = " .  $id . " AND permisoId = " . $i +1;
+            $query = "UPDATE usuariopermiso SET permitido = '". $valores[$i] ."' WHERE usuarioID = " .  $id . " AND permisoId = " . ($i + 1);
          
             $resultado = self::$db->query($query);
         }
