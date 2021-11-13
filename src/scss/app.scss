@@ -4,9 +4,11 @@
 //@import 'base/globales';
 @import 'base/globales2';
 // @import 'base/utilidades';
-@import 'layout/index';
 
 @import 'layout/invarticulos';
 @import 'layout/tabla';
 @import 'layout/dashboard2';
 @import 'layout/login';
+
+@import 'paginas/header';
+@import 'paginas/index';

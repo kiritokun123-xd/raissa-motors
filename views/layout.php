@@ -19,40 +19,32 @@
     <script src="../build/js/bundle.min.js"></script>
     <script src="../build/js/jquery-3.6.0.min.js"></script>
 </head>
-<body class="body-layout">
-    <header>
-        <h2>Raissa Motor's <label for="menu-toggle"><i class='bx bx-menu'></i></label></h2>
-
-        <input type="checkbox" id="menu-toggle">
-        <div class="main-menu">
-            <div class="menu-responsive">
-                <label for="menu-toggle">Close</label>
-                <form action="" class="search">
-                    <input type="search" placeholder="search store">
-                    <button><i class='bx bx-search'></i></button>
-                </form>
+<body>
+    <header class="header">
+        <a href="" class="marca">
+            <div class="marca-ico">
+                <img class="logo" src="../imagenes/logo.png" alt="">
             </div>
-
-            <a href="" class="">Download app</a>
-
-            <a href="">Sign Up / Login</a>
-        </div>
+            <div class="marca-text">
+                RAISSAMOTOR'S
+            </div>
+        </a>
+        <nav class="navegador">
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Nosotros</a></li>
+                <li><a href="">Motocicletas</a></li>
+                <li><a href="">Trimotos</a></li>
+                <li><a href="">Fábrica</a></li>
+            </ul>
+        </nav>
     </header>
 
-
+    
     <?php echo $contenido; ?>
 
-    <!-- JavaScript -->
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.3/src/easytimer.min.js"></script>
-    <script>
-        var timer = new Timer();
-        timer.start({countdown: true, startValues: {seconds: 1000}});
-            document.querySelector('.values').innerHTML = timer.getTimeValues().toString();
-
-        timer.addEventListener('secondsUpdated', function (e) {
-            document.querySelector('.values').innerHTML = timer.getTimeValues().toString();
-        });
-    </script>
 </body>
+<footer>
+    <h2>footer</h2>
+</footer>
 </html>

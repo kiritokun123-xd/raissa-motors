@@ -1,0 +1,30 @@
+.header{
+    background: linear-gradient(to right, rgba(140,0,9,1) 0%, rgba(242,3,45,1) 100%);
+    padding: 2.4rem 1.6rem;
+    display: flex;
+    justify-content: space-around;
+    .marca{
+        display: flex;
+        align-items: center;
+        .marca-text{
+            color: $blanco;
+            font-weight: 700;
+        }
+    }
+    .navegador{
+        display: flex;
+        align-items: center;
+        ul{
+            display: flex;
+            align-items: center;
+            li{
+                a{
+                    color: $blanco;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    padding: 0.5rem 1rem;
+                }
+            }
+        }
+    }
+}
