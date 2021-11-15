@@ -21,6 +21,7 @@
 </head>
 <body>
     <header class="header">
+
         <a href="" class="marca">
             <div class="marca-ico">
                 <img class="logo" src="../imagenes/logo.png" alt="">
@@ -35,6 +36,7 @@
                 <li><a href="">Nosotros</a></li>
                 <li><a href="">Motocicletas</a></li>
                 <li><a href="">Trimotos</a></li>
+                <li><a href="">Repuestos</a></li>
                 <li><a href="">Fábrica</a></li>
             </ul>
         </nav>

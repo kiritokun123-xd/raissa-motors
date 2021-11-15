@@ -1,5 +1,5 @@
 .header{
-    background: linear-gradient(to right, rgba(140,0,9,1) 0%, rgba(242,3,45,1) 100%);
+    background: linear-gradient(to right, rgba(148,1,12,1) 0%, rgba(255,15,54,1) 100%);
     padding: 2.4rem 1.6rem;
     display: flex;
     justify-content: space-around;
@@ -23,6 +23,21 @@
                     font-size: 1.8rem;
                     font-weight: 600;
                     padding: 0.5rem 1rem;
+                    position: relative;
+                    &::before{
+                        content: '';
+                        width:0%;
+                        height:1px;
+                        position:absolute;
+                        top: -0.1rem;
+                        background-color: $blanco;
+                        transition: 0.3s;
+                    }
+                    &:hover{
+                        &::before{
+                            width: 80%;
+                        }
+                    }
                 }
             }
         }
