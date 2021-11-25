@@ -88,6 +88,22 @@
                 </div>
             </li>
 
+            <li class="nav-item" <?php echo (noTienePermiso(1,$arrayPermisos))? 'style="display: none"': ''; ?>>
+                <a href="" class="nav-link navlink"  data-paso="2">
+                    <i class='bx bx-cart-alt bx-icon'></i>
+                    <span class="span">Operaciones</span>
+                    <i class='bx bxs-right-arrow bx-arrow'></i>
+                </a>
+
+                <div class="nav-caja t-2 caja-query" >
+                    <div class="nav-caja-items">
+                        <h6>Gestionar:</h6>
+                        <a href="/logistica/pedido">Gestionar Pedidos</a>
+                        <a href="/logistica/ver-pedido">Ver Pedidos</a>
+                    </div>
+                </div>
+            </li>
+
             <li class="nav-item not-visible" >
                 <a href="" class="nav-link navlink" data-paso="1">
                     <i class='bx bx-cart-alt bx-icon'></i>

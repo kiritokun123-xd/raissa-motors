@@ -54,6 +54,12 @@ $router->post('/logistica/nueva-placa',[LogisticaController::class, 'newplaca'])
 $router->get('/logistica/actualizar-placa',[LogisticaController::class, 'updplaca']);
 $router->post('/logistica/actualizar-placa',[LogisticaController::class, 'updplaca']);
 
+$router->get('/logistica/pedido',[LogisticaController::class, 'invpedido']);
+$router->get('/logistica/nuevo-pedido',[LogisticaController::class, 'newpedido']);
+$router->post('/logistica/nuevo-pedido',[LogisticaController::class, 'newpedido']);
+$router->get('/logistica/actualizar-pedido',[LogisticaController::class, 'updpedido']);
+$router->post('/logistica/actualizar-pedido',[LogisticaController::class, 'updpedido']);
+
 //=======TIENDA=============//
 
 $router->get('/tienda/inventario',[TiendaController::class, 'inventario']);
@@ -95,6 +101,8 @@ $router->post('/ajax/insoldadura',[SoldaduraController::class, 'invsoldadura']);
 $router->post('/ajax/insoldaduraN',[SoldaduraController::class, 'invsoldaduraN']);
 $router->post('/ajax/invusuarioAjaxId',[UsuarioController::class, 'invusuarioajaxid']);
 $router->post('/ajax/invusuarioAjaxN',[UsuarioController::class, 'invusuarioajaxN']);
+$router->post('/ajax/invpedidoAjaxC',[LogisticaController::class, 'invpedidoajaxc']);
+$router->post('/ajax/invpedidoAjaxF',[LogisticaController::class, 'invpedidoajaxf']);
 
 $router->post('/ajax/indicador1Ajax',[IndicadorController::class, 'indicador1ajax']);
 $router->post('/ajax/indicador1AjaxG',[IndicadorController::class, 'indicador1ajaxG']);

@@ -7,6 +7,7 @@ use Model\Moto;
 use Model\ArticuloAlmacen;
 use Model\UsuarioPermiso;
 use Model\Admin;
+use Model\Pedido;
 
 use Intervention\Image\ImageManagerStatic as Image;
 use Model\Placa;
@@ -333,6 +334,126 @@ class LogisticaController{
 
         $router->render('logistica/updmoto',[
             'moto' => $moto,
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
+        ]);
+    }
+    //=====PEDIDO======//
+
+    public static function invpedido(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+
+        $resultado = $_GET['resultado'] ?? null;
+
+        $limite = 10;
+        
+        $pag = $_GET['pag'] ?? null;
+
+        $offset = 0;
+
+        $totalPagina = Pedido::totalPagina();
+
+        $totalLink = ceil($totalPagina/ $limite);
+        
+        if(isset($pag)){
+            if($pag < 1){
+                $pag = 1;
+            }
+            $offset = ($pag - 1) * $limite;    
+        }
+        $pedidos = Pedido::all($offset, $limite);
+    
+        $router->render('logistica/invpedido',[
+            'pedidos' => $pedidos,
+            'resultado' => $resultado,
+            'totalLink' => $totalLink,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
+        ]);
+    }
+    public static function newpedido(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+
+        $pedido = new Pedido();
+
+        $errores = Pedido::getErrores();
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            /*CREA UNA NUEVA INSTANCIA*/
+            $pedido = new Pedido($_POST['pedido']);
+
+            /*VALIDAR*/
+            $errores = $pedido->validar();
+
+            //REVISAR QUE EL ARREGLO DE ERRORES ESTE VACIO
+            if(empty($errores)){
+
+                //SUBE A LA BD
+                $pedido->guardar('/logistica/pedido');
+                
+            }
+        }
+        $router->render('logistica/newpedido',[
+            'pedido' => $pedido,
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
+        ]);
+    }
+    public static function invpedidoajaxc(Router $router){
+        $filtro = $_POST['filtro'];
+
+        $pedidos = Pedido::filtrarAjax('cliente',$filtro);
+
+        $router->renderAjax('invpedidoajax',[
+            'pedidos' => $pedidos
+        ]);
+    }
+    public static function invpedidoajaxf(Router $router){
+        $filtro = $_POST['filtro'];
+
+        $pedidos = Pedido::filtrarAjax('fecha_ent',$filtro);
+
+        $router->renderAjax('invpedidoajax',[
+            'pedidos' => $pedidos
+        ]);
+    }
+    public static function updpedido(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+
+        $id = validarORedireccionar('/logistica/pedido');
+
+        $pedido = Pedido::find($id);
+
+        $errores = Pedido::getErrores();
+
+        //EJECUTAR EL CODIGO DESPUES DE QuE EL USUARIO ENVIA EL FORMULARIO
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            //Asignar los atributos
+            $args = $_POST['pedido'];
+            
+            $pedido->sincronizar($args);
+            
+            $errores = $pedido->validar();
+            
+
+            //REVISAR QUE EL AAREGLO DE ERRORES ESTE VACIO
+            if(empty($errores)){
+                
+                $pedido->guardar('/logistica/pedido');
+            }
+
+        }
+
+        $router->render('logistica/updpedido',[
+            'pedido' => $pedido,
             'errores' => $errores,
             'arrayPermisos' => $arrayPermisos,
             'nick' => $nick

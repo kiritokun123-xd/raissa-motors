@@ -20,7 +20,7 @@
     <script src="../build/js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <header class="header">
+    <header class="header-layout">
 
         <a href="" class="marca">
             <div class="marca-ico">

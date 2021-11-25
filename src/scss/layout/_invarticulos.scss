@@ -399,7 +399,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                input{
+                input, select, textarea{
                     color: $gris-texto;
                     font-size: 1.6rem;
                     border: 1px solid #d1d3e2;

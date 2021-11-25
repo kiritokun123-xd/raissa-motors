@@ -14,7 +14,7 @@
                 <input class="input-id" type="number" id="buscarid">
             </div>
             <div class="buscar-articulo">
-                <label for="buscarid">Buscar Vim:</label>
+                <label for="buscarvim">Buscar Vim:</label>
                 <input type="text" id="buscarvim">
             </div>
         </div>

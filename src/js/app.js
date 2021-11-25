@@ -26,6 +26,9 @@ function functionsAjax() {
     invPlacasAjaxP()
     invPlacasAjaxN()
 
+    invPedidosAjaxC()
+    invPedidosAjaxF()
+
     invtienda()
     invtiendaN()
 
@@ -120,6 +123,24 @@ function invMotosAjax(){
         var filtro = $(this).val();
         $.post("/ajax/invmotoAjax", { filtro: filtro }, function(data) {
             $("#invmoto-body").html(data);
+            
+        });  
+    })            
+}
+function invPedidosAjaxC(){
+    $('#buscarcl').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invpedidoAjaxC", { filtro: filtro }, function(data) {
+            $("#invpedido-body").html(data);
+            
+        });  
+    })            
+}
+function invPedidosAjaxF(){
+    $('#buscarfec').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invpedidoAjaxF", { filtro: filtro }, function(data) {
+            $("#invpedido-body").html(data);
             
         });  
     })            
