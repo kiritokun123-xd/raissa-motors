@@ -18,11 +18,16 @@ function Header()
     $this->Cell(5);
     // Título
     $this->Cell(30,30,'IMAGEN',1,0,'C');
-    $this->MultiCell(50,15,'PROFESIONALES COSECA SAC',1,'C');
-    $this->Cell(80,30,'Title',1,0,'C');
-    $this->Cell(30,30,'Title',1,0,'C');
+    $this->SetFont('Arial','B',8);
+    $this->Cell(48,30,'PROFESIONALES COSECA SAC',1,0,'C');
+    $this->SetFont('Arial','B',12);
+    $this->Cell(55,30,'ORDEN DE PRODUCCION',1,0,'C');
+    $this->Cell(50,30,'FECHA:',1,0,'L');
     // Salto de línea
-    $this->Ln(40);
+    $this->Ln(35);
+    $this->Cell(5);
+    $this->Cell(80,20,'FECHA DE ENTREGA:',1,1,'L');
+    $this->Ln(10);
 }
 
 // Pie de página
@@ -122,23 +127,35 @@ function PutLink($URL, $txt)
 $html = 'Ahora puede imprimir fácilmente texto mezclando diferentes estilos: <b>negrita</b>, <i>itálica</i>,
 <u>subrayado</u>, o ¡ <b><i><u>todos a la vez</u></i></b>!<br><br>También puede incluir enlaces en el
 texto, como <a href="http://www.fpdf.org">www.fpdf.org</a>, o en una imagen: pulse en el logotipo.';
+$info = 'Cliente:______________________     Distribuidor:_______________________<br><br><br>Serie:________________________     Motor:___________________________';
 
 $pdf = new PDF();
 // Primera página
+
 $pdf->AddPage();
-$pdf->AliasNbPages();
-$pdf->SetFont('Arial','',20);
-$pdf->Write(5, utf8_decode('Para saber qué hay de nuevo en este tutorial, pulse '));
-$pdf->SetFont('','U');
-$link = $pdf->AddLink();
-$pdf->Write(5,utf8_decode('aquí'),$link);
-$pdf->SetFont('');
-// Segunda página
-$pdf->AddPage();
-$pdf->SetLink($link);
-//$pdf->Image('logo.png',10,12,30,0,'','http://www.fpdf.org');
-$pdf->SetLeftMargin(45);
+$pdf->Image('../public/imagenes/logopedido.png',15,10,30,30,'','http://www.raissamotors.com');
+$pdf->SetLeftMargin(15);
 $pdf->SetFontSize(14);
-$pdf->WriteHTML( utf8_decode($html) );
+$pdf->Cell(90,15,'Cliente:',0,0,'L');
+$pdf->Cell(90,15,'Distribuidor:',0,1,'L');
+$pdf->Cell(90,15,'Serie:',0,0,'L');
+$pdf->Cell(90,15,'Motor:',0,1,'L');
+$pdf->Ln(5);
+$pdf->Cell(90,15,'VEHICULO:',1,0,'L');
+$pdf->Cell(90,15,'TIPO:',1,1,'L');
+$pdf->Cell(90,15,'COLOR:',1,0,'L');
+$pdf->Cell(90,15,'FARO:',1,1,'L');
+$pdf->Cell(90,15,'TACOMETRO:',1,0,'L');
+$pdf->Cell(90,15,'ARO:',1,1,'L');
+$pdf->Cell(90,15,'PARRILA:',1,0,'L');
+$pdf->Cell(90,15,'TECHO:',1,1,'L');
+$pdf->Cell(90,15,'ASIENTO:',1,0,'L');
+$pdf->Cell(90,15,'MICA:',1,1,'L');
+$pdf->Cell(90,15,'MASCARA:',1,0,'L');
+$pdf->Ln(20);
+$pdf->Cell(90,8,'EQUIPAMIENTO:',1,0,'L');
+$pdf->Cell(90,8,'ADICIONALES:',1,1,'L');
+$pdf->Cell(90,40,'',1,0,'L');
+$pdf->Cell(90,40,'',1,1,'L');
 $pdf->Output();
 ?>
