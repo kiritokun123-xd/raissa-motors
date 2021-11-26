@@ -11,6 +11,7 @@ use Controllers\UsuarioController;
 use Controllers\LoginController;
 use Controllers\IndicadorController;
 use Controllers\PaginasController;
+use Controllers\PDFController;
 
 use MVC\Router;
 
@@ -59,6 +60,9 @@ $router->get('/logistica/nuevo-pedido',[LogisticaController::class, 'newpedido']
 $router->post('/logistica/nuevo-pedido',[LogisticaController::class, 'newpedido']);
 $router->get('/logistica/actualizar-pedido',[LogisticaController::class, 'updpedido']);
 $router->post('/logistica/actualizar-pedido',[LogisticaController::class, 'updpedido']);
+
+//========PDF===============//
+$router->get('/documentos/pdf',[PDFController::class, 'pdf']);
 
 //=======TIENDA=============//
 

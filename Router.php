@@ -118,4 +118,13 @@ class Router{
 
     }
 
+    public function renderPDF($datos = []){
+        foreach($datos as $key=>$value){
+            //Crea variables desde el key : mensaje ----> $mensaje
+            $$key = $value;     
+        }
+
+        include __DIR__ . "/views/pdf.php";
+    }
+
 }
