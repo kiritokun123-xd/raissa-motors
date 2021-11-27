@@ -6,29 +6,32 @@ protected $B = 0;
 protected $I = 0;
 protected $U = 0;
 protected $HREF = '';
-
 // Cabecera de página
-function Header()
-{
-    // Logo
-    //$this->Image('logo.png',10,8,33);
-    // Arial bold 15
-    $this->SetFont('Arial','B',15);
-    // Movernos a la derecha
-    $this->Cell(5);
-    // Título
-    $this->Cell(30,30,'IMAGEN',1,0,'C');
-    $this->SetFont('Arial','B',8);
-    $this->Cell(48,30,'PROFESIONALES COSECA SAC',1,0,'C');
-    $this->SetFont('Arial','B',12);
-    $this->Cell(55,30,'ORDEN DE PRODUCCION',1,0,'C');
-    $this->Cell(50,30,'FECHA:',1,0,'L');
-    // Salto de línea
-    $this->Ln(35);
-    $this->Cell(5);
-    $this->Cell(80,20,'FECHA DE ENTREGA:',1,1,'L');
-    $this->Ln(10);
-}
+// function variables($pedido){
+
+// }
+// function Header()
+// {
+//     // Logo
+//     //$this->Image('logo.png',10,8,33);
+//     // Arial bold 15
+//     $this->SetFont('Arial','B',15);
+//     // Movernos a la derecha
+//     $this->Cell(5);
+//     // Título
+//     $this->Cell(30,30,'IMAGEN',1,0,'C');
+//     $this->SetFont('Arial','B',8);
+//     $this->Cell(48,30,'PROFESIONALES COSECA SAC',1,0,'C');
+//     $this->SetFont('Arial','B',12);
+//     $this->Cell(55,30,'ORDEN DE PRODUCCION',1,0,'C');
+//     $this->Cell(50,30,utf8_decode('FECHA: '),1,0,'L');
+//     // Salto de línea
+//     $this->Ln(35);
+//     $this->Cell(5);
+//     $this->Cell(80,20,utf8_decode('FECHA DE ENTREGA:'),1,1,'L');
+//     $this->Ln(10);
+// }
+
 
 // Pie de página
 function Footer()
@@ -127,35 +130,83 @@ function PutLink($URL, $txt)
 $html = 'Ahora puede imprimir fácilmente texto mezclando diferentes estilos: <b>negrita</b>, <i>itálica</i>,
 <u>subrayado</u>, o ¡ <b><i><u>todos a la vez</u></i></b>!<br><br>También puede incluir enlaces en el
 texto, como <a href="http://www.fpdf.org">www.fpdf.org</a>, o en una imagen: pulse en el logotipo.';
-$info = 'Cliente:______________________     Distribuidor:_______________________<br><br><br>Serie:________________________     Motor:___________________________';
+$equipa = '<b>EQUIPAMIENTO: </b>'.$pedido->equipamiento.'<br><br>';
+$adicio = '<b>ADICIONAL: </b>'.$pedido->adicional;
 
 $pdf = new PDF();
-// Primera página
-
 $pdf->AddPage();
+// Primera página
+$pdf->SetFont('Arial','B',15);
+$pdf->AliasNbPages();
+// Movernos a la derecha
+$pdf->Cell(5);
+// Título
+$pdf->Cell(30,30,'IMAGEN',1,0,'C');
+$pdf->SetFont('Arial','B',8);
+$pdf->Cell(48,30,'PROFESIONALES COSECA SAC',1,0,'C');
+$pdf->SetFont('Arial','B',12);
+$pdf->Cell(55,30,'ORDEN DE PRODUCCION',1,0,'C');
+$pdf->Cell(50,30,utf8_decode('FECHA: ' . date_format(date_create($pedido->fecha_ini),'d-m-Y')),1,0,'L');
+// Salto de línea
+$pdf->Ln(35);
+$pdf->Cell(5);
+$pdf->Cell(80,20,utf8_decode('FECHA DE ENTREGA: ' . date_format(date_create($pedido->fecha_ent),'d-m-Y')),1,1,'L');
+$pdf->Ln(10);
+
 $pdf->Image('../public/imagenes/logopedido.png',15,10,30,30,'','http://www.raissamotors.com');
 $pdf->SetLeftMargin(15);
 $pdf->SetFontSize(14);
-$pdf->Cell(90,15,'Cliente:',0,0,'L');
-$pdf->Cell(90,15,'Distribuidor:',0,1,'L');
-$pdf->Cell(90,15,'Serie:',0,0,'L');
-$pdf->Cell(90,15,'Motor:',0,1,'L');
+$pdf->Cell(90,15,utf8_decode('Cliente: ' .  $pedido->cliente ),0,0,'L');
+$pdf->Cell(90,15,utf8_decode('Distribuidor: ' . $pedido->distribuidor),0,1,'L');
+$pdf->Cell(90,15,utf8_decode('Serie: ' . $pedido->serie),0,0,'L');
+$pdf->Cell(90,15,utf8_decode('Motor: ' . $pedido->motor),0,1,'L');
 $pdf->Ln(5);
-$pdf->Cell(90,15,'VEHICULO:',1,0,'L');
-$pdf->Cell(90,15,'TIPO:',1,1,'L');
-$pdf->Cell(90,15,'COLOR:',1,0,'L');
-$pdf->Cell(90,15,'FARO:',1,1,'L');
-$pdf->Cell(90,15,'TACOMETRO:',1,0,'L');
-$pdf->Cell(90,15,'ARO:',1,1,'L');
-$pdf->Cell(90,15,'PARRILA:',1,0,'L');
-$pdf->Cell(90,15,'TECHO:',1,1,'L');
-$pdf->Cell(90,15,'ASIENTO:',1,0,'L');
-$pdf->Cell(90,15,'MICA:',1,1,'L');
-$pdf->Cell(90,15,'MASCARA:',1,0,'L');
-$pdf->Ln(20);
-$pdf->Cell(90,8,'EQUIPAMIENTO:',1,0,'L');
-$pdf->Cell(90,8,'ADICIONALES:',1,1,'L');
-$pdf->Cell(90,40,'',1,0,'L');
-$pdf->Cell(90,40,'',1,1,'L');
+$pdf->Cell(40,15,utf8_decode('VEHICULO: '),1,0,'R');
+$pdf->SetFont('Arial','',14);
+$pdf->Cell(50,15,utf8_decode($pedido->moto),1,0,'L');
+$pdf->SetFont('Arial','B',14);
+$pdf->Cell(40,15,utf8_decode('TIPO: '),1,0,'R');
+$pdf->SetFont('Arial','',14);
+$pdf->Cell(50,15,utf8_decode($pedido->tipo),1,1,'L');
+$pdf->SetFont('Arial','B',14);
+$pdf->Cell(40,15,utf8_decode('COLOR: '),1,0,'R');
+$pdf->SetFont('Arial','',14);
+$pdf->Cell(50,15,utf8_decode($pedido->color),1,0,'L');
+$pdf->SetFont('Arial','B',14);
+$pdf->Cell(40,15,utf8_decode('FARO: '),1,0,'R');
+$pdf->SetFont('Arial','',14);
+$pdf->Cell(50,15,utf8_decode($pedido->faro),1,1,'L');
+$pdf->SetFont('Arial','B',14);
+$pdf->Cell(40,15,utf8_decode('TACOMETRO: '),1,0,'R');
+$pdf->SetFont('Arial','',14);
+$pdf->Cell(50,15,utf8_decode($pedido->tacometro),1,0,'L');
+$pdf->SetFont('Arial','B',14);
+$pdf->Cell(40,15,utf8_decode('ARO: '),1,0,'R');
+$pdf->SetFont('Arial','',14);
+$pdf->Cell(50,15,utf8_decode($pedido->aro),1,1,'L');
+$pdf->SetFont('Arial','B',14);
+$pdf->Cell(40,15,utf8_decode('PARRILA: '),1,0,'R');
+$pdf->SetFont('Arial','',14);
+$pdf->Cell(50,15,utf8_decode($pedido->parrilla),1,0,'L');
+$pdf->SetFont('Arial','B',14);
+$pdf->Cell(40,15,utf8_decode('TECHO: '),1,0,'R');
+$pdf->SetFont('Arial','',14);
+$pdf->Cell(50,15,utf8_decode($pedido->techo),1,1,'L');
+$pdf->SetFont('Arial','B',14);
+$pdf->Cell(40,15,utf8_decode('ASIENTO: '),1,0,'R');
+$pdf->SetFont('Arial','',14);
+$pdf->Cell(50,15,utf8_decode($pedido->asiento),1,0,'L');
+$pdf->SetFont('Arial','B',14);
+$pdf->Cell(40,15,utf8_decode('MICA: '),1,0,'R');
+$pdf->SetFont('Arial','',14);
+$pdf->Cell(50,15,utf8_decode($pedido->mica),1,1,'L');
+$pdf->SetFont('Arial','B',14);
+$pdf->Cell(40,15,utf8_decode('MASCARA: '),1,0,'R');
+$pdf->SetFont('Arial','',14);
+$pdf->Cell(50,15,utf8_decode($pedido->mascara),1,1,'L');
+$pdf->Ln(5);
+//$pdf->MultiCell(45,8,utf8_decode('EQUIPAMIENTO: nandaidnadni jnsadno dsnada didad and danndindn dandn'),1,'L');
+$pdf->WriteHTML(utf8_decode($equipa));
+$pdf->WriteHTML(utf8_decode($adicio));
 $pdf->Output();
 ?>
