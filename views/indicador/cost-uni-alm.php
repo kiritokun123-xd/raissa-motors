@@ -22,6 +22,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Fecha</th>
+                    <th>Vent. Acum</th>
                     <th>Servicios</th>
                     <th>Alquiler</th>
                     <th>Personal</th>
@@ -36,6 +37,7 @@
                 <tr>
                     <td><?php echo $indicadore->id ?></td>
                     <td><?php echo date_format(date_create($indicadore->fecha),'d-m-Y')  ?></td>
+                    <td>S/<?php echo $indicadore->ven_acumulada ?></td>
                     <td>S/<?php echo $indicadore->servicios ?></td>
                     <td>S/<?php echo $indicadore->alquiler ?></td>
                     <td>S/<?php echo $indicadore->personal ?></td>

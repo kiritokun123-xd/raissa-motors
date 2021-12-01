@@ -6,6 +6,7 @@
     <tr>
         <td>' .$indicadore->id .'</td>
         <td>' .date_format(date_create($indicadore->fecha),'d-m-Y') .'</td>
+        <td>' .$indicadore->ven_acumulada .'</td>
         <td>' .$indicadore->servicios .'</td>
         <td>' .$indicadore->alquiler .'</td>
         <td>' .$indicadore->personal .'</td>

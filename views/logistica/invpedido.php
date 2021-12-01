@@ -50,7 +50,7 @@
                     <td class="td-acciones"> 
                         <div class="div-acciones">
                             <a href="/logistica/actualizar-pedido?id=<?php echo $pedido->id; ?>" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
-                            <a target="_blank" href="/documentos/pdf?id=<?php echo $pedido->id;?>">Ver</a>
+                            <a class="verpedido" target="_blank" href="/documentos/pdf?id=<?php echo $pedido->id;?>">Ver</a>
                         </div>
                     </td>
                     <td><?php echo $pedido->estado ?></td>

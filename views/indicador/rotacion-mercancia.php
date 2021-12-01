@@ -24,6 +24,7 @@
                     <th>Fecha</th>
                     <th>Venta Acum.</th>
                     <th>Inventario Ini.</th>
+                    <th>Inventario Ent.</th>
                     <th>Inventario Fin.</th>
                     <th>Inventario Prom.</th>
                     <th>Indicador</th>
@@ -37,6 +38,7 @@
                     <td><?php echo date_format(date_create($indicadore->fecha),'d-m-Y')  ?></td>
                     <td><?php echo $indicadore->ven_acumulada ?></td>
                     <td><?php echo $indicadore->inv_inicial ?></td>
+                    <td><?php echo $indicadore->inv_entrante ?></td>
                     <td><?php echo $indicadore->inv_final ?></td>
                     <td><?php echo $indicadore->inv_prom ?></td>
                     <td><?php echo $indicadore->rot_mercancia ?></td>

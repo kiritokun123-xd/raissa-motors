@@ -8,6 +8,7 @@
         <td>' .date_format(date_create($indicadore->fecha),'d-m-Y') .'</td>
         <td>' .$indicadore->ven_acumulada .'</td>
         <td>' .$indicadore->inv_inicial .'</td>
+        <td>' .$indicadore->inv_entrante .'</td>
         <td>' .$indicadore->inv_final .'</td>
         <td>' .$indicadore->inv_prom .'</td>
         <td>' .$indicadore->rot_mercancia .'</td>

@@ -7,6 +7,9 @@
 <label for="upd-ven-acu">Inventario Inicial:</label>
 <input type="number" step="0.01" id="new-ven-acu" name="indicador1[inv_inicial]" placeholder="Ingrese la Venta Acumulada" value="<?php echo s($indicador1->inv_inicial); ?>">
 
+<label for="upd-ven-acu">Inventario Entrante:</label>
+<input type="number" step="0.01" id="new-ven-acu" name="indicador1[inv_entrante]" placeholder="Ingrese la Venta Acumulada" value="<?php echo s($indicador1->inv_entrante); ?>">
+
 <label for="upd-ven-acu">Inventario Final:</label>
 <input type="number" step="0.01" id="new-ven-acu" name="indicador1[inv_final]"  placeholder="Ingrese la Venta Acumulada" value="<?php echo s($indicador1->inv_final); ?>">
 

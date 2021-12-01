@@ -4,11 +4,12 @@ namespace Model;
 class Indicador2 extends ActiveRecord{
     
     protected static $tabla = 'indicador2';
-    protected static $columnasDB = ['id', 'fecha', 'servicios', 'alquiler', 'personal', 'cost_alm', 'cost_uni','cost_uni_alm'];
+    protected static $columnasDB = ['id', 'fecha', 'ven_acumulada', 'servicios', 'alquiler', 'personal', 'cost_alm', 'cost_uni','cost_uni_alm'];
     protected static $redireccion = '/dashboard';
 
     public $id;
     public $fecha;
+    public $ven_acumulada;
     public $servicios;
     public $alquiler;
     public $personal;
@@ -20,6 +21,7 @@ class Indicador2 extends ActiveRecord{
     {
         $this->id = $args['id'] ?? null;
         $this->fecha = $args['fecha'] ?? '';
+        $this->ven_acumulada = $args['ven_acumulada'] ?? '';
         $this->servicios = $args['servicios'] ?? '';
         $this->alquiler = $args['alquiler'] ?? '';
         $this->personal = $args['personal'] ?? '';
@@ -30,6 +32,9 @@ class Indicador2 extends ActiveRecord{
     public function validar(){
         if(!$this->fecha){
             self::$errores[] = "La fecha es obligatoria";
+        }
+        if(!$this->ven_acumulada){
+            self::$errores[] = "La venta acumulada es obligatoria";
         }
         if(!$this->servicios){
             self::$errores[] = "La servicios son obligatoria";

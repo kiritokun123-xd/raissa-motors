@@ -1,6 +1,8 @@
 <label for="upd-date">Fecha:</label>
 <input type="date" id="upd-date" name="indicador2[fecha]" value="<?php echo s($indicador2->fecha); ?>">
 
+<label for="upd-ven-acu">Venta Acumulada:</label>
+<input type="number" id="new-ven-acu" name="indicador2[ven_acumulada]"  placeholder="Ingrese la Venta Acumulada" value="<?php echo s($indicador2->ven_acumulada); ?>">
 <label for="upd-ven-acu">Costo de Servicios:</label>
 <input type="number" id="new-ven-acu" name="indicador2[servicios]"  placeholder="Ingrese la Venta Acumulada" value="<?php echo s($indicador2->servicios); ?>">
 
