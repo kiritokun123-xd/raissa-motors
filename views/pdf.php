@@ -150,7 +150,8 @@ $pdf->Cell(50,30,utf8_decode('FECHA: ' . date_format(date_create($pedido->fecha_
 // Salto de línea
 $pdf->Ln(35);
 $pdf->Cell(5);
-$pdf->Cell(80,20,utf8_decode('FECHA DE ENTREGA: ' . date_format(date_create($pedido->fecha_ent),'d-m-Y')),1,1,'L');
+$pdf->Cell(78,20,utf8_decode('FECHA DE ENTREGA: ' . date_format(date_create($pedido->fecha_ent),'d-m-Y')),1,0,'L');
+$pdf->Cell(40,20,utf8_decode('Nº' . $pedido->id),1,1,'C');
 $pdf->Ln(10);
 
 $pdf->Image('../public/imagenes/logopedido.png',15,10,30,30,'','http://www.raissamotors.com');
