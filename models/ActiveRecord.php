@@ -148,11 +148,7 @@ class ActiveRecord{
     }
     public static function allFechaPedido($offset,$cantidad){
         //ESCRIBIR EL QUERY
-<<<<<<< HEAD
         $query = "SELECT * FROM " . static::$tabla . " ORDER BY fecha_ini DESC, id DESC " . " LIMIT " . $offset . " , " . $cantidad;
-=======
-        $query = "SELECT * FROM " . static::$tabla . " ORDER BY fecha_ini DESC " . " LIMIT " . $offset . " , " . $cantidad;
->>>>>>> 35876a566aea49fe9caff33a36c65d370967df49
         //debuguear($query);
         $resultado = self::constularSQL($query);
 
