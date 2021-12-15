@@ -1,17 +1,21 @@
 
 
 .fondo-info{
-    background-image: url("/../imagenes/portadaweb.png");
+    background-image: url("/../build/img/portadaweb.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: calc(100vh - 8rem);
+    height: 30rem;
+    @include tablet{
+        height: calc(100vh - 8rem);
+        background-attachment: fixed;
+    }
 }
 
 .contenedor-nosotros{
     width: 80%;
     margin: 0 auto;
-    padding: 5rem 0 2rem 0;
+    padding: 10rem 0 2rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,8 +25,13 @@
     }
     .nosotros-info{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         column-gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        @include tablet{
+            grid-template-columns: repeat(3, 1fr);
+        }
         .info-caja{
             display: flex;
             flex-direction: column;
@@ -45,18 +54,35 @@
 }
 .ver-mas-nosotros{
     width: 100%;
-    background-color: #ff0f36;
+    background-color: #2C3E50;
     padding: 2rem;
     display: flex;
     justify-content: center;
     .btn-nosotros{
         padding: 1rem 2rem;
-        background-color: #ff8627;
         color: $blanco;
-        font-weight: 600;
+        font-weight: 700;
+        font-size: 1.8rem;
         border-radius: 0.5rem;
+        border-color: #3498db;
+        color: #fff;
+        box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+        transition: all 150ms ease-in-out;
+        &:hover{
+            box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+        }
     }
 }
+.third {
+    border-color: #3498db;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+  }
+  .third:hover {
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+  }
 
 .contenedor-productos{
     width: 80%;
@@ -85,6 +111,8 @@
             font-size: 2.8rem;
         }
         a{
+            position: relative;
+            z-index: 5;
             display: block;
             text-align: center;
             padding: 0.5rem 0;
@@ -92,6 +120,17 @@
             background-color: #1C1F30;
             color: $blanco;
             font-weight: 600;
+            transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+            &:hover{
+                box-shadow: 0 0 40px 40px $yellow inset;
+            }
+        }
+        img{
+            transform: scale(1);
+            transition: 0.3s;
+            &:hover{
+                transform: scale(1.2);
+            }
         }
     }
 }

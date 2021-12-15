@@ -20,17 +20,20 @@
     <script src="../build/js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+
     <header class="header-layout">
 
         <a href="" class="marca">
             <div class="marca-ico">
-                <img class="logo" src="../imagenes/logo.png" alt="">
+                <img class="logo" src="../imagenes/logo.png" alt="Logo Raissamotors">
             </div>
             <div class="marca-text">
-                RAISSAMOTOR'S
+                
+                <h2>RAISSAMOTOR'S</h2>
             </div>
+            <img class="hamburger" id="hamburger" src="../imagenes/barras.png" alt="barra">
         </a>
-        <nav class="navegador">
+        <nav class="navegador" id="navegador">
             <ul>
                 <li><a href="">Inicio</a></li>
                 <li><a href="">Nosotros</a></li>
@@ -41,6 +44,30 @@
             </ul>
         </nav>
     </header>
+    <header class="header-flotante">
+
+        <a href="" class="marca">
+            <div class="marca-ico">
+                <img class="logo" src="../imagenes/logo.png" alt="Logo Raissamotors">
+            </div>
+            <div class="marca-text">
+                
+                <h2>RAISSAMOTOR'S</h2>
+            </div>
+            <img class="hamburger" id="hamburger2" src="../imagenes/barras.png" alt="barra">
+        </a>
+        <nav class="navegador" id="navegador2">
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Nosotros</a></li>
+                <li><a href="">Motocicletas</a></li>
+                <li><a href="">Trimotos</a></li>
+                <li><a href="">Repuestos</a></li>
+                <li><a href="">Fábrica</a></li>
+            </ul>
+        </nav>
+    </header>
+    
 
     
     <?php echo $contenido; ?>
