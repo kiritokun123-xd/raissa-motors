@@ -5,7 +5,7 @@ namespace Controllers;
 use MVC\Router;
 use Model\UsuarioPermiso;
 use Model\Admin;
-USE Model\Pedido;
+use Model\Pedido;
 
 class PDFController{
 
@@ -17,7 +17,6 @@ class PDFController{
         $id = validarORedireccionar('/logistica/pedido');
 
         $pedido = Pedido::find($id);
-
         $router->renderPDF([
             'pedido' => $pedido,
             'arrayPermisos' => $arrayPermisos,

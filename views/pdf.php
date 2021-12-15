@@ -131,7 +131,7 @@ $html = 'Ahora puede imprimir fácilmente texto mezclando diferentes estilos: <b
 <u>subrayado</u>, o ¡ <b><i><u>todos a la vez</u></i></b>!<br><br>También puede incluir enlaces en el
 texto, como <a href="http://www.fpdf.org">www.fpdf.org</a>, o en una imagen: pulse en el logotipo.';
 $equipa = '<b>EQUIPAMIENTO: </b>'.$pedido->equipamiento.'<br><br>';
-$adicio = '<b>ADICIONAL: </b>'.$pedido->adicional;
+$adicio = '<b>TAPIZ: </b>'.$pedido->adicional;
 
 $pdf = new PDF();
 $pdf->AddPage();
@@ -148,18 +148,22 @@ $pdf->SetFont('Arial','B',12);
 $pdf->Cell(55,30,'ORDEN DE PRODUCCION',1,0,'C');
 $pdf->Cell(50,30,utf8_decode('FECHA: ' . date_format(date_create($pedido->fecha_ini),'d-m-Y')),1,0,'L');
 // Salto de línea
+
+
 $pdf->Ln(35);
 $pdf->Cell(5);
-$pdf->Cell(80,20,utf8_decode('FECHA DE ENTREGA: ' . date_format(date_create($pedido->fecha_ent),'d-m-Y')),1,1,'L');
-$pdf->Ln(10);
-
-$pdf->Image('../public/imagenes/logopedido.png',15,10,30,30,'','http://www.raissamotors.com');
+$pdf->Cell(78,20,utf8_decode('FECHA DE ENTREGA: ' . date_format(date_create($pedido->fecha_ent),'d-m-Y')),1,0,'L');
+$pdf->Cell(40,20,utf8_decode('Nº' . $pedido->id),1,1,'C');
+$pdf->Ln(2);
+$pdf->Image('../public_html/imagenes/logopedido.png',15,10,30,30,'','http://www.raissamotors.com');
 $pdf->SetLeftMargin(15);
 $pdf->SetFontSize(14);
-$pdf->Cell(90,15,utf8_decode('Cliente: ' .  $pedido->cliente ),0,0,'L');
-$pdf->Cell(90,15,utf8_decode('Distribuidor: ' . $pedido->distribuidor),0,1,'L');
-$pdf->Cell(90,15,utf8_decode('Serie: ' . $pedido->serie),0,0,'L');
-$pdf->Cell(90,15,utf8_decode('Motor: ' . $pedido->motor),0,1,'L');
+
+$pdf->Cell(90,10,utf8_decode('Cliente: ' .  $pedido->cliente ),0,1,'L');
+$pdf->Cell(90,10,utf8_decode('Distribuidor: ' . $pedido->distribuidor),0,1,'L');
+$pdf->Cell(90,10,utf8_decode('Vendedor: ' . $pedido->vendedor),0,1,'L');
+$pdf->Cell(90,8,utf8_decode('Serie: ' . $pedido->serie),0,0,'L');
+$pdf->Cell(90,8,utf8_decode('Motor: ' . $pedido->motor),0,1,'L');
 $pdf->Ln(5);
 $pdf->Cell(40,15,utf8_decode('VEHICULO: '),1,0,'R');
 $pdf->SetFont('Arial','',14);
@@ -205,8 +209,10 @@ $pdf->Cell(40,15,utf8_decode('MASCARA: '),1,0,'R');
 $pdf->SetFont('Arial','',14);
 $pdf->Cell(50,15,utf8_decode($pedido->mascara),1,1,'L');
 $pdf->Ln(5);
+
 //$pdf->MultiCell(45,8,utf8_decode('EQUIPAMIENTO: nandaidnadni jnsadno dsnada didad and danndindn dandn'),1,'L');
 $pdf->WriteHTML(utf8_decode($equipa));
 $pdf->WriteHTML(utf8_decode($adicio));
-$pdf->Output();
+//debuguear($pdf);
+$pdf->Output('I',utf8_decode($pedido->cliente . '-ORDENPRODUCCION.pdf'),'UTF-8');
 ?>

@@ -364,7 +364,7 @@ class LogisticaController{
             }
             $offset = ($pag - 1) * $limite;    
         }
-        $pedidos = Pedido::all($offset, $limite);
+        $pedidos = Pedido::allFechaPedido($offset, $limite);
     
         $router->render('logistica/invpedido',[
             'pedidos' => $pedidos,

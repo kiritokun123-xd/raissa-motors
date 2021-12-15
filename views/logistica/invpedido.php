@@ -33,7 +33,7 @@
                     <th>Color</th>
                     <th>Fecha entrega</th>
                     <th>Acciones</th>
-                    <th>Estado</th>
+                    
                 </tr>
             </thead>
             <tbody id="invpedido-body">
@@ -53,7 +53,7 @@
                             <a class="verpedido" target="_blank" href="/documentos/pdf?id=<?php echo $pedido->id;?>">Ver</a>
                         </div>
                     </td>
-                    <td><?php echo $pedido->estado ?></td>
+                    
                 </tr>
                 <?php endforeach; ?>
              
@@ -64,7 +64,7 @@
     <div class="gestion-articulo">
         <div class="gestion-caja paginador">
         <?php for($i = 1 ;$i<=$totalLink; $i++) : ?>
-            <a href="/logistica/inventario-motos?pag=<?php echo $i ?>" class="paginas"><?php echo $i ?></a>
+            <a href="/logistica/pedido?pag=<?php echo $i ?>" class="paginas"><?php echo $i ?></a>
         <?php endfor; ?>
         </div>
     </div>

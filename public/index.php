@@ -56,6 +56,7 @@ $router->get('/logistica/actualizar-placa',[LogisticaController::class, 'updplac
 $router->post('/logistica/actualizar-placa',[LogisticaController::class, 'updplaca']);
 
 $router->get('/logistica/pedido',[LogisticaController::class, 'invpedido']);
+$router->post('/logistica/pedido',[LogisticaController::class, 'invpedido']);
 $router->get('/logistica/nuevo-pedido',[LogisticaController::class, 'newpedido']);
 $router->post('/logistica/nuevo-pedido',[LogisticaController::class, 'newpedido']);
 $router->get('/logistica/actualizar-pedido',[LogisticaController::class, 'updpedido']);
@@ -63,6 +64,7 @@ $router->post('/logistica/actualizar-pedido',[LogisticaController::class, 'updpe
 
 //========PDF===============//
 $router->get('/documentos/pdf',[PDFController::class, 'pdf']);
+$router->post('/documentos/pdf',[PDFController::class, 'pdf']);
 
 //=======TIENDA=============//
 

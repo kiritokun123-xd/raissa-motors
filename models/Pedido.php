@@ -4,7 +4,7 @@ date_default_timezone_set("America/Phoenix");
 class Pedido extends ActiveRecord{
     
     protected static $tabla = 'pedidos';
-    protected static $columnasDB = ['id', 'fecha_ini', 'cliente', 'distribuidor', 'serie', 'motor', 'fecha_ent', 'moto', 'tipo', 'color', 'faro', 'tacometro', 'aro', 'parrilla', 'techo', 'asiento', 'mica', 'mascara', 'adicional', 'equipamiento','estado'];
+    protected static $columnasDB = ['id', 'fecha_ini', 'cliente', 'distribuidor', 'serie', 'motor', 'fecha_ent', 'moto', 'tipo', 'color', 'faro', 'tacometro', 'aro', 'parrilla', 'techo', 'asiento', 'mica', 'mascara', 'adicional', 'equipamiento','estado','vendedor'];
     protected static $redireccion = '/logistica/pedido';
 
     public $id;
@@ -28,6 +28,7 @@ class Pedido extends ActiveRecord{
     public $adicional;
     public $equipamiento;
     public $estado;
+    public $vendedor;
 
     public function __construct($args = [])
     {
@@ -51,7 +52,8 @@ class Pedido extends ActiveRecord{
         $this->mascara = $args['mascara'] ?? '';
         $this->adicional = $args['adicional'] ?? '';
         $this->equipamiento = $args['equipamiento'] ?? '';
-        $this->estado = $args['estado'] ?? 'FabricaciÃ³n';
+        $this->estado = $args['estado'] ?? 'Fabricaci¨®n';
+        $this->vendedor = $args['vendedor'] ?? '';
     }
 
     public function validar(){
@@ -59,7 +61,7 @@ class Pedido extends ActiveRecord{
             self::$errores[] = "El cliente es obligatorio";
         }
         if(!$this->motor){
-            self::$errores[] = "El NÂº motor es obligatorio";
+            self::$errores[] = "El motor es obligatorio";
         }
         if(!$this->fecha_ent){
             self::$errores[] = "La fecha de entrega es obligatoria";
@@ -91,8 +93,8 @@ class Pedido extends ActiveRecord{
         if(!$this->mica){
             self::$errores[] = "La mica es obligatoria";
         }
-        if(!$this->mica){
-            self::$errores[] = "La mica es obligatoria";
+        if(!$this->color){
+            self::$errores[] = "El color es obligatorio";
         }
         if(!$this->mascara){
             self::$errores[] = "La mascara es obligatoria";

@@ -32,7 +32,7 @@
 <body id="content">
     
     <div class="flex">
-       <ul class="navbar-nav" id="navbar-nav">
+       <ul class="navbar-nav ocultar" id="navbar-nav">
             <a href="/dashboard" class="sidebar-brand">
                 <div class="sidebar-brand-icon">
                     <img class="logo" src="../imagenes/logo.png" alt="">

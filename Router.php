@@ -123,7 +123,6 @@ class Router{
             //Crea variables desde el key : mensaje ----> $mensaje
             $$key = $value;     
         }
-
         include __DIR__ . "/views/pdf.php";
     }
 
