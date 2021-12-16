@@ -1,6 +1,6 @@
 .header-layout{
-    background: linear-gradient(to right, rgba(148,1,12,1) 0%, rgba(255,15,54,1) 100%);
-    padding: 2.4rem 1.6rem;
+    background: linear-gradient(45deg, $first-color 0%, rgba(255,15,54,1) 100%);
+    padding: 2rem 1.6rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -92,7 +92,7 @@
     }
 }
 .header-flotante{
-    background: linear-gradient(to right, rgba(148,1,12,0.85) 0%, rgba(255,15,54,0.85) 100%);
+    background: linear-gradient(to right, $first-color 0%, rgba(255,15,54,0.85) 100%);
     box-shadow: 0 0.15rem 1.75rem 0 rgb(58 59 69 / 15%);
     padding: 0;
     display: flex;
@@ -106,8 +106,9 @@
     visibility: none;
     height: 0;
     transition: 0.3s;
+    z-index: 6;
     &.mostrar-header{
-        padding: 2rem 1.6rem;
+        padding: 1.6rem 1.6rem;
         opacity: 1;
         visibility: visible;
         height: auto;

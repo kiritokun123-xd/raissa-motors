@@ -1,4 +1,10 @@
 <div class="fondo-info">
+    <div class="fondo-frase">
+        <div class="frase">
+            <h2>Más que elegancia <span>Somos Calidad</span> </h2>
+            <a href="">Escríbenos</a>
+        </div>
+    </div>
     
 </div>
 
@@ -40,15 +46,31 @@
                 <img src="../imagenes/chopper.png" alt="">
             </div>
             <div class="producto">
-                <h3 class="producto-info">Motocicletas</h3>
-                <a href="">Ver más Motocicletas</a>
+                <h3 class="producto-info">Trimotos</h3>
+                <a href="">Ver más Trimotos</a>
                 <img src="../imagenes/chopper.png" alt="">
             </div>
             <div class="producto">
-                <h3 class="producto-info">Motocicletas</h3>
-                <a href="">Ver más Motocicletas</a>
+                <h3 class="producto-info">Repuestos</h3>
+                <a href="">Ver más Repuestos</a>
                 <img src="../imagenes/chopper.png" alt="">
             </div>
         </div>
+    </div>
+</div>
+
+<div class="contenedor-fabrica">
+    <div class="info-fabrica" >    
+        <h3>Somos los únicos fabricantes de estructuras en Comas, garantizados por el Ministerio de Producción</h3>
+        
+    </div>
+</div>
+
+<div class="contenedor">
+    <div class="contenedor-promo">
+        <h2 class="titulo" >Promociones</h2>
+    </div>
+    <div class="">
+        carrusel
     </div>
 </div>
