@@ -9,14 +9,14 @@
     <!--===BOX ICONS===-->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- CSS -->
-    <link rel="stylesheet" href="../build/css/app.css">
+    <link rel="stylesheet" href="../build/css/app2.css">
     <!-- CSS Carousel-->
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <!--==SWEET ALERT-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- <script src="sweetalert2.all.min.js"></script> -->
 
-    <script src="../build/js/bundle.min.js"></script>
+    <script src="../build/js/bundle2.min.js"></script>
     <script src="../build/js/jquery-3.6.0.min.js"></script>
 </head>
 <body>

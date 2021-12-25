@@ -96,6 +96,7 @@
     <option <?php echo 'Anatómico' == $pedido->asiento ? 'selected' : ''; ?> value="Anatómico">Anatómico</option>
     <option <?php echo 'Deportivo' == $pedido->asiento ? 'selected' : ''; ?> value="Deportivo">Deportivo</option>
     <option <?php echo 'Liso' == $pedido->asiento ? 'selected' : ''; ?> value="Liso">Liso</option>
+    <option <?php echo 'Torito' == $pedido->asiento ? 'selected' : ''; ?> value="Torito">Torito</option>
 </select>
 
 <label for="mica">Mica:</label>

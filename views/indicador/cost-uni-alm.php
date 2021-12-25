@@ -64,7 +64,7 @@
     <div class="gestion-articulo">
         <div class="gestion-caja paginador">
         <?php for($i = 1 ;$i<=$totalLink; $i++) : ?>
-            <a href="/indicador/rot-mercancia?pag=<?php echo $i ?>" class="paginas"><?php echo $i ?></a>
+            <a href="/indicador/cost-uni-alma?pag=<?php echo $i ?>" class="paginas"><?php echo $i ?></a>
         <?php endfor; ?>
         </div>
     </div>
