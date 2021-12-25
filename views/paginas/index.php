@@ -70,7 +70,35 @@
     <div class="contenedor-promo">
         <h2 class="titulo" >Promociones</h2>
     </div>
-    <div class="">
-        carrusel
+    <!-- <div id="slideshow-principal">
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+        <div id="slideshow">
+            <img src="" alt="img1" id="img1">
+            <img src="" alt="img2" id="img2">
+        </div>
+        <div id="indicadores">
+
+        </div>
+    </div> -->
+
+    <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+            <li class="glide__slide"><a href=""><img src="../build/img/1.jpg" alt=""></a></li>
+            <li class="glide__slide"><img src="../build/img/2.jpg" alt=""></li>
+            <li class="glide__slide"><img src="../build/img/3.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class='bx bx-left-arrow-alt arrowglide'></i></button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class='bx bx-right-arrow-alt arrowglide' ></i></button>
+        </div>
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet" data-glide-dir="=2"></button>
+        </div>
     </div>
 </div>
