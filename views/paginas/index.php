@@ -70,18 +70,6 @@
     <div class="contenedor-promo">
         <h2 class="titulo" >Promociones</h2>
     </div>
-    <!-- <div id="slideshow-principal">
-        <div id="progress-bar-container">
-            <div id="progress-bar"></div>
-        </div>
-        <div id="slideshow">
-            <img src="" alt="img1" id="img1">
-            <img src="" alt="img2" id="img2">
-        </div>
-        <div id="indicadores">
-
-        </div>
-    </div> -->
 
     <div class="glide">
         <div class="glide__track" data-glide-el="track">
@@ -101,4 +89,8 @@
             <button class="glide__bullet" data-glide-dir="=2"></button>
         </div>
     </div>
+</div>
+
+<div class="contenedor-testi">
+    <h2 class="nosotros-testi">Nuestros Clientes</h2>
 </div>

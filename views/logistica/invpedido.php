@@ -14,8 +14,8 @@
                 <input class="input-id" type="text" id="buscarcl">
             </div>
             <div class="buscar-articulo">
-                <label for="buscarfec">Buscar Fecha:</label>
-                <input type="text" id="buscarfec">
+                <label for="buscarfec">Fecha de Entrega:</label>
+                <input type="date" class="input-id input-fecha" id="buscarfec">
             </div>
         </div>
     </div>
