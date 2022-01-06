@@ -257,3 +257,51 @@
     background-color: rgba(228, 69, 69, 0.7);
     transition: background-color 0.8s;
 }
+.cliente{
+    background-color: #EDEFEE;
+    padding: 1rem;
+    //box-shadow: 0 0.15rem 0.9rem 0 rgba(48, 48, 48, 0.15);
+}
+.div-clientes{
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    @include tablet{
+        padding: 2rem 4rem 2rem 4rem;
+        @include grid(3,2rem);
+    }
+}
+.cliente-superior{
+    display: flex;
+    .imagen-cliente{
+        img{
+            overflow: hidden;
+            border-radius: 50%;
+            width: 7rem;
+            height: 7rem;
+        }
+    }
+    .datos{
+        margin-left: 1rem;
+        h4{
+            font-size: 1.6rem;
+            color: dimgrey;
+            margin: 0;
+        }
+        p{
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+        .estrellas{
+            i{
+                color: gold;
+            }
+        }
+    }
+}
+.cliente-inferior{
+    p{
+        font-size: 1.5rem;
+    }
+}

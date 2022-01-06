@@ -93,4 +93,69 @@
 
 <div class="contenedor-testi">
     <h2 class="nosotros-testi">Nuestros Clientes</h2>
+    <div class="div-clientes">
+        <div class="cliente">
+            <div class="cliente-superior">
+                <div class="imagen-cliente">
+                    <img src="../imagenes/perfil.jpg" alt="">
+                </div>
+                <div class="datos">
+                    <h4>MARIA PEREZ</h4>
+                    <p>Distribuidora</p>
+                    <div class="estrellas">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cliente-inferior">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, a quaerat nisi at totam corrupti nihil modi ratione, rerum consectetur similique eos quae sint, iure beatae. Inventore dolores nihil quis.</p>
+            </div>
+        </div>
+        <div class="cliente">
+            <div class="cliente-superior">
+                <div class="imagen-cliente">
+                    <img src="../imagenes/perfil.jpg" alt="">
+                </div>
+                <div class="datos">
+                    <h4>MARIA PEREZ</h4>
+                    <p>Distribuidora</p>
+                    <div class="estrellas">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cliente-inferior">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, a quaerat nisi at totam corrupti nihil modi ratione, rerum consectetur similique eos quae sint, iure beatae. Inventore dolores nihil quis.</p>
+            </div>
+        </div>
+        <div class="cliente">
+            <div class="cliente-superior">
+                <div class="imagen-cliente">
+                    <img src="../imagenes/perfil.jpg" alt="">
+                </div>
+                <div class="datos">
+                    <h4>MARIA PEREZ</h4>
+                    <p>Distribuidora</p>
+                    <div class="estrellas">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cliente-inferior">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, a quaerat nisi at totam corrupti nihil modi ratione, rerum consectetur similique eos quae sint, iure beatae. Inventore dolores nihil quis.</p>
+            </div>
+        </div>
+    </div>
 </div>
