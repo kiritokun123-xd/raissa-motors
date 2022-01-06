@@ -51,8 +51,8 @@
                 <img src="../imagenes/chopper.png" alt="">
             </div>
             <div class="producto">
-                <h3 class="producto-info">Repuestos</h3>
-                <a href="">Ver más Repuestos</a>
+                <h3 class="producto-info">Accesorios</h3>
+                <a href="">Ver más Accesorios</a>
                 <img src="../imagenes/chopper.png" alt="">
             </div>
         </div>

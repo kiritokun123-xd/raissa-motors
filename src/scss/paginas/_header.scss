@@ -198,4 +198,28 @@
         }
     }
 }
+.wp-flotante{
+    position: fixed;
+    z-index: 5000;
+    bottom: 1rem;
+    right: 1rem;
+    opacity: 0;
+    visibility: 0;
+    transition: 0.3s;
+    &.mostrar-wp{
+        opacity: 1;
+        visibility: visible;
+    }
+    .wp{
+        i{
+            padding: 0.4rem;
+            border-radius: 50%;
+            background-color: $verdeF;
+            text-align: center;
+            color: $blanco;
+            font-size: 4rem;
+            font-weight: 400;
+        }
+    }
+}
 

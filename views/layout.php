@@ -40,12 +40,12 @@
                 <li><a href="">Nosotros</a></li>
                 <li><a href="">Motocicletas</a></li>
                 <li><a href="">Trimotos</a></li>
-                <li><a href="">Repuestos</a></li>
+                <li><a href="">Accesorios</a></li>
                 <li><a href="">Fábrica</a></li>
             </ul>
         </nav>
     </header>
-    <header class="header-flotante">
+    <div class="header-flotante">
 
         <a href="" class="marca">
             <div class="marca-ico">
@@ -63,12 +63,16 @@
                 <li><a href="">Nosotros</a></li>
                 <li><a href="">Motocicletas</a></li>
                 <li><a href="">Trimotos</a></li>
-                <li><a href="">Repuestos</a></li>
+                <li><a href="">Accesorios</a></li>
                 <li><a href="">Fábrica</a></li>
             </ul>
         </nav>
-    </header>
-    
+    </div>
+    <div class="wp-flotante">
+        <a class="wp" href="">
+            <i class='bx bxl-whatsapp' ></i>
+        </a>
+    </div>
 
     
     <?php echo $contenido; ?>
@@ -93,6 +97,39 @@
     </script>
 </body>
 <footer>
-    <h2>footer</h2>
+    <h2>Contáctanos</h2>
+    <div class="contenedor-contacto">
+        <div class="texto">
+            <h4>Puedes comunicarte con nosotros a través de nuestras redes sociales o llamando al <span>939-485-217</span></h4>
+        </div>
+        <div class="links">
+            <div class="link">
+                <i class='bx bxl-facebook-circle'></i>
+                <a href="https://www.facebook.com/raissamotors.sac/">Facebook</a>
+            </div>
+            <div class="link">
+                <i class='bx bxl-facebook-circle'></i>
+                <a href="https://www.facebook.com/raissamotors.sac/">Facebook</a>
+            </div>
+            <div class="link">
+                <i class='bx bxl-facebook-circle'></i>
+                <a href="https://www.facebook.com/raissamotors.sac/">Facebook</a>
+            </div>
+        </div>
+    </div>
+    <h2>Ubícanos</h2>
+    <div class="contenedor-mapa">
+        <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d487.9259317832596!2d-77.05916659325321!3d-11.946266631911397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf4ac3e487c25261d!2sRAISSA%20MOTOR&#39;S!5e0!3m2!1ses-419!2spe!4v1641503351745!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="info-contacto">
+            <h3>¿Cómo llegar?</h3>
+            <p>En el cruce de la Av. 22 de Agosto con Av. Universitaria frente al Mercado Modelo puerta 7, o dale click al boton como llegar. ¡Te esperamos!</p>
+            <div class="icono-mapa">
+                <i class='bx bx-map'></i>
+                <h4>RAISSA MOTOR'S</h4>
+            </div>
+        </div>
+    </div>
 </footer>
 </html>
