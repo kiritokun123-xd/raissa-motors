@@ -131,5 +131,8 @@
             </div>
         </div>
     </div>
+    <div class="footer">
+        <p>Todos los derechos reservados RaissaMotors 2022</p>
+    </div>
 </footer>
 </html>
