@@ -82,7 +82,7 @@
             type: "carousel",
             focusAt: 'center',
             autoplay: 2000,
-            perView: 2,
+            perView: 4,
             breakpoints:{
                 768: {
                 perView: 2

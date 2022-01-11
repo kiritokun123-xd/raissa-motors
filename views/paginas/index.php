@@ -74,9 +74,10 @@
     <div class="glide">
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
-            <li class="glide__slide"><a href=""><img src="../build/img/1.jpg" alt=""></a></li>
-            <li class="glide__slide"><img src="../build/img/2.jpg" alt=""></li>
-            <li class="glide__slide"><img src="../build/img/3.jpg" alt=""></li>
+            <li class="glide__slide"><a href=""><img src="../imagenes/PROMO1.png" alt=""></a></li>
+            <li class="glide__slide"><img src="../imagenes/PROMO1.png" alt=""></li>
+            <li class="glide__slide"><img src="../imagenes/PROMO1.png" alt=""></li>
+            <li class="glide__slide"><img src="../imagenes/PROMO1.png" alt=""></li>
             </ul>
         </div>
         <div class="glide__arrows" data-glide-el="controls">
@@ -87,6 +88,7 @@
             <button class="glide__bullet" data-glide-dir="=0"></button>
             <button class="glide__bullet" data-glide-dir="=1"></button>
             <button class="glide__bullet" data-glide-dir="=2"></button>
+            <button class="glide__bullet" data-glide-dir="=3"></button>
         </div>
     </div>
 </div>
