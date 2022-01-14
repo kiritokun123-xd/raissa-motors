@@ -36,11 +36,11 @@
         </a>
         <nav class="navegador" id="navegador">
             <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Nosotros</a></li>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
                 <li><a href="">Motocicletas</a></li>
-                <li><a href="">Trimotos</a></li>
-                <li><a href="">Accesorios</a></li>
+                <li><a href="">Mototaxis</a></li>
+                <li><a href="">Cargueros</a></li>
                 <li><a href="">Fábrica</a></li>
             </ul>
         </nav>
@@ -59,11 +59,11 @@
         </a>
         <nav class="navegador" id="navegador2">
             <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Nosotros</a></li>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
                 <li><a href="">Motocicletas</a></li>
-                <li><a href="">Trimotos</a></li>
-                <li><a href="">Accesorios</a></li>
+                <li><a href="">Mototaxis</a></li>
+                <li><a href="">Cargueros</a></li>
                 <li><a href="">Fábrica</a></li>
             </ul>
         </nav>

@@ -6,6 +6,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 30rem;
+    &.small-fondo{
+        height: 20rem;
+        background-image: url("/../build/img/4.jpg");
+    }
     @include tablet{
         height: calc(100vh - 8rem);
         background-attachment: fixed;

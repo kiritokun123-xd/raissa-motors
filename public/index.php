@@ -20,6 +20,7 @@ $router = new Router();
 //ZONA PUBLICA
 
 $router->get('/',[PaginasController::class,'index']);
+$router->get('/nosotros',[PaginasController::class,'nosotros']);
 
 //Zona Dashboard
 $router->get('/dashboard',[DashboardController::class, 'inicio']);
