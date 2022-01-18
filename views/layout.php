@@ -77,24 +77,7 @@
     
     <?php echo $contenido; ?>
 
-    <script>
-        const config = {
-            type: "carousel",
-            focusAt: 'center',
-            autoplay: 2000,
-            perView: 4,
-            breakpoints:{
-                768: {
-                perView: 2
-                },
-                600: {
-                perView: 1
-                }
-            }
-        }
-        
-        new Glide('.glide', config).mount()
-    </script>
+    
 </body>
 <footer>
     <h2>Contáctanos</h2>

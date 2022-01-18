@@ -33,7 +33,7 @@
 </div>
 
 <div class="ver-mas-nosotros">
-    <a href="" class="btn-nosotros">Ver más sobre Nosotros</a>
+    <a href="/nosotros" class="btn-nosotros">Ver más sobre Nosotros</a>
 </div>
 
 <div class="contenedor">
@@ -161,3 +161,22 @@
         </div>
     </div>
 </div>
+
+<script>
+    const config = {
+        type: "carousel",
+        focusAt: 'center',
+        autoplay: 2000,
+        perView: 4,
+        breakpoints:{
+            768: {
+            perView: 2
+            },
+            600: {
+            perView: 1
+            }
+        }
+    }
+    
+    new Glide('.glide', config).mount()
+</script>

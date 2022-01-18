@@ -29,8 +29,14 @@
     }
 }
 .contenedor-mapa{
-    display: flex;
+    @include grid(1,0rem);
+    @include tablet{
+        @include grid(2,0rem);
+    }
     .mapa{
+        iframe{
+            width: 100%;
+        }
     }
     .info-contacto{
         background-color: #EDEFEE;
