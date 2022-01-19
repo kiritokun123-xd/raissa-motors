@@ -16,4 +16,9 @@ class PaginasController{
             
         ]);
     }
+    public static function mototaxis(Router $router){
+        $router->render('paginas/mototaxis',[
+            
+        ]);
+    }
 }

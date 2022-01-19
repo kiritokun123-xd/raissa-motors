@@ -21,6 +21,7 @@ $router = new Router();
 
 $router->get('/',[PaginasController::class,'index']);
 $router->get('/nosotros',[PaginasController::class,'nosotros']);
+$router->get('/mototaxis',[PaginasController::class,'mototaxis']);
 
 //Zona Dashboard
 $router->get('/dashboard',[DashboardController::class, 'inicio']);

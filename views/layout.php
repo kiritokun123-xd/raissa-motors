@@ -39,7 +39,7 @@
                 <li><a href="/">Inicio</a></li>
                 <li><a href="/nosotros">Nosotros</a></li>
                 <li><a href="">Motocicletas</a></li>
-                <li><a href="">Mototaxis</a></li>
+                <li><a href="/mototaxis">Mototaxis</a></li>
                 <li><a href="">Cargueros</a></li>
                 <li><a href="">Fábrica</a></li>
             </ul>
@@ -61,8 +61,8 @@
             <ul>
                 <li><a href="/">Inicio</a></li>
                 <li><a href="/nosotros">Nosotros</a></li>
-                <li><a href="">Motocicletas</a></li>
-                <li><a href="">Mototaxis</a></li>
+                <li><a href="/">Motocicletas</a></li>
+                <li><a href="/mototaxis">Mototaxis</a></li>
                 <li><a href="">Cargueros</a></li>
                 <li><a href="">Fábrica</a></li>
             </ul>
