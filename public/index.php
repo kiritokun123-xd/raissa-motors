@@ -12,6 +12,7 @@ use Controllers\LoginController;
 use Controllers\IndicadorController;
 use Controllers\PaginasController;
 use Controllers\PDFController;
+use Controllers\AdministrarController;
 
 use MVC\Router;
 
@@ -63,6 +64,9 @@ $router->get('/logistica/nuevo-pedido',[LogisticaController::class, 'newpedido']
 $router->post('/logistica/nuevo-pedido',[LogisticaController::class, 'newpedido']);
 $router->get('/logistica/actualizar-pedido',[LogisticaController::class, 'updpedido']);
 $router->post('/logistica/actualizar-pedido',[LogisticaController::class, 'updpedido']);
+
+$router->get('/administrar/mototaxis',[AdministrarController::class, 'invmototaxi']);
+
 
 //========PDF===============//
 $router->get('/documentos/pdf',[PDFController::class, 'pdf']);

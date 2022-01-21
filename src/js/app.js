@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     verStock('.td-info-stock','popup-stock');
 
-
+    verEspe('.especi', 'popupespe');
 });
 function functionsAjax() {
     invArticuloAjaxId()
@@ -305,6 +305,26 @@ const ocultarNav = (menuid, navbarid,mensajesid) =>{
     }
 }
 
+const verEspe = (verespeid,popupmotoid) => {
+    const verespe = document.querySelectorAll(verespeid),
+    popupespe = document.getElementById(popupmotoid)
+    
+    if(verespe && popupespe){
+        console.log("hola")
+        verespe.forEach( stock => {
+            stock.addEventListener('click', (e) => {
+                e.preventDefault()
+                popupespe.classList.add('active')
+    
+                popupespe.onclick = function(){
+                    popupespe.classList.remove('active')
+
+                }
+                
+            })
+        })
+    }
+}
 const verStock = (verstockid,popupstockid) => {
     const verstock = document.querySelectorAll(verstockid),
     popupstock = document.getElementById(popupstockid)
