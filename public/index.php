@@ -23,6 +23,8 @@ $router = new Router();
 $router->get('/',[PaginasController::class,'index']);
 $router->get('/nosotros',[PaginasController::class,'nosotros']);
 $router->get('/mototaxis',[PaginasController::class,'mototaxis']);
+$router->post('/mototaxis',[PaginasController::class,'mototaxis']);
+$router->get('/motocicletas',[PaginasController::class,'motocicletas']);
 
 //Zona Dashboard
 $router->get('/dashboard',[DashboardController::class, 'inicio']);
@@ -66,6 +68,23 @@ $router->get('/logistica/actualizar-pedido',[LogisticaController::class, 'updped
 $router->post('/logistica/actualizar-pedido',[LogisticaController::class, 'updpedido']);
 
 $router->get('/administrar/mototaxis',[AdministrarController::class, 'invmototaxi']);
+$router->post('/administrar/mototaxis',[AdministrarController::class, 'invmototaxi']);
+$router->get('/administrar/nueva-mototaxi',[AdministrarController::class, 'newmototaxi']);
+$router->post('/administrar/nueva-mototaxi',[AdministrarController::class, 'newmototaxi']);
+$router->get('/administrar/actualizar-mototaxi',[AdministrarController::class, 'updmototaxi']);
+$router->post('/administrar/actualizar-mototaxi',[AdministrarController::class, 'updmototaxi']);
+$router->get('/administrar/motocicletas',[AdministrarController::class, 'invmotocicleta']);
+$router->post('/administrar/motocicletas',[AdministrarController::class, 'invmotocicleta']);
+$router->get('/administrar/nueva-motocicleta',[AdministrarController::class, 'newmotocicleta']);
+$router->post('/administrar/nueva-motocicleta',[AdministrarController::class, 'newmotocicleta']);
+$router->get('/administrar/actualizar-motocicleta',[AdministrarController::class, 'updmotocicleta']);
+$router->post('/administrar/actualizar-motocicleta',[AdministrarController::class, 'updmotocicleta']);
+$router->get('/administrar/cargueros',[AdministrarController::class, 'invcarguero']);
+$router->post('/administrar/cargueros',[AdministrarController::class, 'invcarguero']);
+$router->get('/administrar/nuevo-carguero',[AdministrarController::class, 'newcarguero']);
+$router->post('/administrar/nuevo-carguero',[AdministrarController::class, 'newcarguero']);
+$router->get('/administrar/actualizar-carguero',[AdministrarController::class, 'updcarguero']);
+$router->post('/administrar/actualizar-carguero',[AdministrarController::class, 'updcarguero']);
 
 
 //========PDF===============//
@@ -121,6 +140,9 @@ $router->post('/ajax/indicador1AjaxG',[IndicadorController::class, 'indicador1aj
 
 $router->post('/ajax/indicador2Ajax',[IndicadorController::class, 'indicador2ajax']);
 $router->post('/ajax/indicador2AjaxG',[IndicadorController::class, 'indicador2ajaxG']);
+
+$router->post('/ajax/verEspeAjax',[PaginasController::class, 'verespeajax']);
+$router->post('/ajax/verEspeMotocicletaAjax',[PaginasController::class, 'verespemotocicletaajax']);
 
 // AUTENTIFICAION
 $router->get('/login',[LoginController::class,'login']);

@@ -1,13 +1,13 @@
 <main class="main">
-    <h2 class="main-titulo">Administrar Mototaxis</h2>
+    <h2 class="main-titulo">Administrar Cargueros</h2>
 
     <div class="gestion-articulo">
         <div class="gestion-titulo">
-            <h3>Gestionar Mototaxis</h3>
+            <h3>Gestionar Cargueros</h3>
         </div>
         <div class="gestion-caja">
-            <a href="/administrar/nueva-mototaxi" class="nuevo-articulo" >
-                <p>Nueva Mototaxi</p>
+            <a href="/administrar/nuevo-carguero" class="nuevo-articulo" >
+                <p>Nuevo Carguero</p>
             </a>
         </div>
     </div>
@@ -24,17 +24,17 @@
                 </tr>
             </thead>
             <tbody id="invarticulo-body">
-                <?php foreach($mototaxis as $mototaxi) : ?>
+                <?php foreach($cargueros as $carguero) : ?>
                 <tr>
-                    <td><?php echo $mototaxi->id; ?></td>
+                    <td><?php echo $carguero->id; ?></td>
                     <td class="td-img" >
-                        <img class="img-articulo"  src="/imagenes/<?php echo $mototaxi->imagen; ?>" alt="<?php echo $mototaxi->nombre; ?>">
+                        <img class="img-articulo"  src="/imagenes/<?php echo $carguero->imagen; ?>" alt="<?php echo $carguero->nombre; ?>">
                     </td>
-                    <td><?php echo $mototaxi->nombre; ?></td>
-                    <td class="td-descripcion"><?php echo $mototaxi->descripcion; ?></td>
+                    <td><?php echo $carguero->nombre; ?></td>
+                    <td class="td-descripcion"><?php echo $carguero->descripcion; ?></td>
                     <td class="td-acciones"> 
                         <div class="div-acciones">
-                            <a href="/administrar/actualizar-mototaxi?id=<?php echo $mototaxi->id; ?>" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
+                            <a href="/administrar/actualizar-carguero?id=<?php echo $carguero->id; ?>" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
                             <form  method="POST" class="" action="">
                                 <input type="hidden" value="" name="id">
                                 <input type="hidden" value="propiedad" name="tipo">
@@ -54,7 +54,7 @@
     <div class="gestion-articulo">
         <div class="gestion-caja paginador">
         <?php for($i = 1 ;$i<=$totalLink; $i++) : ?>
-            <a href="/logistica/inventario-mototaxis?pag=<?php echo $i ?>" class="paginas"><?php echo $i ?></a>
+            <a href="/logistica/inventario-cargueros?pag=<?php echo $i ?>" class="paginas"><?php echo $i ?></a>
         <?php endfor; ?>
         </div>
     </div>
@@ -78,14 +78,14 @@
         if($resultado == 1){
             ?>
             <script>
-                mensajeAlerta('!Éxito!','Mototaxi agregada Correctamente','success','Ok')
+                mensajeAlerta('!Éxito!','Carguero agregado Correctamente','success','Ok')
             </script>
             <?php
         }
         if($resultado == 2){
             ?>
             <script>
-                mensajeAlerta('!Éxito!','Mototaxi Actualizada Correctamente','success','Ok')
+                mensajeAlerta('!Éxito!','Carguero Actualizado Correctamente','success','Ok')
             </script>
             <?php
         }

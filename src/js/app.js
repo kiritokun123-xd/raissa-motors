@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     verStock('.td-info-stock','popup-stock');
 
     verEspe('.especi', 'popupespe');
+    
 });
 function functionsAjax() {
     invArticuloAjaxId()
@@ -46,6 +47,9 @@ function functionsAjax() {
 
     indicador2Ajax()
     indicador2AjaxG()
+
+    verEspeAjax()
+    verEspeMAjax()
 }
 function mensajeAlerta(titulo,texto,icono,boton){
     Swal.fire({
@@ -245,6 +249,24 @@ function stockArticuloAjax(){
         });  
     })            
 }
+function verEspeAjax(){       
+    $('.especi').on('click',function(e){
+        var id = $(this).data().paso;
+        $.post("/ajax/verEspeAjax", { id: id }, function(data) {
+            $("#info-mototaxi").html(data);
+            
+        });  
+    })            
+}
+function verEspeMAjax(){       
+    $('.especi').on('click',function(e){
+        var id = $(this).data().paso;
+        $.post("/ajax/verEspeMotocicletaAjax", { id: id }, function(data) {
+            $("#info-motocicleta").html(data);
+            
+        });  
+    })            
+}
 
 
 const mostrarMensajes = (navmensajeid,mensajeid,contentid) => {
@@ -310,7 +332,6 @@ const verEspe = (verespeid,popupmotoid) => {
     popupespe = document.getElementById(popupmotoid)
     
     if(verespe && popupespe){
-        console.log("hola")
         verespe.forEach( stock => {
             stock.addEventListener('click', (e) => {
                 e.preventDefault()

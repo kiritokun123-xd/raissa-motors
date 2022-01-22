@@ -20,6 +20,13 @@
 
     <script src="../build/js/bundle.min.js"></script>
     <script src="../build/js/jquery-3.6.0.min.js"></script>
+    <script >
+        $(document).ready(function(){
+            functionsAjax()
+            
+        })
+        
+    </script>
 </head>
 <body>
     <header class="header-layout">
@@ -38,7 +45,7 @@
             <ul>
                 <li><a href="/">Inicio</a></li>
                 <li><a href="/nosotros">Nosotros</a></li>
-                <li><a href="">Motocicletas</a></li>
+                <li><a href="/motocicletas">Motocicletas</a></li>
                 <li><a href="/mototaxis">Mototaxis</a></li>
                 <li><a href="">Cargueros</a></li>
                 <li><a href="">Fábrica</a></li>

@@ -1,9 +1,25 @@
 .caja-mototaxis{
     margin-bottom: 2rem;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include tablet{
+        flex-direction: row;
+    }
+    &.invertir{
+        img{
+            order: 2;
+        }
+        .info{
+            order: 1;
+        }
+    }
     img{
-        width: 60rem;
-        height: 60rem;
+        width: 90%;
+        @include tablet{
+            width: 50%;
+        }
     }
     .info{
         margin-left: 2rem;
