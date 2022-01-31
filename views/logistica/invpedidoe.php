@@ -45,7 +45,7 @@
                     <td><?php echo date_format(date_create($pedido->fecha_ent),'d-m-Y') ?></td>
                     <td class="td-acciones"> 
                         <div class="div-acciones">
-                            <a href="/logistica/actualizar-pedido?id=<?php echo $pedido->id; ?>" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
+                            <a href="/logistica/actualizar-pedidoE?id=<?php echo $pedido->id; ?>" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
                             <a class="verpedido" target="_blank" href="/documentos/pdf?id=<?php echo $pedido->id;?>">Ver</a>
                         </div>
                     </td>
@@ -60,7 +60,7 @@
     <div class="gestion-articulo">
         <div class="gestion-caja paginador">
         <?php for($i = 1 ;$i<=$totalLink; $i++) : ?>
-            <a href="/logistica/pedido?pag=<?php echo $i ?>" class="paginas"><?php echo $i ?></a>
+            <a href="/logistica/pedidoE?pag=<?php echo $i ?>" class="paginas"><?php echo $i ?></a>
         <?php endfor; ?>
         </div>
     </div>

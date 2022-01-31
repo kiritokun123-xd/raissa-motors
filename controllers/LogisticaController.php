@@ -526,6 +526,43 @@ class LogisticaController{
             'nick' => $nick
         ]);
     }
+    public static function updpedidoE(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+
+        $id = validarORedireccionar('/logistica/pedidoE');
+
+        $pedido = Pedidoe::find($id);
+
+        $errores = Pedidoe::getErrores();
+
+        //EJECUTAR EL CODIGO DESPUES DE QuE EL USUARIO ENVIA EL FORMULARIO
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            //Asignar los atributos
+            $args = $_POST['pedido'];
+            
+            $pedido->sincronizar($args);
+            
+            $errores = $pedido->validar();
+            
+
+            //REVISAR QUE EL AAREGLO DE ERRORES ESTE VACIO
+            if(empty($errores)){
+                
+                $pedido->guardar('/logistica/pedidoE');
+            }
+
+        }
+
+        $router->render('logistica/updpedidoE',[
+            'pedido' => $pedido,
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
+        ]);
+    }
+
     //=====PLACA======//
     
     public static function invplaca(Router $router){
