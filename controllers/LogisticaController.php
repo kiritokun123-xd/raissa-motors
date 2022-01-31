@@ -8,6 +8,7 @@ use Model\ArticuloAlmacen;
 use Model\UsuarioPermiso;
 use Model\Admin;
 use Model\Pedido;
+use Model\Pedidoe;
 
 use Intervention\Image\ImageManagerStatic as Image;
 use Model\Placa;
@@ -339,7 +340,7 @@ class LogisticaController{
             'nick' => $nick
         ]);
     }
-    //=====PEDIDO======//
+    //=====PEDIDO TRIMOTO======//
 
     public static function invpedido(Router $router){
         $auth = $_SESSION['id'];
@@ -460,6 +461,71 @@ class LogisticaController{
         ]);
     }
 
+     //=====PEDIDO ESTRUCUTURA======//
+     public static function invpedidoE(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+
+        $resultado = $_GET['resultado'] ?? null;
+
+        $limite = 10;
+        
+        $pag = $_GET['pag'] ?? null;
+
+        $offset = 0;
+
+        $totalPagina = Pedidoe::totalPagina();
+
+        $totalLink = ceil($totalPagina/ $limite);
+        
+        if(isset($pag)){
+            if($pag < 1){
+                $pag = 1;
+            }
+            $offset = ($pag - 1) * $limite;    
+        }
+        $pedidos = Pedidoe::allFechaPedido($offset, $limite);
+    
+        $router->render('logistica/invpedidoe',[
+            'pedidos' => $pedidos,
+            'resultado' => $resultado,
+            'totalLink' => $totalLink,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
+        ]);
+    }
+    public static function newpedidoE(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+
+        $pedido = new Pedidoe();
+
+        $errores = Pedidoe::getErrores();
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            /*CREA UNA NUEVA INSTANCIA*/
+            $pedido = new Pedidoe($_POST['pedido']);
+
+            /*VALIDAR*/
+            $errores = $pedido->validar();
+
+            //REVISAR QUE EL ARREGLO DE ERRORES ESTE VACIO
+            if(empty($errores)){
+
+                //SUBE A LA BD
+                $pedido->guardar('/logistica/pedidoE');
+                
+            }
+        }
+        $router->render('logistica/newpedidoE',[
+            'pedido' => $pedido,
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
+        ]);
+    }
     //=====PLACA======//
     
     public static function invplaca(Router $router){

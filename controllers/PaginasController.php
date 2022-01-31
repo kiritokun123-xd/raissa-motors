@@ -29,10 +29,18 @@ class PaginasController{
     }
     public static function verespemajax(Router $router){
         $id = $_POST['id'];
-        $motocicleta = Mototaxi::find($id);
+        $motocicleta = Motocicleta::find($id);
 
         $router->renderAjax('verespemajax',[
             'motocicleta' => $motocicleta
+        ]);
+    }
+    public static function verespecajax(Router $router){
+        $id = $_POST['id'];
+        $carguero = Carguero::find($id);
+
+        $router->renderAjax('verespecajax',[
+            'carguero' => $carguero
         ]);
     }
     public static function mototaxis(Router $router){
@@ -45,6 +53,12 @@ class PaginasController{
         $motocicletas = Motocicleta::all(0, 100);
         $router->render('paginas/motocicletas',[
             'motocicletas' => $motocicletas
+        ]);
+    }
+    public static function cargueros(Router $router){
+        $cargueros = Carguero::all(0, 100);
+        $router->render('paginas/cargueros',[
+            'cargueros' => $cargueros
         ]);
     }
 }

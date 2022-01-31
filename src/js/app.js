@@ -50,6 +50,7 @@ function functionsAjax() {
 
     verEspeAjax()
     verEspeMAjax()
+    verEspeCAjax()
 }
 function mensajeAlerta(titulo,texto,icono,boton){
     Swal.fire({
@@ -263,6 +264,15 @@ function verEspeMAjax(){
         var id = $(this).data().paso;
         $.post("/ajax/verEspeMotocicletaAjax", { id: id }, function(data) {
             $("#info-motocicleta").html(data);
+            
+        });  
+    })            
+}
+function verEspeCAjax(){       
+    $('.especi').on('click',function(e){
+        var id = $(this).data().paso;
+        $.post("/ajax/verEspeCargueroAjax", { id: id }, function(data) {
+            $("#info-carguero").html(data);
             
         });  
     })            

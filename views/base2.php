@@ -91,15 +91,15 @@
             <li class="nav-item" <?php echo (noTienePermiso(1,$arrayPermisos))? 'style="display: none"': ''; ?>>
                 <a href="" class="nav-link navlink"  data-paso="2">
                     <i class='bx bx-cart-alt bx-icon'></i>
-                    <span class="span">Operaciones</span>
+                    <span class="span">Gestionar Pedidos</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
                 </a>
 
                 <div class="nav-caja t-2 caja-query" >
                     <div class="nav-caja-items">
                         <h6>Gestionar:</h6>
-                        <a href="/logistica/pedido">Gestionar Pedidos</a>
-                        <a href="/logistica/ver-pedido">Ver Pedidos</a>
+                        <a href="/logistica/pedido">Trimotos</a>
+                        <a href="/logistica/pedidoE">Estructuras</a>
                     </div>
                 </div>
             </li>

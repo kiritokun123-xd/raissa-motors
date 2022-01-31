@@ -1,12 +1,12 @@
 <main class="main">
-    <h2 class="main-titulo">Pedidos Trimotos</h2>
+    <h2 class="main-titulo">Pedidos Estructuras</h2>
 
     <div class="gestion-articulo">
         <div class="gestion-titulo">
             <h3>Gestionar Pedidos</h3>
         </div>
         <div class="gestion-caja">
-            <a href="/logistica/nuevo-pedido" class="nuevo-articulo" >
+            <a href="/logistica/nuevo-pedidoE" class="nuevo-articulo" >
                 <p>Nuevo Pedido</p>
             </a>
             <div class="buscar-articulo">
@@ -27,8 +27,6 @@
                     <th>Id</th>
                     <th>Fecha Ini</th>
                     <th>Cliente</th>
-                    <th>Motor</th>
-                    <th>Moto</th>
                     <th>Tipo</th>
                     <th>Color</th>
                     <th>Fecha entrega</th>
@@ -42,8 +40,6 @@
                     <td><?php echo $pedido->id ?></td>
                     <td><?php echo date_format(date_create($pedido->fecha_ini),'d-m-Y')?></td>
                     <td><?php echo $pedido->cliente ?></td>
-                    <td><?php echo $pedido->motor ?></td>
-                    <td><?php echo $pedido->moto ?></td>
                     <td><?php echo $pedido->tipo ?></td>
                     <td><?php echo $pedido->color ?></td>
                     <td><?php echo date_format(date_create($pedido->fecha_ent),'d-m-Y') ?></td>
