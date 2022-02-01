@@ -562,6 +562,15 @@ class LogisticaController{
             'nick' => $nick
         ]);
     }
+    public static function invpedidoajaxe(Router $router){
+        $filtro = $_POST['filtro'];
+
+        $pedidos = Pedidoe::filtrarAjax('cliente',$filtro);
+
+        $router->renderAjax('invpedidoajaxe',[
+            'pedidos' => $pedidos
+        ]);
+    }
 
     //=====PLACA======//
     

@@ -30,6 +30,8 @@ function functionsAjax() {
     invPedidosAjaxC()
     invPedidosAjaxF()
 
+    invPedidosAjaxE()
+
     invtienda()
     invtiendaN()
 
@@ -145,6 +147,15 @@ function invPedidosAjaxF(){
     $('#buscarfec').on('input',function(){
         var filtro = $(this).val();
         $.post("/ajax/invpedidoAjaxF", { filtro: filtro }, function(data) {
+            $("#invpedido-body").html(data);
+            
+        });  
+    })            
+}
+function invPedidosAjaxE(){
+    $('#buscarcle').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invpedidoAjaxE", { filtro: filtro }, function(data) {
             $("#invpedido-body").html(data);
             
         });  

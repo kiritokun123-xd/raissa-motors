@@ -10,12 +10,8 @@
                 <p>Nuevo Pedido</p>
             </a>
             <div class="buscar-articulo">
-                <label for="buscarcl">Buscar por Cliente:</label>
-                <input class="input-id" type="text" id="buscarcl">
-            </div>
-            <div class="buscar-articulo">
-                <label for="buscarfec">Fecha de Entrega:</label>
-                <input type="date" class="input-id input-fecha" id="buscarfec">
+                <label for="buscarcle">Buscar por Cliente:</label>
+                <input class="input-id" type="text" id="buscarcle">
             </div>
         </div>
     </div>
@@ -46,7 +42,7 @@
                     <td class="td-acciones"> 
                         <div class="div-acciones">
                             <a href="/logistica/actualizar-pedidoE?id=<?php echo $pedido->id; ?>" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
-                            <a class="verpedido" target="_blank" href="/documentos/pdf?id=<?php echo $pedido->id;?>">Ver</a>
+                            <a class="verpedido" target="_blank" href="/documentos/pdf2?id=<?php echo $pedido->id;?>">Ver</a>
                         </div>
                     </td>
                     

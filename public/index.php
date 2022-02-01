@@ -75,7 +75,7 @@ $router->post('/logistica/pedidoE',[LogisticaController::class, 'invpedidoE']);
 $router->get('/logistica/nuevo-pedidoE',[LogisticaController::class, 'newpedidoE']);
 $router->post('/logistica/nuevo-pedidoE',[LogisticaController::class, 'newpedidoE']);
 $router->get('/logistica/actualizar-pedidoE',[LogisticaController::class, 'updpedidoE']);
-$router->post('/logistica/actualizar-pedidoE',[LogisticaController::class, 'updpedido']);
+$router->post('/logistica/actualizar-pedidoE',[LogisticaController::class, 'updpedidoE']);
 
 $router->get('/administrar/mototaxis',[AdministrarController::class, 'invmototaxi']);
 $router->post('/administrar/mototaxis',[AdministrarController::class, 'invmototaxi']);
@@ -101,6 +101,8 @@ $router->post('/administrar/actualizar-carguero',[AdministrarController::class, 
 //========PDF===============//
 $router->get('/documentos/pdf',[PDFController::class, 'pdf']);
 $router->post('/documentos/pdf',[PDFController::class, 'pdf']);
+$router->get('/documentos/pdf2',[PDFController::class, 'pdf2']);
+$router->post('/documentos/pdf2',[PDFController::class, 'pdf2']);
 
 //=======TIENDA=============//
 
@@ -145,6 +147,7 @@ $router->post('/ajax/invusuarioAjaxId',[UsuarioController::class, 'invusuarioaja
 $router->post('/ajax/invusuarioAjaxN',[UsuarioController::class, 'invusuarioajaxN']);
 $router->post('/ajax/invpedidoAjaxC',[LogisticaController::class, 'invpedidoajaxc']);
 $router->post('/ajax/invpedidoAjaxF',[LogisticaController::class, 'invpedidoajaxf']);
+$router->post('/ajax/invpedidoAjaxE',[LogisticaController::class, 'invpedidoajaxe']);
 
 $router->post('/ajax/indicador1Ajax',[IndicadorController::class, 'indicador1ajax']);
 $router->post('/ajax/indicador1AjaxG',[IndicadorController::class, 'indicador1ajaxG']);
