@@ -15,25 +15,25 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nostrum, praesentium ducimus quae quaerat minima pariatur corporis possimus debitis aut explicabo blanditiis hic est voluptas doloribus nihil? Deleniti, labore officia.</p>
     <div class="nosotros-info">
         <div class="info-caja">
-            <i class='bx bx-cycling'></i>
-            <h3>Motos</h3>
-            <p>Motos de primera calidad y elegancia</p>
+            <i class='bx bx-list-check'></i>
+            <h3>Calidad</h3>
+            <p>Motos de primera calidad y elegancia hecha por especialistas</p>
+        </div>
+        <div class="info-caja">
+            <i class='bx bxs-badge-dollar'></i>
+            <h3>Precio</h3>
+            <p>Motos con precios de fábrica con todos los gustos del cliente</p>
         </div>
         <div class="info-caja">
             <i class='bx bx-cycling'></i>
-            <h3>Motos</h3>
-            <p>Motos de primera calidad y elegancia</p>
-        </div>
-        <div class="info-caja">
-            <i class='bx bx-cycling'></i>
-            <h3>Motos</h3>
-            <p>Motos de primera calidad y elegancia</p>
+            <h3>Alcance</h3>
+            <p>Llegamos a todo el Perú y sus provincias, no hay límites</p>
         </div>
     </div>
 </div>
 
 <div class="ver-mas-nosotros">
-    <a href="" class="btn-nosotros">Ver más sobre Nosotros</a>
+    <a href="/nosotros" class="btn-nosotros">Ver más sobre Nosotros</a>
 </div>
 
 <div class="contenedor">
@@ -48,12 +48,12 @@
             <div class="producto">
                 <h3 class="producto-info">Trimotos</h3>
                 <a href="">Ver más Trimotos</a>
-                <img src="../imagenes/chopper.png" alt="">
+                <img src="../imagenes/MOTOTAXI.png" alt="">
             </div>
             <div class="producto">
                 <h3 class="producto-info">Accesorios</h3>
                 <a href="">Ver más Accesorios</a>
-                <img src="../imagenes/chopper.png" alt="">
+                <img src="../imagenes/HELICOPTERO.png" alt="">
             </div>
         </div>
     </div>
@@ -161,3 +161,22 @@
         </div>
     </div>
 </div>
+
+<script>
+    const config = {
+        type: "carousel",
+        focusAt: 'center',
+        autoplay: 2000,
+        perView: 4,
+        breakpoints:{
+            768: {
+            perView: 2
+            },
+            600: {
+            perView: 1
+            }
+        }
+    }
+    
+    new Glide('.glide', config).mount()
+</script>

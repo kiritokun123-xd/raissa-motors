@@ -1,0 +1,12 @@
+.caja-nosotros{
+    @include grid(1,2rem);
+    @include tablet{
+        @include grid(2,2rem);
+    }
+    .info{
+        padding: 2rem;
+        p{
+            text-align: justify;
+        }
+    }
+}

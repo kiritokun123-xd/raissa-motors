@@ -1,0 +1,95 @@
+.caja-mototaxis{
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include tablet{
+        flex-direction: row;
+    }
+    &.invertir{
+        img{
+            order: 2;
+        }
+        .info{
+            order: 1;
+        }
+    }
+    img{
+        width: 90%;
+        @include tablet{
+            width: 50%;
+        }
+    }
+    .info{
+        margin-left: 2rem;
+        h3{
+            font-size: 4rem;
+            margin: 0;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .especi{
+            background-color: crimson;
+            color: $blanco;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            &:hover{
+                background-color: rgb(211, 77, 104); 
+            }
+        }
+    }
+}
+
+.popup-motos{
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    .caja-popup-motos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        @include tablet{
+            width: 60%;
+        }
+        background-color: $blanco;
+        border-radius: 1rem;
+        h3{
+            width: 100%;
+            margin: 0;
+            border-bottom: 1px solid $grisOscuro;
+        }
+    }
+    &.active{
+        opacity: 1;
+        visibility:visible;
+    }
+}
+.info-motos{
+    padding: 2rem;
+    .info-moto{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        i{
+            color: green;
+        }
+        p{
+            font-size: 1.6rem;
+        }
+    }
+}

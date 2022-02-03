@@ -1,21 +1,17 @@
 <main class="main">
-    <h2 class="main-titulo">Pedidos Trimotos</h2>
+    <h2 class="main-titulo">Pedidos Estructuras</h2>
 
     <div class="gestion-articulo">
         <div class="gestion-titulo">
             <h3>Gestionar Pedidos</h3>
         </div>
         <div class="gestion-caja">
-            <a href="/logistica/nuevo-pedido" class="nuevo-articulo" >
+            <a href="/logistica/nuevo-pedidoE" class="nuevo-articulo" >
                 <p>Nuevo Pedido</p>
             </a>
             <div class="buscar-articulo">
-                <label for="buscarcl">Buscar por Cliente:</label>
-                <input class="input-id" type="text" id="buscarcl">
-            </div>
-            <div class="buscar-articulo">
-                <label for="buscarfec">Fecha de Entrega:</label>
-                <input type="date" class="input-id input-fecha" id="buscarfec">
+                <label for="buscarcle">Buscar por Cliente:</label>
+                <input class="input-id" type="text" id="buscarcle">
             </div>
         </div>
     </div>
@@ -27,8 +23,6 @@
                     <th>Id</th>
                     <th>Fecha Ini</th>
                     <th>Cliente</th>
-                    <th>Motor</th>
-                    <th>Moto</th>
                     <th>Tipo</th>
                     <th>Color</th>
                     <th>Fecha entrega</th>
@@ -42,15 +36,13 @@
                     <td><?php echo $pedido->id ?></td>
                     <td><?php echo date_format(date_create($pedido->fecha_ini),'d-m-Y')?></td>
                     <td><?php echo $pedido->cliente ?></td>
-                    <td><?php echo $pedido->motor ?></td>
-                    <td><?php echo $pedido->moto ?></td>
                     <td><?php echo $pedido->tipo ?></td>
                     <td><?php echo $pedido->color ?></td>
                     <td><?php echo date_format(date_create($pedido->fecha_ent),'d-m-Y') ?></td>
                     <td class="td-acciones"> 
                         <div class="div-acciones">
-                            <a href="/logistica/actualizar-pedido?id=<?php echo $pedido->id; ?>" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
-                            <a class="verpedido" target="_blank" href="/documentos/pdf?id=<?php echo $pedido->id;?>">Ver</a>
+                            <a href="/logistica/actualizar-pedidoE?id=<?php echo $pedido->id; ?>" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
+                            <a class="verpedido" target="_blank" href="/documentos/pdf2?id=<?php echo $pedido->id;?>">Ver</a>
                         </div>
                     </td>
                     
@@ -64,7 +56,7 @@
     <div class="gestion-articulo">
         <div class="gestion-caja paginador">
         <?php for($i = 1 ;$i<=$totalLink; $i++) : ?>
-            <a href="/logistica/pedido?pag=<?php echo $i ?>" class="paginas"><?php echo $i ?></a>
+            <a href="/logistica/pedidoE?pag=<?php echo $i ?>" class="paginas"><?php echo $i ?></a>
         <?php endfor; ?>
         </div>
     </div>

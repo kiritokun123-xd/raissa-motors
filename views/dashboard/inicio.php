@@ -21,20 +21,20 @@
                 </div>
             </div>
         </a>
-        <a href="/logistica/inventario-motos">
+        <a href="/logistica/pedido">
             <div class="acceso-articulo">
                 <div class="acceso-titulo">
-                    <h3 class="text-center rojo">Inventario Motos</h3>
+                    <h3 class="text-center rojo">Pedidos Trimotos</h3>
                 </div>
                 <div class="acceso-caja rojo">
                     <i class='bx bx-cycling icono-caja'></i>
                 </div>
             </div>
         </a>
-        <a href="/logistica/inventario-placas">
+        <a href="/logistica/pedidoE">
             <div class="acceso-articulo">
                 <div class="acceso-titulo">
-                    <h3 class="text-center">Inventario Placas</h3>
+                    <h3 class="text-center">Pedidos Estructuras</h3>
                 </div>
                 <div class="acceso-caja">
                     <i class='bx bx-barcode icono-caja'></i>

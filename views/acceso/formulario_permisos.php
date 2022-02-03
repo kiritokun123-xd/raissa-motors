@@ -4,7 +4,7 @@
 <label for="new-password">Permisos:</label>
 <?php $i = 0; foreach($usuariopermisos as $usuariopermiso){ ?>
     
-    <?php $permisos = ['Administración','Tienda','Ensamblaje','Soldadura']; ?>
+    <?php $permisos = ['Administración','Ventas','Inventariado','PaginaWeb']; ?>
     <div class="checkbox">
         
         <label for=""><input class="switch" type="checkbox" name="checkbox[]" value="<?php echo s($usuariopermiso->permisoId); ?>" <?php echo ($usuariopermiso->permitido) == 'si' ?  "checked" : "" ?>><?php echo $permisos[$i]; ?></label>

@@ -51,7 +51,7 @@
                 </a>
             </li>
 
-            <li class="nav-item" <?php echo (noTienePermiso(1,$arrayPermisos))? 'style="display: none"': ''; ?>>
+            <li class="nav-item not-visible" <?php echo (noTienePermiso(1,$arrayPermisos))? 'style="display: none"': ''; ?>>
                 <a href="" class="nav-link navlink"  data-paso="0">
                     <i class='bx bx-cart-alt bx-icon'></i>
                     <span class="span">Indicadores</span>
@@ -88,79 +88,32 @@
                 </div>
             </li>
 
-            <li class="nav-item" <?php echo (noTienePermiso(1,$arrayPermisos))? 'style="display: none"': ''; ?>>
+            <li class="nav-item" <?php echo (noTienePermiso(2,$arrayPermisos))? 'style="display: none"': ''; ?>>
                 <a href="" class="nav-link navlink"  data-paso="2">
                     <i class='bx bx-cart-alt bx-icon'></i>
-                    <span class="span">Operaciones</span>
+                    <span class="span">Gestionar Pedidos</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
                 </a>
 
                 <div class="nav-caja t-2 caja-query" >
                     <div class="nav-caja-items">
                         <h6>Gestionar:</h6>
-                        <a href="/logistica/pedido">Gestionar Pedidos</a>
-                        <a href="/logistica/ver-pedido">Ver Pedidos</a>
+                        <a href="/logistica/pedido">Trimotos</a>
+                        <a href="/logistica/pedidoE">Estructuras</a>
                     </div>
                 </div>
             </li>
 
-            <li class="nav-item not-visible" >
-                <a href="" class="nav-link navlink" data-paso="1">
-                    <i class='bx bx-cart-alt bx-icon'></i>
-                    <span class="span">Operaciones</span>
-                    <i class='bx bxs-right-arrow bx-arrow'></i>
-                </a>
-
-                <div class="nav-caja caja-query" >
-                    <div class="nav-caja-items">
-                        <h6>Pedidos y Compra:</h6>
-                        <a href="">Gestionar Pedidos</a>
-                        <a href="">Ver Ordenes de Compra</a>
-                    </div>
-                </div>
-            </li>
-
-            <li class="nav-item not-visible"">
-                <a href="" class="nav-link navlink" data-paso="2">
-                    <i class='bx bxs-user-detail bx-icon'></i>
-                    <span class="span">Proveedores</span>
-                    <i class='bx bxs-right-arrow bx-arrow'></i>
-                </a>
-
-                <div class="nav-caja caja-query" >
-                    <div class="nav-caja-items">
-                        <h6>Proveedor y precios: </h6>
-                        <a href="">Artículos y precios</a>
-                        <a href="">Administrar Proveedor </a>
-                    </div>
-                </div>
-            </li>
 
             <hr class="siderbar-divider">
 
-            <div class="sidebar-heading" <?php echo (noTienePermiso(2,$arrayPermisos))? 'style="display: none"': ''; ?>>Almacén Tienda</div>
+            <div class="sidebar-heading" <?php echo (noTienePermiso(3,$arrayPermisos))? 'style="display: none"': ''; ?>>Almacén Tienda</div>
 
-            <li class="nav-item" <?php echo (noTienePermiso(2,$arrayPermisos))? 'style="display: none"': ''; ?>>
+            <li class="nav-item" <?php echo (noTienePermiso(3,$arrayPermisos))? 'style="display: none"': ''; ?>>
                 <a href="/tienda/inventario" class="nav-link">
                     <i class='bx bxs-store-alt bx-icon'></i>
                     <span class="span">Inventario</span>
                 </a> 
-            </li>
-
-            <li class="nav-item not-visible">
-                <a href="" class="nav-link navlink" data-paso="3">
-                    <i class='bx bx-cart-alt bx-icon'></i>
-                    <span class="span">Operaciones</span>
-                    <i class='bx bxs-right-arrow bx-arrow'></i>
-                </a>
-
-                <div class="nav-caja caja-query" >
-                    <div class="nav-caja-items">
-                        <h6>Pedidos y Compra:</h6>
-                        <a href="">Ver Pedidos</a>
-                        <a href="">Gestionar Orden de Compra</a>
-                    </div>
-                </div>
             </li>
             
             <hr class="siderbar-divider ">
@@ -174,61 +127,32 @@
                 </a> 
             </li>
 
-            <li class="nav-item not-visible"">
-                <a href="" class="nav-link navlink" data-paso="4">
-                    <i class='bx bx-cart-alt bx-icon'></i>
-                    <span class="span">Operaciones</span>
-                    <i class='bx bxs-right-arrow bx-arrow'></i>
-                </a>
-
-                <div class="nav-caja caja-query" >
-                    <div class="nav-caja-items">
-                        <h6>Pedidos y Compra:</h6>
-                        <a href="">Ver Pedidos</a>
-                        <a href="">Gestionar Orden de Compra</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- <li class="nav-item">
-                <a href="" class="nav-link navlink" data-paso="5">
-                    <i class='bx bx-cycling bx-icon'></i>
-                    <span class="span">Motos</span>
-                    <i class='bx bxs-right-arrow bx-arrow'></i>
-                </a>
-
-                <div class="nav-caja caja-query" >
-                    <div class="nav-caja-items">
-                        <h6>Piezas y motos:</h6>
-                        <a href="">Piezas de Moto</a>
-                        <a href="">Adminitrar Motos</a>
-                    </div>
-                </div>
-            </li> -->
-
             <hr class="siderbar-divider">
 
-            <div class="sidebar-heading" <?php echo (noTienePermiso(4,$arrayPermisos))? 'style="display: none"': ''; ?>>Almacén Soldadura</div>
+            <div class="sidebar-heading" <?php echo (noTienePermiso(3,$arrayPermisos))? 'style="display: none"': ''; ?>>Almacén Soldadura</div>
 
-            <li class="nav-item" <?php echo (noTienePermiso(4,$arrayPermisos))? 'style="display: none"': ''; ?>>
+            <li class="nav-item" <?php echo (noTienePermiso(3,$arrayPermisos))? 'style="display: none"': ''; ?>>
                 <a href="/soldadura/inventario" class="nav-link">
                     <i class='bx bxs-store-alt bx-icon'></i>
                     <span class="span">Inventario</span>
                 </a> 
             </li>
+            
+            <hr class="siderbar-divider">
 
-            <li class="nav-item not-visible"">
-                <a href="" class="nav-link navlink" data-paso="5">
-                    <i class='bx bx-cart-alt bx-icon'></i>
-                    <span class="span">Operaciones</span>
+            <li class="nav-item" <?php echo (noTienePermiso(4,$arrayPermisos))? 'style="display: none"': ''; ?>>
+                <a href="" class="nav-link navlink"  data-paso="3">
+                    <i class='bx bx-laptop bx-icon'></i>
+                    <span class="span">Administrar Página</span>
                     <i class='bx bxs-right-arrow bx-arrow'></i>
                 </a>
 
-                <div class="nav-caja caja-query" >
+                <div class="nav-caja t-3 caja-query" >
                     <div class="nav-caja-items">
-                        <h6>Pedidos y Compra:</h6>
-                        <a href="">Ver Pedidos</a>
-                        <a href="">Gestionar Orden de Compra</a>
+                        <h6>Gestionar:</h6>
+                        <a href="/administrar/motocicletas">Motocicletas</a>
+                        <a href="/administrar/mototaxis">Mototaxis</a>
+                        <a href="/administrar/cargueros">Cargueros</a>
                     </div>
                 </div>
             </li>
@@ -241,16 +165,7 @@
                     <span class="span">Accesos y Usuarios</span>
                 </a>
             </li>
-            
-            <hr class="siderbar-divider">
-            
-            <li class="nav-item" <?php echo (noTienePermiso(1,$arrayPermisos))? 'style="display: none"': ''; ?>>
-                <a href="/" class="nav-link">
-                    <i class='bx bx-laptop bx-icon'></i>
-                    <span class="span">Administrar Página</span>
-                </a>
-                
-            </li>
+
             <hr class="siderbar-divider">
 
             <div class="lateral" >

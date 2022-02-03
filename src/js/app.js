@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     verStock('.td-info-stock','popup-stock');
 
-
+    verEspe('.especi', 'popupespe');
+    
 });
 function functionsAjax() {
     invArticuloAjaxId()
@@ -28,6 +29,8 @@ function functionsAjax() {
 
     invPedidosAjaxC()
     invPedidosAjaxF()
+
+    invPedidosAjaxE()
 
     invtienda()
     invtiendaN()
@@ -46,6 +49,10 @@ function functionsAjax() {
 
     indicador2Ajax()
     indicador2AjaxG()
+
+    verEspeAjax()
+    verEspeMAjax()
+    verEspeCAjax()
 }
 function mensajeAlerta(titulo,texto,icono,boton){
     Swal.fire({
@@ -140,6 +147,15 @@ function invPedidosAjaxF(){
     $('#buscarfec').on('input',function(){
         var filtro = $(this).val();
         $.post("/ajax/invpedidoAjaxF", { filtro: filtro }, function(data) {
+            $("#invpedido-body").html(data);
+            
+        });  
+    })            
+}
+function invPedidosAjaxE(){
+    $('#buscarcle').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invpedidoAjaxE", { filtro: filtro }, function(data) {
             $("#invpedido-body").html(data);
             
         });  
@@ -245,6 +261,33 @@ function stockArticuloAjax(){
         });  
     })            
 }
+function verEspeAjax(){       
+    $('.especi').on('click',function(e){
+        var id = $(this).data().paso;
+        $.post("/ajax/verEspeAjax", { id: id }, function(data) {
+            $("#info-mototaxi").html(data);
+            
+        });  
+    })            
+}
+function verEspeMAjax(){       
+    $('.especi').on('click',function(e){
+        var id = $(this).data().paso;
+        $.post("/ajax/verEspeMotocicletaAjax", { id: id }, function(data) {
+            $("#info-motocicleta").html(data);
+            
+        });  
+    })            
+}
+function verEspeCAjax(){       
+    $('.especi').on('click',function(e){
+        var id = $(this).data().paso;
+        $.post("/ajax/verEspeCargueroAjax", { id: id }, function(data) {
+            $("#info-carguero").html(data);
+            
+        });  
+    })            
+}
 
 
 const mostrarMensajes = (navmensajeid,mensajeid,contentid) => {
@@ -305,6 +348,25 @@ const ocultarNav = (menuid, navbarid,mensajesid) =>{
     }
 }
 
+const verEspe = (verespeid,popupmotoid) => {
+    const verespe = document.querySelectorAll(verespeid),
+    popupespe = document.getElementById(popupmotoid)
+    
+    if(verespe && popupespe){
+        verespe.forEach( stock => {
+            stock.addEventListener('click', (e) => {
+                e.preventDefault()
+                popupespe.classList.add('active')
+    
+                popupespe.onclick = function(){
+                    popupespe.classList.remove('active')
+
+                }
+                
+            })
+        })
+    }
+}
 const verStock = (verstockid,popupstockid) => {
     const verstock = document.querySelectorAll(verstockid),
     popupstock = document.getElementById(popupstockid)

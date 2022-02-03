@@ -24,10 +24,9 @@ class Router{
         //==ARREGLO DE RUTAS PROTEGIDAS==
         $rutas_protegidas2 = [];
         $rutas_administrador = ['/logistica/inventario-articulos','/logistica/nuevo-articulo','/logistica/actualizar-articulo','/logistica/inventario-motos','/logistica/nueva-moto','/logistica/actualizar-moto','/logistica/inventario-placas','/logistica/actualizar-placa','/acceso/usuario','/acceso/nuevo-usuario','/acceso/actualizar-usuario','/acceso/permiso-usuario',];
-        $rutas_tienda = ['/tienda/inventario','/tienda/actualizar-stock'];
-        $rutas_ensamblaje = ['/ensamblaje/inventario','/ensamblaje/actualizar-stock'];
-        $rutas_soldadura = ['/soldadura/inventario','/soldadura/actualizar-stock'];
-        $rutas_ajax = ['/ajax/invarticuloAjax','/ajax/invarticuloAjaxId','/ajax/stockarticuloAjax','/ajax/invmotoAjaxId','/ajax/invmotoAjax','/ajax/invplacaAjaxP','/ajax/invplacaAjaxN','/ajax/invtienda','/ajax/invtiendaN','/ajax/invensamblaje','/ajax/invensamblajeN','/ajax/insoldadura','/ajax/insoldaduraN','/ajax/invusuarioAjaxId'];
+        $rutas_tienda = ['/logistica/pedido','/logistica/actualizar-pedido','/logistica/nuevo-pedido'];
+        $rutas_ensamblaje = ['/tienda/inventario','/tienda/actualizar-stock','/ensamblaje/inventario','/ensamblaje/actualizar-stock','/soldadura/inventario','/soldadura/actualizar-stock'];
+        $rutas_soldadura = ['/administrar/motocicletas','/administrar/actualizar-motocicleta','/administrar/nueva-motocicleta','/administrar/mototaxis','/administrar/actualizar-mototaxi','/administrar/cargueros','/administrar/actualizar-carguero','/administrar/nuevo-carguero'];
         $rutas_protegidas = ['/dashboard','/logistica/inventario-articulos','/logistica/nuevo-articulo','/logistica/actualizar-articulo','/logistica/inventario-motos','/logistica/nueva-moto','/logistica/actualizar-moto','/logistica/inventario-placas','/logistica/actualizar-placa','/tienda/inventario','/tienda/actualizar-stock','/ensamblaje/inventario','/ensamblaje/actualizar-stock','/ensamblaje/inventario','/ensamblaje/actualizar-stock','/soldadura/inventario','/soldadura/actualizar-stock','/acceso/usuario','/acceso/nuevo-usuario','/acceso/actualizar-usuario','/acceso/permiso-usuario','/ajax/invarticuloAjax','/ajax/invarticuloAjaxId','/ajax/stockarticuloAjax','/ajax/invmotoAjaxId','/ajax/invmotoAjax','/ajax/invplacaAjaxP','/ajax/invplacaAjaxN','/ajax/invtienda','/ajax/invtiendaN','/ajax/invensamblaje','/ajax/invensamblajeN','/ajax/insoldadura','/ajax/insoldaduraN','/ajax/invusuarioAjaxId'];
 
         if($id){
@@ -96,7 +95,7 @@ class Router{
         $contenido = ob_get_clean();//Limpia el buffer
         if($view === 'auth/login'){
             include __DIR__ . "/views/base3.php";
-        }else if($view === 'paginas/index'){
+        }else if($view === 'paginas/index' || $view === 'paginas/nosotros' || $view === 'paginas/mototaxis' || $view === 'paginas/motocicletas' || $view === 'paginas/cargueros'){
             include __DIR__ . "/views/layout.php";
         }else{
             include __DIR__ . "/views/base2.php";
@@ -124,6 +123,13 @@ class Router{
             $$key = $value;     
         }
         include __DIR__ . "/views/pdf.php";
+    }
+    public function renderPDF2($datos = []){
+        foreach($datos as $key=>$value){
+            //Crea variables desde el key : mensaje ----> $mensaje
+            $$key = $value;     
+        }
+        include __DIR__ . "/views/pdf2.php";
     }
 
 }

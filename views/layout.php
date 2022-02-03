@@ -20,6 +20,13 @@
 
     <script src="../build/js/bundle.min.js"></script>
     <script src="../build/js/jquery-3.6.0.min.js"></script>
+    <script >
+        $(document).ready(function(){
+            functionsAjax()
+            
+        })
+        
+    </script>
 </head>
 <body>
     <header class="header-layout">
@@ -59,11 +66,11 @@
         </a>
         <nav class="navegador" id="navegador2">
             <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Nosotros</a></li>
-                <li><a href="">Motocicletas</a></li>
-                <li><a href="">Mototaxis</a></li>
-                <li><a href="">Cargueros</a></li>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
+                <li><a href="/motocicletas">Motocicletas</a></li>
+                <li><a href="/mototaxis">Mototaxis</a></li>
+                <li><a href="/cargueros">Cargueros</a></li>
                 <li><a href="">Fábrica</a></li>
             </ul>
         </nav>
@@ -77,24 +84,7 @@
     
     <?php echo $contenido; ?>
 
-    <script>
-        const config = {
-            type: "carousel",
-            focusAt: 'center',
-            autoplay: 2000,
-            perView: 4,
-            breakpoints:{
-                768: {
-                perView: 2
-                },
-                600: {
-                perView: 1
-                }
-            }
-        }
-        
-        new Glide('.glide', config).mount()
-    </script>
+    
 </body>
 <footer>
     <h2>Contáctanos</h2>

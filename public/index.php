@@ -12,6 +12,7 @@ use Controllers\LoginController;
 use Controllers\IndicadorController;
 use Controllers\PaginasController;
 use Controllers\PDFController;
+use Controllers\AdministrarController;
 
 use MVC\Router;
 
@@ -19,7 +20,14 @@ $router = new Router();
 
 //ZONA PUBLICA
 
-$router->get('/',[PaginasController::class,'index']);
+$router->get('/1',[PaginasController::class,'index']);
+$router->get('/nosotros',[PaginasController::class,'nosotros']);
+$router->get('/mototaxis',[PaginasController::class,'mototaxis']);
+$router->post('/mototaxis',[PaginasController::class,'mototaxis']);
+$router->get('/motocicletas',[PaginasController::class,'motocicletas']);
+$router->post('/motocicletas',[PaginasController::class,'motocicletas']);
+$router->get('/cargueros',[PaginasController::class,'cargueros']);
+$router->post('/cargueros',[PaginasController::class,'cargueros']);
 
 //Zona Dashboard
 $router->get('/dashboard',[DashboardController::class, 'inicio']);
@@ -62,9 +70,39 @@ $router->post('/logistica/nuevo-pedido',[LogisticaController::class, 'newpedido'
 $router->get('/logistica/actualizar-pedido',[LogisticaController::class, 'updpedido']);
 $router->post('/logistica/actualizar-pedido',[LogisticaController::class, 'updpedido']);
 
+$router->get('/logistica/pedidoE',[LogisticaController::class, 'invpedidoE']);
+$router->post('/logistica/pedidoE',[LogisticaController::class, 'invpedidoE']);
+$router->get('/logistica/nuevo-pedidoE',[LogisticaController::class, 'newpedidoE']);
+$router->post('/logistica/nuevo-pedidoE',[LogisticaController::class, 'newpedidoE']);
+$router->get('/logistica/actualizar-pedidoE',[LogisticaController::class, 'updpedidoE']);
+$router->post('/logistica/actualizar-pedidoE',[LogisticaController::class, 'updpedidoE']);
+
+$router->get('/administrar/mototaxis',[AdministrarController::class, 'invmototaxi']);
+$router->post('/administrar/mototaxis',[AdministrarController::class, 'invmototaxi']);
+$router->get('/administrar/nueva-mototaxi',[AdministrarController::class, 'newmototaxi']);
+$router->post('/administrar/nueva-mototaxi',[AdministrarController::class, 'newmototaxi']);
+$router->get('/administrar/actualizar-mototaxi',[AdministrarController::class, 'updmototaxi']);
+$router->post('/administrar/actualizar-mototaxi',[AdministrarController::class, 'updmototaxi']);
+
+$router->get('/administrar/motocicletas',[AdministrarController::class, 'invmotocicleta']);
+$router->post('/administrar/motocicletas',[AdministrarController::class, 'invmotocicleta']);
+$router->get('/administrar/nueva-motocicleta',[AdministrarController::class, 'newmotocicleta']);
+$router->post('/administrar/nueva-motocicleta',[AdministrarController::class, 'newmotocicleta']);
+$router->get('/administrar/actualizar-motocicleta',[AdministrarController::class, 'updmotocicleta']);
+$router->post('/administrar/actualizar-motocicleta',[AdministrarController::class, 'updmotocicleta']);
+$router->get('/administrar/cargueros',[AdministrarController::class, 'invcarguero']);
+$router->post('/administrar/cargueros',[AdministrarController::class, 'invcarguero']);
+$router->get('/administrar/nuevo-carguero',[AdministrarController::class, 'newcarguero']);
+$router->post('/administrar/nuevo-carguero',[AdministrarController::class, 'newcarguero']);
+$router->get('/administrar/actualizar-carguero',[AdministrarController::class, 'updcarguero']);
+$router->post('/administrar/actualizar-carguero',[AdministrarController::class, 'updcarguero']);
+
+
 //========PDF===============//
 $router->get('/documentos/pdf',[PDFController::class, 'pdf']);
 $router->post('/documentos/pdf',[PDFController::class, 'pdf']);
+$router->get('/documentos/pdf2',[PDFController::class, 'pdf2']);
+$router->post('/documentos/pdf2',[PDFController::class, 'pdf2']);
 
 //=======TIENDA=============//
 
@@ -109,12 +147,17 @@ $router->post('/ajax/invusuarioAjaxId',[UsuarioController::class, 'invusuarioaja
 $router->post('/ajax/invusuarioAjaxN',[UsuarioController::class, 'invusuarioajaxN']);
 $router->post('/ajax/invpedidoAjaxC',[LogisticaController::class, 'invpedidoajaxc']);
 $router->post('/ajax/invpedidoAjaxF',[LogisticaController::class, 'invpedidoajaxf']);
+$router->post('/ajax/invpedidoAjaxE',[LogisticaController::class, 'invpedidoajaxe']);
 
 $router->post('/ajax/indicador1Ajax',[IndicadorController::class, 'indicador1ajax']);
 $router->post('/ajax/indicador1AjaxG',[IndicadorController::class, 'indicador1ajaxG']);
 
 $router->post('/ajax/indicador2Ajax',[IndicadorController::class, 'indicador2ajax']);
 $router->post('/ajax/indicador2AjaxG',[IndicadorController::class, 'indicador2ajaxG']);
+
+$router->post('/ajax/verEspeAjax',[PaginasController::class, 'verespeajax']);
+$router->post('/ajax/verEspeMotocicletaAjax',[PaginasController::class, 'verespemajax']);
+$router->post('/ajax/verEspeCargueroAjax',[PaginasController::class, 'verespecajax']);
 
 // AUTENTIFICAION
 $router->get('/login',[LoginController::class,'login']);
