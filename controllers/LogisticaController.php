@@ -9,6 +9,7 @@ use Model\UsuarioPermiso;
 use Model\Admin;
 use Model\Pedido;
 use Model\Pedidoe;
+use Model\Contrato;
 
 use Intervention\Image\ImageManagerStatic as Image;
 use Model\Placa;
@@ -519,7 +520,7 @@ class LogisticaController{
                 
             }
         }
-        $router->render('logistica/newpedidoE',[
+        $router->render('logistica/newpedidoe',[
             'pedido' => $pedido,
             'errores' => $errores,
             'arrayPermisos' => $arrayPermisos,
@@ -569,6 +570,72 @@ class LogisticaController{
 
         $router->renderAjax('invpedidoajaxe',[
             'pedidos' => $pedidos
+        ]);
+    }
+    //==========CONTRATOS=============//
+    public static function invcontrato(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+        
+        $resultado = $_GET['resultado'] ?? null;
+        
+        $limite = 10;
+        
+        $pag = $_GET['pag'] ?? null;
+        
+        $offset = 0;
+        
+        $totalPagina = Contrato::totalPagina();
+        
+        $totalLink = ceil($totalPagina/ $limite);
+        
+        if(isset($pag)){
+            if($pag < 1){
+                $pag = 1;
+            }
+            $offset = ($pag - 1) * $limite;    
+        }
+        $contratos = Contrato::allFechaContrato($offset, $limite);
+        //debuguear("hola");
+        
+        $router->render('logistica/invcontrato',[
+            'contratos' => $contratos,
+            'resultado' => $resultado,
+            'totalLink' => $totalLink,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
+        ]);
+    }
+    public static function newcontrato(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+
+        $contrato = new Contrato();
+
+        $errores = Contrato::getErrores();
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            /*CREA UNA NUEVA INSTANCIA*/
+            $contrato = new Contrato($_POST['contrato']);
+
+            /*VALIDAR*/
+            $errores = $contrato->validar();
+
+            //REVISAR QUE EL ARREGLO DE ERRORES ESTE VACIO
+            if(empty($errores)){
+
+                //SUBE A LA BD
+                $contrato->guardar('/logistica/contrato');
+                
+            }
+        }
+        $router->render('logistica/newcontrato',[
+            'contrato' => $contrato,
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
         ]);
     }
 

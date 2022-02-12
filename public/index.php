@@ -77,6 +77,11 @@ $router->post('/logistica/nuevo-pedidoE',[LogisticaController::class, 'newpedido
 $router->get('/logistica/actualizar-pedidoE',[LogisticaController::class, 'updpedidoE']);
 $router->post('/logistica/actualizar-pedidoE',[LogisticaController::class, 'updpedidoE']);
 
+$router->get('/logistica/contrato',[LogisticaController::class, 'invcontrato']);
+$router->post('/logistica/contrato',[LogisticaController::class, 'invcontrato']);
+$router->get('/logistica/nuevo-contrato',[LogisticaController::class, 'newcontrato']);
+$router->post('/logistica/nuevo-contrato',[LogisticaController::class, 'newcontrato']);
+
 $router->get('/administrar/mototaxis',[AdministrarController::class, 'invmototaxi']);
 $router->post('/administrar/mototaxis',[AdministrarController::class, 'invmototaxi']);
 $router->get('/administrar/nueva-mototaxi',[AdministrarController::class, 'newmototaxi']);
