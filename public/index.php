@@ -77,12 +77,20 @@ $router->post('/logistica/nuevo-pedidoE',[LogisticaController::class, 'newpedido
 $router->get('/logistica/actualizar-pedidoE',[LogisticaController::class, 'updpedidoE']);
 $router->post('/logistica/actualizar-pedidoE',[LogisticaController::class, 'updpedidoE']);
 
+$router->get('/logistica/pedidoT',[LogisticaController::class, 'invpedidoT']);
+$router->post('/logistica/pedidoT',[LogisticaController::class, 'invpedidoT']);
+$router->get('/logistica/nuevo-pedidoT',[LogisticaController::class, 'newpedidoT']);
+$router->post('/logistica/nuevo-pedidoT',[LogisticaController::class, 'newpedidoT']);
+$router->get('/logistica/actualizar-pedidoT',[LogisticaController::class, 'updpedidoT']);
+$router->post('/logistica/actualizar-pedidoT',[LogisticaController::class, 'updpedidoT']);
+
 $router->get('/logistica/contrato',[LogisticaController::class, 'invcontrato']);
 $router->post('/logistica/contrato',[LogisticaController::class, 'invcontrato']);
 $router->get('/logistica/nuevo-contrato',[LogisticaController::class, 'newcontrato']);
 $router->post('/logistica/nuevo-contrato',[LogisticaController::class, 'newcontrato']);
 $router->get('/logistica/actualizar-contrato',[LogisticaController::class, 'updcontrato']);
 $router->post('/logistica/actualizar-contrato',[LogisticaController::class, 'updcontrato']);
+
 
 $router->get('/administrar/mototaxis',[AdministrarController::class, 'invmototaxi']);
 $router->post('/administrar/mototaxis',[AdministrarController::class, 'invmototaxi']);
@@ -110,6 +118,8 @@ $router->get('/documentos/pdf',[PDFController::class, 'pdf']);
 $router->post('/documentos/pdf',[PDFController::class, 'pdf']);
 $router->get('/documentos/pdf2',[PDFController::class, 'pdf2']);
 $router->post('/documentos/pdf2',[PDFController::class, 'pdf2']);
+$router->get('/documentos/pdf3',[PDFController::class, 'pdf3']);
+$router->post('/documentos/pdf3',[PDFController::class, 'pdf3']);
 
 //=======TIENDA=============//
 
@@ -155,6 +165,7 @@ $router->post('/ajax/invusuarioAjaxN',[UsuarioController::class, 'invusuarioajax
 $router->post('/ajax/invpedidoAjaxC',[LogisticaController::class, 'invpedidoajaxc']);
 $router->post('/ajax/invpedidoAjaxF',[LogisticaController::class, 'invpedidoajaxf']);
 $router->post('/ajax/invpedidoAjaxE',[LogisticaController::class, 'invpedidoajaxe']);
+$router->post('/ajax/invpedidoAjaxT',[LogisticaController::class, 'invpedidoajaxt']);
 $router->post('/ajax/invcontratoAjax',[LogisticaController::class, 'invcontratoajax']);
 
 $router->post('/ajax/indicador1Ajax',[IndicadorController::class, 'indicador1ajax']);

@@ -31,6 +31,7 @@ function functionsAjax() {
     invPedidosAjaxF()
 
     invPedidosAjaxE()
+    invPedidosAjaxT()
 
     invContratoAjaxE()
 
@@ -149,6 +150,15 @@ function invPedidosAjaxF(){
     $('#buscarfec').on('input',function(){
         var filtro = $(this).val();
         $.post("/ajax/invpedidoAjaxF", { filtro: filtro }, function(data) {
+            $("#invpedido-body").html(data);
+            
+        });  
+    })            
+}
+function invPedidosAjaxT(){
+    $('#buscarcltap').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invpedidoAjaxT", { filtro: filtro }, function(data) {
             $("#invpedido-body").html(data);
             
         });  

@@ -95,11 +95,12 @@
                     <i class='bx bxs-right-arrow bx-arrow'></i>
                 </a>
 
-                <div class="nav-caja t-2 caja-query" >
+                <div class="nav-caja t-3 caja-query" >
                     <div class="nav-caja-items">
                         <h6>Gestionar:</h6>
                         <a href="/logistica/pedido">Trimotos</a>
                         <a href="/logistica/pedidoE">Estructuras</a>
+                        <a href="/logistica/pedidoT">Tapices</a>
                     </div>
                 </div>
             </li>

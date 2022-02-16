@@ -7,6 +7,7 @@ use Model\UsuarioPermiso;
 use Model\Admin;
 use Model\Pedido;
 use Model\Pedidoe;
+use Model\Pedidot;
 
 class PDFController{
 
@@ -33,6 +34,20 @@ class PDFController{
 
         $pedido = Pedidoe::find($id);
         $router->renderPDF2([
+            'pedido' => $pedido,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
+        ]);
+    }
+    public static function pdf3(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+
+        $id = validarORedireccionar('/logistica/pedidoT');
+
+        $pedido = Pedidot::find($id);
+        $router->renderPDF3([
             'pedido' => $pedido,
             'arrayPermisos' => $arrayPermisos,
             'nick' => $nick

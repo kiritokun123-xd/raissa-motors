@@ -131,5 +131,12 @@ class Router{
         }
         include __DIR__ . "/views/pdf2.php";
     }
+    public function renderPDF3($datos = []){
+        foreach($datos as $key=>$value){
+            //Crea variables desde el key : mensaje ----> $mensaje
+            $$key = $value;     
+        }
+        include __DIR__ . "/views/pdf3.php";
+    }
 
 }

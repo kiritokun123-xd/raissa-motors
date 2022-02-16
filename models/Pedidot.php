@@ -1,7 +1,7 @@
 <?php
 namespace Model;
 date_default_timezone_set("America/Phoenix");
-class Pedidoe extends ActiveRecord{
+class Pedidot extends ActiveRecord{
     
     protected static $tabla = 'pedidot';
     protected static $columnasDB = ['id', 'fecha_ini', 'cliente', 'fecha_ent', 'techo', 'mica', 'mascara', 'adicional'];
