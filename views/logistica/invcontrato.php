@@ -11,7 +11,7 @@
             </a>
             <div class="buscar-articulo">
                 <label for="buscarclcon">Buscar por Cliente:</label>
-                <input class="input-id" type="text" id="buscarcle">
+                <input class="input-id" type="text" id="buscarclcon">
             </div>
         </div>
     </div>
@@ -22,8 +22,10 @@
                 <tr>
                     <th>Fecha</th>
                     <th>Cliente</th>
+                    <th>Celular</th>
                     <th>Vendedor</th>
                     <th>Serie</th>
+                    <th>Observación</th>
                     <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
@@ -33,13 +35,14 @@
                 <tr>
                     <td><?php echo date_format(date_create($contrato->fecha),'d-m-Y')?></td>
                     <td><?php echo $contrato->cliente ?></td>
+                    <td><?php echo $contrato->celular ?></td>
                     <td><?php echo $contrato->vendedor ?></td>
                     <td><?php echo $contrato->serie ?></td>
-                    <td><?php echo $contrato->estado ?></td>
+                    <td><?php echo $contrato->observacion ?></td>
+                    <td ><span  class="<?php  echo $contrato->estado == 'Debe' ? 'debe' : 'no-debe'?>"><?php echo $contrato->estado ?></span></td>
                     <td class="td-acciones"> 
                         <div class="div-acciones">
                             <a href="/logistica/actualizar-contrato?id=<?php echo $contrato->id; ?>" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>
-                            <a class="verpedido" target="_blank" href="/documentos/pdf2?id=<?php echo $pedido->id;?>">Ver</a>
                         </div>
                     </td>
                     

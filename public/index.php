@@ -81,6 +81,8 @@ $router->get('/logistica/contrato',[LogisticaController::class, 'invcontrato']);
 $router->post('/logistica/contrato',[LogisticaController::class, 'invcontrato']);
 $router->get('/logistica/nuevo-contrato',[LogisticaController::class, 'newcontrato']);
 $router->post('/logistica/nuevo-contrato',[LogisticaController::class, 'newcontrato']);
+$router->get('/logistica/actualizar-contrato',[LogisticaController::class, 'updcontrato']);
+$router->post('/logistica/actualizar-contrato',[LogisticaController::class, 'updcontrato']);
 
 $router->get('/administrar/mototaxis',[AdministrarController::class, 'invmototaxi']);
 $router->post('/administrar/mototaxis',[AdministrarController::class, 'invmototaxi']);
@@ -153,6 +155,7 @@ $router->post('/ajax/invusuarioAjaxN',[UsuarioController::class, 'invusuarioajax
 $router->post('/ajax/invpedidoAjaxC',[LogisticaController::class, 'invpedidoajaxc']);
 $router->post('/ajax/invpedidoAjaxF',[LogisticaController::class, 'invpedidoajaxf']);
 $router->post('/ajax/invpedidoAjaxE',[LogisticaController::class, 'invpedidoajaxe']);
+$router->post('/ajax/invcontratoAjax',[LogisticaController::class, 'invcontratoajax']);
 
 $router->post('/ajax/indicador1Ajax',[IndicadorController::class, 'indicador1ajax']);
 $router->post('/ajax/indicador1AjaxG',[IndicadorController::class, 'indicador1ajaxG']);

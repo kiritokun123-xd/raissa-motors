@@ -1,6 +1,9 @@
 <label for="new-cliente">Cliente:</label>
 <input type="text" id="new-cliente" name="contrato[cliente]" placeholder="Ingrese nombre del Cliente" value="<?php echo s($contrato->cliente); ?>">
 
+<label for="new-cliente">Celular:</label>
+<input type="number" id="new-celular" name="contrato[celular]" placeholder="Ingrese número de celular" value="<?php echo s($contrato->celular); ?>">
+
 <label for="new-vendedor">Vendedor:</label>
 <input type="text" id="new-vendedor" name="contrato[vendedor]" placeholder="Ingrese Nº vendedor" value="<?php echo s($contrato->vendedor); ?>">
 

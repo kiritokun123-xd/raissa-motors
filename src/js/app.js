@@ -32,6 +32,8 @@ function functionsAjax() {
 
     invPedidosAjaxE()
 
+    invContratoAjaxE()
+
     invtienda()
     invtiendaN()
 
@@ -156,6 +158,15 @@ function invPedidosAjaxE(){
     $('#buscarcle').on('input',function(){
         var filtro = $(this).val();
         $.post("/ajax/invpedidoAjaxE", { filtro: filtro }, function(data) {
+            $("#invpedido-body").html(data);
+            
+        });  
+    })            
+}
+function invContratoAjaxE(){
+    $('#buscarclcon').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invcontratoAjax", { filtro: filtro }, function(data) {
             $("#invpedido-body").html(data);
             
         });  

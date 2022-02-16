@@ -125,6 +125,20 @@
     tbody tr:last-of-type{
         border-bottom: 2px solid $second-color;
     }
+    tbody .debe{
+      background-color: #e74a3b;
+      color: $blanco;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+    }
+    tbody .no-debe{
+      background-color: #1cc88a;
+      color: $blanco;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+    }
     .estado{
         margin: 0;
         padding: 0.5rem;
