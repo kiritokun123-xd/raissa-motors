@@ -12,22 +12,22 @@
 
 <div class="contenedor-nosotros">
     <h2 class="nosotros-titulo">Sobre Nosotros</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nostrum, praesentium ducimus quae quaerat minima pariatur corporis possimus debitis aut explicabo blanditiis hic est voluptas doloribus nihil? Deleniti, labore officia.</p>
+    <p>Somos una empresa con más de 18 años en el Mercado Nacional, dedicados a la fabricación de Mototaxis, Cargueros y Motocicletas. Contamos con personal altamente calificado con autorización del Ministerio de Producción.</p>
     <div class="nosotros-info">
         <div class="info-caja">
             <i class='bx bx-list-check'></i>
             <h3>Calidad</h3>
-            <p>Motos de primera calidad y elegancia hecha por especialistas</p>
+            <p>Con los mejores materiales del Mercado</p>
         </div>
         <div class="info-caja">
             <i class='bx bxs-badge-dollar'></i>
             <h3>Precio</h3>
-            <p>Motos con precios de fábrica con todos los gustos del cliente</p>
+            <p>Con el balance exacto entre calidad y precio</p>
         </div>
         <div class="info-caja">
             <i class='bx bx-cycling'></i>
             <h3>Alcance</h3>
-            <p>Llegamos a todo el Perú y sus provincias, no hay límites</p>
+            <p>Envios a Lima, Provincias y todo el nivel Nacional</p>
         </div>
     </div>
 </div>
@@ -158,6 +158,14 @@
             <div class="cliente-inferior">
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, a quaerat nisi at totam corrupti nihil modi ratione, rerum consectetur similique eos quae sint, iure beatae. Inventore dolores nihil quis.</p>
             </div>
+        </div>
+    </div>
+    <div class="clientes-videos">
+        <div class="cliente-video">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@raissamotors/video/7060153615079542022" data-video-id="7060153615079542022" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@raissamotors" href="https://www.tiktok.com/@raissamotors">@raissamotors</a> <p>Venta de lineales , mototaxis y cargueros https://www.facebook.com/Raissamotors-110647063667382</p> <a target="_blank" title="♬ sonido original - Lapadula_supremacy" href="https://www.tiktok.com/music/sonido-original-7059985001517026054">♬ sonido original - Lapadula_supremacy</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+        </div>
+        <div class="cliente-video">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@raissamotors/video/7060618324002016518" data-video-id="7060618324002016518" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@raissamotors" href="https://www.tiktok.com/@raissamotors">@raissamotors</a> Realizamos de acuerdo al gusto del cliente 🇵🇪https:&#47;&#47;www.facebook.com&#47;Raissamotors-110647063667 #<a title="mototaxis" target="_blank" href="https://www.tiktok.com/tag/mototaxis">mototaxis </a>#<a title="mototaxista" target="_blank" href="https://www.tiktok.com/tag/mototaxista">mototaxista</a> <a target="_blank" title="♬ sonido original - Raissamotors" href="https://www.tiktok.com/music/sonido-original-7060618285305350917">♬ sonido original - Raissamotors</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
         </div>
     </div>
 </div>

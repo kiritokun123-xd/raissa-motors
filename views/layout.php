@@ -43,12 +43,12 @@
         </a>
         <nav class="navegador" id="navegador">
             <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Nosotros</a></li>
-                <li><a href="">Motocicletas</a></li>
-                <li><a href="">Mototaxis</a></li>
-                <li><a href="">Cargueros</a></li>
-                <li><a href="">Fábrica</a></li>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
+                <li><a href="/motocicletas">Motocicletas</a></li>
+                <li><a href="/mototaxis">Mototaxis</a></li>
+                <li><a href="/cargueros">Cargueros</a></li>
+                <li><a href="/fabrica">Fábrica</a></li>
             </ul>
         </nav>
     </header>
@@ -71,7 +71,7 @@
                 <li><a href="/motocicletas">Motocicletas</a></li>
                 <li><a href="/mototaxis">Mototaxis</a></li>
                 <li><a href="/cargueros">Cargueros</a></li>
-                <li><a href="">Fábrica</a></li>
+                <li><a href="/fabrica">Fábrica</a></li>
             </ul>
         </nav>
     </div>
@@ -95,15 +95,15 @@
         <div class="links">
             <div class="link">
                 <i class='bx bxl-facebook-circle'></i>
-                <a href="https://www.facebook.com/raissamotors.sac/">Facebook</a>
+                <a target="_blank" href="https://www.facebook.com/raissamotors.sac/">Facebook</a>
+            </div>
+            <div class="link">
+            <i class='bx bxl-tiktok'></i>
+                <a target="_blank" href="https://www.tiktok.com/@raissamotors">TikTok</a>
             </div>
             <div class="link">
                 <i class='bx bxl-facebook-circle'></i>
-                <a href="https://www.facebook.com/raissamotors.sac/">Facebook</a>
-            </div>
-            <div class="link">
-                <i class='bx bxl-facebook-circle'></i>
-                <a href="https://www.facebook.com/raissamotors.sac/">Facebook</a>
+                <a target="_blank" href="https://www.facebook.com/raissamotors.sac/">Facebook</a>
             </div>
         </div>
     </div>
