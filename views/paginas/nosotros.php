@@ -12,7 +12,7 @@
 <div class="contenedor-nosotros">
     <h2>Nosotros</h2>
     <div class="caja-nosotros">
-        <img src="../imagenes/MOTOTAXI.png" alt="">
+        <img src="../imagenes/TIENDA.jpg" alt="">
         <div class="info">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur corporis labore quos veritatis sunt, ipsa nesciunt autem expedita officiis voluptatibus quibusdam, natus explicabo nisi facilis quisquam animi odit ratione.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur corporis labore quos veritatis sunt, ipsa nesciunt autem expedita officiis voluptatibus quibusdam, natus explicabo nisi facilis quisquam animi odit ratione.</p>
