@@ -2,7 +2,7 @@
     <div class="fondo-frase">
         <div class="frase">
             <h2>Más que elegancia <span>Somos Calidad</span> </h2>
-            <a href="">Escríbenos</a>
+            <a target="_blank" href="https://api.whatsapp.com/send/?phone=51983640793&text=Hola!+quisiera+más+información+por+favor&app_absent=0">Escríbenos</a>
         </div>
     </div>
     
@@ -103,7 +103,7 @@
                 </div>
                 <div class="datos">
                     <h4>MARIA PEREZ</h4>
-                    <p>Distribuidora</p>
+                    <p>Cliente Final</p>
                     <div class="estrellas">
                         <i class='bx bxs-star'></i>
                         <i class='bx bxs-star'></i>
@@ -114,16 +114,16 @@
                 </div>
             </div>
             <div class="cliente-inferior">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, a quaerat nisi at totam corrupti nihil modi ratione, rerum consectetur similique eos quae sint, iure beatae. Inventore dolores nihil quis.</p>
+                <p>Me compre mi mototaxi aquí poque hicieron todos los detalles que solicite en la compra, una moto super personalizada a mi gusto, estoy muy feliz porque la calidad de la moto vale el precio. Muy recomendado!</p>
             </div>
         </div>
         <div class="cliente">
             <div class="cliente-superior">
                 <div class="imagen-cliente">
-                    <img src="../imagenes/perfil.jpg" alt="">
+                    <img src="../imagenes/perfil3.jpg" alt="">
                 </div>
                 <div class="datos">
-                    <h4>MARIA PEREZ</h4>
+                    <h4>Perla Flores</h4>
                     <p>Distribuidora</p>
                     <div class="estrellas">
                         <i class='bx bxs-star'></i>
@@ -135,17 +135,17 @@
                 </div>
             </div>
             <div class="cliente-inferior">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, a quaerat nisi at totam corrupti nihil modi ratione, rerum consectetur similique eos quae sint, iure beatae. Inventore dolores nihil quis.</p>
+                <p>Llevo años comprando mototaxis a RaissaMotors, todas son de calidad y mis clientes estan muy satisfechos, me gusta esta nueva etapa que están pasando, les deseo lo mejor. Felicidades!.</p>
             </div>
         </div>
         <div class="cliente">
             <div class="cliente-superior">
                 <div class="imagen-cliente">
-                    <img src="../imagenes/perfil.jpg" alt="">
+                    <img src="../imagenes/perfil2.jpg" alt="">
                 </div>
                 <div class="datos">
-                    <h4>MARIA PEREZ</h4>
-                    <p>Distribuidora</p>
+                    <h4>Raiza Mendoza</h4>
+                    <p>Cliente final</p>
                     <div class="estrellas">
                         <i class='bx bxs-star'></i>
                         <i class='bx bxs-star'></i>
@@ -156,7 +156,7 @@
                 </div>
             </div>
             <div class="cliente-inferior">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, a quaerat nisi at totam corrupti nihil modi ratione, rerum consectetur similique eos quae sint, iure beatae. Inventore dolores nihil quis.</p>
+                <p>Muy feliz con la compra de mi motocicleta, me salió muy bien y ya estoy usandola para el trabajo, me encanto que tuvieramos casi el mismo nombre, muy carismáticas las vendedoras, excelente atención!.</p>
             </div>
         </div>
     </div>

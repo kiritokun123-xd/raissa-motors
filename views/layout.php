@@ -76,7 +76,7 @@
         </nav>
     </div>
     <div class="wp-flotante">
-        <a class="wp" href="">
+        <a class="wp" target="_blank" href="https://api.whatsapp.com/send/?phone=51983640793&text=Hola!+quisiera+más+información+por+favor&app_absent=0">
             <i class='bx bxl-whatsapp' ></i>
         </a>
     </div>
@@ -102,8 +102,8 @@
                 <a target="_blank" href="https://www.tiktok.com/@raissamotors">TikTok</a>
             </div>
             <div class="link">
-                <i class='bx bxl-facebook-circle'></i>
-                <a target="_blank" href="https://www.facebook.com/raissamotors.sac/">Facebook</a>
+                <i class='bx bxl-whatsapp'></i>
+                <a target="_blank" href="https://api.whatsapp.com/send/?phone=51983640793&text=Hola!+quisiera+más+información+por+favor&app_absent=0">WhatsApp</a>
             </div>
         </div>
     </div>
