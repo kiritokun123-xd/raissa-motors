@@ -311,9 +311,11 @@
 }
 .clientes-videos{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     @include tablet{
         display: flex;
+        flex-direction: row;
         gap: 2rem;
     }
 }

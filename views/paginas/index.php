@@ -162,6 +162,9 @@
     </div>
     <div class="clientes-videos">
         <div class="cliente-video">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@raissamotors/video/7060852043719773445" data-video-id="7060852043719773445" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@raissamotors" href="https://www.tiktok.com/@raissamotors">@raissamotors</a> Mototaxi con corona 💖https:&#47;&#47;www.facebook.com&#47;Raissamotors-110647063667382✨<a title="mototaxista" target="_blank" href="https://www.tiktok.com/tag/mototaxista">#mototaxista</a> <a title="mototaxis" target="_blank" href="https://www.tiktok.com/tag/mototaxis">#mototaxis</a> <a title="fabricantes" target="_blank" href="https://www.tiktok.com/tag/fabricantes">#fabricantes</a> <a target="_blank" title="♬ sonido original - Raissamotors" href="https://www.tiktok.com/music/sonido-original-7060851979022600965">♬ sonido original - Raissamotors</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+        </div>
+        <div class="cliente-video">
             <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@raissamotors/video/7060153615079542022" data-video-id="7060153615079542022" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@raissamotors" href="https://www.tiktok.com/@raissamotors">@raissamotors</a> <p>Venta de lineales , mototaxis y cargueros https://www.facebook.com/Raissamotors-110647063667382</p> <a target="_blank" title="♬ sonido original - Lapadula_supremacy" href="https://www.tiktok.com/music/sonido-original-7059985001517026054">♬ sonido original - Lapadula_supremacy</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
         </div>
         <div class="cliente-video">
