@@ -28,7 +28,7 @@
 <select id="tipo" name="pedido[tipo]">
     <option value="" >-- Seleccione --</option>
     <option <?php echo 'Redonda' == $pedido->tipo ? 'selected' : ''; ?> value="Redonda">Redonda</option>
-    <option <?php echo 'Reforzada' == $pedido->tipo ? 'selected' : ''; ?> value="Reforzada">Reforzada</option>
+    <option <?php echo 'Redorzada' == $pedido->tipo ? 'selected' : ''; ?> value="Reforzada">Reforzada</option>
     <option <?php echo 'Corona' == $pedido->tipo ? 'selected' : ''; ?> value="Corona">Corona</option>
     <option <?php echo 'Fuerza' == $pedido->tipo ? 'selected' : ''; ?> value="Fuerza">Fuerza</option>
     <option <?php echo 'Fuerza Gallinero' == $pedido->tipo ? 'selected' : ''; ?> value="Fuerza Gallinero">Fuerza Gallinero</option>
@@ -80,6 +80,7 @@
     <option <?php echo 'VZ' == $pedido->parrilla ? 'selected' : ''; ?> value="VZ">VZ</option>
     <option <?php echo 'Trenzada' == $pedido->parrilla ? 'selected' : ''; ?> value="Trenzada">Trenzada</option>
     <option <?php echo 'Cajón' == $pedido->parrilla ? 'selected' : ''; ?> value="Cajón">Cajón</option>
+    <option <?php echo 'Titán' == $pedido->parrilla ? 'selected' : ''; ?> value="Titán">Titán</option>
 </select>
 
 <label for="techo">Techo:</label>
@@ -111,6 +112,7 @@
     <option value="" >-- Seleccione --</option>
     <option <?php echo 'Aero' == $pedido->mascara ? 'selected' : ''; ?> value="Aero">Aero</option>
     <option <?php echo 'Doble Mica' == $pedido->mascara ? 'selected' : ''; ?> value="Doble Mica">Doble Mica</option>
+    <option <?php echo 'Corta' == $pedido->mascara ? 'selected' : ''; ?> value="Corta">Corta</option>
 </select>
 
 <label for="equipamiento">Equipamiento:</label>
