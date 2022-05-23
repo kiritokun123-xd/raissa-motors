@@ -18,6 +18,7 @@
     <option <?php echo 'Absoluto' == $pedido->tipo ? 'selected' : ''; ?> value="Absoluto">Absoluto</option>
     <option <?php echo 'Importado' == $pedido->tipo ? 'selected' : ''; ?> value="Importado">Importado</option>
     <option <?php echo 'Nacional' == $pedido->tipo ? 'selected' : ''; ?> value="Nacional">Nacional</option>
+    <option <?php echo 'No Aplica' == $pedido->tipo ? 'selected' : ''; ?> value="No Aplica">No Aplica</option>
 </select>
 
 <label for="color">Color:</label>
@@ -28,6 +29,7 @@
     <option <?php echo 'Rojo' == $pedido->color ? 'selected' : ''; ?> value="Rojo">Rojo</option>
     <option <?php echo 'Anaranjado' == $pedido->color ? 'selected' : ''; ?> value="Anaranjado">Anaranjado</option>
     <option <?php echo 'Verde' == $pedido->color ? 'selected' : ''; ?> value="Verde">Verde</option>
+    <option <?php echo 'No Aplica' == $pedido->color ? 'selected' : ''; ?> value="No Aplica">No Aplica</option>
 </select>
 
 <label for="parrilla">Parrilla:</label>
@@ -37,6 +39,7 @@
     <option <?php echo 'VZ' == $pedido->parrilla ? 'selected' : ''; ?> value="VZ">VZ</option>
     <option <?php echo 'Trenzada' == $pedido->parrilla ? 'selected' : ''; ?> value="Trenzada">Trenzada</option>
     <option <?php echo 'Cajón' == $pedido->parrilla ? 'selected' : ''; ?> value="Cajón">Cajón</option>
+    <option <?php echo 'No Aplica' == $pedido->parrilla ? 'selected' : ''; ?> value="No Aplica">No Aplica</option>
 </select>
 
 <label for="techo">Techo:</label>
@@ -45,6 +48,7 @@
     <option <?php echo 'Estándar' == $pedido->techo ? 'selected' : ''; ?> value="Estándar">Estándar</option>
     <option <?php echo 'Cola 1' == $pedido->techo ? 'selected' : ''; ?> value="Cola 1">Cola 1</option>
     <option <?php echo 'Cola 2' == $pedido->techo ? 'selected' : ''; ?> value="Cola 2">Cola 2</option>
+    <option <?php echo 'No Aplica' == $pedido->techo ? 'selected' : ''; ?> value="No Aplica">No Aplica</option>
 </select>
 
 <label for="asiento">Asiento:</label>
@@ -54,6 +58,7 @@
     <option <?php echo 'Deportivo' == $pedido->asiento ? 'selected' : ''; ?> value="Deportivo">Deportivo</option>
     <option <?php echo 'Liso' == $pedido->asiento ? 'selected' : ''; ?> value="Liso">Liso</option>
     <option <?php echo 'Torito' == $pedido->asiento ? 'selected' : ''; ?> value="Torito">Torito</option>
+    <option <?php echo 'No Aplica' == $pedido->asiento ? 'selected' : ''; ?> value="No Aplica">No Aplica</option>
 </select>
 
 <label for="mica">Mica:</label>
@@ -61,6 +66,7 @@
     <option value="" >-- Seleccione --</option>
     <option <?php echo 'Transparente' == $pedido->mica ? 'selected' : ''; ?> value="Transparente">Transparente</option>
     <option <?php echo 'Polarizado' == $pedido->mica ? 'selected' : ''; ?> value="Polarizado">Polarizado</option>
+    <option <?php echo 'No Aplica' == $pedido->mica ? 'selected' : ''; ?> value="No Aplica">No Aplica</option>
 </select>
 
 <label for="mascara">Máscara:</label>
@@ -68,6 +74,7 @@
     <option value="" >-- Seleccione --</option>
     <option <?php echo 'Aero' == $pedido->mascara ? 'selected' : ''; ?> value="Aero">Aero</option>
     <option <?php echo 'Doble Mica' == $pedido->mascara ? 'selected' : ''; ?> value="Doble Mica">Doble Mica</option>
+    <option <?php echo 'No Aplica' == $pedido->mascara ? 'selected' : ''; ?> value="No Aplica">No Aplica</option>
 </select>
 
 <label for="equipamiento">Equipamiento:</label>
@@ -75,7 +82,3 @@
 
 <label for="adicional">Tapiz:</label>
 <textarea id="adicional" name="pedido[adicional]"><?php echo s($pedido->adicional); ?></textarea>
-
-
-
-
