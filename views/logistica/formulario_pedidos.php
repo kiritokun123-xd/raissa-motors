@@ -16,7 +16,7 @@
 <label for="new-fecha-ent">Fecha de Entrega:</label>
 <input type="date" class="input-id input-fecha" id="new-fecha-ent" name="pedido[fecha_ent]" value="<?php echo s($pedido->fecha_ent); ?>">
 
-<label for="estado">Estado:</label>
+<label for="estado" class="estadop">Estado:</label>
 <select id="estado" name="pedido[estado]">
     <option <?php echo 'Pedido' == $pedido->estado ? 'selected' : ''; ?> value="Pedido">Pedido</option>
     <option <?php echo 'Fabricación' == $pedido->estado ? 'selected' : ''; ?> value="Fabricación">Fabricación</option>
