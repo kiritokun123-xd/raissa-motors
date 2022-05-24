@@ -20,7 +20,7 @@ $router = new Router();
 
 //ZONA PUBLICA
 
-$router->get('/1',[PaginasController::class,'index']);
+$router->get('/',[PaginasController::class,'index']);
 $router->get('/nosotros',[PaginasController::class,'nosotros']);
 $router->get('/mototaxis',[PaginasController::class,'mototaxis']);
 $router->post('/mototaxis',[PaginasController::class,'mototaxis']);

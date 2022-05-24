@@ -46,13 +46,13 @@
                 <img src="../imagenes/chopper.png" alt="">
             </div>
             <div class="producto">
-                <h3 class="producto-info">Trimotos</h3>
-                <a href="">Ver más Trimotos</a>
+                <h3 class="producto-info">Mototaxis</h3>
+                <a href="">Ver más Mototaxis</a>
                 <img src="../imagenes/MOTOTAXI.png" alt="">
             </div>
             <div class="producto">
-                <h3 class="producto-info">Accesorios</h3>
-                <a href="">Ver más Accesorios</a>
+                <h3 class="producto-info">Cargueros</h3>
+                <a href="">Ver más Cargueros</a>
                 <img src="../imagenes/HELICOPTERO.png" alt="">
             </div>
         </div>
