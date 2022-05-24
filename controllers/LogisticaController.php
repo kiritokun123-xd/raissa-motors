@@ -557,7 +557,7 @@ class LogisticaController{
 
         }
 
-        $router->render('logistica/updpedidoE',[
+        $router->render('logistica/updpedidoe',[
             'pedido' => $pedido,
             'errores' => $errores,
             'arrayPermisos' => $arrayPermisos,

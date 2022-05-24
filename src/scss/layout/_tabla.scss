@@ -139,6 +139,34 @@
       border-radius: 0.5rem;
       padding: 0.5rem;
     }
+    tbody .pedido{
+      background-color: #e74a3b;
+      color: $blanco;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+    }
+    tbody .fabricacion{
+      background-color: #b13be7;
+      color: $blanco;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+    }
+    tbody .entregado{
+      background-color: #1cc88a;
+      color: $blanco;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+    }
+    tbody .stock{
+      background-color: #858585;
+      color: $blanco;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+    }
     .estado{
         margin: 0;
         padding: 0.5rem;
@@ -319,7 +347,7 @@ input[type='checkbox'],
   }
 }
 .verpedido{
-  background-color: #1cc88a;
+  background-color: #4775f3;
   color: $blanco;
   font-weight: 700;
   padding: 1rem;

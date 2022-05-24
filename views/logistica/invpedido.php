@@ -26,12 +26,12 @@
                 <tr>
                     <th>Id</th>
                     <th>Fecha Ini</th>
-                    <th>Cliente</th>
-                    <th>Motor</th>
+                    <th>Cliente</th>                    
+                    <th>Color</th>
                     <th>Moto</th>
                     <th>Tipo</th>
-                    <th>Color</th>
                     <th>Fecha entrega</th>
+                    <th>Estado</th>
                     <th>Acciones</th>
                     
                 </tr>
@@ -42,11 +42,22 @@
                     <td><?php echo $pedido->id ?></td>
                     <td><?php echo date_format(date_create($pedido->fecha_ini),'d-m-Y')?></td>
                     <td><?php echo $pedido->cliente ?></td>
-                    <td><?php echo $pedido->motor ?></td>
+                    <td><?php echo $pedido->color ?></td>                   
                     <td><?php echo $pedido->moto ?></td>
                     <td><?php echo $pedido->tipo ?></td>
-                    <td><?php echo $pedido->color ?></td>
                     <td><?php echo date_format(date_create($pedido->fecha_ent),'d-m-Y') ?></td>
+                    <td ><span  class="<?php  
+                        if($pedido->estado == 'Pedido'){
+                            echo "pedido";
+                        }else if($pedido->estado == 'Fabricación'){
+                            echo "fabricacion";
+                        }else if($pedido->estado == 'Entregado'){
+                            echo "entregado";
+                        }else if($pedido->estado == 'Stock'){
+                            echo "stock";
+                        }
+                    ?>"><?php echo $pedido->estado ?></span></td>
+
                     <td class="td-acciones"> 
                         <div class="div-acciones">
                             <a href="/logistica/actualizar-pedido?id=<?php echo $pedido->id; ?>" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>

@@ -52,7 +52,7 @@ class Pedido extends ActiveRecord{
         $this->mascara = $args['mascara'] ?? '';
         $this->adicional = $args['adicional'] ?? '';
         $this->equipamiento = $args['equipamiento'] ?? '';
-        $this->estado = $args['estado'] ?? 'Fabricaci¨®n';
+        $this->estado = $args['estado'] ?? 'Pedido';
         $this->vendedor = $args['vendedor'] ?? '';
     }
 
