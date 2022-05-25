@@ -10,7 +10,7 @@
 
 
 <div class="contenedor-nosotros">
-    <h2>Mototaxis de todo tipo</h2>
+    <h2>Motocicletas de todo tipo</h2>
     <?php foreach($motocicletas as $motocicleta) : ?>
         <div class="caja-mototaxis <?php echo ($motocicleta->id%2==0) ? 'invertir' : ''; ?>">
             <img src="/imagenes/<?php echo $motocicleta->imagen; ?>" alt="">

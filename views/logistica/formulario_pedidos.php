@@ -38,7 +38,7 @@
 <select id="tipo" name="pedido[tipo]">
     <option value="" >-- Seleccione --</option>
     <option <?php echo 'Redonda' == $pedido->tipo ? 'selected' : ''; ?> value="Redonda">Redonda</option>
-    <option <?php echo 'Redorzada' == $pedido->tipo ? 'selected' : ''; ?> value="Reforzada">Reforzada</option>
+    <option <?php echo 'Reforzada' == $pedido->tipo ? 'selected' : ''; ?> value="Reforzada">Reforzada</option>
     <option <?php echo 'Corona' == $pedido->tipo ? 'selected' : ''; ?> value="Corona">Corona</option>
     <option <?php echo 'Fuerza' == $pedido->tipo ? 'selected' : ''; ?> value="Fuerza">Fuerza</option>
     <option <?php echo 'Fuerza Gallinero' == $pedido->tipo ? 'selected' : ''; ?> value="Fuerza Gallinero">Fuerza Gallinero</option>

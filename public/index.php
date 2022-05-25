@@ -28,6 +28,7 @@ $router->get('/motocicletas',[PaginasController::class,'motocicletas']);
 $router->post('/motocicletas',[PaginasController::class,'motocicletas']);
 $router->get('/cargueros',[PaginasController::class,'cargueros']);
 $router->post('/cargueros',[PaginasController::class,'cargueros']);
+$router->get('/fabrica',[PaginasController::class,'fabrica']);
 
 //Zona Dashboard
 $router->get('/dashboard',[DashboardController::class, 'inicio']);

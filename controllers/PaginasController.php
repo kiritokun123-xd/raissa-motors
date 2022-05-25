@@ -19,6 +19,11 @@ class PaginasController{
             
         ]);
     }
+    public static function fabrica(Router $router){
+        $router->render('paginas/fabrica',[
+            
+        ]);
+    }
     public static function verespeajax(Router $router){
         $id = $_POST['id'];
         $mototaxi = Mototaxi::find($id);

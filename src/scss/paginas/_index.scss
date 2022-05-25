@@ -167,15 +167,15 @@
             font-weight: 600;
             transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
             &:hover{
-                box-shadow: 0 0 40px 40px $second-color inset;
+                box-shadow: 0 0 40px 40px #3f82ff inset;
             }
         }
         img{
-            transform: scale(1);
-            transform: rotate(-7deg);
+            transform: scale(0.9);
+            //transform: rotate(-7deg);
             transition: 0.3s;
             &:hover{
-                transform: rotate(0);
+                //transform: rotate(0);
                 transform: scale(1.2);
             }
         }

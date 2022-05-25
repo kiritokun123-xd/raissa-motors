@@ -95,7 +95,7 @@ class Router{
         $contenido = ob_get_clean();//Limpia el buffer
         if($view === 'auth/login'){
             include __DIR__ . "/views/base3.php";
-        }else if($view === 'paginas/index' || $view === 'paginas/nosotros' || $view === 'paginas/mototaxis' || $view === 'paginas/motocicletas' || $view === 'paginas/cargueros'){
+        }else if($view === 'paginas/index' || $view === 'paginas/nosotros' || $view === 'paginas/mototaxis' || $view === 'paginas/motocicletas' || $view === 'paginas/cargueros' || $view === 'paginas/fabrica'){
             include __DIR__ . "/views/layout.php";
         }else{
             include __DIR__ . "/views/base2.php";
