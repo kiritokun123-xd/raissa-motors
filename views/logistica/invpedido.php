@@ -47,14 +47,16 @@
                     <td><?php echo $pedido->tipo ?></td>
                     <td><?php echo date_format(date_create($pedido->fecha_ent),'d-m-Y') ?></td>
                     <td ><span  class="<?php  
-                        if($pedido->estado == 'Pedido'){
-                            echo "pedido";
-                        }else if($pedido->estado == 'Fabricación'){
-                            echo "fabricacion";
-                        }else if($pedido->estado == 'Entregado'){
-                            echo "entregado";
-                        }else if($pedido->estado == 'Stock'){
-                            echo "stock";
+                        if($pedido->estado == 'Taller Sol'){
+                            echo "tallsol";
+                        }else if($pedido->estado == 'Taller Ens'){
+                            echo "tallens";
+                        }else if($pedido->estado == 'Fin Ens'){
+                            echo "finens";
+                        }else if($pedido->estado == 'Fin Tie'){
+                            echo "fintie";
+                        }else if($pedido->estado == 'Ent Clie'){
+                            echo "entclie";
                         }
                     ?>"><?php echo $pedido->estado ?></span></td>
 

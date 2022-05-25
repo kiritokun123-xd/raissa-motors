@@ -4,7 +4,7 @@ date_default_timezone_set("America/Phoenix");
 class Pedido extends ActiveRecord{
     
     protected static $tabla = 'pedidos';
-    protected static $columnasDB = ['id', 'fecha_ini', 'cliente', 'distribuidor', 'serie', 'motor', 'fecha_ent', 'moto', 'tipo', 'color', 'faro', 'tacometro', 'aro', 'parrilla', 'techo', 'asiento', 'mica', 'mascara', 'adicional', 'equipamiento','estado','vendedor'];
+    protected static $columnasDB = ['id', 'fecha_ini', 'cliente', 'distribuidor', 'serie', 'motor', 'fecha_ent', 'moto', 'tipo', 'color', 'faro', 'tacometro', 'aro', 'parrilla', 'techo', 'asiento', 'mica', 'mascara', 'adicional', 'equipamiento','estado','vendedor','observacion'];
     protected static $redireccion = '/logistica/pedido';
 
     public $id;
@@ -29,6 +29,7 @@ class Pedido extends ActiveRecord{
     public $equipamiento;
     public $estado;
     public $vendedor;
+    public $observacion;
 
     public function __construct($args = [])
     {
@@ -52,8 +53,9 @@ class Pedido extends ActiveRecord{
         $this->mascara = $args['mascara'] ?? '';
         $this->adicional = $args['adicional'] ?? '';
         $this->equipamiento = $args['equipamiento'] ?? '';
-        $this->estado = $args['estado'] ?? 'Pedido';
+        $this->estado = $args['estado'] ?? 'Taller Sol';
         $this->vendedor = $args['vendedor'] ?? '';
+        $this->observacion = $args['observacion'] ?? '';
     }
 
     public function validar(){

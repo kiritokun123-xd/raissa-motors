@@ -18,10 +18,11 @@
 
 <label for="estado" class="estadop">Estado:</label>
 <select id="estado" name="pedido[estado]">
-    <option <?php echo 'Pedido' == $pedido->estado ? 'selected' : ''; ?> value="Pedido">Pedido</option>
-    <option <?php echo 'Fabricación' == $pedido->estado ? 'selected' : ''; ?> value="Fabricación">Fabricación</option>
-    <option <?php echo 'Entregado' == $pedido->estado ? 'selected' : ''; ?> value="Entregado">Entregado</option>
-    <option <?php echo 'Stock' == $pedido->estado ? 'selected' : ''; ?> value="Stock">Stock</option>
+    <option <?php echo 'Taller Sol' == $pedido->estado ? 'selected' : ''; ?> value="Taller Sol">Taller Sol</option>
+    <option <?php echo 'Taller Ens' == $pedido->estado ? 'selected' : ''; ?> value="Taller Ens">Taller Ens</option>
+    <option <?php echo 'Fin Ens' == $pedido->estado ? 'selected' : ''; ?> value="Fin Ens">Fin Ens</option>
+    <option <?php echo 'Fin Tie' == $pedido->estado ? 'selected' : ''; ?> value="Fin Tie">Fin Tie</option>
+    <option <?php echo 'Ent Clie' == $pedido->estado ? 'selected' : ''; ?> value="Ent Clie">Ent Clie</option>
     
 </select>
 
@@ -129,6 +130,9 @@
 
 <label for="adicional">Tapiz:</label>
 <textarea id="adicional" name="pedido[adicional]"><?php echo s($pedido->adicional); ?></textarea>
+
+<label for="observacion">Observaciones:</label>
+<textarea id="observacion" name="pedido[observacion]"><?php echo s($pedido->observacion); ?></textarea>
 
 
 
