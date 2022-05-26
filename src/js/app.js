@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
     verStock('.td-info-stock','popup-stock');
 
     verEspe('.especi', 'popupespe');
+
+    verAsignar('btn-asignar-s','.popup-asignar','cerrar-asignar','.asignar-ajax-s');
     
 });
 function functionsAjax() {
@@ -302,6 +304,15 @@ function verEspeAjax(){
         });  
     })            
 }
+function asignarAjaxS(){       
+    $('#asignar-ajax-s').on('click',function(e){
+        var id = $(this).data().paso;
+        $.post("/ajax/asignarAjaxS", { id: id }, function(data) {
+            $("#contenedor-asigS").html(data);
+            
+        });  
+    })            
+}
 function verEspeMAjax(){       
     $('.especi').on('click',function(e){
         var id = $(this).data().paso;
@@ -397,6 +408,32 @@ const verEspe = (verespeid,popupmotoid) => {
                 
             })
         })
+    }
+}
+
+const verAsignar = (btnasignarsid,popupasignarsid,cerrarasignarid,asignarajaxsid) => {
+    const btnasignars = document.getElementById(btnasignarsid),
+    popupasignars = document.querySelector(popupasignarsid),
+    cerrarasignar = document.getElementById(cerrarasignarid),
+    asignarajaxs = document.querySelectorAll(asignarajaxsid)
+    
+    if(btnasignars && popupasignars && cerrarasignar && asignarajaxs){
+        btnasignars.addEventListener('click', (e) => {
+            e.preventDefault()
+            popupasignars.classList.add('active')      
+        })
+        cerrarasignar.addEventListener('click', (e) => {
+            e.preventDefault()
+            popupasignars.classList.remove('active')      
+        })
+        asignarajaxs.forEach( stock => {
+            stock.addEventListener('click', (e) => {
+                e.preventDefault()
+                popupasignars.classList.remove('active')
+                
+            })
+        })
+        
     }
 }
 const verStock = (verstockid,popupstockid) => {

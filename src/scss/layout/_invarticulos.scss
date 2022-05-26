@@ -302,6 +302,66 @@
     }
 }
 
+.popup-asignar{
+    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    opacity: 0;
+    visibility: hidden;
+    .contenido-asignar{
+        display: flex;
+        flex-direction: column;
+        //box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.65);
+        box-shadow: 0 0.5rem 2.5rem 0 rgba(23, 23, 24, 0.5);
+        background-color: #f8f8f8;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        .titulo{
+            background-color: #4e73df;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            p{
+                cursor: pointer;
+                color: #d1d1d1;
+                font-weight: 600;
+                font-size: 2rem;
+                margin-right: 1rem;
+            }
+            h3{
+                font-size: 1.6rem;
+                color: #e3e6f0;
+                margin: 0 0 0 1rem;
+            }
+        }
+        //width: 85%;
+        transition: 0.3s ease all;
+        transform: scale(0.7);
+        //opacity: 0;   
+        img{
+            width: 25rem;
+            height: 25rem;
+        } 
+    }
+
+    &.active{
+        opacity: 1;
+        visibility:visible;
+        transform: scale(1);
+        .contenido-asignar{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+////////////////
 .stock-almacen{
     .stock-cant{
         display: flex;

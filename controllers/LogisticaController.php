@@ -436,6 +436,8 @@ class LogisticaController{
 
         $pedido = Pedido::find($id);
 
+        $series = Serie::get(20);
+
         $errores = Pedido::getErrores();
 
         //EJECUTAR EL CODIGO DESPUES DE QuE EL USUARIO ENVIA EL FORMULARIO
@@ -458,6 +460,7 @@ class LogisticaController{
 
         $router->render('logistica/updpedido',[
             'pedido' => $pedido,
+            'series' => $series,
             'errores' => $errores,
             'arrayPermisos' => $arrayPermisos,
             'nick' => $nick

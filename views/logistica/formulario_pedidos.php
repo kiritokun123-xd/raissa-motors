@@ -7,7 +7,7 @@
 <label for="new-vendedor">Vendedor:</label>
 <input type="text" id="new-vendedor" name="pedido[vendedor]" placeholder="Ingrese nombre del vendedor" value="<?php echo s($pedido->vendedor); ?>">
 
-<div class="asignar serie">
+<div class="asignar serie" id="contenedor-asigS">
     <label for="new-serie">Serie:</label>
     <input type="text" id="new-serie" name="pedido[serie]" disabled value="<?php echo s($pedido->serie); ?>">
     <a id="btn-asignar-s" class="btn btn-serie">Asignar</a>

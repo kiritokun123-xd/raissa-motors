@@ -34,8 +34,3 @@
         </div>
     </div>
 </main>
-<div class="popup-asignar">
-    <div class="contenido-asignar">
-        
-    </div>
-</div>
