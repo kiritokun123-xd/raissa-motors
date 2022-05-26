@@ -125,6 +125,20 @@
     tbody tr:last-of-type{
         border-bottom: 2px solid $second-color;
     }
+    tbody .disponible{
+      background-color: #1cc88a;
+      color: $blanco;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+    }
+    tbody .asignado{
+      background-color: #e7803b;
+      color: $blanco;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+    }
     tbody .debe{
       background-color: #e74a3b;
       color: $blanco;

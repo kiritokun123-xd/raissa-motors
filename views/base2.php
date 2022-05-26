@@ -106,6 +106,13 @@
             </li>
 
             <li class="nav-item" <?php echo (noTienePermiso(2,$arrayPermisos))? 'style="display: none"': ''; ?>>
+                <a href="/logistica/serie" class="nav-link">
+                    <i class='bx  bxs-keyboard bx-icon'></i>
+                    <span class="span">Series</span>
+                </a> 
+            </li>
+
+            <li class="nav-item" <?php echo (noTienePermiso(2,$arrayPermisos))? 'style="display: none"': ''; ?>>
                 <a href="/logistica/contrato" class="nav-link">
                     <i class='bx bxs-book bx-icon'></i>
                     <span class="span">Contratos</span>
@@ -113,6 +120,7 @@
             </li>
 
             <hr class="siderbar-divider">
+            
 
             <div class="sidebar-heading" <?php echo (noTienePermiso(3,$arrayPermisos))? 'style="display: none"': ''; ?>>Almacén Tienda</div>
 

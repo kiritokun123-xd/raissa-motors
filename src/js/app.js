@@ -27,6 +27,8 @@ function functionsAjax() {
     invPlacasAjaxP()
     invPlacasAjaxN()
 
+    invSeriesAjax()
+
     invPedidosAjaxC()
     invPedidosAjaxF()
 
@@ -133,6 +135,15 @@ function invMotosAjax(){
         var filtro = $(this).val();
         $.post("/ajax/invmotoAjax", { filtro: filtro }, function(data) {
             $("#invmoto-body").html(data);
+            
+        });  
+    })            
+}
+function invSeriesAjax(){
+    $('#buscarserie').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invserieAjax", { filtro: filtro }, function(data) {
+            $("#invserie-body").html(data);
             
         });  
     })            

@@ -11,6 +11,7 @@ use Model\Pedido;
 use Model\Pedidoe;
 use Model\Pedidot;
 use Model\Contrato;
+use Model\Serie;
 
 use Intervention\Image\ImageManagerStatic as Image;
 use Model\Placa;
@@ -685,6 +686,116 @@ class LogisticaController{
         ]);
     }
 
+    //==========SERIES=============//
+    public static function invserie(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+
+        $resultado = $_GET['resultado'] ?? null;
+
+        $limite = 20;
+        
+        $pag = $_GET['pag'] ?? null;
+
+        $offset = 0;
+
+        $totalPagina = Serie::totalPagina();
+
+        $totalLink = ceil($totalPagina/ $limite);
+        
+        if(isset($pag)){
+            if($pag < 1){
+                $pag = 1;
+            }
+            $offset = ($pag - 1) * $limite;    
+        }
+        $series = Serie::allFechaSerie($offset, $limite);
+    
+        $router->render('logistica/invserie',[
+            'series' => $series,
+            'resultado' => $resultado,
+            'totalLink' => $totalLink,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
+        ]);
+    }
+    public static function newserie(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+
+        $serie = new Serie();
+
+        $errores = Serie::getErrores();
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            /*CREA UNA NUEVA INSTANCIA*/
+            $serie = new Serie($_POST['serie']);
+
+            /*VALIDAR*/
+            $errores = $serie->validar();
+
+            //REVISAR QUE EL ARREGLO DE ERRORES ESTE VACIO
+            if(empty($errores)){
+
+                //SUBE A LA BD
+                $serie->guardar('/logistica/serie');
+                
+            }
+        }
+        $router->render('logistica/newserie',[
+            'serie' => $serie,
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
+        ]);
+    }
+    public static function invserieajax(Router $router){
+        $filtro = $_POST['filtro'];
+
+        $series = Serie::filtrarAjax('numserie',$filtro);
+
+        $router->renderAjax('invserieajax',[
+            'series' => $series
+        ]);
+    }
+    public static function updserie(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+
+        $id = validarORedireccionar('/logistica/serie');
+
+        $serie = Serie::find($id);
+
+        $errores = Serie::getErrores();
+
+        //EJECUTAR EL CODIGO DESPUES DE QuE EL USUARIO ENVIA EL FORMULARIO
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            //Asignar los atributos
+            $args = $_POST['serie'];
+            
+            $serie->sincronizar($args);
+            
+            $errores = $serie->validar();
+            
+
+            //REVISAR QUE EL AAREGLO DE ERRORES ESTE VACIO
+            if(empty($errores)){
+                
+                $serie->guardar('/logistica/serie');
+            }
+
+        }
+
+        $router->render('logistica/updserie',[
+            'serie' => $serie,
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
+        ]);
+    }
     //==========CONTRATOS=============//
     public static function invcontrato(Router $router){
         $auth = $_SESSION['id'];

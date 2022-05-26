@@ -399,6 +399,24 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                .asignar{
+                    margin: 0;
+                    display: grid;
+                    grid-template-columns: repeat(1,1fr);
+                    gap: 1rem;
+                    .btn{
+                        text-align: center;
+                        background-color: #4e73df;
+                        padding: 0.5rem 1rem;
+                        color: #e6e6e6;
+                        border-radius: 0.5rem;
+                        cursor: pointer;
+                    }
+                    @include tablet{
+                        display: inline-block;
+                        margin: 1rem 0;
+                    }
+                }
                 .estadop{
                     color: rgb(51, 119, 245);
                     font-weight: 700;

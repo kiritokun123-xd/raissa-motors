@@ -154,6 +154,14 @@ class ActiveRecord{
 
         return $resultado;
     }
+    public static function allFechaSerie($offset,$cantidad){
+        //ESCRIBIR EL QUERY
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY fecha DESC, id DESC " . " LIMIT " . $offset . " , " . $cantidad;
+        //debuguear($query);
+        $resultado = self::constularSQL($query);
+
+        return $resultado;
+    }
     public static function allFechaContrato($offset,$cantidad){
         //ESCRIBIR EL QUERY
         $query = "SELECT * FROM " . static::$tabla . " ORDER BY fecha DESC, id DESC " . " LIMIT " . $offset . " , " . $cantidad;
@@ -192,7 +200,7 @@ class ActiveRecord{
     //lista por busqueda ajax
     public static function filtrarAjax($columna,$filtro){
         //ESCRIBIR EL QUERY
-        $query = "SELECT * FROM " . static::$tabla . " WHERE ". $columna ." LIKE " . "'%".$filtro."%'";
+        $query = "SELECT * FROM " . static::$tabla . " WHERE ". $columna ." LIKE " . "'%".$filtro."%'" . " ORDER BY id DESC";
         $resultado = self::constularSQL($query);
         return $resultado;
     }

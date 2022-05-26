@@ -71,6 +71,13 @@ $router->post('/logistica/nuevo-pedido',[LogisticaController::class, 'newpedido'
 $router->get('/logistica/actualizar-pedido',[LogisticaController::class, 'updpedido']);
 $router->post('/logistica/actualizar-pedido',[LogisticaController::class, 'updpedido']);
 
+$router->get('/logistica/serie',[LogisticaController::class, 'invserie']);
+$router->post('/logistica/serie',[LogisticaController::class, 'invserie']);
+$router->get('/logistica/nuevo-serie',[LogisticaController::class, 'newserie']);
+$router->post('/logistica/nuevo-serie',[LogisticaController::class, 'newserie']);
+$router->get('/logistica/actualizar-serie',[LogisticaController::class, 'updserie']);
+$router->post('/logistica/actualizar-serie',[LogisticaController::class, 'updserie']);
+
 $router->get('/logistica/pedidoE',[LogisticaController::class, 'invpedidoE']);
 $router->post('/logistica/pedidoE',[LogisticaController::class, 'invpedidoE']);
 $router->get('/logistica/nuevo-pedidoE',[LogisticaController::class, 'newpedidoE']);
@@ -168,6 +175,7 @@ $router->post('/ajax/invpedidoAjaxF',[LogisticaController::class, 'invpedidoajax
 $router->post('/ajax/invpedidoAjaxE',[LogisticaController::class, 'invpedidoajaxe']);
 $router->post('/ajax/invpedidoAjaxT',[LogisticaController::class, 'invpedidoajaxt']);
 $router->post('/ajax/invcontratoAjax',[LogisticaController::class, 'invcontratoajax']);
+$router->post('/ajax/invserieAjax',[LogisticaController::class, 'invserieajax']);
 
 $router->post('/ajax/indicador1Ajax',[IndicadorController::class, 'indicador1ajax']);
 $router->post('/ajax/indicador1AjaxG',[IndicadorController::class, 'indicador1ajaxG']);

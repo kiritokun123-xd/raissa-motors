@@ -7,11 +7,18 @@
 <label for="new-vendedor">Vendedor:</label>
 <input type="text" id="new-vendedor" name="pedido[vendedor]" placeholder="Ingrese nombre del vendedor" value="<?php echo s($pedido->vendedor); ?>">
 
-<label for="new-serie">Serie:</label>
-<input type="text" id="new-serie" name="pedido[serie]" placeholder="Ingrese Nº serie" value="<?php echo s($pedido->serie); ?>">
+<div class="asignar serie">
+    <label for="new-serie">Serie:</label>
+    <input type="text" id="new-serie" name="pedido[serie]" disabled value="<?php echo s($pedido->serie); ?>">
+    <a id="btn-asignar-s" class="btn btn-serie">Asignar</a>
+</div>
 
-<label for="new-motor">Motor:</label>
-<input type="text" id="new-motor" name="pedido[motor]" placeholder="Ingrese serie motor" value="<?php echo s($pedido->motor); ?>">
+<div class="asignar motor">
+    <label for="new-motor">Motor:</label>
+    <input type="text" id="new-motor" name="pedido[motor]" placeholder="Ingrese serie motor" value="<?php echo s($pedido->motor); ?>">
+    <input type="text" id="new-nummotor" name="pedido[nummotor]" disabled value="<?php echo s($pedido->nummotor); ?>">
+    <a id="btn-asignar-m" class="btn btn-serie">Asignar</a>
+</div>
 
 <label for="new-fecha-ent">Fecha de Entrega:</label>
 <input type="date" class="input-id input-fecha" id="new-fecha-ent" name="pedido[fecha_ent]" value="<?php echo s($pedido->fecha_ent); ?>">
