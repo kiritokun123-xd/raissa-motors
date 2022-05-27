@@ -176,6 +176,7 @@ $router->post('/ajax/invpedidoAjaxE',[LogisticaController::class, 'invpedidoajax
 $router->post('/ajax/invpedidoAjaxT',[LogisticaController::class, 'invpedidoajaxt']);
 $router->post('/ajax/invcontratoAjax',[LogisticaController::class, 'invcontratoajax']);
 $router->post('/ajax/invserieAjax',[LogisticaController::class, 'invserieajax']);
+$router->post('/ajax/asignarAjaxS',[LogisticaController::class, 'asignarajaxs']);
 
 $router->post('/ajax/indicador1Ajax',[IndicadorController::class, 'indicador1ajax']);
 $router->post('/ajax/indicador1AjaxG',[IndicadorController::class, 'indicador1ajaxG']);

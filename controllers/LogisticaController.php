@@ -352,7 +352,7 @@ class LogisticaController{
 
         $resultado = $_GET['resultado'] ?? null;
 
-        $limite = 20;
+        $limite = 30;
         
         $pag = $_GET['pag'] ?? null;
 
@@ -435,11 +435,12 @@ class LogisticaController{
         $id = validarORedireccionar('/logistica/pedido');
 
         $pedido = Pedido::find($id);
-
-        $series = Serie::get(20);
-
+        
+        $series = Serie::getSeries();
+        $oldserie = $pedido->getSerie();
+        
         $errores = Pedido::getErrores();
-
+        
         //EJECUTAR EL CODIGO DESPUES DE QuE EL USUARIO ENVIA EL FORMULARIO
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             //Asignar los atributos
@@ -449,11 +450,19 @@ class LogisticaController{
             
             $errores = $pedido->validar();
             
+            $serie = new Serie();
 
             //REVISAR QUE EL AAREGLO DE ERRORES ESTE VACIO
             if(empty($errores)){
+                if(empty($oldserie)){
+                    $serie->actualizarSerie("asignado",$pedido->serie);
+                }else{
+                    $serie->actualizarSerie("disponible",$oldserie);           
+                    $serie->actualizarSerie("asignado",$pedido->serie);
+                }
                 
                 $pedido->guardar('/logistica/pedido');
+
             }
 
         }
@@ -752,6 +761,15 @@ class LogisticaController{
             'errores' => $errores,
             'arrayPermisos' => $arrayPermisos,
             'nick' => $nick
+        ]);
+    }
+    public static function asignarajaxs(Router $router){
+        $id = $_POST['id'];
+
+        $series = Serie::filtrarAjax('id',$id);
+
+        $router->renderAjax('asignarajaxs',[
+            'series' => $series
         ]);
     }
     public static function invserieajax(Router $router){

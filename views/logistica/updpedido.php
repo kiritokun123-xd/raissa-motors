@@ -54,7 +54,7 @@
                     <td><?php echo $serie->id ?></td>
                     <td><?php echo $serie->numserie ?></td>
                     <td><?php echo $serie->tipo ?></td>
-                    <td><a class="asignar-ajax-s" data-paso=<?php echo $serie->id ?> >Asignar</a></td>
+                    <td><a class="asignar-ajax-s" data-paso=<?php echo $serie->numserie ?> >Asignar</a></td>
                     
                 </tr>
                 <?php endforeach; ?>

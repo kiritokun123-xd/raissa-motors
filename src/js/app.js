@@ -60,6 +60,8 @@ function functionsAjax() {
     verEspeAjax()
     verEspeMAjax()
     verEspeCAjax()
+
+    asignarAjaxS()
 }
 function mensajeAlerta(titulo,texto,icono,boton){
     Swal.fire({
@@ -305,11 +307,12 @@ function verEspeAjax(){
     })            
 }
 function asignarAjaxS(){       
-    $('#asignar-ajax-s').on('click',function(e){
+    $('.asignar-ajax-s').on('click',function(e){
         var id = $(this).data().paso;
-        $.post("/ajax/asignarAjaxS", { id: id }, function(data) {
-            $("#contenedor-asigS").html(data);
-            
+        $.post("/ajax/asignarAjaxS", { id: id }, function() {
+            //$("#contenedor-asigS").html(data);
+            const inputNombre = document.getElementById("new-serie");
+            inputNombre.value = id;
         });  
     })            
 }
@@ -403,7 +406,7 @@ const verEspe = (verespeid,popupmotoid) => {
     
                 popupespe.onclick = function(){
                     popupespe.classList.remove('active')
-
+                    
                 }
                 
             })
@@ -428,7 +431,7 @@ const verAsignar = (btnasignarsid,popupasignarsid,cerrarasignarid,asignarajaxsid
         })
         asignarajaxs.forEach( stock => {
             stock.addEventListener('click', (e) => {
-                e.preventDefault()
+                //e.preventDefault()
                 popupasignars.classList.remove('active')
                 
             })

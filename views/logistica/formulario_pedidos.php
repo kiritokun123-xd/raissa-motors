@@ -9,14 +9,14 @@
 
 <div class="asignar serie" id="contenedor-asigS">
     <label for="new-serie">Serie:</label>
-    <input type="text" id="new-serie" name="pedido[serie]" disabled value="<?php echo s($pedido->serie); ?>">
+    <input type="text" id="new-serie" name="pedido[serie]" readonly value="<?php echo s($pedido->serie); ?>">
     <a id="btn-asignar-s" class="btn btn-serie">Asignar</a>
 </div>
 
 <div class="asignar motor">
     <label for="new-motor">Motor:</label>
     <input type="text" id="new-motor" name="pedido[motor]" placeholder="Ingrese serie motor" value="<?php echo s($pedido->motor); ?>">
-    <input type="text" id="new-nummotor" name="pedido[nummotor]" disabled value="<?php echo s($pedido->nummotor); ?>">
+    <input type="text" id="new-nummotor" name="pedido[nummotor]" readonly value="<?php echo s($pedido->nummotor); ?>">
     <a id="btn-asignar-m" class="btn btn-serie">Asignar</a>
 </div>
 

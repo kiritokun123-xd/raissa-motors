@@ -109,4 +109,8 @@ class Pedido extends ActiveRecord{
         return self::$errores;
     }
 
+    public function getSerie(): string
+    {
+        return $this->serie;
+    }
 }

@@ -119,6 +119,9 @@
         border-left: 1px solid #e3e6f0;
         border-right: 1px solid #e3e6f0;
     }
+    tbody td:nth-child(3) {
+      width: 20rem;
+    }
     tbody tr:nth-of-type(even){
         background-color: #f3f3f3;
     }
