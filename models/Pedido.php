@@ -113,4 +113,8 @@ class Pedido extends ActiveRecord{
     {
         return $this->serie;
     }
+    public function getMotor(): string
+    {
+        return $this->nummotor;
+    }
 }

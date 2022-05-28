@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     verEspe('.especi', 'popupespe');
 
     verAsignar('btn-asignar-s','.popup-asignar','cerrar-asignar','.asignar-ajax-s');
+    verAsignarM('btn-asignar-m','popupasignarmotor','cerrar-asignar-id','.asignar-ajax-m');
     
 });
 function functionsAjax() {
@@ -30,6 +31,8 @@ function functionsAjax() {
     invPlacasAjaxN()
 
     invSeriesAjax()
+
+    invMotoresAjax()
 
     invPedidosAjaxC()
     invPedidosAjaxF()
@@ -62,6 +65,7 @@ function functionsAjax() {
     verEspeCAjax()
 
     asignarAjaxS()
+    asignarAjaxM()
 }
 function mensajeAlerta(titulo,texto,icono,boton){
     Swal.fire({
@@ -139,6 +143,15 @@ function invMotosAjax(){
         var filtro = $(this).val();
         $.post("/ajax/invmotoAjax", { filtro: filtro }, function(data) {
             $("#invmoto-body").html(data);
+            
+        });  
+    })            
+}
+function invMotoresAjax(){
+    $('#buscarmotor').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invmotorAjax", { filtro: filtro }, function(data) {
+            $("#invmotor-body").html(data);
             
         });  
     })            
@@ -316,6 +329,16 @@ function asignarAjaxS(){
         });  
     })            
 }
+function asignarAjaxM(){       
+    $('.asignar-ajax-m').on('click',function(e){
+        var idm = $(this).data().paso;
+        $.post("/ajax/asignarAjaxM", { idm: idm }, function() {
+            //$("#contenedor-asigS").html(data);
+            const inputNombre = document.getElementById("new-nummotor");
+            inputNombre.value = idm;
+        });  
+    })            
+}
 function verEspeMAjax(){       
     $('.especi').on('click',function(e){
         var id = $(this).data().paso;
@@ -420,6 +443,30 @@ const verAsignar = (btnasignarsid,popupasignarsid,cerrarasignarid,asignarajaxsid
     cerrarasignar = document.getElementById(cerrarasignarid),
     asignarajaxs = document.querySelectorAll(asignarajaxsid)
     
+    if(btnasignars && popupasignars && cerrarasignar && asignarajaxs){
+        btnasignars.addEventListener('click', (e) => {
+            e.preventDefault()
+            popupasignars.classList.add('active')      
+        })
+        cerrarasignar.addEventListener('click', (e) => {
+            e.preventDefault()
+            popupasignars.classList.remove('active')      
+        })
+        asignarajaxs.forEach( stock => {
+            stock.addEventListener('click', (e) => {
+                //e.preventDefault()
+                popupasignars.classList.remove('active')
+                
+            })
+        })
+        
+    }
+}
+const verAsignarM = (btnasignarsid,popupasignarsid,cerrarasignarid,asignarajaxsid) => {
+    const btnasignars = document.getElementById(btnasignarsid),
+    popupasignars = document.getElementById(popupasignarsid),
+    cerrarasignar = document.getElementById(cerrarasignarid),
+    asignarajaxs = document.querySelectorAll(asignarajaxsid)
     if(btnasignars && popupasignars && cerrarasignar && asignarajaxs){
         btnasignars.addEventListener('click', (e) => {
             e.preventDefault()

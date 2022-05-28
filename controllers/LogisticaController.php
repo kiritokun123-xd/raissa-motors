@@ -12,6 +12,7 @@ use Model\Pedidoe;
 use Model\Pedidot;
 use Model\Contrato;
 use Model\Serie;
+use Model\Motor;
 
 use Intervention\Image\ImageManagerStatic as Image;
 use Model\Placa;
@@ -438,6 +439,8 @@ class LogisticaController{
         
         $series = Serie::getSeries();
         $oldserie = $pedido->getSerie();
+        $motores = Motor::getMotores();
+        $oldmotor = $pedido->getMotor();
         
         $errores = Pedido::getErrores();
         
@@ -451,7 +454,9 @@ class LogisticaController{
             $errores = $pedido->validar();
             
             $serie = new Serie();
-
+            $motor = new Motor();
+            
+            //debuguear($oldserie);
             //REVISAR QUE EL AAREGLO DE ERRORES ESTE VACIO
             if(empty($errores)){
                 if(empty($oldserie)){
@@ -459,6 +464,12 @@ class LogisticaController{
                 }else{
                     $serie->actualizarSerie("disponible",$oldserie);           
                     $serie->actualizarSerie("asignado",$pedido->serie);
+                }
+                if(empty($oldmotor)){
+                    $motor->actualizarMotor("asignado",$pedido->nummotor);
+                }else{
+                    $motor->actualizarMotor("disponible",$oldmotor);           
+                    $motor->actualizarMotor("asignado",$pedido->nummotor);
                 }
                 
                 $pedido->guardar('/logistica/pedido');
@@ -470,6 +481,7 @@ class LogisticaController{
         $router->render('logistica/updpedido',[
             'pedido' => $pedido,
             'series' => $series,
+            'motores' => $motores,
             'errores' => $errores,
             'arrayPermisos' => $arrayPermisos,
             'nick' => $nick
@@ -812,6 +824,125 @@ class LogisticaController{
 
         $router->render('logistica/updserie',[
             'serie' => $serie,
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
+        ]);
+    }
+    //==========MOTORES=============//
+    public static function invmotor(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+
+        $resultado = $_GET['resultado'] ?? null;
+
+        $limite = 20;
+        
+        $pag = $_GET['pag'] ?? null;
+
+        $offset = 0;
+
+        $totalPagina = Serie::totalPagina();
+
+        $totalLink = ceil($totalPagina/ $limite);
+        
+        if(isset($pag)){
+            if($pag < 1){
+                $pag = 1;
+            }
+            $offset = ($pag - 1) * $limite;    
+        }
+        $motores = Motor::allFechaSerie($offset, $limite);
+    
+        $router->render('logistica/invmotor',[
+            'motores' => $motores,
+            'resultado' => $resultado,
+            'totalLink' => $totalLink,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
+        ]);
+    }
+    public static function newmotor(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+
+        $motor = new Motor();
+
+        $errores = Motor::getErrores();
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            /*CREA UNA NUEVA INSTANCIA*/
+            $motor = new Motor($_POST['motor']);
+
+            /*VALIDAR*/
+            $errores = $motor->validar();
+
+            //REVISAR QUE EL ARREGLO DE ERRORES ESTE VACIO
+            if(empty($errores)){
+
+                //SUBE A LA BD
+                $motor->guardar('/logistica/motor');
+                
+            }
+        }
+        $router->render('logistica/newmotor',[
+            'motor' => $motor,
+            'errores' => $errores,
+            'arrayPermisos' => $arrayPermisos,
+            'nick' => $nick
+        ]);
+    }
+    public static function asignarajaxm(Router $router){
+        $id = $_POST['id'];
+
+        $motores = Motor::filtrarAjax('id',$id);
+
+        $router->renderAjax('asignarajaxm',[
+            'motores' => $motores
+        ]);
+    }
+    public static function invmotorajax(Router $router){
+        $filtro = $_POST['filtro'];
+
+        $motores = Motor::filtrarAjax('nummotor',$filtro);
+
+        $router->renderAjax('invmotorajax',[
+            'motores' => $motores
+        ]);
+    }
+    public static function updmotor(Router $router){
+        $auth = $_SESSION['id'];
+        $arrayPermisos = UsuarioPermiso::mostrarPermisos($auth);
+        $nick = Admin::mostrarNombre($auth);
+
+        $id = validarORedireccionar('/logistica/motor');
+
+        $motor = Motor::find($id);
+
+        $errores = Motor::getErrores();
+
+        //EJECUTAR EL CODIGO DESPUES DE QuE EL USUARIO ENVIA EL FORMULARIO
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            //Asignar los atributos
+            $args = $_POST['motor'];
+            
+            $motor->sincronizar($args);
+            
+            $errores = $motor->validar();
+            
+
+            //REVISAR QUE EL AAREGLO DE ERRORES ESTE VACIO
+            if(empty($errores)){
+                
+                $motor->guardar('/logistica/motor');
+            }
+
+        }
+
+        $router->render('logistica/updmotor',[
+            'motor' => $motor,
             'errores' => $errores,
             'arrayPermisos' => $arrayPermisos,
             'nick' => $nick

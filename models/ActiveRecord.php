@@ -72,6 +72,23 @@ class ActiveRecord{
 
         $resultado = self::$db->query($query);
     }
+    public function actualizarMotor($estadoS, $nums){
+        
+        //SANITIZAR LOS DATOS
+        $atributos = $this->sanitizarAtributos();
+
+        $valores = [];
+
+        foreach($atributos as $key=>$value){
+            $valores[] = "{$key}='{$value}'";
+        }
+        $query = "UPDATE " . static::$tabla . " SET ";
+        $query .= "estado = '" . $estadoS;
+        $query .= "' WHERE nummotor LIKE '%" . $nums;
+        $query .= "%' LIMIT 1 ";
+
+        $resultado = self::$db->query($query);
+    }
 
     public function crear($redireccion){
         
@@ -245,6 +262,14 @@ class ActiveRecord{
         return $resultado;
     }
     public static function getSeries(){
+        //ESCRIBIR EL QUERY
+        $query = "SELECT * FROM " . static::$tabla . " WHERE estado like '%disponible%' ORDER BY id DESC";
+        //debuguear($query);
+        $resultado = self::constularSQL($query);
+
+        return $resultado;
+    }
+    public static function getMotores(){
         //ESCRIBIR EL QUERY
         $query = "SELECT * FROM " . static::$tabla . " WHERE estado like '%disponible%' ORDER BY id DESC";
         //debuguear($query);

@@ -113,6 +113,13 @@
             </li>
 
             <li class="nav-item" <?php echo (noTienePermiso(2,$arrayPermisos))? 'style="display: none"': ''; ?>>
+                <a href="/logistica/motor" class="nav-link">
+                    <i class='bx  bx-chip bx-icon'></i>
+                    <span class="span">Motores</span>
+                </a> 
+            </li>
+
+            <li class="nav-item" <?php echo (noTienePermiso(2,$arrayPermisos))? 'style="display: none"': ''; ?>>
                 <a href="/logistica/contrato" class="nav-link">
                     <i class='bx bxs-book bx-icon'></i>
                     <span class="span">Contratos</span>

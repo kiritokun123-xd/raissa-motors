@@ -15,7 +15,7 @@
 
 <div class="asignar motor">
     <label for="new-motor">Motor:</label>
-    <input type="text" id="new-motor" name="pedido[motor]" placeholder="Ingrese serie motor" value="<?php echo s($pedido->motor); ?>">
+    <input type="text" id="new-motor" name="pedido[motor]" placeholder="Ingrese  descripcion motor" value="<?php echo s($pedido->motor); ?>">
     <input type="text" id="new-nummotor" name="pedido[nummotor]" readonly value="<?php echo s($pedido->nummotor); ?>">
     <a id="btn-asignar-m" class="btn btn-serie">Asignar</a>
 </div>

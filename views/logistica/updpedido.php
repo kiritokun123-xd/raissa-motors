@@ -64,3 +64,34 @@
     </div>
     </div>
 </div>
+<div id="popupasignarmotor" class="popup-asignar">
+    <div class="contenido-asignar" >
+        <div class="titulo">
+            <h3>Motores Disponibles</h3>
+            <p id="cerrar-asignar-id">x</p>
+        </div>
+        <div class="contenedor-tabla">
+        <table class="table">
+            <!-- <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Serie</th>
+                    <th>Tipo</th>                    
+                </tr>
+            </thead> -->
+            <tbody id="invmotor-body">
+                <?php foreach($motores as $motor) : ?>
+                <tr>
+                    <td><?php echo $motor->id ?></td>
+                    <td><?php echo $motor->nummotor ?></td>
+                    <td><?php echo $motor->tipo ?></td>
+                    <td><a class="asignar-ajax-m" data-paso=<?php echo $motor->nummotor ?> >Asignar</a></td>
+                    
+                </tr>
+                <?php endforeach; ?>
+             
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
