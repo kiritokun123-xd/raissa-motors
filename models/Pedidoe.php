@@ -4,7 +4,7 @@ date_default_timezone_set("America/Phoenix");
 class Pedidoe extends ActiveRecord{
     
     protected static $tabla = 'pedidoe';
-    protected static $columnasDB = ['id', 'fecha_ini', 'cliente', 'serie', 'fecha_ent', 'tipo', 'color', 'parrilla', 'techo', 'asiento', 'mica', 'mascara', 'adicional', 'equipamiento'];
+    protected static $columnasDB = ['id', 'fecha_ini', 'cliente', 'serie', 'fecha_ent', 'tipo', 'color', 'parrilla', 'techo', 'asiento', 'mica', 'mascara', 'adicional', 'equipamiento','vendedor','despacho','destino'];
     protected static $redireccion = '/logistica/pedidoE';
 
     public $id;
@@ -21,6 +21,9 @@ class Pedidoe extends ActiveRecord{
     public $mascara;
     public $adicional;
     public $equipamiento;
+    public $vendedor;
+    public $despacho;
+    public $destino;
 
     public function __construct($args = [])
     {
@@ -38,11 +41,17 @@ class Pedidoe extends ActiveRecord{
         $this->mascara = $args['mascara'] ?? '';
         $this->adicional = $args['adicional'] ?? '';
         $this->equipamiento = $args['equipamiento'] ?? '';
+        $this->vendedor = $args['vendedor'] ?? '';
+        $this->despacho = $args['despacho'] ?? '';
+        $this->destino = $args['destino'] ?? '';
     }
 
     public function validar(){
         if(!$this->cliente){
             self::$errores[] = "El cliente es obligatorio";
+        }
+        if(!$this->vendedor){
+            self::$errores[] = "El vendedor es obligatorio";
         }
         if(!$this->fecha_ent){
             self::$errores[] = "La fecha de entrega es obligatoria";
@@ -70,6 +79,11 @@ class Pedidoe extends ActiveRecord{
         }
         
         return self::$errores;
+    }
+
+    public function getSerie(): string
+    {
+        return $this->serie;
     }
 
 }

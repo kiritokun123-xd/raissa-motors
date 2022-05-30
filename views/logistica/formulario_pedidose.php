@@ -1,8 +1,25 @@
 <label for="new-cliente">Cliente:</label>
 <input type="text" id="new-cliente" name="pedido[cliente]" placeholder="Ingrese nombre del Cliente" value="<?php echo s($pedido->cliente); ?>">
 
-<label for="new-serie">Serie:</label>
-<input type="text" id="new-serie" name="pedido[serie]" placeholder="Ingrese Nº serie" value="<?php echo s($pedido->serie); ?>">
+<label for="new-vendedor">Vendedor:</label>
+<input type="text" id="new-vendedor" name="pedido[vendedor]" placeholder="Ingrese nombre del vendedor" value="<?php echo s($pedido->vendedor); ?>">
+
+<label for="despacho">Despacho:</label>
+<select id="despacho" name="pedido[despacho]">
+    <option value="" >-- Seleccione --</option>
+    <option <?php echo 'Tda Comas' == $pedido->despacho ? 'selected' : ''; ?> value="Tda Comas">Tda Comas</option>
+    <option <?php echo 'Ensamblaje' == $pedido->despacho ? 'selected' : ''; ?> value="Ensamblaje">Ensamblaje</option>
+    <option <?php echo 'Soldadura' == $pedido->despacho ? 'selected' : ''; ?> value="Soldadura">Soldadura</option>
+</select>
+
+<label for="new-destino">Destino:</label>
+<input type="text" id="new-destino" name="pedido[destino]" placeholder="Ingrese destino" value="<?php echo s($pedido->destino); ?>">
+
+<div class="asignar serie" id="contenedor-asigS">
+    <label for="new-serie">Serie:</label>
+    <input type="text" id="new-serie" name="pedido[serie]" readonly value="<?php echo s($pedido->serie); ?>">
+    <a id="btn-asignar-s" class="btn btn-serie">Asignar</a>
+</div>
 
 <label for="new-fecha-ent">Fecha de Entrega:</label>
 <input type="date" class="input-id input-fecha" id="new-fecha-ent" name="pedido[fecha_ent]" value="<?php echo s($pedido->fecha_ent); ?>">

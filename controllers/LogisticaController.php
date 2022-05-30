@@ -562,6 +562,9 @@ class LogisticaController{
 
         $pedido = Pedidoe::find($id);
 
+        $series = Serie::getSeries();
+        $oldserie = $pedido->getSerie();
+
         $errores = Pedidoe::getErrores();
 
         //EJECUTAR EL CODIGO DESPUES DE QuE EL USUARIO ENVIA EL FORMULARIO
@@ -573,9 +576,17 @@ class LogisticaController{
             
             $errores = $pedido->validar();
             
+            $serie = new Serie();
 
             //REVISAR QUE EL AAREGLO DE ERRORES ESTE VACIO
             if(empty($errores)){
+
+                if(empty($oldserie)){
+                    $serie->actualizarSerie("asignado",$pedido->serie);
+                }else{
+                    $serie->actualizarSerie("disponible",$oldserie);           
+                    $serie->actualizarSerie("asignado",$pedido->serie);
+                }
                 
                 $pedido->guardar('/logistica/pedidoE');
             }
@@ -584,6 +595,7 @@ class LogisticaController{
 
         $router->render('logistica/updpedidoe',[
             'pedido' => $pedido,
+            'series' => $series,
             'errores' => $errores,
             'arrayPermisos' => $arrayPermisos,
             'nick' => $nick

@@ -23,8 +23,8 @@
                     <th>Id</th>
                     <th>Fecha Ini</th>
                     <th>Cliente</th>
-                    <th>Tipo</th>
-                    <th>Color</th>
+                    <th>Despacho</th>
+                    <th>Destino</th>
                     <th>Fecha entrega</th>
                     <th>Acciones</th>
                     
@@ -36,8 +36,8 @@
                     <td><?php echo $pedido->id ?></td>
                     <td><?php echo date_format(date_create($pedido->fecha_ini),'d-m-Y')?></td>
                     <td><?php echo $pedido->cliente ?></td>
-                    <td><?php echo $pedido->tipo ?></td>
-                    <td><?php echo $pedido->color ?></td>
+                    <td><?php echo $pedido->despacho ?></td>
+                    <td><?php echo $pedido->destino ?></td>
                     <td><?php echo date_format(date_create($pedido->fecha_ent),'d-m-Y') ?></td>
                     <td class="td-acciones"> 
                         <div class="div-acciones">
