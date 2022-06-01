@@ -160,6 +160,9 @@ $pdf->SetLeftMargin(15);
 $pdf->SetFontSize(14);
 
 $pdf->Cell(90,10,utf8_decode('Cliente: ' .  $pedido->cliente ),0,1,'L');
+$pdf->Cell(90,10,utf8_decode('Cliente: ' .  $pedido->vendedor ),0,1,'L');
+$pdf->Cell(90,10,utf8_decode('Cliente: ' .  $pedido->despacho ),0,1,'L');
+$pdf->Cell(90,10,utf8_decode('Cliente: ' .  $pedido->destino ),0,1,'L');
 $pdf->Cell(90,8,utf8_decode('Serie: ' . $pedido->serie),0,1,'L');
 $pdf->Ln(5);
 $pdf->SetFont('Arial','B',14);
