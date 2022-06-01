@@ -29,7 +29,7 @@ class LogisticaController{
         $resultado = $_GET['resultado'] ?? null;
         
 
-        $limite = 10;
+        $limite = 40;
         
         $pag = $_GET['pag'] ?? null;
 
