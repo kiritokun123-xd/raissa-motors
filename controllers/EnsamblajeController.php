@@ -17,7 +17,7 @@ class EnsamblajeController{
 
         $resultado = $_GET['resultado'] ?? null;
 
-        $limite = 10;
+        $limite = 30;
         
         $pag = $_GET['pag'] ?? null;
 
