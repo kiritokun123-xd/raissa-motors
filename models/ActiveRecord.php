@@ -181,6 +181,14 @@ class ActiveRecord{
 
         return $resultado;
     }
+    public static function allarticulo($offset,$cantidad){
+        //ESCRIBIR EL QUERY
+        $query = "SELECT * FROM " . static::$tabla . " order by nombre asc" . " LIMIT " . $offset . " , " . $cantidad ;
+        
+        $resultado = self::constularSQL($query);
+
+        return $resultado;
+    }
     public static function allFechaPedido($offset,$cantidad){
         //ESCRIBIR EL QUERY
         $query = "SELECT * FROM " . static::$tabla . " ORDER BY fecha_ini DESC, id DESC " . " LIMIT " . $offset . " , " . $cantidad;
@@ -225,7 +233,7 @@ class ActiveRecord{
     }
     public static function allMul($almacen, $offset, $cantidad){
         //ESCRIBIR EL QUERY
-        $query = "SELECT * FROM " . static::$tabla . " WHERE almacenId = " . $almacen . " ORDER BY id" . " LIMIT " . $offset . " , " . $cantidad;
+        $query = "SELECT * FROM " . static::$tabla . " WHERE almacenId = " . $almacen . " ORDER BY nombre" . " LIMIT " . $offset . " , " . $cantidad;
 
         $resultado = self::constularSQL($query);
 
