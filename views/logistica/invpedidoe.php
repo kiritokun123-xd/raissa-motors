@@ -26,6 +26,7 @@
                     <th>Despacho</th>
                     <th>Destino</th>
                     <th>Fecha entrega</th>
+                    <th>Estado</th>
                     <th>Acciones</th>
                     
                 </tr>
@@ -39,6 +40,19 @@
                     <td><?php echo $pedido->despacho ?></td>
                     <td><?php echo $pedido->destino ?></td>
                     <td><?php echo date_format(date_create($pedido->fecha_ent),'d-m-Y') ?></td>
+                    <td ><span  class="<?php  
+                        if($pedido->estado == 'Taller Sol'){
+                            echo "tallsol";
+                        }else if($pedido->estado == 'Taller Ens'){
+                            echo "tallens";
+                        }else if($pedido->estado == 'Fin Ens'){
+                            echo "finens";
+                        }else if($pedido->estado == 'Fin Tie'){
+                            echo "fintie";
+                        }else if($pedido->estado == 'Ent Clie'){
+                            echo "entclie";
+                        }
+                    ?>"><?php echo $pedido->estado ?></span></td>
                     <td class="td-acciones"> 
                         <div class="div-acciones">
                             <a href="/logistica/actualizar-pedidoE?id=<?php echo $pedido->id; ?>" class="accion-actualizar"><i class='bx bxs-pencil'></i></a>

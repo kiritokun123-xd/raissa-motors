@@ -24,6 +24,16 @@
 <label for="new-fecha-ent">Fecha de Entrega:</label>
 <input type="date" class="input-id input-fecha" id="new-fecha-ent" name="pedido[fecha_ent]" value="<?php echo s($pedido->fecha_ent); ?>">
 
+<label for="estado" class="estadop">Estado:</label>
+<select id="estado" name="pedido[estado]">
+    <option <?php echo 'Taller Sol' == $pedido->estado ? 'selected' : ''; ?> value="Taller Sol">Taller Sol</option>
+    <option <?php echo 'Taller Ens' == $pedido->estado ? 'selected' : ''; ?> value="Taller Ens">Taller Ens</option>
+    <option <?php echo 'Fin Ens' == $pedido->estado ? 'selected' : ''; ?> value="Fin Ens">Fin Ens</option>
+    <option <?php echo 'Fin Tie' == $pedido->estado ? 'selected' : ''; ?> value="Fin Tie">Fin Tie</option>
+    <option <?php echo 'Ent Clie' == $pedido->estado ? 'selected' : ''; ?> value="Ent Clie">Ent Clie</option>
+    
+</select>
+
 <label for="tipo">Tipo:</label>
 <select id="tipo" name="pedido[tipo]">
     <option value="" >-- Seleccione --</option>

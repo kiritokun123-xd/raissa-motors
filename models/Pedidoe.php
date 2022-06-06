@@ -4,7 +4,7 @@ date_default_timezone_set("America/Phoenix");
 class Pedidoe extends ActiveRecord{
     
     protected static $tabla = 'pedidoe';
-    protected static $columnasDB = ['id', 'fecha_ini', 'cliente', 'serie', 'fecha_ent', 'tipo', 'color', 'parrilla', 'techo', 'asiento', 'mica', 'mascara', 'adicional', 'equipamiento','vendedor','despacho','destino'];
+    protected static $columnasDB = ['id', 'fecha_ini', 'cliente', 'serie', 'fecha_ent', 'tipo', 'color', 'parrilla', 'techo', 'asiento', 'mica', 'mascara', 'adicional', 'equipamiento','vendedor','despacho','destino','estado'];
     protected static $redireccion = '/logistica/pedidoE';
 
     public $id;
@@ -24,6 +24,7 @@ class Pedidoe extends ActiveRecord{
     public $vendedor;
     public $despacho;
     public $destino;
+    public $estado;
 
     public function __construct($args = [])
     {
@@ -44,6 +45,7 @@ class Pedidoe extends ActiveRecord{
         $this->vendedor = $args['vendedor'] ?? '';
         $this->despacho = $args['despacho'] ?? '';
         $this->destino = $args['destino'] ?? '';
+        $this->estado = $args['estado'] ?? 'Taller Sol';
     }
 
     public function validar(){

@@ -29,7 +29,7 @@ class LogisticaController{
         $resultado = $_GET['resultado'] ?? null;
         
 
-        $limite = 40;
+        $limite = 50;
         
         $pag = $_GET['pag'] ?? null;
 
@@ -46,7 +46,7 @@ class LogisticaController{
             $offset = ($pag - 1) * $limite;    
         }
 
-        $articulos = Articulo::all($offset, $limite);
+        $articulos = Articulo::allarticulo($offset, $limite);
 
         $router->render('logistica/invarticulo',[
             'articulos' => $articulos,
@@ -496,7 +496,7 @@ class LogisticaController{
 
         $resultado = $_GET['resultado'] ?? null;
 
-        $limite = 10;
+        $limite = 50;
         
         $pag = $_GET['pag'] ?? null;
 

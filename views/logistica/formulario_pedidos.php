@@ -69,6 +69,7 @@
     <option value="" >-- Seleccione --</option>
     <option <?php echo 'GL' == $pedido->faro ? 'selected' : ''; ?> value="GL">GL</option>
     <option <?php echo 'Harley' == $pedido->faro ? 'selected' : ''; ?> value="Harley">Harley</option>
+    <option <?php echo 'No Aplica' == $pedido->faro ? 'selected' : ''; ?> value="No Aplica">No Aplica</option>
 </select>
 
 <label for="tacometro">Tacometro:</label>
@@ -77,6 +78,7 @@
     <option <?php echo 'GL' == $pedido->tacometro ? 'selected' : ''; ?> value="GL">GL</option>
     <option <?php echo 'Mostrito' == $pedido->tacometro ? 'selected' : ''; ?> value="Mostrito">Mostrito</option>
     <option <?php echo 'Harley' == $pedido->tacometro ? 'selected' : ''; ?> value="Harley">Harley</option>
+    <option <?php echo 'No Aplica' == $pedido->tacometro ? 'selected' : ''; ?> value="No Aplica">No Aplica</option>
 </select>
 
 <label for="aro">Aro:</label>
@@ -87,6 +89,7 @@
     <option <?php echo 'Deportivo Zapata' == $pedido->aro ? 'selected' : ''; ?> value="Deportivo Zapata">Deportivo Zapata</option>
     <option <?php echo 'Deportivo Disco' == $pedido->aro ? 'selected' : ''; ?> value="Deportivo Disco">Deportivo Disco</option>
     <option <?php echo 'Doble llanta' == $pedido->aro ? 'selected' : ''; ?> value="Doble llanta">Doble llanta</option>
+    <option <?php echo 'Llanta Balon' == $pedido->aro ? 'selected' : ''; ?> value="Llanta Balon">Llanta Balon</option>
     <option <?php echo 'Kit Nacional' == $pedido->aro ? 'selected' : ''; ?> value="Kit Nacional">Kit Nacional</option>
 </select>
 
@@ -98,6 +101,7 @@
     <option <?php echo 'Trenzada' == $pedido->parrilla ? 'selected' : ''; ?> value="Trenzada">Trenzada</option>
     <option <?php echo 'Cajón' == $pedido->parrilla ? 'selected' : ''; ?> value="Cajón">Cajón</option>
     <option <?php echo 'Titán' == $pedido->parrilla ? 'selected' : ''; ?> value="Titán">Titán</option>
+    <option <?php echo 'No Aplica' == $pedido->parrilla ? 'selected' : ''; ?> value="No Aplica">No Aplica</option>
 </select>
 
 <label for="techo">Techo:</label>
@@ -106,6 +110,7 @@
     <option <?php echo 'Estándar' == $pedido->techo ? 'selected' : ''; ?> value="Estándar">Estándar</option>
     <option <?php echo 'Cola 1' == $pedido->techo ? 'selected' : ''; ?> value="Cola 1">Cola 1</option>
     <option <?php echo 'Cola 2' == $pedido->techo ? 'selected' : ''; ?> value="Cola 2">Cola 2</option>
+    <option <?php echo 'No Aplica' == $pedido->techo ? 'selected' : ''; ?> value="No Aplica">No Aplica</option>
 </select>
 
 <label for="asiento">Asiento:</label>
@@ -115,6 +120,7 @@
     <option <?php echo 'Deportivo' == $pedido->asiento ? 'selected' : ''; ?> value="Deportivo">Deportivo</option>
     <option <?php echo 'Liso' == $pedido->asiento ? 'selected' : ''; ?> value="Liso">Liso</option>
     <option <?php echo 'Torito' == $pedido->asiento ? 'selected' : ''; ?> value="Torito">Torito</option>
+    <option <?php echo 'No Aplica' == $pedido->asiento ? 'selected' : ''; ?> value="No Aplica">No Aplica</option>
 </select>
 
 <label for="mica">Mica:</label>
@@ -122,6 +128,7 @@
     <option value="" >-- Seleccione --</option>
     <option <?php echo 'Transparente' == $pedido->mica ? 'selected' : ''; ?> value="Transparente">Transparente</option>
     <option <?php echo 'Polarizado' == $pedido->mica ? 'selected' : ''; ?> value="Polarizado">Polarizado</option>
+    <option <?php echo 'No Aplica' == $pedido->mica ? 'selected' : ''; ?> value="No Aplica">No Aplica</option>
 </select>
 
 <label for="mascara">Máscara:</label>
@@ -130,6 +137,7 @@
     <option <?php echo 'Aero' == $pedido->mascara ? 'selected' : ''; ?> value="Aero">Aero</option>
     <option <?php echo 'Doble Mica' == $pedido->mascara ? 'selected' : ''; ?> value="Doble Mica">Doble Mica</option>
     <option <?php echo 'Corta' == $pedido->mascara ? 'selected' : ''; ?> value="Corta">Corta</option>
+    <option <?php echo 'No Aplica' == $pedido->mascara ? 'selected' : ''; ?> value="No Aplica">No Aplica</option>
 </select>
 
 <label for="equipamiento">Equipamiento:</label>
