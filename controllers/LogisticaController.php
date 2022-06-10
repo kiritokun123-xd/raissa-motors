@@ -1,6 +1,7 @@
 <?php 
 namespace Controllers;
 
+use Exception;
 use MVC\Router;
 use Model\Articulo;
 use Model\Moto;
@@ -776,7 +777,11 @@ class LogisticaController{
             if(empty($errores)){
 
                 //SUBE A LA BD
-                $serie->guardar('/logistica/serie');
+                try{
+                    $serie->guardar('/logistica/serie');
+                }catch(\Exception $e){
+                    $errores[]= "Ya existe esa serie";
+                }
                 
             }
         }
@@ -895,8 +900,12 @@ class LogisticaController{
             if(empty($errores)){
 
                 //SUBE A LA BD
-                $motor->guardar('/logistica/motor');
-                
+                try{
+                    $motor->guardar('/logistica/motor');
+                }catch(\Exception $e){
+                    $errores[]= "Ya existe ese motor";
+                }
+
             }
         }
         $router->render('logistica/newmotor',[
