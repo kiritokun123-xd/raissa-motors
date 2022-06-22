@@ -42,17 +42,17 @@
         <div class="productos-caja">
             <div class="producto">
                 <h3 class="producto-info">Motocicletas</h3>
-                <a href="">Ver más Motocicletas</a>
+                <a href="/motocicletas">Ver más Motocicletas</a>
                 <img src="../imagenes/chopper.png" alt="">
             </div>
             <div class="producto">
                 <h3 class="producto-info">Mototaxis</h3>
-                <a href="">Ver más Mototaxis</a>
+                <a href="/mototaxis">Ver más Mototaxis</a>
                 <img src="../imagenes/MOTOTAXI.png" alt="">
             </div>
             <div class="producto">
                 <h3 class="producto-info">Cargueros</h3>
-                <a href="">Ver más Cargueros</a>
+                <a href="/cargueros">Ver más Cargueros</a>
                 <img src="../imagenes/HELICOPTERO.png" alt="">
             </div>
         </div>

@@ -1,7 +1,6 @@
 <?php 
 namespace Controllers;
 
-use Exception;
 use MVC\Router;
 use Model\Articulo;
 use Model\Moto;
@@ -354,7 +353,7 @@ class LogisticaController{
 
         $resultado = $_GET['resultado'] ?? null;
 
-        $limite = 30;
+        $limite = 50;
         
         $pag = $_GET['pag'] ?? null;
 
@@ -442,8 +441,10 @@ class LogisticaController{
         $oldserie = $pedido->getSerie();
         $motores = Motor::getMotores();
         $oldmotor = $pedido->getMotor();
+        //debuguear("hola");
         
         $errores = Pedido::getErrores();
+        
         
         //EJECUTAR EL CODIGO DESPUES DE QuE EL USUARIO ENVIA EL FORMULARIO
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -780,7 +781,7 @@ class LogisticaController{
                 try{
                     $serie->guardar('/logistica/serie');
                 }catch(\Exception $e){
-                    $errores[]= "Ya existe esa serie";
+                    $errores[]= "Ya existe esta serie";
                 }
                 
             }
@@ -888,6 +889,7 @@ class LogisticaController{
         $motor = new Motor();
 
         $errores = Motor::getErrores();
+        
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             /*CREA UNA NUEVA INSTANCIA*/
@@ -903,9 +905,9 @@ class LogisticaController{
                 try{
                     $motor->guardar('/logistica/motor');
                 }catch(\Exception $e){
-                    $errores[]= "Ya existe ese motor";
+                    $errores[]= "Ya existe este motor";
                 }
-
+                
             }
         }
         $router->render('logistica/newmotor',[

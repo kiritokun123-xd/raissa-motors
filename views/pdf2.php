@@ -155,14 +155,14 @@ $pdf->Cell(5);
 $pdf->Cell(78,20,utf8_decode('FECHA DE ENTREGA: ' . date_format(date_create($pedido->fecha_ent),'d-m-Y')),1,0,'L');
 $pdf->Cell(40,20,utf8_decode('Nº' . $pedido->id),1,1,'C');
 $pdf->Ln(2);
-$pdf->Image('../public/imagenes/logopedido.png',15,10,30,30,'','http://www.raissamotors.com');
+$pdf->Image('../public_html/imagenes/logopedido.png',15,10,30,30,'','http://www.raissamotors.com');
 $pdf->SetLeftMargin(15);
 $pdf->SetFontSize(14);
 
 $pdf->Cell(90,10,utf8_decode('Cliente: ' .  $pedido->cliente ),0,1,'L');
-$pdf->Cell(90,10,utf8_decode('Vendedor: ' .  $pedido->vendedor ),0,1,'L');
-$pdf->Cell(90,10,utf8_decode('Despacho: ' .  $pedido->despacho ),0,1,'L');
-$pdf->Cell(90,10,utf8_decode('Destino: ' .  $pedido->destino ),0,1,'L');
+$pdf->Cell(90,10,utf8_decode('Cliente: ' .  $pedido->vendedor ),0,1,'L');
+$pdf->Cell(90,10,utf8_decode('Cliente: ' .  $pedido->despacho ),0,1,'L');
+$pdf->Cell(90,10,utf8_decode('Cliente: ' .  $pedido->destino ),0,1,'L');
 $pdf->Cell(90,8,utf8_decode('Serie: ' . $pedido->serie),0,1,'L');
 $pdf->Ln(5);
 $pdf->SetFont('Arial','B',14);

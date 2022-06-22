@@ -25,6 +25,7 @@ class Pedidoe extends ActiveRecord{
     public $despacho;
     public $destino;
     public $estado;
+    
 
     public function __construct($args = [])
     {
