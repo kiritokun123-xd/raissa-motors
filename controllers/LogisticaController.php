@@ -410,6 +410,24 @@ class LogisticaController{
             'nick' => $nick
         ]);
     }
+    public static function invpedidoajaxcs(Router $router){
+        $filtro = $_POST['filtro'];
+
+        $pedidos = Pedido::filtrarAjax('serie',$filtro);
+
+        $router->renderAjax('invpedidoajax',[
+            'pedidos' => $pedidos
+        ]);
+    }
+    public static function invpedidoajaxcm(Router $router){
+        $filtro = $_POST['filtro'];
+
+        $pedidos = Pedido::filtrarAjax('nummotor',$filtro);
+
+        $router->renderAjax('invpedidoajax',[
+            'pedidos' => $pedidos
+        ]);
+    }
     public static function invpedidoajaxc(Router $router){
         $filtro = $_POST['filtro'];
 

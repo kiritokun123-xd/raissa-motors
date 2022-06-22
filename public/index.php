@@ -178,6 +178,8 @@ $router->post('/ajax/insoldaduraN',[SoldaduraController::class, 'invsoldaduraN']
 $router->post('/ajax/invusuarioAjaxId',[UsuarioController::class, 'invusuarioajaxid']);
 $router->post('/ajax/invusuarioAjaxN',[UsuarioController::class, 'invusuarioajaxN']);
 $router->post('/ajax/invpedidoAjaxC',[LogisticaController::class, 'invpedidoajaxc']);
+$router->post('/ajax/invpedidoAjaxCS',[LogisticaController::class, 'invpedidoajaxcs']);
+$router->post('/ajax/invpedidoAjaxCM',[LogisticaController::class, 'invpedidoajaxcm']);
 $router->post('/ajax/invpedidoAjaxF',[LogisticaController::class, 'invpedidoajaxf']);
 $router->post('/ajax/invpedidoAjaxE',[LogisticaController::class, 'invpedidoajaxe']);
 $router->post('/ajax/invpedidoAjaxT',[LogisticaController::class, 'invpedidoajaxt']);

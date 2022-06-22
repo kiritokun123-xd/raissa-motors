@@ -10,8 +10,16 @@
                 <p>Nuevo Pedido</p>
             </a>
             <div class="buscar-articulo">
-                <label for="buscarcl">Buscar por Cliente:</label>
+                <label for="buscarcl">Cliente:</label>
                 <input class="input-id" type="text" id="buscarcl">
+            </div>
+            <div class="buscar-articulo">
+                <label for="buscarcls">Serie:</label>
+                <input class="input-id" type="text" id="buscarcls">
+            </div>
+            <div class="buscar-articulo">
+                <label for="buscarclm">Motor:</label>
+                <input class="input-id" type="text" id="buscarclm">
             </div>
             <div class="buscar-articulo">
                 <label for="buscarfec">Fecha de Entrega:</label>

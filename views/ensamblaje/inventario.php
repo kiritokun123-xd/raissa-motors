@@ -21,7 +21,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Imagen</th>
+                    <!-- <th>Imagen</th> -->
                     <th>Id</th>
                     <th>Artículo</th>
                     <th class="th-descripcion">Descripción</th>
@@ -34,9 +34,9 @@
             <tbody id="invensamblaje-body">
                 <?php foreach($articulos as $articulo) : ?>
                 <tr>
-                    <td class="td-img" >
+                    <!-- <td class="td-img" >
                         <img class="img-articulo"  src="/imagenes/<?php echo $articulo->imagen; ?>" alt="<?php echo $articulo->nombre; ?>">
-                    </td>
+                    </td> -->
                     <td><?php echo $articulo->id; ?></td>
                     <td><?php echo $articulo->nombre; ?></td>
                     <td class="td-descripcion"><?php echo $articulo->descripcion; ?></td>

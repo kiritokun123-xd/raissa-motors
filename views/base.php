@@ -19,7 +19,7 @@
     <!--===BOX ICONS===-->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- CSS -->
-    <link rel="stylesheet" href="../build/css/app2.css">
+    <link rel="stylesheet" href="../build/css/app.css">
 <body id="body-pd" >
     
     <header class="header" id="header">
@@ -82,6 +82,6 @@
 
     
 
-    <script src="../build/js/bundle2.min.js"></script>
+    <script src="../build/js/bundle.min.js"></script>
 </body>
 </html>

@@ -35,6 +35,8 @@ function functionsAjax() {
     invMotoresAjax()
 
     invPedidosAjaxC()
+    invPedidosAjaxCS()
+    invPedidosAjaxCM()
     invPedidosAjaxF()
 
     invPedidosAjaxE()
@@ -169,6 +171,24 @@ function invPedidosAjaxC(){
     $('#buscarcl').on('input',function(){
         var filtro = $(this).val();
         $.post("/ajax/invpedidoAjaxC", { filtro: filtro }, function(data) {
+            $("#invpedido-body").html(data);
+            
+        });  
+    })            
+}
+function invPedidosAjaxCS(){
+    $('#buscarcls').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invpedidoAjaxCS", { filtro: filtro }, function(data) {
+            $("#invpedido-body").html(data);
+            
+        });  
+    })            
+}
+function invPedidosAjaxCM(){
+    $('#buscarclm').on('input',function(){
+        var filtro = $(this).val();
+        $.post("/ajax/invpedidoAjaxCM", { filtro: filtro }, function(data) {
             $("#invpedido-body").html(data);
             
         });  
