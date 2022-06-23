@@ -39,7 +39,7 @@
 <div class="contenedor">
     <div class="contenedor-productos">
         <h2 class="titulo-productos">Nuestros Productos</h2>
-        <div class="productos-caja">
+        <div class="productos-caja" data-aos="fade-right">
             <div class="producto">
                 <h3 class="producto-info">Motocicletas</h3>
                 <a href="/motocicletas">Ver más Motocicletas</a>

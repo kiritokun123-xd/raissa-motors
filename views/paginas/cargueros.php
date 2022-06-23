@@ -10,9 +10,9 @@
 
 
 <div class="contenedor-nosotros">
-    <h2>Cargueros de todo tipo</h2>
+    <h2 data-aos="zoom-in-down">Cargueros de todo tipo</h2>
     <?php foreach($cargueros as $carguero) : ?>
-        <div class="caja-mototaxis <?php echo ($carguero->id%2==0) ? 'invertir' : ''; ?>">
+        <div class="caja-mototaxis <?php echo ($carguero->id%2==0) ? 'invertir' : ''; ?>" data-aos="zoom-in-down">
             <img src="/imagenes/<?php echo $carguero->imagen; ?>" alt="">
             <div class="info">
                 <h3><?php echo $carguero->nombre; ?></h3>

@@ -6,13 +6,13 @@
     align-items: center;
     @include tablet{
         flex-direction: row;
-    }
-    &.invertir{
-        img{
-            order: 2;
-        }
-        .info{
-            order: 1;
+        &.invertir{
+            img{
+                order: 2;
+            }
+            .info{
+                order: 1;
+            }
         }
     }
     img{
@@ -23,6 +23,12 @@
     }
     .info{
         margin-left: 2rem;
+        border-bottom: 1px solid $gris-icons;
+        padding-bottom: 3rem;
+        @include tablet{
+            border-bottom: 0px solid $gris;
+            padding-bottom: 0rem;
+        }
         h3{
             font-size: 4rem;
             margin: 0;

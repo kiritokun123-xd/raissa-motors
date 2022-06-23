@@ -10,9 +10,9 @@
 
 
 <div class="contenedor-nosotros">
-    <h2>Mototaxis de todo tipo</h2>
+    <h2 data-aos="zoom-in-down">Mototaxis de todo tipo</h2>
     <?php foreach($mototaxis as $mototaxi) : ?>
-        <div class="caja-mototaxis <?php echo ($mototaxi->id%2==0) ? 'invertir' : ''; ?>">
+        <div class="caja-mototaxis <?php echo ($mototaxi->id%2==0) ? 'invertir' : ''; ?>" data-aos="zoom-in-down">
             <img src="/imagenes/<?php echo $mototaxi->imagen; ?>" alt="">
             <div class="info">
                 <h3><?php echo $mototaxi->nombre; ?></h3>

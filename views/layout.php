@@ -11,6 +11,7 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- CSS -->
     <link rel="stylesheet" href="../build/css/app.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- CSS Carousel-->
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <!--==SWEET ALERT-->
@@ -21,10 +22,11 @@
 
     <script src="../build/js/bundle.min.js"></script>
     <script src="../build/js/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script >
         $(document).ready(function(){
             functionsAjax()
-            
+            AOS.init();
         })
         
     </script>
@@ -89,7 +91,7 @@
 </body>
 <footer>
     <h2>Contáctanos</h2>
-    <div class="contenedor-contacto">
+    <div class="contenedor-contacto" data-aos="zoom-in-up">
         <div class="texto">
             <h4>Puedes comunicarte con nosotros a través de nuestras redes sociales o llamando al <span>939-485-217</span></h4>
         </div>
